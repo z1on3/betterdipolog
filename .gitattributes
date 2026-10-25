@@ -1,0 +1,7 @@
+# Keep LF everywhere (matches Prettier; avoids CRLF churn on Windows checkouts)
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.webp binary
+*.ttf binary
+*.xlsx binary
