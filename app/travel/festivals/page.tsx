@@ -57,7 +57,7 @@ function hostLabel(url: string) {
 
 export default function FestivalsPage() {
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/travel" text="Back to Travel" />
       <SubpageHero>
         <SubpageHero.Title>Festivals &amp; Events</SubpageHero.Title>
@@ -69,29 +69,31 @@ export default function FestivalsPage() {
       </SubpageHero>
 
       <div className="container mx-auto px-4 py-8 md:px-6">
-        <ol className="relative space-y-6 border-l-2 border-cyan-100 pl-6 md:pl-8">
+        <ol className="relative space-y-6 border-l-2 border-cyan-100 pl-6 md:pl-8 dark:border-cyan-900">
           {festivals.map((f) => (
             <li key={f.name} className="relative">
               <span
                 className="absolute top-5 -left-[33px] h-4 w-4 rounded-full border-2 border-white bg-cyan-600 shadow md:-left-[41px]"
                 aria-hidden
               />
-              <article className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+              <article className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-800 dark:bg-slate-900">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="rounded-md bg-cyan-600 px-2 py-1 text-xs font-bold tracking-wider text-white uppercase">
                     {f.monthLabel ?? MONTHS[f.month - 1]}
                   </span>
-                  <h2 className="text-lg font-bold text-slate-900">{f.name}</h2>
+                  <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+                    {f.name}
+                  </h2>
                 </div>
-                <p className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700">
+                <p className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700 dark:text-cyan-300">
                   <CalendarDays className="h-4 w-4" aria-hidden />
                   {f.schedule}
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                   {f.description}
                 </p>
                 {f.note && (
-                  <p className="mt-3 flex items-start gap-1.5 rounded-md border border-amber-100 bg-amber-50 p-2 text-xs text-amber-800">
+                  <p className="mt-3 flex items-start gap-1.5 rounded-md border border-amber-100 bg-amber-50 p-2 text-xs text-amber-800 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-200">
                     <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden />
                     {f.note}
                   </p>
@@ -105,7 +107,7 @@ export default function FestivalsPage() {
                         href={s}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline hover:text-slate-600"
+                        className="underline hover:text-slate-600 dark:hover:text-slate-400"
                       >
                         {hostLabel(s)}
                       </a>

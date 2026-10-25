@@ -116,9 +116,9 @@ export default function BangonLivePanel({
   }
 
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
+    <div className="flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg dark:border-slate-800 dark:bg-slate-900">
       {/* Tabs */}
-      <div className="flex items-center border-b border-slate-100 bg-slate-50/70">
+      <div className="flex items-center border-b border-slate-100 bg-slate-50/70 dark:border-slate-800 dark:bg-slate-950/70">
         <TabButton
           active={tab === "alerts"}
           onClick={() => setTab("alerts")}
@@ -149,7 +149,7 @@ export default function BangonLivePanel({
             <ShieldCheck className="h-3 w-3" /> Moderator
           </span>
         ) : (
-          <span className="mr-3 ml-auto inline-flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-emerald-600 uppercase">
+          <span className="mr-3 ml-auto inline-flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-emerald-600 uppercase dark:text-emerald-400">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -161,7 +161,7 @@ export default function BangonLivePanel({
 
       {/* Body */}
       {tab === "alerts" ? (
-        <ul className="flex-1 divide-y divide-slate-50 overflow-y-auto">
+        <ul className="flex-1 divide-y divide-slate-50 overflow-y-auto dark:divide-slate-800">
           {feed.length === 0 && (
             <EmptyState
               title="No active alerts"
@@ -182,14 +182,14 @@ export default function BangonLivePanel({
                         rel: "noopener noreferrer",
                       }
                     : {})}
-                  className={`block px-4 py-3 ${url ? "transition-colors hover:bg-slate-50" : ""}`}
+                  className={`block px-4 py-3 ${url ? "transition-colors hover:bg-slate-50 dark:hover:bg-slate-950" : ""}`}
                 >
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex shrink-0 items-center rounded-full border border-rose-100 bg-rose-50 px-2 py-0.5 text-[10px] font-bold tracking-wide text-rose-700 uppercase">
+                    <span className="inline-flex shrink-0 items-center rounded-full border border-rose-100 bg-rose-50 px-2 py-0.5 text-[10px] font-bold tracking-wide text-rose-700 uppercase dark:border-rose-900 dark:bg-rose-950/40 dark:text-rose-300">
                       {f.category}
                     </span>
                     {f.magnitude != null && (
-                      <span className="shrink-0 text-xs font-bold text-rose-700">
+                      <span className="shrink-0 text-xs font-bold text-rose-700 dark:text-rose-300">
                         M{f.magnitude.toFixed(1)}
                       </span>
                     )}
@@ -197,7 +197,7 @@ export default function BangonLivePanel({
                       {relativeTime(f.published_at)}
                     </span>
                   </div>
-                  <p className="mt-1 flex items-start gap-1 text-sm leading-snug break-words text-slate-700">
+                  <p className="mt-1 flex items-start gap-1 text-sm leading-snug break-words text-slate-700 dark:text-slate-300">
                     <span className="min-w-0">{f.title}</span>
                     {url && (
                       <ExternalLink className="mt-0.5 h-3 w-3 shrink-0 text-slate-400" />
@@ -209,7 +209,7 @@ export default function BangonLivePanel({
           })}
         </ul>
       ) : tab === "reports" ? (
-        <ul className="flex-1 divide-y divide-slate-50 overflow-y-auto">
+        <ul className="flex-1 divide-y divide-slate-50 overflow-y-auto dark:divide-slate-800">
           {isAdmin && pendingReports.length > 0 && (
             <>
               <ModHeader
@@ -217,9 +217,12 @@ export default function BangonLivePanel({
                 count={pendingReports.length}
               />
               {pendingReports.map((r) => (
-                <li key={r.id} className="bg-amber-50/50 px-4 py-3">
+                <li
+                  key={r.id}
+                  className="bg-amber-50/50 px-4 py-3 dark:bg-amber-950/40"
+                >
                   <ReportHead r={r} pending time={relativeTime(r.created_at)} />
-                  <p className="mt-1 text-sm leading-snug break-words text-slate-700">
+                  <p className="mt-1 text-sm leading-snug break-words text-slate-700 dark:text-slate-300">
                     {r.description}
                   </p>
                   <ContactLine value={r.contact_number} />
@@ -263,7 +266,7 @@ export default function BangonLivePanel({
                   time={relativeTime(r.created_at)}
                 />
                 <p
-                  className={`mt-1 text-sm leading-snug break-words ${cleared ? "text-slate-500 line-through decoration-slate-300" : "text-slate-700"}`}
+                  className={`mt-1 text-sm leading-snug break-words ${cleared ? "text-slate-500 line-through decoration-slate-300 dark:text-slate-400" : "text-slate-700 dark:text-slate-300"}`}
                 >
                   {r.description}
                 </p>
@@ -292,7 +295,7 @@ export default function BangonLivePanel({
         </ul>
       ) : (
         <>
-          <ul className="flex-1 divide-y divide-slate-50 overflow-y-auto">
+          <ul className="flex-1 divide-y divide-slate-50 overflow-y-auto dark:divide-slate-800">
             {isAdmin && pendingMessages.length > 0 && (
               <>
                 <ModHeader
@@ -300,13 +303,16 @@ export default function BangonLivePanel({
                   count={pendingMessages.length}
                 />
                 {pendingMessages.map((m) => (
-                  <li key={m.id} className="bg-amber-50/50 px-4 py-3">
+                  <li
+                    key={m.id}
+                    className="bg-amber-50/50 px-4 py-3 dark:bg-amber-950/40"
+                  >
                     <MessageHead
                       m={m}
                       pending
                       time={relativeTime(m.created_at)}
                     />
-                    <p className="mt-1 text-sm leading-snug break-words text-slate-700">
+                    <p className="mt-1 text-sm leading-snug break-words text-slate-700 dark:text-slate-300">
                       {m.message}
                     </p>
                     <div className="mt-2 flex flex-wrap gap-1.5">
@@ -340,7 +346,7 @@ export default function BangonLivePanel({
             {messages.map((m) => (
               <li key={m.id} className="px-4 py-3">
                 <MessageHead m={m} time={relativeTime(m.created_at)} />
-                <p className="mt-1 text-sm leading-snug break-words text-slate-700">
+                <p className="mt-1 text-sm leading-snug break-words text-slate-700 dark:text-slate-300">
                   {m.message}
                 </p>
                 {isAdmin && (
@@ -367,7 +373,7 @@ export default function BangonLivePanel({
           <form
             ref={formRef}
             onSubmit={onSubmit}
-            className="space-y-2 border-t border-slate-100 bg-slate-50/50 p-3"
+            className="space-y-2 border-t border-slate-100 bg-slate-50/50 p-3 dark:border-slate-800 dark:bg-slate-950/50"
           >
             <textarea
               name="message"
@@ -375,20 +381,20 @@ export default function BangonLivePanel({
               rows={2}
               maxLength={280}
               placeholder="Post a message to the community…"
-              className="w-full resize-none rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 focus:outline-none"
+              className="w-full resize-none rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 focus:outline-none dark:border-slate-800 dark:text-slate-100 dark:focus:ring-emerald-800"
             />
             <div className="grid grid-cols-2 gap-2">
               <input
                 name="authorName"
                 maxLength={80}
                 placeholder="Name (optional)"
-                className="w-full min-w-0 rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 focus:outline-none"
+                className="w-full min-w-0 rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 focus:outline-none dark:border-slate-800 dark:text-slate-100 dark:focus:ring-emerald-800"
               />
               <input
                 name="barangay"
                 maxLength={100}
                 placeholder="Barangay (optional)"
-                className="w-full min-w-0 rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 focus:outline-none"
+                className="w-full min-w-0 rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 focus:outline-none dark:border-slate-800 dark:text-slate-100 dark:focus:ring-emerald-800"
               />
             </div>
             {SITE_KEY && (
@@ -431,7 +437,7 @@ function ReportHead({
 }) {
   return (
     <div className="flex items-center gap-2">
-      <span className="inline-flex shrink-0 items-center rounded-full border border-orange-100 bg-orange-50 px-2 py-0.5 text-[10px] font-bold tracking-wide text-orange-700 uppercase">
+      <span className="inline-flex shrink-0 items-center rounded-full border border-orange-100 bg-orange-50 px-2 py-0.5 text-[10px] font-bold tracking-wide text-orange-700 uppercase dark:border-orange-900 dark:bg-orange-950/40 dark:text-orange-300">
         {INCIDENT_LABEL[r.incident_type]}
       </span>
       {pending && <StatusTag tone="amber">Pending</StatusTag>}
@@ -440,7 +446,7 @@ function ReportHead({
           <CheckCircle2 className="h-3 w-3" /> Cleared
         </StatusTag>
       )}
-      <span className="flex min-w-0 items-center gap-1 text-xs font-semibold text-slate-500">
+      <span className="flex min-w-0 items-center gap-1 text-xs font-semibold text-slate-500 dark:text-slate-400">
         <MapPin className="h-3 w-3 shrink-0" />
         <span className="truncate">
           {r.barangay}
@@ -465,7 +471,7 @@ function MessageHead({
 }) {
   return (
     <div className="flex items-center gap-2 text-xs">
-      <span className="max-w-[45%] shrink-0 truncate font-bold text-slate-800">
+      <span className="max-w-[45%] shrink-0 truncate font-bold text-slate-800 dark:text-slate-200">
         {m.author_name || "Anonymous"}
       </span>
       {pending && <StatusTag tone="amber">Pending</StatusTag>}
@@ -499,8 +505,8 @@ function StatusTag({
 }) {
   const cls =
     tone === "amber"
-      ? "bg-amber-100 text-amber-800 border-amber-200"
-      : "bg-emerald-50 text-emerald-700 border-emerald-100";
+      ? "bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-200 border-amber-200 dark:border-amber-800"
+      : "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border-emerald-100 dark:border-emerald-900";
   return (
     <span
       className={`inline-flex shrink-0 items-center gap-1 rounded-full border px-2 py-0.5 text-[10px] font-bold tracking-wide uppercase ${cls}`}
@@ -512,7 +518,7 @@ function StatusTag({
 
 function ModHeader({ label, count }: { label: string; count: number }) {
   return (
-    <li className="sticky top-0 z-10 bg-slate-100/95 px-4 py-1 text-[10px] font-bold tracking-widest text-slate-500 uppercase backdrop-blur">
+    <li className="sticky top-0 z-10 bg-slate-100/95 px-4 py-1 text-[10px] font-bold tracking-widest text-slate-500 uppercase backdrop-blur dark:bg-slate-800/95 dark:text-slate-400">
       {label} · {count}
     </li>
   );
@@ -533,8 +539,8 @@ function ModButton({
     tone === "go"
       ? "bg-emerald-600 text-white hover:bg-emerald-700"
       : tone === "danger"
-        ? "border border-red-200 text-red-600 hover:bg-red-50"
-        : "border border-slate-200 text-slate-600 hover:bg-slate-50";
+        ? "border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/40"
+        : "border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-950";
   return (
     <form action={action}>
       <button
@@ -566,8 +572,8 @@ function TabButton({
       aria-pressed={active}
       className={`relative inline-flex items-center gap-1.5 border-b-2 px-4 py-3 text-sm font-bold transition-colors ${
         active
-          ? "border-emerald-600 text-emerald-700"
-          : "border-transparent text-slate-500 hover:text-slate-700"
+          ? "border-emerald-600 text-emerald-700 dark:text-emerald-300"
+          : "border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
       }`}
     >
       <Icon className="h-4 w-4" />
@@ -584,7 +590,7 @@ function TabButton({
 function EmptyState({ title, body }: { title: string; body: string }) {
   return (
     <li className="flex h-full flex-col items-center justify-center px-6 py-12 text-center">
-      <p className="font-bold text-slate-600">{title}</p>
+      <p className="font-bold text-slate-600 dark:text-slate-400">{title}</p>
       <p className="mt-1 text-sm text-slate-400">{body}</p>
     </li>
   );

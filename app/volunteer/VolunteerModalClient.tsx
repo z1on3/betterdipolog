@@ -72,16 +72,16 @@ export default function VolunteerModalClient() {
       {/* --- JOIN MODAL --- */}
       {isModalOpen && (
         <div className="animate-in fade-in fixed inset-0 top-[105.1px] z-[999] flex h-[calc(100dvh-105.1px)] items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm duration-200 sm:top-[81.1px] sm:h-[calc(100dvh-81.1px)]">
-          <div className="animate-in zoom-in-95 relative w-full max-w-md overflow-hidden rounded-3xl bg-white shadow-2xl duration-200">
+          <div className="animate-in zoom-in-95 relative w-full max-w-md overflow-hidden rounded-3xl bg-white shadow-2xl duration-200 dark:bg-slate-900">
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50 p-5">
-              <h2 className="flex items-center gap-2 text-xl font-extrabold text-slate-900">
-                <HeartHandshake className="h-6 w-6 text-emerald-600" />
+            <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50 p-5 dark:border-slate-800 dark:bg-slate-950">
+              <h2 className="flex items-center gap-2 text-xl font-extrabold text-slate-900 dark:text-slate-100">
+                <HeartHandshake className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
                 Connect With Us
               </h2>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="rounded-full p-2 text-slate-400 transition-colors hover:bg-slate-200 hover:text-slate-700"
+                className="rounded-full p-2 text-slate-400 transition-colors hover:bg-slate-200 hover:text-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-300"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -89,7 +89,7 @@ export default function VolunteerModalClient() {
 
             {/* Content Links */}
             <div className="space-y-4 p-6">
-              <p className="mb-6 text-sm leading-relaxed text-slate-600">
+              <p className="mb-6 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                 We coordinate online! Join the BetterGov.ph Discord to meet
                 civic tech builders, or check out the source code on GitHub.
               </p>
@@ -99,17 +99,17 @@ export default function VolunteerModalClient() {
                 href="https://discord.gg/bettergovph"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-xl border border-slate-200 p-4 transition-all hover:border-[#5865F2] hover:bg-[#5865F2]/5"
+                className="group flex items-center justify-between rounded-xl border border-slate-200 p-4 transition-all hover:border-[#5865F2] hover:bg-[#5865F2]/5 dark:border-slate-800"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#5865F2] text-white shadow-sm">
                     <DiscordIcon className="h-6 w-6" />
                   </div>
                   <div>
-                    <div className="font-bold text-slate-900 transition-colors group-hover:text-[#5865F2]">
+                    <div className="font-bold text-slate-900 transition-colors group-hover:text-[#5865F2] dark:text-slate-100">
                       BetterGov.ph Discord
                     </div>
-                    <div className="text-xs text-slate-500">
+                    <div className="text-xs text-slate-500 dark:text-slate-400">
                       Chat with civic tech builders nationwide
                     </div>
                   </div>
@@ -122,22 +122,22 @@ export default function VolunteerModalClient() {
                 href="https://github.com/z1on3/betterdipolog"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-xl border border-slate-200 p-4 transition-all hover:border-slate-800 hover:bg-slate-50"
+                className="group flex items-center justify-between rounded-xl border border-slate-200 p-4 transition-all hover:border-slate-800 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-950"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-900 text-white shadow-sm">
                     <GitHubIcon className="h-6 w-6" />
                   </div>
                   <div>
-                    <div className="font-bold text-slate-900 transition-colors group-hover:text-slate-900">
+                    <div className="font-bold text-slate-900 transition-colors group-hover:text-slate-900 dark:text-slate-100 dark:group-hover:text-slate-100">
                       GitHub Repository
                     </div>
-                    <div className="text-xs text-slate-500">
+                    <div className="text-xs text-slate-500 dark:text-slate-400">
                       BetterDipolog source code
                     </div>
                   </div>
                 </div>
-                <ExternalLink className="h-5 w-5 text-slate-300 group-hover:text-slate-900" />
+                <ExternalLink className="h-5 w-5 text-slate-300 group-hover:text-slate-900 dark:group-hover:text-slate-100" />
               </a>
 
               {/* TODO(owner): add BetterDipolog's own Facebook page / community
@@ -148,17 +148,17 @@ export default function VolunteerModalClient() {
                 href="https://www.facebook.com/bettergovph"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-xl border border-slate-200 p-4 transition-all hover:border-[#0284C7] hover:bg-[#0284C7]/5"
+                className="group flex items-center justify-between rounded-xl border border-slate-200 p-4 transition-all hover:border-[#0284C7] hover:bg-[#0284C7]/5 dark:border-slate-800"
               >
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#1877F2] bg-white text-[#1877F2] shadow-sm">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[#1877F2] bg-white text-[#1877F2] shadow-sm dark:bg-slate-900">
                     <FacebookIcon className="h-6 w-6" />
                   </div>
                   <div>
-                    <div className="font-bold text-slate-900 transition-colors group-hover:text-[#0284C7]">
+                    <div className="font-bold text-slate-900 transition-colors group-hover:text-[#0284C7] dark:text-slate-100">
                       BetterGov.ph FB Page
                     </div>
-                    <div className="text-xs text-slate-500">
+                    <div className="text-xs text-slate-500 dark:text-slate-400">
                       Nationwide civic tech movement
                     </div>
                   </div>

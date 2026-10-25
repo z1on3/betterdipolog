@@ -7,6 +7,7 @@ import Header from "@/components/layout/Header";
 import TopBanner from "@/components/layout/TopBanner";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import { themeInitScript } from "@/lib/theme";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://betterdipolog.org"),
@@ -55,7 +56,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${kapwaSans.variable} ${kapwaMono.variable} h-full scroll-smooth antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="flex min-h-full flex-col">
         <TopBanner />
         <Header />

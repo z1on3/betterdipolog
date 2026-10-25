@@ -18,30 +18,34 @@ export default function CityStatsSummary() {
   // PSA-based Wikipedia infobox. Update together with data/dipolog/city-stats.
   const quickStats = [
     {
-      icon: <Users className="h-5 w-5 text-blue-600" />,
-      bgIcon: "bg-blue-50 border-blue-100",
+      icon: <Users className="h-5 w-5 text-blue-600 dark:text-blue-400" />,
+      bgIcon:
+        "bg-blue-50 dark:bg-blue-950/40 border-blue-100 dark:border-blue-900",
       label: "Total Population",
       value: "136,528",
       subtext: "2024 Census (PSA) • 566.20/km² density",
     },
     {
-      icon: <Map className="h-5 w-5 text-emerald-600" />,
-      bgIcon: "bg-emerald-50 border-emerald-100",
+      icon: <Map className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />,
+      bgIcon:
+        "bg-emerald-50 dark:bg-emerald-950/40 border-emerald-100 dark:border-emerald-900",
       label: "Land Area",
       value: "241.13 km²",
       subtext: "24,113 hectares",
     },
     {
-      icon: <Landmark className="h-5 w-5 text-cyan-600" />,
-      bgIcon: "bg-cyan-50 border-cyan-100",
+      icon: <Landmark className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />,
+      bgIcon:
+        "bg-cyan-50 dark:bg-cyan-950/40 border-cyan-100 dark:border-cyan-900",
       label: "Provincial Capital",
       value: "Zamboanga del Norte",
       subtext: "Gateway to Western Mindanao",
       href: "/travel",
     },
     {
-      icon: <Layers className="h-5 w-5 text-purple-600" />,
-      bgIcon: "bg-purple-50 border-purple-100",
+      icon: <Layers className="h-5 w-5 text-purple-600 dark:text-purple-400" />,
+      bgIcon:
+        "bg-purple-50 dark:bg-purple-950/40 border-purple-100 dark:border-purple-900",
       label: "Political Subdivisions",
       value: "21 Barangays",
       subtext: "Component city • 2nd income class",
@@ -50,18 +54,18 @@ export default function CityStatsSummary() {
   ];
 
   return (
-    <Section className="bg-blue-50">
+    <Section className="bg-blue-50 dark:bg-blue-950/40">
       {/* Header Block */}
       <div className="mb-8 flex flex-col justify-between gap-5 md:mb-12 md:flex-row md:items-end md:gap-4">
         <div className="text-left">
-          <p className="mb-1.5 text-[10px] font-bold tracking-widest text-blue-600 uppercase md:mb-2 md:text-xs">
+          <p className="mb-1.5 text-[10px] font-bold tracking-widest text-blue-600 uppercase md:mb-2 md:text-xs dark:text-blue-400">
             Dipolog At A Glance
           </p>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl dark:text-slate-100">
             City Statistics & Profile
           </h2>
           <Text
-            className="mt-2 max-w-xl text-sm text-slate-500 md:text-base"
+            className="mt-2 max-w-xl text-sm text-slate-500 md:text-base dark:text-slate-400"
             size="md"
           >
             From vital demographics to natural resources, explore the
@@ -105,10 +109,10 @@ export default function CityStatsSummary() {
               <p className="mb-1 hidden text-xs font-bold tracking-wider text-slate-400 uppercase md:block">
                 {stat.label}
               </p>
-              <h3 className="mb-1 text-2xl font-black tracking-tight text-slate-800 transition-colors group-hover:text-blue-600 md:mb-1.5 md:text-3xl">
+              <h3 className="mb-1 text-2xl font-black tracking-tight text-slate-800 transition-colors group-hover:text-blue-600 md:mb-1.5 md:text-3xl dark:text-slate-200 dark:group-hover:text-blue-400">
                 {stat.value}
               </h3>
-              <p className="mt-auto pr-6 text-xs font-medium text-slate-500">
+              <p className="mt-auto pr-6 text-xs font-medium text-slate-500 dark:text-slate-400">
                 {stat.subtext}
               </p>
             </>
@@ -116,7 +120,7 @@ export default function CityStatsSummary() {
 
           // Added 'relative' to the base classes
           const cardClasses =
-            "relative bg-white border border-blue-100/50 shadow-sm rounded-2xl p-5 md:p-6 flex flex-col hover:shadow-md hover:border-blue-300 transition-all duration-200 group h-full block";
+            "relative bg-white dark:bg-slate-900 border border-blue-100/50 dark:border-blue-900/50 shadow-sm rounded-2xl p-5 md:p-6 flex flex-col hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-200 group h-full block";
 
           // Conditionally render as a Next.js Link or a standard div
           if (stat.href) {
@@ -137,33 +141,33 @@ export default function CityStatsSummary() {
 
       {/* Quick Historic Fact Banner */}
       {/* Changed to pure white background to lift it off the blue section background */}
-      <div className="flex flex-col items-start justify-between gap-4 rounded-2xl border border-blue-100/50 bg-white p-4 shadow-sm md:flex-row md:items-center md:gap-6 md:p-5">
+      <div className="flex flex-col items-start justify-between gap-4 rounded-2xl border border-blue-100/50 bg-white p-4 shadow-sm md:flex-row md:items-center md:gap-6 md:p-5 dark:border-blue-900/50 dark:bg-slate-900">
         <div className="flex w-full items-start gap-3 md:w-auto md:items-center md:gap-3.5">
-          <div className="mt-1 shrink-0 rounded-xl border border-amber-200 bg-amber-50 p-2 text-amber-600 md:mt-0">
+          <div className="mt-1 shrink-0 rounded-xl border border-amber-200 bg-amber-50 p-2 text-amber-600 md:mt-0 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-400">
             <Calendar className="h-4 w-4 md:h-5 md:w-5" />
           </div>
           <div className="flex-1 text-left">
             <div className="mb-0.5 flex flex-wrap items-center gap-2 md:mb-1">
-              <span className="rounded bg-amber-100 px-2 py-0.5 text-[9px] font-extrabold tracking-wider text-amber-800 uppercase md:text-[10px]">
+              <span className="rounded bg-amber-100 px-2 py-0.5 text-[9px] font-extrabold tracking-wider text-amber-800 uppercase md:text-[10px] dark:bg-amber-900/50 dark:text-amber-200">
                 Foundation
               </span>
-              <span className="text-xs font-bold text-slate-700 md:text-sm">
+              <span className="text-xs font-bold text-slate-700 md:text-sm dark:text-slate-300">
                 Chartered City: 1970
               </span>
             </div>
-            <p className="text-[11px] text-slate-500 md:text-xs">
+            <p className="text-[11px] text-slate-500 md:text-xs dark:text-slate-400">
               Created a chartered city under Republic Act No. 5520.
             </p>
           </div>
         </div>
 
-        <div className="flex w-full flex-row justify-between gap-3 border-t border-slate-100 pt-3 text-[11px] font-bold text-slate-500 md:w-auto md:flex-nowrap md:justify-end md:gap-4 md:border-t-0 md:pt-0 md:text-xs">
+        <div className="flex w-full flex-row justify-between gap-3 border-t border-slate-100 pt-3 text-[11px] font-bold text-slate-500 md:w-auto md:flex-nowrap md:justify-end md:gap-4 md:border-t-0 md:pt-0 md:text-xs dark:border-slate-800 dark:text-slate-400">
           <div className="flex flex-1 items-center justify-center gap-1.5 md:flex-auto md:justify-start">
             <Map className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
             <span className="truncate">Region IX</span>
           </div>
-          <div className="hidden h-4 w-px bg-slate-200 md:block"></div>
-          <div className="flex flex-1 items-center justify-center gap-1.5 border-l border-slate-100 pl-3 md:flex-auto md:justify-start md:border-0 md:pl-0">
+          <div className="hidden h-4 w-px bg-slate-200 md:block dark:bg-slate-700"></div>
+          <div className="flex flex-1 items-center justify-center gap-1.5 border-l border-slate-100 pl-3 md:flex-auto md:justify-start md:border-0 md:pl-0 dark:border-slate-800">
             <Compass className="h-3.5 w-3.5 shrink-0 text-indigo-500" />
             <span className="truncate">Cebuano-speaking</span>
           </div>

@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/" text="Go Home" />
       <SubpageHero>
         <SubpageHero.Badges>
           <Link
             href="/about"
-            className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-500 transition-colors hover:text-blue-600"
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-500 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
           >
             <ArrowLeft className="h-4 w-4" /> Back to About
           </Link>
@@ -30,13 +30,13 @@ export default function PrivacyPolicyPage() {
       </SubpageHero>
 
       <div className="mx-auto max-w-[800px] px-4 py-12 md:px-6">
-        <div className="space-y-8 rounded-2xl border border-slate-200 bg-white p-6 leading-relaxed text-slate-600 shadow-sm md:p-10">
+        <div className="space-y-8 rounded-2xl border border-slate-200 bg-white p-6 leading-relaxed text-slate-600 shadow-sm md:p-10 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
           <p className="text-lg">
             This Privacy Policy describes how BetterDipolog.org (&quot;we&quot;)
             collects, uses, and protects your data on our website{" "}
             <a
               href="https://betterdipolog.org/"
-              className="font-medium text-blue-600 transition-colors hover:text-blue-700 hover:underline"
+              className="font-medium text-blue-600 transition-colors hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
             >
               https://betterdipolog.org/
             </a>
@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               1. Data We Collect
             </h2>
             <p className="mb-4">
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               2. Use of Data
             </h2>
             <p>
@@ -89,7 +89,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               3. Data Protection
             </h2>
             <p>
@@ -100,7 +100,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               4. Sharing Data with Third Parties
             </h2>
             <p>
@@ -114,7 +114,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               5. Your Rights
             </h2>
             <p>
@@ -122,7 +122,7 @@ export default function PrivacyPolicyPage() {
               access, correction, or deletion of your data by contacting us at:{" "}
               <a
                 href="mailto:reports@betterdipolog.org"
-                className="font-medium text-blue-600 transition-colors hover:text-blue-700 hover:underline"
+                className="font-medium text-blue-600 transition-colors hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
               >
                 reports@betterdipolog.org
               </a>
@@ -131,14 +131,14 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               6. Contact Us
             </h2>
             <p>
               If you have any questions, please contact us at:{" "}
               <a
                 href="mailto:reports@betterdipolog.org"
-                className="font-medium text-blue-600 transition-colors hover:text-blue-700 hover:underline"
+                className="font-medium text-blue-600 transition-colors hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
               >
                 reports@betterdipolog.org
               </a>

@@ -23,7 +23,7 @@ export default function ResolutionsPage() {
   const resolutionCount = resolutionsData.entries.length - ordinanceCount;
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/transparency" text="Back to Transparency" />
 
       <SubpageHero>

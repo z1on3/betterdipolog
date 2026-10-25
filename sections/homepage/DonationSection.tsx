@@ -16,18 +16,24 @@ export default function DonationSection() {
   const donation: BangonConfig["donation"] = donationJSON.donation;
   if (!donationJSON.active || !donationJSON.displayDonation) return null;
   return (
-    <Section aria-labelledby="donate-heading" className="bg-red-50">
+    <Section
+      aria-labelledby="donate-heading"
+      className="bg-red-50 dark:bg-red-950/40"
+    >
       <div className="mb-4 flex items-center gap-2">
-        <HeartHandshake className="h-6 w-6 text-emerald-600" />
-        <h2 id="donate-heading" className="text-2xl font-bold text-slate-900">
+        <HeartHandshake className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+        <h2
+          id="donate-heading"
+          className="text-2xl font-bold text-slate-900 dark:text-slate-100"
+        >
           How to help
         </h2>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <div className="flex items-center gap-2 text-slate-900">
-            <Wallet className="h-5 w-5 text-emerald-600" />
+        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <div className="flex items-center gap-2 text-slate-900 dark:text-slate-100">
+            <Wallet className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
             <h3 className="font-bold">GCash</h3>
           </div>
           <dl className="mt-3 space-y-1 text-sm">
@@ -36,9 +42,9 @@ export default function DonationSection() {
           </dl>
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <div className="flex items-center gap-2 text-slate-900">
-            <Landmark className="h-5 w-5 text-emerald-600" />
+        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <div className="flex items-center gap-2 text-slate-900 dark:text-slate-100">
+            <Landmark className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
             <h3 className="font-bold">Bank transfer</h3>
           </div>
           <dl className="mt-3 space-y-1 text-sm">
@@ -50,16 +56,16 @@ export default function DonationSection() {
       </div>
 
       {donation.inKindNeeds.length > 0 && (
-        <div className="mt-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <div className="flex items-center gap-2 text-slate-900">
-            <PackageOpen className="h-5 w-5 text-emerald-600" />
+        <div className="mt-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <div className="flex items-center gap-2 text-slate-900 dark:text-slate-100">
+            <PackageOpen className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
             <h3 className="font-bold">Most-needed goods</h3>
           </div>
           <ul className="mt-3 flex flex-wrap gap-2">
             {donation.inKindNeeds.map((item) => (
               <li
                 key={item}
-                className="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-800"
+                className="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-200"
               >
                 {item}
               </li>
@@ -69,16 +75,21 @@ export default function DonationSection() {
       )}
 
       {donation.dropOff.length > 0 && (
-        <div className="mt-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <div className="flex items-center gap-2 text-slate-900">
-            <MapPin className="h-5 w-5 text-emerald-600" />
+        <div className="mt-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <div className="flex items-center gap-2 text-slate-900 dark:text-slate-100">
+            <MapPin className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
             <h3 className="font-bold">Drop-off points</h3>
           </div>
           <ul className="mt-3 space-y-2">
             {donation.dropOff.map((d) => (
               <li key={d.name} className="text-sm">
-                <span className="font-bold text-slate-800">{d.name}</span>
-                <span className="text-slate-500"> — {d.address}</span>
+                <span className="font-bold text-slate-800 dark:text-slate-200">
+                  {d.name}
+                </span>
+                <span className="text-slate-500 dark:text-slate-400">
+                  {" "}
+                  — {d.address}
+                </span>
               </li>
             ))}
           </ul>
@@ -99,8 +110,10 @@ function Row({
 }) {
   return (
     <div className="flex items-center justify-between gap-4">
-      <dt className="text-slate-500">{label}</dt>
-      <dd className={`font-bold text-slate-900 ${mono ? "font-mono" : ""}`}>
+      <dt className="text-slate-500 dark:text-slate-400">{label}</dt>
+      <dd
+        className={`font-bold text-slate-900 dark:text-slate-100 ${mono ? "font-mono" : ""}`}
+      >
         {value}
       </dd>
     </div>

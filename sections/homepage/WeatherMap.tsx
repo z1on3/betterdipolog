@@ -130,10 +130,12 @@ interface WeatherMetricProps {
 
 const WeatherMetric = ({ icon: Icon, label, value }: WeatherMetricProps) => {
   return (
-    <div className="rounded-xl border border-slate-100 bg-white p-4 shadow-sm">
+    <div className="rounded-xl border border-slate-100 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
       <Icon className="mb-2 h-5 w-5 text-blue-500" />
-      <p className="mb-1 text-xs text-slate-500">{label}</p>
-      <p className="text-lg font-bold text-slate-800">{value}</p>
+      <p className="mb-1 text-xs text-slate-500 dark:text-slate-400">{label}</p>
+      <p className="text-lg font-bold text-slate-800 dark:text-slate-200">
+        {value}
+      </p>
     </div>
   );
 };
@@ -231,14 +233,14 @@ export default function WeatherAndMap() {
   const currentCode = weatherData?.current.weather?.id ?? 0;
 
   return (
-    <Section className="bg-white">
+    <Section className="bg-white dark:bg-slate-900">
       {/* Section Header */}
       <div className="mb-10 text-center">
-        <h2 className="text-3xl font-bold text-slate-900">
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100">
           Weather & Location
         </h2>
         <Text
-          className="mx-auto mt-2 text-sm text-slate-600 md:text-base"
+          className="mx-auto mt-2 text-sm text-slate-600 md:text-base dark:text-slate-400"
           size="md"
         >
           Current conditions and interactive map of Dipolog City
@@ -249,16 +251,16 @@ export default function WeatherAndMap() {
         {/* WEATHER CARD */}
         <div
           onClick={() => !loading && weatherData && setIsModalOpen(true)}
-          className={`flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 lg:col-span-4 ${
+          className={`flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 lg:col-span-4 dark:border-slate-800 dark:bg-slate-900 ${
             !loading && weatherData
-              ? "group cursor-pointer hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg"
+              ? "group cursor-pointer hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg dark:hover:border-blue-700"
               : ""
           }`}
         >
           {loading ? (
             <div className="flex min-h-[360px] flex-1 flex-col items-center justify-center">
               <Loader2 className="mb-2 h-8 w-8 animate-spin text-blue-500" />
-              <p className="font-medium text-slate-500">
+              <p className="font-medium text-slate-500 dark:text-slate-400">
                 Fetching weather data...
               </p>
             </div>
@@ -314,37 +316,43 @@ export default function WeatherAndMap() {
               </div>
 
               {/* Quick Stats */}
-              <div className="grid grid-cols-3 border-b border-slate-100">
+              <div className="grid grid-cols-3 border-b border-slate-100 dark:border-slate-800">
                 <div className="p-4 text-center">
                   <Droplets className="mx-auto mb-1 h-4 w-4 text-blue-500" />
-                  <p className="text-xs text-slate-500">Humidity</p>
-                  <p className="font-bold text-slate-800">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    Humidity
+                  </p>
+                  <p className="font-bold text-slate-800 dark:text-slate-200">
                     {Math.round(weatherData.current.humidity)}%
                   </p>
                 </div>
-                <div className="border-x border-slate-100 p-4 text-center">
-                  <Wind className="mx-auto mb-1 h-4 w-4 text-slate-500" />
-                  <p className="text-xs text-slate-500">Wind</p>
-                  <p className="font-bold text-slate-800">
+                <div className="border-x border-slate-100 p-4 text-center dark:border-slate-800">
+                  <Wind className="mx-auto mb-1 h-4 w-4 text-slate-500 dark:text-slate-400" />
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    Wind
+                  </p>
+                  <p className="font-bold text-slate-800 dark:text-slate-200">
                     {weatherData.current.wind_speed.toFixed(1)} km/h
                   </p>
                 </div>
                 <div className="p-4 text-center">
                   <Cloud className="mx-auto mb-1 h-4 w-4 text-slate-400" />
-                  <p className="text-xs text-slate-500">Clouds</p>
-                  <p className="font-bold text-slate-800">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    Clouds
+                  </p>
+                  <p className="font-bold text-slate-800 dark:text-slate-200">
                     {Math.round(weatherData.current.clouds)}%
                   </p>
                 </div>
               </div>
 
               {/* Today's Forecast */}
-              <div className="bg-slate-50 px-5 py-4">
+              <div className="bg-slate-50 px-5 py-4 dark:bg-slate-950">
                 <div className="mb-3 flex items-center justify-between">
                   <span className="text-xs font-bold tracking-wider text-slate-400 uppercase">
                     Today&apos;s Forecast
                   </span>
-                  <span className="text-xs font-semibold text-blue-600">
+                  <span className="text-xs font-semibold text-blue-600 dark:text-blue-400">
                     {Math.round(
                       getDailyValue(
                         weatherData.forecast.precipitation_probability_max,
@@ -368,12 +376,12 @@ export default function WeatherAndMap() {
                       );
                     })()}
                     <div className="min-w-0">
-                      <p className="truncate text-sm font-semibold text-slate-800">
+                      <p className="truncate text-sm font-semibold text-slate-800 dark:text-slate-200">
                         {getUnifiedWeatherLabel(
                           getDailyValue(weatherData.forecast.weather_code, 0),
                         )}
                       </p>
-                      <p className="text-xs text-slate-500">
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
                         {getDailyValue(
                           weatherData.forecast.precipitation_sum,
                           0,
@@ -391,7 +399,7 @@ export default function WeatherAndMap() {
                   </div>
 
                   <div className="shrink-0 text-right">
-                    <p className="font-bold text-slate-800">
+                    <p className="font-bold text-slate-800 dark:text-slate-200">
                       {Math.round(
                         getDailyValue(
                           weatherData.forecast.temperature_2m_max,
@@ -416,27 +424,29 @@ export default function WeatherAndMap() {
               </div>
 
               {/* Footer */}
-              <div className="border-t border-slate-100 bg-white p-3 text-center text-xs font-medium text-slate-500 transition-colors group-hover:bg-blue-50 group-hover:text-blue-600">
+              <div className="border-t border-slate-100 bg-white p-3 text-center text-xs font-medium text-slate-500 transition-colors group-hover:bg-blue-50 group-hover:text-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:group-hover:bg-blue-950/40 dark:group-hover:text-blue-400">
                 {isFallback
                   ? "Viewing offline data • Click for details"
                   : "Click to view 7-day forecast →"}
               </div>
             </>
           ) : (
-            <div className="flex min-h-[360px] flex-1 items-center justify-center text-slate-500">
+            <div className="flex min-h-[360px] flex-1 items-center justify-center text-slate-500 dark:text-slate-400">
               Unable to load weather
             </div>
           )}
         </div>
 
         {/* MAP CARD */}
-        <div className="flex h-100 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm lg:col-span-8 lg:h-auto">
-          <div className="flex items-center gap-2 border-b border-slate-100 bg-slate-50/50 px-6 py-4">
-            <MapPin className="h-5 w-5 text-blue-600" />
-            <h3 className="font-semibold text-slate-800">City Map</h3>
+        <div className="flex h-100 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm lg:col-span-8 lg:h-auto dark:border-slate-800 dark:bg-slate-900">
+          <div className="flex items-center gap-2 border-b border-slate-100 bg-slate-50/50 px-6 py-4 dark:border-slate-800 dark:bg-slate-950/50">
+            <MapPin className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+            <h3 className="font-semibold text-slate-800 dark:text-slate-200">
+              City Map
+            </h3>
           </div>
 
-          <div className="relative w-full flex-1 bg-slate-100">
+          <div className="relative w-full flex-1 bg-slate-100 dark:bg-slate-800">
             <iframe
               title="Map of Dipolog City"
               width="100%"
@@ -450,13 +460,13 @@ export default function WeatherAndMap() {
             />
           </div>
 
-          <div className="flex items-center justify-between border-t border-slate-100 bg-white px-6 py-3 text-xs text-slate-500">
+          <div className="flex items-center justify-between border-t border-slate-100 bg-white px-6 py-3 text-xs text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
             <span>📍 Dipolog City Hall, Rizal Avenue</span>
             <a
               href="https://www.google.com/maps/search/?api=1&query=8.5883,123.3409"
               target="_blank"
               rel="noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-blue-600 hover:underline dark:text-blue-400"
             >
               View Larger Map
             </a>
@@ -472,14 +482,14 @@ export default function WeatherAndMap() {
             onClick={() => setIsModalOpen(false)}
           />
 
-          <div className="animate-in zoom-in-95 relative max-h-[90vh] w-full max-w-3xl overflow-hidden rounded-2xl bg-white shadow-2xl duration-200">
+          <div className="animate-in zoom-in-95 relative max-h-[90vh] w-full max-w-3xl overflow-hidden rounded-2xl bg-white shadow-2xl duration-200 dark:bg-slate-900">
             {/* Modal Header */}
             <div className="relative bg-blue-600 p-6 text-white sm:p-8">
               <button
                 type="button"
                 onClick={() => setIsModalOpen(false)}
                 aria-label="Close weather details"
-                className="absolute top-4 right-4 rounded-full bg-white/10 p-2 transition-colors hover:bg-white/20"
+                className="absolute top-4 right-4 rounded-full bg-white/10 p-2 transition-colors hover:bg-white/20 dark:bg-slate-900/10 dark:hover:bg-slate-900/20"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -522,7 +532,7 @@ export default function WeatherAndMap() {
             </div>
 
             {/* Modal Body */}
-            <div className="max-h-[calc(90vh-268px)] overflow-y-auto bg-slate-50 p-6 sm:p-8">
+            <div className="max-h-[calc(90vh-268px)] overflow-y-auto bg-slate-50 p-6 sm:p-8 dark:bg-slate-950">
               {/* 7-Day Forecast */}
               <div className="mb-8">
                 <h3 className="mb-4 text-sm font-bold tracking-wider text-slate-400 uppercase">
@@ -545,14 +555,14 @@ export default function WeatherAndMap() {
                           key={date}
                           className={`min-w-[160px] snap-start rounded-xl border p-4 sm:min-w-0 ${
                             isToday
-                              ? "border-blue-200 bg-blue-50"
-                              : "border-slate-200 bg-white"
+                              ? "border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-950/40"
+                              : "border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900"
                           }`}
                         >
                           {/* Date */}
                           <div className="mb-4">
                             <p
-                              className={`text-sm font-bold ${isToday ? "text-blue-600" : "text-slate-700"}`}
+                              className={`text-sm font-bold ${isToday ? "text-blue-600 dark:text-blue-400" : "text-slate-700 dark:text-slate-300"}`}
                             >
                               {isToday
                                 ? "Today"
@@ -573,7 +583,7 @@ export default function WeatherAndMap() {
 
                           {/* Temperature */}
                           <div className="mb-4 text-center">
-                            <span className="text-2xl font-bold text-slate-800">
+                            <span className="text-2xl font-bold text-slate-800 dark:text-slate-200">
                               {Math.round(
                                 getDailyValue(
                                   weatherData.forecast.temperature_2m_max,
@@ -595,12 +605,12 @@ export default function WeatherAndMap() {
                           </div>
 
                           {/* Rain */}
-                          <div className="border-t border-slate-100 pt-3">
+                          <div className="border-t border-slate-100 pt-3 dark:border-slate-800">
                             <div className="flex items-center justify-between">
-                              <span className="text-xs text-slate-500">
+                              <span className="text-xs text-slate-500 dark:text-slate-400">
                                 Rain
                               </span>
-                              <span className="text-xs font-bold text-blue-600">
+                              <span className="text-xs font-bold text-blue-600 dark:text-blue-400">
                                 {Math.round(
                                   getDailyValue(
                                     weatherData.forecast
@@ -680,15 +690,15 @@ export default function WeatherAndMap() {
                 </h3>
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-                  <div className="flex items-center gap-4 rounded-xl border border-slate-100 bg-white p-4 shadow-sm">
-                    <div className="rounded-lg bg-orange-50 p-3">
+                  <div className="flex items-center gap-4 rounded-xl border border-slate-100 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                    <div className="rounded-lg bg-orange-50 p-3 dark:bg-orange-950/40">
                       <Sunrise className="h-6 w-6 text-orange-500" />
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-slate-500">
+                      <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
                         Sunrise
                       </p>
-                      <p className="text-lg font-bold text-slate-800">
+                      <p className="text-lg font-bold text-slate-800 dark:text-slate-200">
                         {formatWeatherTime(
                           weatherData.forecast.sunrise[0],
                           weatherData.location.timezone,
@@ -697,15 +707,15 @@ export default function WeatherAndMap() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 rounded-xl border border-slate-100 bg-white p-4 shadow-sm">
-                    <div className="rounded-lg bg-purple-50 p-3">
+                  <div className="flex items-center gap-4 rounded-xl border border-slate-100 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                    <div className="rounded-lg bg-purple-50 p-3 dark:bg-purple-950/40">
                       <Sunset className="h-6 w-6 text-purple-500" />
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-slate-500">
+                      <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
                         Sunset
                       </p>
-                      <p className="text-lg font-bold text-slate-800">
+                      <p className="text-lg font-bold text-slate-800 dark:text-slate-200">
                         {formatWeatherTime(
                           weatherData.forecast.sunset[0],
                           weatherData.location.timezone,
@@ -714,15 +724,15 @@ export default function WeatherAndMap() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 rounded-xl border border-slate-100 bg-white p-4 shadow-sm">
-                    <div className="rounded-lg bg-yellow-50 p-3">
+                  <div className="flex items-center gap-4 rounded-xl border border-slate-100 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                    <div className="rounded-lg bg-yellow-50 p-3 dark:bg-yellow-950/40">
                       <Sun className="h-6 w-6 text-yellow-500" />
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-slate-500">
+                      <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
                         UV Index
                       </p>
-                      <p className="text-lg font-bold text-slate-800">
+                      <p className="text-lg font-bold text-slate-800 dark:text-slate-200">
                         {getDailyValue(
                           weatherData.forecast.uv_index_max,
                           0,

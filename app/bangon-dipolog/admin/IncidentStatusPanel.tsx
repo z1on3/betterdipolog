@@ -36,10 +36,10 @@ export function IncidentStatusPanel({
 
   if (active && state) {
     return (
-      <section className="rounded-2xl border border-red-200 bg-red-50 p-5">
+      <section className="rounded-2xl border border-red-200 bg-red-50 p-5 dark:border-red-800 dark:bg-red-950/40">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="min-w-0">
-            <p className="flex flex-wrap items-center gap-x-2 text-[11px] font-bold tracking-widest text-red-700 uppercase">
+            <p className="flex flex-wrap items-center gap-x-2 text-[11px] font-bold tracking-widest text-red-700 uppercase dark:text-red-300">
               <Siren className="h-4 w-4" /> Incident active
               {state.declared_at && (
                 <span className="font-semibold tracking-normal text-red-500 normal-case">
@@ -47,11 +47,13 @@ export function IncidentStatusPanel({
                 </span>
               )}
             </p>
-            <p className="mt-1 text-base font-extrabold text-slate-900">
+            <p className="mt-1 text-base font-extrabold text-slate-900 dark:text-slate-100">
               {state.title}
             </p>
             {state.summary && (
-              <p className="mt-0.5 text-sm text-slate-600">{state.summary}</p>
+              <p className="mt-0.5 text-sm text-slate-600 dark:text-slate-400">
+                {state.summary}
+              </p>
             )}
             <p className="mt-2 text-xs text-slate-400">
               The homepage banner and command center are showing the active
@@ -77,19 +79,19 @@ export function IncidentStatusPanel({
   }
 
   const inputCls =
-    "w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200";
+    "w-full rounded-lg border border-slate-200 dark:border-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-200 dark:focus:ring-red-800";
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+    <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
       <div className="mb-3 flex items-center gap-2">
-        <Siren className="h-5 w-5 text-red-600" />
-        <h2 className="text-lg font-bold text-slate-900">
+        <Siren className="h-5 w-5 text-red-600 dark:text-red-400" />
+        <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
           Declare an incident
         </h2>
-        <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-700">
+        <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300">
           Standby
         </span>
       </div>
-      <p className="mb-4 text-sm text-slate-500">
+      <p className="mb-4 text-sm text-slate-500 dark:text-slate-400">
         Activating flips the homepage banner and the command center to active
         immediately — no redeploy.
       </p>
@@ -111,13 +113,13 @@ export function IncidentStatusPanel({
           className={`${inputCls} resize-none`}
         />
         <div className="flex flex-wrap items-center gap-3">
-          <label className="inline-flex items-center gap-2 text-sm text-slate-500">
+          <label className="inline-flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
             Declared
             <input
               type="date"
               name="declaredAt"
               defaultValue={state?.declared_at || ""}
-              className="rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900"
+              className="rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-900 dark:border-slate-800 dark:text-slate-100"
             />
           </label>
           <button
@@ -137,7 +139,7 @@ export function IncidentStatusPanel({
 
 function ErrorNote({ message }: { message: string }) {
   return (
-    <p className="mt-3 flex items-start gap-1.5 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs font-medium text-red-700">
+    <p className="mt-3 flex items-start gap-1.5 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs font-medium text-red-700 dark:border-red-800 dark:bg-red-950/40 dark:text-red-300">
       <TriangleAlert className="mt-0.5 h-3.5 w-3.5 shrink-0" /> {message}
     </p>
   );

@@ -19,12 +19,16 @@ export default function ListItem({
   href,
 }: ListItemProps) {
   const content = (
-    <div className="hover:border-primary-500 cursor-pointer rounded-lg border border-gray-200 bg-white p-4 transition-colors">
+    <div className="hover:border-primary-500 cursor-pointer rounded-lg border border-gray-200 bg-white p-4 transition-colors dark:border-gray-800 dark:bg-slate-900">
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <h4 className="text-lg font-medium text-gray-900">{title}</h4>
-          <p className="mt-2 text-sm text-gray-600">{description}</p>
-          <span className="mt-2 inline-block rounded-sm bg-gray-100 px-2 py-1 text-xs font-medium text-gray-800">
+          <h4 className="text-lg font-medium text-gray-900 dark:text-gray-100">
+            {title}
+          </h4>
+          <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            {description}
+          </p>
+          <span className="mt-2 inline-block rounded-sm bg-gray-100 px-2 py-1 text-xs font-medium text-gray-800 dark:bg-gray-800 dark:text-gray-200">
             {category}
           </span>
         </div>

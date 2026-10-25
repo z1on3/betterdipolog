@@ -58,18 +58,22 @@ const REFERENCES = [
 const AttractionsMap = dynamic(() => import("./AttractionsMap"), {
   ssr: false,
   loading: () => (
-    <div className="flex h-[380px] w-full animate-pulse items-center justify-center bg-slate-100 font-medium text-slate-500">
+    <div className="flex h-[380px] w-full animate-pulse items-center justify-center bg-slate-100 font-medium text-slate-500 dark:bg-slate-800 dark:text-slate-400">
       Loading map…
     </div>
   ),
 });
 
 const CATEGORY_STYLES: Record<Attraction["category"], string> = {
-  Nature: "bg-emerald-50 text-emerald-700 border-emerald-100",
-  Heritage: "bg-amber-50 text-amber-700 border-amber-100",
-  Faith: "bg-violet-50 text-violet-700 border-violet-100",
-  Landmark: "bg-cyan-50 text-cyan-700 border-cyan-100",
-  Park: "bg-lime-50 text-lime-700 border-lime-100",
+  Nature:
+    "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border-emerald-100 dark:border-emerald-900",
+  Heritage:
+    "bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border-amber-100 dark:border-amber-900",
+  Faith:
+    "bg-violet-50 dark:bg-violet-950/40 text-violet-700 dark:text-violet-300 border-violet-100 dark:border-violet-900",
+  Landmark:
+    "bg-cyan-50 dark:bg-cyan-950/40 text-cyan-700 dark:text-cyan-300 border-cyan-100 dark:border-cyan-900",
+  Park: "bg-lime-50 dark:bg-lime-950/40 text-lime-700 dark:text-lime-300 border-lime-100 dark:border-lime-900",
 };
 
 function isMapped(a: Attraction): a is MappedAttraction {
@@ -106,7 +110,7 @@ export default function AttractionsClient({
   }, [attractions, query]);
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/travel" text="Back to Travel" />
       <SubpageHero>
         <SubpageHero.Title>Attractions</SubpageHero.Title>
@@ -118,7 +122,7 @@ export default function AttractionsClient({
       </SubpageHero>
 
       <div className="container mx-auto space-y-8 px-4 py-8 md:px-6">
-        <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+        <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm dark:border-gray-800">
           <div className="h-[380px] w-full">
             <AttractionsMap places={mapped} />
           </div>
@@ -135,7 +139,7 @@ export default function AttractionsClient({
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search attractions…"
             aria-label="Search attractions"
-            className="w-full rounded-lg border border-slate-200 py-2.5 pr-3 pl-9 text-sm shadow-sm focus:ring-2 focus:ring-cyan-200 focus:outline-none"
+            className="w-full rounded-lg border border-slate-200 py-2.5 pr-3 pl-9 text-sm shadow-sm focus:ring-2 focus:ring-cyan-200 focus:outline-none dark:border-slate-800 dark:focus:ring-cyan-800"
           />
         </div>
 
@@ -143,9 +147,9 @@ export default function AttractionsClient({
           {visible.map((a) => (
             <article
               key={a.name}
-              className="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+              className="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md dark:border-gray-800 dark:bg-slate-900"
             >
-              <div className="relative aspect-4/3 bg-cyan-50">
+              <div className="relative aspect-4/3 bg-cyan-50 dark:bg-cyan-950/40">
                 {a.photo ? (
                   <Image
                     src={a.photo.url}
@@ -158,7 +162,7 @@ export default function AttractionsClient({
                     )}
                   />
                 ) : (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-cyan-600/70">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-cyan-600/70 dark:text-cyan-400">
                     <Landmark className="h-10 w-10" aria-hidden />
                     <span className="mt-1 text-xs font-semibold">
                       Photo needed
@@ -176,19 +180,21 @@ export default function AttractionsClient({
                 >
                   {a.category}
                 </span>
-                <h2 className="text-lg font-bold text-slate-900">{a.name}</h2>
+                <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+                  {a.name}
+                </h2>
                 {a.area && (
-                  <span className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500">
+                  <span className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500 dark:text-slate-400">
                     <MapPin className="h-3.5 w-3.5" aria-hidden /> {a.area}
                   </span>
                 )}
 
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                   {a.description}
                 </p>
 
                 {a.note && (
-                  <p className="mt-3 flex items-start gap-1.5 rounded-md border border-amber-100 bg-amber-50 p-2 text-xs text-amber-800">
+                  <p className="mt-3 flex items-start gap-1.5 rounded-md border border-amber-100 bg-amber-50 p-2 text-xs text-amber-800 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-200">
                     <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden />
                     {a.note}
                   </p>
@@ -212,7 +218,7 @@ export default function AttractionsClient({
                     href={a.sources[0]}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-700 transition-colors hover:bg-slate-200"
+                    className="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-700 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
                   >
                     <ExternalLink className="h-3.5 w-3.5" aria-hidden /> Learn
                     more
@@ -229,7 +235,7 @@ export default function AttractionsClient({
                           href={s}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="underline hover:text-slate-600"
+                          className="underline hover:text-slate-600 dark:hover:text-slate-400"
                         >
                           {hostLabel(s)}
                         </a>
@@ -244,7 +250,7 @@ export default function AttractionsClient({
                         href={a.photo.source}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline hover:text-slate-600"
+                        className="underline hover:text-slate-600 dark:hover:text-slate-400"
                       >
                         {a.photo.credit}
                       </a>{" "}
@@ -258,7 +264,7 @@ export default function AttractionsClient({
                         href={a.coordSource}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline hover:text-slate-600"
+                        className="underline hover:text-slate-600 dark:hover:text-slate-400"
                       >
                         {hostLabel(a.coordSource)}
                       </a>

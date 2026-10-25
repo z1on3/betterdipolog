@@ -15,11 +15,11 @@ export default function SubpageNav({
   className,
 }: SubpageNavProps) {
   const interactionClasses =
-    "inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors";
+    "inline-flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors";
 
   return (
     <div
-      className={`border-b border-slate-200 bg-white md:hidden ${className}`}
+      className={`border-b border-slate-200 bg-white md:hidden dark:border-slate-800 dark:bg-slate-900 ${className}`}
     >
       {/* Standardized width to match your SubpageHero perfectly */}
       <div className="container mx-auto px-4 py-4 md:px-6">

@@ -58,7 +58,7 @@ export default function HazardReportModal() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="inline-flex items-center gap-2 rounded-lg border border-amber-300 bg-amber-50 px-2 py-1.5 text-xs font-bold text-amber-800 transition-colors hover:bg-amber-100 min-[450px]:px-4 min-[450px]:py-2.5 min-[450px]:text-sm"
+        className="inline-flex items-center gap-2 rounded-lg border border-amber-300 bg-amber-50 px-2 py-1.5 text-xs font-bold text-amber-800 transition-colors hover:bg-amber-100 min-[450px]:px-4 min-[450px]:py-2.5 min-[450px]:text-sm dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-200 dark:hover:bg-amber-900/50"
       >
         <TriangleAlert className="h-4 w-4 max-[450px]:hidden" />
         Report a hazard
@@ -66,15 +66,15 @@ export default function HazardReportModal() {
 
       {open && (
         <div className="fixed inset-0 z-[999] flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm">
-          <div className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white shadow-2xl">
-            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-100 bg-white p-5">
-              <h2 className="text-lg font-bold text-slate-900">
+          <div className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white shadow-2xl dark:bg-slate-900">
+            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-100 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+              <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                 Report a hazard
               </h2>
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Close"
-                className="rounded-full p-2 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
+                className="rounded-full p-2 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-300"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -86,7 +86,7 @@ export default function HazardReportModal() {
                   name="incidentType"
                   required
                   defaultValue="infrastructure"
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-700 outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-700 outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:focus:ring-amber-800"
                 >
                   {TYPE_OPTIONS.map((o) => (
                     <option key={o.value} value={o.value}>
@@ -101,7 +101,7 @@ export default function HazardReportModal() {
                   name="barangay"
                   required
                   placeholder="e.g. Tibanga"
-                  className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-amber-500 focus:ring-2 focus:ring-amber-200"
+                  className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:border-slate-800 dark:text-slate-100 dark:focus:ring-amber-800"
                 />
               </Field>
 
@@ -109,7 +109,7 @@ export default function HazardReportModal() {
                 <input
                   name="landmark"
                   placeholder="Nearby landmark to help locate it"
-                  className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-amber-500 focus:ring-2 focus:ring-amber-200"
+                  className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:border-slate-800 dark:text-slate-100 dark:focus:ring-amber-800"
                 />
               </Field>
 
@@ -120,7 +120,7 @@ export default function HazardReportModal() {
                   rows={4}
                   maxLength={1000}
                   placeholder="e.g. Clogged canal that floods during heavy rain; broken warning siren at the barangay hall."
-                  className="w-full resize-none rounded-xl border border-slate-200 px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-amber-500 focus:ring-2 focus:ring-amber-200"
+                  className="w-full resize-none rounded-xl border border-slate-200 px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:border-slate-800 dark:text-slate-100 dark:focus:ring-amber-800"
                 />
               </Field>
 
@@ -130,7 +130,7 @@ export default function HazardReportModal() {
                   required
                   inputMode="tel"
                   placeholder="09XX XXX XXXX"
-                  className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-amber-500 focus:ring-2 focus:ring-amber-200"
+                  className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 dark:border-slate-800 dark:text-slate-100 dark:focus:ring-amber-800"
                 />
               </Field>
 
@@ -174,7 +174,7 @@ function Field({
 }) {
   return (
     <div className="space-y-1.5">
-      <label className="text-sm font-bold text-slate-700">
+      <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
         {label}
         {optional && (
           <span className="ml-1 font-normal text-slate-400">(optional)</span>

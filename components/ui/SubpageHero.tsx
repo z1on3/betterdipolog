@@ -17,7 +17,7 @@ export default function SubpageHero({
 }: SubpageHeroProps) {
   return (
     <header
-      className={`relative overflow-hidden border-b border-slate-200 bg-white ${className}`}
+      className={`relative overflow-hidden border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900 ${className}`}
     >
       {/* Background Banner Layer */}
       {bannerUrl && (
@@ -33,7 +33,7 @@ export default function SubpageHero({
             />
           </div>
           {/* The Readability Gradient */}
-          <div className="absolute inset-0 z-0 bg-white/90 md:bg-linear-to-r md:from-white md:via-white/50 md:to-white/30"></div>
+          <div className="absolute inset-0 z-0 bg-white/90 md:bg-linear-to-r md:from-white md:via-white/50 md:to-white/30 dark:bg-slate-950/90 md:dark:from-slate-950 md:dark:via-slate-950/50 md:dark:to-slate-950/30"></div>
         </>
       )}
 
@@ -42,7 +42,7 @@ export default function SubpageHero({
         <div className="flex flex-col items-start gap-6 md:flex-row md:gap-10">
           {/* Logo Container */}
           {logoUrl && (
-            <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-slate-100 bg-white p-2 shadow-lg md:h-32 md:w-32">
+            <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border border-slate-100 bg-white p-2 shadow-lg md:h-32 md:w-32 dark:border-slate-800 dark:bg-slate-900">
               <Image
                 src={logoUrl}
                 alt="Profile Logo"
@@ -80,7 +80,7 @@ SubpageHero.Title = function SubpageHeroTitle({
 }: SubpageHeroProps) {
   return (
     <h1
-      className={`mb-4 text-3xl font-extrabold tracking-tight md:text-5xl ${className} text-slate-900`}
+      className={`mb-4 text-3xl font-extrabold tracking-tight md:text-5xl ${className} text-slate-900 dark:text-slate-100`}
     >
       {children}
     </h1>
@@ -94,7 +94,7 @@ SubpageHero.Description = function SubpageHeroDescription({
 }: SubpageHeroProps) {
   return (
     <p
-      className={`max-w-3xl text-[13px] leading-relaxed sm:text-lg ${className} text-slate-600`}
+      className={`max-w-3xl text-[13px] leading-relaxed sm:text-lg ${className} text-slate-600 dark:text-slate-400`}
     >
       {children}
     </p>

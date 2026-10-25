@@ -9,20 +9,20 @@ import ReportIssueModal from "@/components/modals/ReportIssueModal";
 export default function ReportIssueSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <Section className="bg-linear-to-b from-white from-50% to-[#0E172B] to-50%">
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 rounded-3xl border border-slate-200/80 bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-md md:flex-row md:gap-8 md:p-8 md:text-left">
+    <Section className="bg-linear-to-b from-white from-50% to-[#0E172B] to-50% dark:from-slate-950">
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 rounded-3xl border border-slate-200/80 bg-white p-6 text-center shadow-sm transition-shadow hover:shadow-md md:flex-row md:gap-8 md:p-8 md:text-left dark:border-slate-800/80 dark:bg-slate-900">
         <div className="flex flex-col items-center gap-4 md:flex-row md:items-start md:gap-6">
           {/* Icon Block */}
-          <div className="shrink-0 rounded-2xl border border-orange-100 bg-orange-50 p-3 text-orange-500 md:p-4">
+          <div className="shrink-0 rounded-2xl border border-orange-100 bg-orange-50 p-3 text-orange-500 md:p-4 dark:border-orange-900 dark:bg-orange-950/40">
             <Flag className="h-8 w-8 md:h-6 md:w-6" />
           </div>
 
           {/* Text Content */}
           <div>
-            <h2 className="mb-2 text-xl font-bold tracking-tight text-slate-900 md:text-2xl">
+            <h2 className="mb-2 text-xl font-bold tracking-tight text-slate-900 md:text-2xl dark:text-slate-100">
               Spot an error or outdated info?
             </h2>
-            <p className="max-w-xl text-sm leading-relaxed text-slate-500 md:text-base">
+            <p className="max-w-xl text-sm leading-relaxed text-slate-500 md:text-base dark:text-slate-400">
               BetterDipolog relies on community feedback. If you notice a broken
               link, incorrect procedure, or outdated contact detail, let us know
               so we can fix it!

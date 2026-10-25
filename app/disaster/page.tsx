@@ -41,7 +41,7 @@ export default function DisasterPage() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -63,10 +63,10 @@ export default function DisasterPage() {
 
         <div
           role="note"
-          className="flex items-start gap-3 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900"
+          className="flex items-start gap-3 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-200"
         >
           <ShieldAlert
-            className="mt-0.5 h-5 w-5 shrink-0 text-amber-600"
+            className="mt-0.5 h-5 w-5 shrink-0 text-amber-600 dark:text-amber-400"
             aria-hidden
           />
           <p>

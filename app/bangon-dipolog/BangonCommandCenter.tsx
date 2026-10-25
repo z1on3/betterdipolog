@@ -33,7 +33,7 @@ const DisasterMapLeaflet = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-full w-full items-center justify-center bg-slate-100 font-medium text-slate-500">
+      <div className="flex h-full w-full items-center justify-center bg-slate-100 font-medium text-slate-500 dark:bg-slate-800 dark:text-slate-400">
         Loading map…
       </div>
     ),
@@ -97,7 +97,7 @@ export default function BangonCommandCenter({
   const active = config.active;
 
   return (
-    <div className="relative h-[100dvh] w-full overflow-hidden bg-slate-100">
+    <div className="relative h-[100dvh] w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
       {/* ── Full-bleed map ── */}
       <div className="absolute inset-0 isolate z-0">
         <DisasterMapLeaflet
@@ -112,7 +112,7 @@ export default function BangonCommandCenter({
       {/* ── Top bar (above the feed panel so its actions stay clickable) ── */}
       <div className="pointer-events-none absolute inset-x-0 top-0 z-[700] flex items-start justify-between gap-3 p-3 sm:p-4">
         {/* Left: BetterDipolog branding + page context + status */}
-        <div className="pointer-events-auto flex items-center gap-2 rounded-xl bg-white/95 px-2.5 py-2 shadow-md backdrop-blur sm:gap-3 sm:px-3">
+        <div className="pointer-events-auto flex items-center gap-2 rounded-xl bg-white/95 px-2.5 py-2 shadow-md backdrop-blur sm:gap-3 sm:px-3 dark:bg-slate-900/95">
           <Link
             href="/"
             aria-label="BetterDipolog home"
@@ -125,12 +125,15 @@ export default function BangonCommandCenter({
               height={28}
               className="h-7 w-7 shrink-0 object-contain"
             />
-            <span className="hidden text-sm font-extrabold tracking-tight text-slate-900 sm:inline">
+            <span className="hidden text-sm font-extrabold tracking-tight text-slate-900 sm:inline dark:text-slate-100">
               BetterDipolog
             </span>
           </Link>
-          <span className="h-6 w-px bg-slate-200" aria-hidden />
-          <span className="text-sm font-bold tracking-tight whitespace-nowrap text-slate-900">
+          <span
+            className="h-6 w-px bg-slate-200 dark:bg-slate-700"
+            aria-hidden
+          />
+          <span className="text-sm font-bold tracking-tight whitespace-nowrap text-slate-900 dark:text-slate-100">
             Bangon Dipolog
           </span>
           <StatusPill active={active} label={active ? "Active" : "Standby"} />
@@ -140,7 +143,7 @@ export default function BangonCommandCenter({
         <div className="pointer-events-auto flex flex-wrap items-center justify-end gap-2">
           <Link
             href={config.standby.preparednessHref}
-            className="hidden items-center gap-1.5 rounded-lg bg-white/95 px-3 py-2 text-sm font-bold text-slate-700 shadow-md backdrop-blur transition-colors hover:bg-white sm:inline-flex"
+            className="hidden items-center gap-1.5 rounded-lg bg-white/95 px-3 py-2 text-sm font-bold text-slate-700 shadow-md backdrop-blur transition-colors hover:bg-white sm:inline-flex dark:bg-slate-900/95 dark:text-slate-300 dark:hover:bg-slate-900"
           >
             <ShieldAlert className="h-4 w-4" /> Get prepared
           </Link>
@@ -156,7 +159,7 @@ export default function BangonCommandCenter({
             <button
               onClick={dismissStandby}
               aria-label="Dismiss notice"
-              className="shrink-0 rounded-md p-1 text-emerald-200 transition-colors hover:bg-white/10 hover:text-white"
+              className="shrink-0 rounded-md p-1 text-emerald-200 transition-colors hover:bg-white/10 hover:text-white dark:hover:bg-slate-900/10"
             >
               <X className="h-4 w-4" />
             </button>
@@ -170,7 +173,7 @@ export default function BangonCommandCenter({
           onClick={locateMe}
           disabled={locating}
           aria-label="Find my location"
-          className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-xl bg-white text-slate-700 shadow-md transition-colors hover:bg-slate-50 disabled:opacity-60"
+          className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-xl bg-white text-slate-700 shadow-md transition-colors hover:bg-slate-50 disabled:opacity-60 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-950"
         >
           {locating ? (
             <Loader2 className="h-5 w-5 animate-spin" />
@@ -218,7 +221,7 @@ export default function BangonCommandCenter({
           />
           <button
             onClick={() => setPanelOpen(false)}
-            className="mt-2 inline-flex shrink-0 items-center justify-center gap-1.5 rounded-lg bg-white/90 py-1.5 text-xs font-bold text-slate-500 shadow-sm backdrop-blur transition-colors hover:text-slate-800"
+            className="mt-2 inline-flex shrink-0 items-center justify-center gap-1.5 rounded-lg bg-white/90 py-1.5 text-xs font-bold text-slate-500 shadow-sm backdrop-blur transition-colors hover:text-slate-800 dark:bg-slate-900/90 dark:text-slate-400 dark:hover:text-slate-200"
           >
             <X className="h-3.5 w-3.5" /> Hide panel
           </button>
@@ -237,7 +240,9 @@ function StatusPill({ active, label }: { active: boolean; label: string }) {
   return (
     <span
       className={`inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase ${
-        active ? "bg-red-100 text-red-700" : "bg-emerald-100 text-emerald-700"
+        active
+          ? "bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300"
+          : "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300"
       }`}
     >
       {active ? (
@@ -259,11 +264,11 @@ function FacilityCard({
 }) {
   const { label, color } = CATEGORY_META[facility.category];
   return (
-    <div className="pointer-events-auto absolute bottom-4 left-1/2 z-[700] w-[calc(100%-1.5rem)] max-w-sm -translate-x-1/2 rounded-2xl bg-white p-4 shadow-2xl sm:left-4 sm:translate-x-0">
+    <div className="pointer-events-auto absolute bottom-4 left-1/2 z-[700] w-[calc(100%-1.5rem)] max-w-sm -translate-x-1/2 rounded-2xl bg-white p-4 shadow-2xl sm:left-4 sm:translate-x-0 dark:bg-slate-900">
       <button
         onClick={onClose}
         aria-label="Close"
-        className="absolute top-3 right-3 text-slate-400 hover:text-slate-700"
+        className="absolute top-3 right-3 text-slate-400 hover:text-slate-700 dark:hover:text-slate-300"
       >
         <X className="h-4 w-4" />
       </button>
@@ -273,11 +278,11 @@ function FacilityCard({
       >
         {label}
       </span>
-      <h3 className="mt-1.5 pr-6 text-base leading-tight font-bold text-slate-900">
+      <h3 className="mt-1.5 pr-6 text-base leading-tight font-bold text-slate-900 dark:text-slate-100">
         {facility.name}
       </h3>
       {facility.address && (
-        <p className="mt-0.5 flex items-start gap-1 text-sm text-slate-500">
+        <p className="mt-0.5 flex items-start gap-1 text-sm text-slate-500 dark:text-slate-400">
           <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0" /> {facility.address}
         </p>
       )}
@@ -294,7 +299,7 @@ function FacilityCard({
           href={`https://www.openstreetmap.org/directions?to=${facility.lat}%2C${facility.lon}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-slate-100 py-2 text-sm font-bold text-slate-700 transition-colors hover:bg-slate-200"
+          className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-slate-100 py-2 text-sm font-bold text-slate-700 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
         >
           <Navigation className="h-4 w-4" /> Directions
         </a>

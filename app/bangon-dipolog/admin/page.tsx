@@ -65,12 +65,12 @@ export default async function AdminPage() {
   const incidentActive = incidentState?.active === 1;
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
-      <header className="border-b border-slate-200 bg-white">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
+      <header className="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
         <div className="container mx-auto flex items-center gap-4 px-4 py-4 md:px-6">
           <Link
             href="/bangon-dipolog"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-blue-600"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
           >
             <ArrowLeft className="h-4 w-4" /> Command center
           </Link>
@@ -82,12 +82,12 @@ export default async function AdminPage() {
               href="https://github.com/z1on3/betterdipolog/blob/main/docs/bangon-dipolog.md"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-50"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:text-slate-400 dark:hover:bg-slate-950"
             >
               <BookOpen className="h-4 w-4" /> Docs
             </a>
             <form action={adminLogout}>
-              <button className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-50">
+              <button className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:text-slate-400 dark:hover:bg-slate-950">
                 <LogOut className="h-4 w-4" /> Sign out
               </button>
             </form>
@@ -104,11 +104,11 @@ export default async function AdminPage() {
         {/* Pending board posts */}
         <section>
           <div className="mb-4 flex items-center gap-2">
-            <MessageSquare className="h-5 w-5 text-emerald-600" />
-            <h2 className="text-lg font-bold text-slate-900">
+            <MessageSquare className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
               Community board
             </h2>
-            <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-700">
+            <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300">
               {pending.length} pending
             </span>
           </div>
@@ -120,9 +120,11 @@ export default async function AdminPage() {
               {pending.map((m) => (
                 <li
                   key={m.id}
-                  className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
+                  className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
                 >
-                  <p className="text-sm text-slate-800">{m.message}</p>
+                  <p className="text-sm text-slate-800 dark:text-slate-200">
+                    {m.message}
+                  </p>
                   <p className="mt-1 text-xs text-slate-400">
                     {m.author_name || "Anonymous"}
                     {m.barangay ? ` · ${m.barangay}` : ""}
@@ -148,11 +150,11 @@ export default async function AdminPage() {
         {/* Unverified reports */}
         <section>
           <div className="mb-4 flex items-center gap-2">
-            <TriangleAlert className="h-5 w-5 text-amber-600" />
-            <h2 className="text-lg font-bold text-slate-900">
+            <TriangleAlert className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
               Hazard &amp; incident reports
             </h2>
-            <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-700">
+            <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-700 dark:bg-amber-900/50 dark:text-amber-300">
               {unverified.length} to review
             </span>
           </div>
@@ -164,18 +166,20 @@ export default async function AdminPage() {
               {unverified.map((r) => (
                 <li
                   key={r.id}
-                  className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
+                  className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
                 >
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center rounded-full border border-orange-100 bg-orange-50 px-2 py-0.5 text-[10px] font-bold tracking-wide text-orange-700 uppercase">
+                    <span className="inline-flex items-center rounded-full border border-orange-100 bg-orange-50 px-2 py-0.5 text-[10px] font-bold tracking-wide text-orange-700 uppercase dark:border-orange-900 dark:bg-orange-950/40 dark:text-orange-300">
                       {INCIDENT_LABEL[r.incident_type]}
                     </span>
-                    <span className="text-xs font-semibold text-slate-500">
+                    <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
                       {r.barangay}
                       {r.landmark ? ` · ${r.landmark}` : ""}
                     </span>
                   </div>
-                  <p className="mt-2 text-sm text-slate-800">{r.description}</p>
+                  <p className="mt-2 text-sm text-slate-800 dark:text-slate-200">
+                    {r.description}
+                  </p>
                   <p className="mt-1 text-xs text-slate-400">
                     Contact: {r.contact_number}
                   </p>
@@ -200,9 +204,11 @@ export default async function AdminPage() {
         {/* Active (verified) reports — mark resolved when cleared */}
         <section className="lg:col-span-2">
           <div className="mb-4 flex items-center gap-2">
-            <CheckCircle2 className="h-5 w-5 text-emerald-600" />
-            <h2 className="text-lg font-bold text-slate-900">Active reports</h2>
-            <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-700">
+            <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+              Active reports
+            </h2>
+            <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-bold text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300">
               {active.length} live
             </span>
           </div>
@@ -214,18 +220,20 @@ export default async function AdminPage() {
               {active.map((r) => (
                 <li
                   key={r.id}
-                  className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
+                  className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
                 >
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center rounded-full border border-orange-100 bg-orange-50 px-2 py-0.5 text-[10px] font-bold tracking-wide text-orange-700 uppercase">
+                    <span className="inline-flex items-center rounded-full border border-orange-100 bg-orange-50 px-2 py-0.5 text-[10px] font-bold tracking-wide text-orange-700 uppercase dark:border-orange-900 dark:bg-orange-950/40 dark:text-orange-300">
                       {INCIDENT_LABEL[r.incident_type]}
                     </span>
-                    <span className="text-xs font-semibold text-slate-500">
+                    <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
                       {r.barangay}
                       {r.landmark ? ` · ${r.landmark}` : ""}
                     </span>
                   </div>
-                  <p className="mt-2 text-sm text-slate-800">{r.description}</p>
+                  <p className="mt-2 text-sm text-slate-800 dark:text-slate-200">
+                    {r.description}
+                  </p>
                   <p className="mt-1 text-xs text-slate-400">
                     Contact: {r.contact_number}
                   </p>
@@ -255,11 +263,11 @@ export default async function AdminPage() {
         {/* Approved (live) board posts — un-publish or delete accidental ones */}
         <section className="lg:col-span-2">
           <div className="mb-4 flex items-center gap-2">
-            <MessageSquare className="h-5 w-5 text-slate-600" />
-            <h2 className="text-lg font-bold text-slate-900">
+            <MessageSquare className="h-5 w-5 text-slate-600 dark:text-slate-400" />
+            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
               Live board posts
             </h2>
-            <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-bold text-slate-600">
+            <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-400">
               {approved.length} public
             </span>
           </div>
@@ -271,9 +279,11 @@ export default async function AdminPage() {
               {approved.map((m) => (
                 <li
                   key={m.id}
-                  className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
+                  className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
                 >
-                  <p className="text-sm text-slate-800">{m.message}</p>
+                  <p className="text-sm text-slate-800 dark:text-slate-200">
+                    {m.message}
+                  </p>
                   <p className="mt-1 text-xs text-slate-400">
                     {m.author_name || "Anonymous"}
                     {m.barangay ? ` · ${m.barangay}` : ""}
@@ -311,8 +321,8 @@ function ActionButton({
     tone === "approve"
       ? "bg-emerald-600 text-white hover:bg-emerald-700"
       : tone === "danger"
-        ? "border border-red-200 text-red-600 hover:bg-red-50"
-        : "border border-slate-200 text-slate-600 hover:bg-slate-50";
+        ? "border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/40"
+        : "border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-950";
   return (
     <button
       type="submit"
@@ -325,7 +335,7 @@ function ActionButton({
 
 function Empty({ text }: { text: string }) {
   return (
-    <div className="rounded-xl border border-dashed border-slate-200 bg-white p-8 text-center text-sm text-slate-400">
+    <div className="rounded-xl border border-dashed border-slate-200 bg-white p-8 text-center text-sm text-slate-400 dark:border-slate-800 dark:bg-slate-900">
       {text}
     </div>
   );

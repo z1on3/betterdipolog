@@ -64,11 +64,11 @@ export default function TopBanner({ className }: ClassName) {
 
   return (
     <div
-      className={`${className} ${hideHeader && "hidden"} border-b border-slate-200 bg-slate-50 font-sans text-[10px] sm:text-xs`}
+      className={`${className} ${hideHeader && "hidden"} border-b border-slate-200 bg-slate-50 font-sans text-[10px] sm:text-xs dark:border-slate-800 dark:bg-slate-950`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-1 sm:justify-end sm:gap-4 sm:py-2">
-        <div className="flex items-center gap-3 text-slate-600">
-          <span className="text-slate-500">
+        <div className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+          <span className="text-slate-500 dark:text-slate-400">
             {new Date().toLocaleDateString("en-PH", {
               weekday: "short",
               month: "short",
@@ -83,24 +83,24 @@ export default function TopBanner({ className }: ClassName) {
           {rate && (
             <span
               key={curr}
-              className="animate-fade-in font-medium text-emerald-600"
+              className="animate-fade-in font-medium text-emerald-600 dark:text-emerald-400"
             >
               {curr} ₱{rate}
             </span>
           )}
         </div>
-        <div className="flex items-center gap-1 text-slate-600 sm:border-l sm:border-slate-300 sm:pl-4">
+        <div className="flex items-center gap-1 text-slate-600 sm:border-l sm:border-slate-300 sm:pl-4 dark:text-slate-400 dark:sm:border-slate-700">
           <Phone className="h-3 w-3 text-red-500" />
           <a
             href="tel:911"
-            className="font-semibold text-red-600 hover:underline"
+            className="font-semibold text-red-600 hover:underline dark:text-red-400"
           >
             911
           </a>
           <span className="mx-1 hidden text-slate-300 sm:inline">·</span>
           <a
             href="tel:+63652121506"
-            className="hover:text-primary-600 hidden text-slate-600 sm:inline"
+            className="hover:text-primary-600 dark:hover:text-primary-400 hidden text-slate-600 sm:inline dark:text-slate-400"
           >
             CDRRMO Dipolog
           </a>

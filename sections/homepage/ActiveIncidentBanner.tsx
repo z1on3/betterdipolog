@@ -17,7 +17,7 @@ export default async function ActiveIncidentBanner() {
     <aside role="alert" className="bg-red-600 text-white">
       <div className="container mx-auto flex flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between md:px-6">
         <div className="flex items-start gap-3">
-          <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15">
+          <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15 dark:bg-slate-900/15">
             <Siren className="h-5 w-5 animate-pulse" />
           </span>
           <div className="min-w-0">
@@ -39,7 +39,7 @@ export default async function ActiveIncidentBanner() {
         </div>
         <Link
           href="/bangon-dipolog"
-          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-bold text-red-700 shadow-sm transition-colors hover:bg-red-50"
+          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-bold text-red-700 shadow-sm transition-colors hover:bg-red-50 dark:bg-slate-900 dark:text-red-300 dark:hover:bg-red-950/40"
         >
           Open relief command center <ArrowRight className="h-4 w-4" />
         </Link>

@@ -32,15 +32,24 @@ export const STATUS_LABELS: Record<ProjectStatus, string> = {
 };
 
 export const STATUS_STYLES: Record<ProjectStatus, string> = {
-  completed: "border-emerald-200 bg-emerald-50 text-emerald-700",
-  ongoing: "border-blue-200 bg-blue-50 text-blue-700",
-  awarded: "border-indigo-200 bg-indigo-50 text-indigo-700",
-  "under-procurement": "border-violet-200 bg-violet-50 text-violet-700",
-  "for-procurement": "border-violet-200 bg-violet-50 text-violet-700",
-  "not-yet-started": "border-slate-200 bg-slate-50 text-slate-600",
-  planned: "border-sky-200 bg-sky-50 text-sky-700",
-  "historical-completed": "border-amber-200 bg-amber-50 text-amber-800",
-  "historical-ongoing": "border-amber-200 bg-amber-50 text-amber-800",
+  completed:
+    "border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300",
+  ongoing:
+    "border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300",
+  awarded:
+    "border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300",
+  "under-procurement":
+    "border-violet-200 dark:border-violet-800 bg-violet-50 dark:bg-violet-950/40 text-violet-700 dark:text-violet-300",
+  "for-procurement":
+    "border-violet-200 dark:border-violet-800 bg-violet-50 dark:bg-violet-950/40 text-violet-700 dark:text-violet-300",
+  "not-yet-started":
+    "border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-400",
+  planned:
+    "border-sky-200 dark:border-sky-800 bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-300",
+  "historical-completed":
+    "border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-200",
+  "historical-ongoing":
+    "border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-200",
 };
 
 export const AMOUNT_BASIS_LABELS: Record<

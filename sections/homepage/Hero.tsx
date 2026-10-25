@@ -193,14 +193,14 @@ export default function HeroSection() {
           className={`z-10 mx-auto w-full max-lg:max-w-2xl lg:mx-0 lg:ml-auto ${!isMobileSearchVisible ? "max-lg:hidden" : "max-lg:animate-in max-lg:fade-in max-lg:slide-in-from-bottom-4 max-lg:duration-300"}`}
         >
           {/* The main Search Card UI */}
-          <div className="relative rounded-xl border border-white/20 p-5 shadow-lg max-lg:bg-white/10 max-lg:backdrop-blur-md md:rounded-2xl md:border-slate-100 md:bg-white md:p-8 md:shadow-2xl">
+          <div className="relative rounded-xl border border-white/20 p-5 shadow-lg max-lg:bg-white/10 max-lg:backdrop-blur-md md:rounded-2xl md:border-slate-100 md:bg-white md:p-8 md:shadow-2xl dark:max-lg:bg-slate-900/10 dark:md:border-slate-800 dark:md:bg-slate-900">
             {/* Card Header & Mobile Close Button */}
             <div className="mb-5 flex items-center justify-between md:mb-6">
               <div className="flex items-center gap-3">
-                <div className="rounded-xl bg-white/20 p-2.5 md:rounded-lg md:bg-blue-100 md:p-2">
-                  <Search className="h-5 w-5 text-white md:text-blue-600" />
+                <div className="rounded-xl bg-white/20 p-2.5 md:rounded-lg md:bg-blue-100 md:p-2 dark:bg-slate-900/20 dark:md:bg-blue-900/50">
+                  <Search className="h-5 w-5 text-white md:text-blue-600 dark:md:text-blue-400" />
                 </div>
-                <h2 className="text-xl font-bold text-white md:text-slate-800">
+                <h2 className="text-xl font-bold text-white md:text-slate-800 dark:md:text-slate-200">
                   Find a Service
                 </h2>
               </div>
@@ -211,7 +211,7 @@ export default function HeroSection() {
                   setIsMobileSearchVisible(false);
                   setSearchQuery(""); // Optional: clear search when closing
                 }}
-                className="rounded-full p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white lg:hidden"
+                className="rounded-full p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white lg:hidden dark:hover:bg-slate-900/10"
                 aria-label="Close search"
               >
                 <X className="h-6 w-6" />
@@ -233,7 +233,7 @@ export default function HeroSection() {
                   searchQuery.trim().length >= 2 && setIsDropdownOpen(true)
                 }
                 onKeyDown={handleKeyDown}
-                className="relative z-10 w-full rounded-xl border-2 border-transparent bg-white py-4 pr-16 pl-4 text-base text-slate-900 shadow-xl transition-all duration-200 placeholder:text-slate-400 focus:border-blue-600 focus:bg-white focus:outline-none md:border-slate-100 md:bg-slate-50 md:pr-14 md:shadow-none"
+                className="relative z-10 w-full rounded-xl border-2 border-transparent bg-white py-4 pr-16 pl-4 text-base text-slate-900 shadow-xl transition-all duration-200 placeholder:text-slate-400 focus:border-blue-600 focus:bg-white focus:outline-none md:border-slate-100 md:bg-slate-50 md:pr-14 md:shadow-none dark:bg-slate-900 dark:text-slate-100 dark:focus:bg-slate-900 dark:md:border-slate-800 dark:md:bg-slate-950"
               />
 
               {/* Search Submit Button */}
@@ -247,9 +247,9 @@ export default function HeroSection() {
 
               {/* FLOATING DROPDOWN RESULTS */}
               {isDropdownOpen && (
-                <div className="animate-in fade-in slide-in-from-top-2 absolute top-full right-0 left-0 z-50 mt-2 overflow-hidden rounded-xl border border-slate-100 bg-white shadow-2xl duration-200">
+                <div className="animate-in fade-in slide-in-from-top-2 absolute top-full right-0 left-0 z-50 mt-2 overflow-hidden rounded-xl border border-slate-100 bg-white shadow-2xl duration-200 dark:border-slate-800 dark:bg-slate-900">
                   {searchResults.length > 0 ? (
-                    <ul className="custom-scrollbar max-h-[50vh] divide-y divide-slate-100 overflow-y-auto p-1 md:max-h-80">
+                    <ul className="custom-scrollbar max-h-[50vh] divide-y divide-slate-100 overflow-y-auto p-1 md:max-h-80 dark:divide-slate-800">
                       {searchResults.map((service, idx) => (
                         <li key={`service-${idx}`}>
                           <Link
@@ -266,20 +266,20 @@ export default function HeroSection() {
                                       ? service.internalUrl
                                       : `/services/${service.slug}`
                             }
-                            className="group/item flex items-center justify-between rounded-lg p-3 transition-all hover:bg-blue-50 focus:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-inset md:p-4"
+                            className="group/item flex items-center justify-between rounded-lg p-3 transition-all hover:bg-blue-50 focus:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-inset md:p-4 dark:hover:bg-blue-950/40 dark:focus:bg-blue-950/40"
                             onClick={() => setIsDropdownOpen(false)}
                           >
                             <div className="flex flex-col">
-                              <span className="mb-0.5 text-base font-bold text-slate-900 transition-colors group-hover/item:text-blue-700 group-focus/item:text-blue-700 md:text-sm">
+                              <span className="mb-0.5 text-base font-bold text-slate-900 transition-colors group-hover/item:text-blue-700 group-focus/item:text-blue-700 md:text-sm dark:text-slate-100">
                                 {service.title}
                               </span>
-                              <span className="mb-0.5 text-xs text-slate-500 md:text-xs">
+                              <span className="mb-0.5 text-xs text-slate-500 md:text-xs dark:text-slate-400">
                                 {service.type !== "internal" &&
                                   service.type !== "custom_link" &&
                                   `${service.department} • `}{" "}
                                 {service.category}
                               </span>
-                              <span className="line-clamp-1 text-xs text-blue-700 md:text-sm">
+                              <span className="line-clamp-1 text-xs text-blue-700 md:text-sm dark:text-blue-300">
                                 {service.type === "standard"
                                   ? `betterdipolog.org/services/${service.slug}`
                                   : service.type === "internal"
@@ -294,7 +294,7 @@ export default function HeroSection() {
                       ))}
                     </ul>
                   ) : (
-                    <div className="p-6 text-center text-sm text-slate-500">
+                    <div className="p-6 text-center text-sm text-slate-500 dark:text-slate-400">
                       No services found matching &ldquo;{searchQuery}&rdquo;
                     </div>
                   )}
@@ -316,7 +316,7 @@ export default function HeroSection() {
                   <button
                     key={item.name}
                     onClick={() => handlePopularSearch(item.name)}
-                    className="flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-xs text-white backdrop-blur-sm transition-colors hover:bg-white/20 hover:text-white md:border-slate-100 md:bg-slate-50 md:text-slate-600 md:backdrop-blur-none md:hover:bg-blue-50 md:hover:text-blue-700"
+                    className="flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-xs text-white backdrop-blur-sm transition-colors hover:bg-white/20 hover:text-white md:border-slate-100 md:bg-slate-50 md:text-slate-600 md:backdrop-blur-none md:hover:bg-blue-50 md:hover:text-blue-700 dark:bg-slate-900/10 dark:hover:bg-slate-900/20 dark:md:border-slate-800 dark:md:bg-slate-950 dark:md:text-slate-400 dark:md:hover:bg-blue-950/40 dark:md:hover:text-blue-300"
                   >
                     <item.icon className="h-3.5 w-3.5" />
                     {item.name}
@@ -344,14 +344,14 @@ export default function HeroSection() {
               <Link
                 key={title}
                 href={href}
-                className="group relative z-0 flex flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-4 shadow-lg backdrop-blur-md transition-all hover:-translate-y-1 hover:border-white/40 hover:bg-white/20 md:p-5"
+                className="group relative z-0 flex flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-4 shadow-lg backdrop-blur-md transition-all hover:-translate-y-1 hover:border-white/40 hover:bg-white/20 md:p-5 dark:bg-slate-900/10 dark:hover:bg-slate-900/20"
               >
                 <div className="mb-3 flex items-center justify-between">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 md:h-12 md:w-12">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 md:h-12 md:w-12 dark:bg-slate-900/20">
                     <Icon className="h-5 w-5 text-white md:h-6 md:w-6" />
                   </div>
                   {badge && (
-                    <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-[10px] font-semibold tracking-wider text-white uppercase backdrop-blur-sm">
+                    <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-[10px] font-semibold tracking-wider text-white uppercase backdrop-blur-sm dark:bg-slate-900/20">
                       {badge}
                     </span>
                   )}

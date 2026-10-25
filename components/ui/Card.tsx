@@ -15,7 +15,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm",
+        "overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-slate-900",
         hoverable &&
           "transition-all duration-300 hover:-translate-y-1 hover:shadow-md",
         className,
@@ -34,7 +34,10 @@ export function CardHeader({
 }: React.HTMLAttributes<HTMLDivElement> & { children: React.ReactNode }) {
   return (
     <div
-      className={cn("border-b border-gray-200 p-4 md:p-6", className)}
+      className={cn(
+        "border-b border-gray-200 p-4 md:p-6 dark:border-gray-800",
+        className,
+      )}
       {...props}
     >
       {children}
@@ -62,7 +65,7 @@ export function CardFooter({
   return (
     <div
       className={cn(
-        "border-t border-gray-200 bg-gray-50 p-4 md:p-6",
+        "border-t border-gray-200 bg-gray-50 p-4 md:p-6 dark:border-gray-800 dark:bg-gray-950",
         className,
       )}
       {...props}

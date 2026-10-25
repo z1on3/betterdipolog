@@ -54,11 +54,11 @@ export default function DepartmentClient({
         );
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav />
       <SubpageHero>
         <SubpageHero.Badges>
-          <span className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold tracking-wider text-blue-700 uppercase">
+          <span className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold tracking-wider text-blue-700 uppercase dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-300">
             Official Directory
           </span>
         </SubpageHero.Badges>
@@ -93,11 +93,11 @@ export default function DepartmentClient({
               return (
                 <div
                   key={idx}
-                  className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                  className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-slate-800 dark:bg-slate-900"
                 >
                   {/* Top: Logo & Category Badge */}
                   <div className="mb-4 flex items-start justify-between">
-                    <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-100 bg-slate-50 p-2">
+                    <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-100 bg-slate-50 p-2 dark:border-slate-800 dark:bg-slate-950">
                       {department.logoUrl ? (
                         <Image
                           src={department.logoUrl}
@@ -110,14 +110,14 @@ export default function DepartmentClient({
                         <Building className="h-6 w-6 text-slate-400" />
                       )}
                     </div>
-                    <span className="ml-2 rounded bg-slate-100 px-2 py-1 text-right text-[10px] font-bold tracking-wider text-slate-500 uppercase">
+                    <span className="ml-2 rounded bg-slate-100 px-2 py-1 text-right text-[10px] font-bold tracking-wider text-slate-500 uppercase dark:bg-slate-800 dark:text-slate-400">
                       {department.category}
                     </span>
                   </div>
 
                   {/* Middle: Title, Address & Contact Details */}
                   <div className={`flex-1 ${hasUrls && "mb-6"}`}>
-                    <h3 className="mb-3 text-lg leading-tight font-bold text-slate-900">
+                    <h3 className="mb-3 text-lg leading-tight font-bold text-slate-900 dark:text-slate-100">
                       {department.name}
                     </h3>
 
@@ -127,7 +127,7 @@ export default function DepartmentClient({
                         href={`https://maps.google.com/?q=${encodeURIComponent(department.address)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mb-4 flex items-start gap-1.5 text-sm text-slate-500"
+                        className="mb-4 flex items-start gap-1.5 text-sm text-slate-500 dark:text-slate-400"
                       >
                         <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
                         <span className="line-clamp-2 text-blue-500 underline">
@@ -140,13 +140,13 @@ export default function DepartmentClient({
                     {(department.representative.name ||
                       department.representative.numbers ||
                       department.representative.emails) && (
-                      <div className="space-y-2.5 border-t border-slate-100 pt-4">
+                      <div className="space-y-2.5 border-t border-slate-100 pt-4 dark:border-slate-800">
                         {/* Head/Representative */}
                         {department.representative.name && (
-                          <div className="flex items-start gap-2 text-sm text-slate-600">
+                          <div className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
                             <User className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
                             <span>
-                              <span className="font-semibold text-slate-700">
+                              <span className="font-semibold text-slate-700 dark:text-slate-300">
                                 Head:
                               </span>{" "}
                               {department.representative.name}
@@ -157,7 +157,7 @@ export default function DepartmentClient({
                         {/* Phone Numbers */}
                         {department.representative.numbers &&
                           department.representative.numbers.length > 0 && (
-                            <div className="flex items-start gap-2 text-sm text-slate-600">
+                            <div className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
                               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
                               <div className="flex flex-col gap-1">
                                 {department.representative.numbers.map(
@@ -165,7 +165,7 @@ export default function DepartmentClient({
                                     <a
                                       key={i}
                                       href={`tel:${number.replace(/[^0-9+]/g, "")}`}
-                                      className="break-all transition-colors hover:text-blue-600"
+                                      className="break-all transition-colors hover:text-blue-600 dark:hover:text-blue-400"
                                     >
                                       {number}
                                     </a>
@@ -178,7 +178,7 @@ export default function DepartmentClient({
                         {/* Emails */}
                         {department.representative.emails &&
                           department.representative.emails.length > 0 && (
-                            <div className="flex items-start gap-2 text-sm text-slate-600">
+                            <div className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
                               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
                               <div className="flex flex-col gap-1">
                                 {department.representative.emails.map(
@@ -186,7 +186,7 @@ export default function DepartmentClient({
                                     <a
                                       key={i}
                                       href={`mailto:${email}`}
-                                      className="break-all transition-colors hover:text-blue-600"
+                                      className="break-all transition-colors hover:text-blue-600 dark:hover:text-blue-400"
                                     >
                                       {email}
                                     </a>
@@ -201,14 +201,14 @@ export default function DepartmentClient({
 
                   {/* Bottom: Action Buttons */}
                   {hasUrls && (
-                    <div className="mt-auto flex gap-2 border-t border-slate-100 pt-4">
+                    <div className="mt-auto flex gap-2 border-t border-slate-100 pt-4 dark:border-slate-800">
                       {/* Website Button */}
                       {department.websiteUrl && (
                         <a
                           href={department.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-slate-600 transition-colors hover:bg-slate-100"
+                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-slate-600 transition-colors hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400 dark:hover:bg-slate-800"
                           title="Visit Website"
                         >
                           <Globe className="h-4 w-4" />
@@ -221,7 +221,7 @@ export default function DepartmentClient({
                           href={department.facebookUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-blue-100 bg-blue-50 text-blue-600 transition-colors hover:bg-blue-100"
+                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-blue-100 bg-blue-50 text-blue-600 transition-colors hover:bg-blue-100 dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-400 dark:hover:bg-blue-900/50"
                           title="Visit Facebook Page"
                         >
                           <Facebook className="h-4 w-4" />

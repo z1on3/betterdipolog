@@ -53,23 +53,23 @@ export default function ResolutionsInteractive({
     <>
       <div className="container mx-auto px-4 pt-6 md:px-6">
         <div className="group relative mx-auto mb-2 max-w-2xl">
-          <Search className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-blue-600" />
+          <Search className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400" />
           <input
             type="text"
             placeholder="Search by title or resolution/ordinance number..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-xl border border-slate-200 bg-white py-4 pr-4 pl-12 text-base text-slate-900 shadow-sm transition-all duration-200 placeholder:text-slate-400 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
+            className="w-full rounded-xl border border-slate-200 bg-white py-4 pr-4 pl-12 text-base text-slate-900 shadow-sm transition-all duration-200 placeholder:text-slate-400 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100"
           />
         </div>
 
         <div className="mb-4 flex justify-center">
-          <div className="inline-flex rounded-lg border border-slate-200 bg-white p-1">
+          <div className="inline-flex rounded-lg border border-slate-200 bg-white p-1 dark:border-slate-800 dark:bg-slate-900">
             {(["all", "resolution", "ordinance"] as const).map((t) => (
               <button
                 key={t}
                 onClick={() => setSelectedType(t)}
-                className={`rounded-md px-3 py-1.5 text-xs font-bold capitalize transition-colors ${selectedType === t ? "bg-emerald-700 text-white" : "text-slate-500 hover:text-slate-900"}`}
+                className={`rounded-md px-3 py-1.5 text-xs font-bold capitalize transition-colors ${selectedType === t ? "bg-emerald-700 text-white" : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"}`}
               >
                 {t === "all" ? "All Types" : `${t}s`}
               </button>
@@ -103,7 +103,7 @@ export default function ResolutionsInteractive({
                 <div className="col-span-full flex justify-center">
                   <button
                     onClick={() => setVisibleCount((n) => n + PAGE_SIZE)}
-                    className="rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                    className="rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-blue-800 dark:hover:bg-blue-950/40 dark:hover:text-blue-300"
                   >
                     Show more ({filtered.length - visibleCount} remaining)
                   </button>
@@ -111,14 +111,14 @@ export default function ResolutionsInteractive({
               )}
             </>
           ) : (
-            <div className="col-span-full flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-white p-12 text-center">
-              <div className="mb-4 rounded-full bg-slate-50 p-4">
+            <div className="col-span-full flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-white p-12 text-center dark:border-slate-800 dark:bg-slate-900">
+              <div className="mb-4 rounded-full bg-slate-50 p-4 dark:bg-slate-950">
                 <Search className="h-8 w-8 text-slate-400" />
               </div>
-              <h3 className="mb-2 text-lg font-bold text-slate-900">
+              <h3 className="mb-2 text-lg font-bold text-slate-900 dark:text-slate-100">
                 No ordinances or resolutions found
               </h3>
-              <p className="mx-auto max-w-sm text-sm text-slate-500">
+              <p className="mx-auto max-w-sm text-sm text-slate-500 dark:text-slate-400">
                 Try a different search term or category.
               </p>
             </div>

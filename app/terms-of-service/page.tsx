@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function TermsOfServicePage() {
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/" text="Go Home" />
       <SubpageHero>
         <SubpageHero.Title>Terms of Service</SubpageHero.Title>
@@ -20,9 +20,9 @@ export default function TermsOfServicePage() {
       </SubpageHero>
 
       <div className="mx-auto max-w-[800px] px-4 py-12 md:px-6">
-        <div className="space-y-8 rounded-2xl border border-slate-200 bg-white p-6 leading-relaxed text-slate-600 shadow-sm md:p-10">
+        <div className="space-y-8 rounded-2xl border border-slate-200 bg-white p-6 leading-relaxed text-slate-600 shadow-sm md:p-10 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               Agreement to Our Legal Terms
             </h2>
             <p className="mb-4">
@@ -32,7 +32,7 @@ export default function TermsOfServicePage() {
               Philippines. We operate the website{" "}
               <a
                 href="https://betterdipolog.org/"
-                className="text-blue-600 hover:text-blue-700 hover:underline"
+                className="text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
               >
                 https://betterdipolog.org/
               </a>{" "}
@@ -55,7 +55,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               1. Our Services
             </h2>
             <p>
@@ -67,7 +67,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               2. Intellectual Property Rights
             </h2>
             <p>
@@ -86,7 +86,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               3. Prohibited Activities
             </h2>
             <p className="mb-4">
@@ -127,7 +127,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               4. Disclaimer & Limitations of Liability
             </h2>
             <p className="mb-4">
@@ -150,7 +150,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               5. User Data
             </h2>
             <p>
@@ -159,7 +159,7 @@ export default function TermsOfServicePage() {
               agree that we shall have no liability to you for any loss or
               corruption of any such data. Please refer to our{" "}
               <Link
-                className="text-blue-600 hover:text-blue-700 hover:underline"
+                className="text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
                 href={"/privacy-policy"}
               >
                 Privacy Policy
@@ -169,7 +169,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               6. Governing Law
             </h2>
             <p>
@@ -182,7 +182,7 @@ export default function TermsOfServicePage() {
           </section>
 
           <section>
-            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900">
+            <h2 className="mb-3 border-b border-slate-100 pb-2 text-xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
               7. Contact Us
             </h2>
             <p>
@@ -191,7 +191,7 @@ export default function TermsOfServicePage() {
               contact us at:{" "}
               <a
                 href="mailto:reports@betterdipolog.org"
-                className="text-blue-600 hover:text-blue-700 hover:underline"
+                className="text-blue-600 hover:text-blue-700 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
               >
                 reports@betterdipolog.org
               </a>

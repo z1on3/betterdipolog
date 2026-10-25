@@ -38,7 +38,7 @@ const PAGE_SIZE = 24;
 const ALL = "All";
 
 const selectClass =
-  "w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none";
+  "w-full rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 shadow-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none";
 
 export default function ProjectsClient({ data }: { data: ProjectsData }) {
   const sourcesById = useMemo(
@@ -118,7 +118,7 @@ export default function ProjectsClient({ data }: { data: ProjectsData }) {
   }));
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/transparency" text="Back to Transparency" />
       <SubpageHero>
         <SubpageHero.Title>Projects</SubpageHero.Title>
@@ -144,19 +144,23 @@ export default function ProjectsClient({ data }: { data: ProjectsData }) {
             return (
               <div
                 key={g.key}
-                className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
+                className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
               >
                 <p className="text-xs font-bold tracking-wider text-slate-400 uppercase">
                   {g.label}
                 </p>
-                <p className="text-2xl font-bold text-slate-900">{count}</p>
-                <p className="mt-1 text-xs text-slate-500">{asOf}</p>
+                <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+                  {count}
+                </p>
+                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  {asOf}
+                </p>
               </div>
             );
           })}
         </div>
 
-        <div className="flex gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
+        <div className="flex gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-200">
           <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0" />
           <p>
             Statuses are copied from each source on its own date and are not
@@ -167,7 +171,7 @@ export default function ProjectsClient({ data }: { data: ProjectsData }) {
         </div>
 
         <div className="group relative mx-auto mt-6 max-w-2xl">
-          <Search className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-blue-600" />
+          <Search className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400" />
           <input
             type="text"
             placeholder="Search by name, barangay, contractor, contract ID..."
@@ -176,12 +180,12 @@ export default function ProjectsClient({ data }: { data: ProjectsData }) {
               setQuery(e.target.value);
               resetPaging();
             }}
-            className="w-full rounded-xl border border-slate-200 bg-white py-4 pr-4 pl-12 text-base text-slate-900 shadow-sm transition-all duration-200 placeholder:text-slate-400 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
+            className="w-full rounded-xl border border-slate-200 bg-white py-4 pr-4 pl-12 text-base text-slate-900 shadow-sm transition-all duration-200 placeholder:text-slate-400 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100"
           />
         </div>
 
         <div className="mx-auto mt-4 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
-          <label className="text-xs font-semibold text-slate-500">
+          <label className="text-xs font-semibold text-slate-500 dark:text-slate-400">
             Source
             <select
               className={cn(selectClass, "mt-1")}
@@ -199,7 +203,7 @@ export default function ProjectsClient({ data }: { data: ProjectsData }) {
               ))}
             </select>
           </label>
-          <label className="text-xs font-semibold text-slate-500">
+          <label className="text-xs font-semibold text-slate-500 dark:text-slate-400">
             Status (as of source date)
             <select
               className={cn(selectClass, "mt-1")}
@@ -217,7 +221,7 @@ export default function ProjectsClient({ data }: { data: ProjectsData }) {
               ))}
             </select>
           </label>
-          <label className="text-xs font-semibold text-slate-500">
+          <label className="text-xs font-semibold text-slate-500 dark:text-slate-400">
             Barangay (named in source)
             <select
               className={cn(selectClass, "mt-1")}
@@ -265,21 +269,21 @@ export default function ProjectsClient({ data }: { data: ProjectsData }) {
               {visible < filtered.length && (
                 <button
                   onClick={() => setVisible((v) => v + PAGE_SIZE)}
-                  className="col-span-full mx-auto rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm hover:border-blue-300 hover:text-blue-700"
+                  className="col-span-full mx-auto rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm hover:border-blue-300 hover:text-blue-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-blue-700 dark:hover:text-blue-300"
                 >
                   Show more ({filtered.length - visible} remaining)
                 </button>
               )}
             </>
           ) : (
-            <div className="col-span-full flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-white p-12 text-center">
-              <div className="mb-4 rounded-full bg-slate-50 p-4">
+            <div className="col-span-full flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-white p-12 text-center dark:border-slate-800 dark:bg-slate-900">
+              <div className="mb-4 rounded-full bg-slate-50 p-4 dark:bg-slate-950">
                 <Search className="h-8 w-8 text-slate-400" />
               </div>
-              <h3 className="mb-2 text-lg font-bold text-slate-900">
+              <h3 className="mb-2 text-lg font-bold text-slate-900 dark:text-slate-100">
                 No projects found
               </h3>
-              <p className="mx-auto max-w-sm text-sm text-slate-500">
+              <p className="mx-auto max-w-sm text-sm text-slate-500 dark:text-slate-400">
                 Try a different search term or clear a filter.
               </p>
             </div>
@@ -307,7 +311,7 @@ function ProjectCard({
   const historical =
     p.status === "historical-completed" || p.status === "historical-ongoing";
   return (
-    <Card className="col-span-full rounded-2xl border-slate-200">
+    <Card className="col-span-full rounded-2xl border-slate-200 dark:border-slate-800">
       <CardContent className="space-y-4">
         <div className="flex flex-wrap items-center gap-2">
           <span
@@ -319,10 +323,10 @@ function ProjectCard({
             {historical && <History className="h-3.5 w-3.5" />}
             {p.statusLabel}
           </span>
-          <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
+          <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-400">
             {CATEGORY_LABELS[p.category]}
           </span>
-          <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600">
+          <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-400">
             {p.year}
           </span>
           {p.referenceNo && (
@@ -333,11 +337,13 @@ function ProjectCard({
         </div>
 
         <div>
-          <h3 className="text-base leading-snug font-bold text-slate-900">
+          <h3 className="text-base leading-snug font-bold text-slate-900 dark:text-slate-100">
             {p.title}
           </h3>
           {p.description && (
-            <p className="mt-1 text-sm text-slate-600">{p.description}</p>
+            <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+              {p.description}
+            </p>
           )}
         </div>
 
@@ -346,12 +352,12 @@ function ProjectCard({
             <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
             <div>
               <dt className="text-xs font-semibold text-slate-400">Location</dt>
-              <dd className="text-slate-700">
+              <dd className="text-slate-700 dark:text-slate-300">
                 {p.barangays.length > 0
                   ? p.barangays.join(", ")
                   : "Dipolog City (barangay not stated)"}
                 {p.locationNote && (
-                  <span className="block text-xs text-slate-500">
+                  <span className="block text-xs text-slate-500 dark:text-slate-400">
                     {p.locationNote}
                   </span>
                 )}
@@ -364,11 +370,11 @@ function ProjectCard({
               <dt className="text-xs font-semibold text-slate-400">
                 Implementer / office
               </dt>
-              <dd className="text-slate-700">
+              <dd className="text-slate-700 dark:text-slate-300">
                 {[p.implementer, p.office].filter(Boolean).join(" · ") ||
                   "Not stated (listed by the City Government of Dipolog)"}
                 {p.contractor && (
-                  <span className="block text-xs text-slate-500">
+                  <span className="block text-xs text-slate-500 dark:text-slate-400">
                     Contractor: {p.contractor}
                   </span>
                 )}
@@ -381,20 +387,20 @@ function ProjectCard({
               <dt className="text-xs font-semibold text-slate-400">
                 {p.amount ? AMOUNT_BASIS_LABELS[p.amount.basis] : "Amount"}
               </dt>
-              <dd className="text-slate-700">
+              <dd className="text-slate-700 dark:text-slate-300">
                 {p.amount ? formatPeso(p.amount.value) : "Not stated"}
                 {p.abc !== undefined && (
-                  <span className="block text-xs text-slate-500">
+                  <span className="block text-xs text-slate-500 dark:text-slate-400">
                     Approved budget (ABC): {formatPeso(p.abc)}
                   </span>
                 )}
                 {p.fundSource && (
-                  <span className="block text-xs text-slate-500">
+                  <span className="block text-xs text-slate-500 dark:text-slate-400">
                     Fund source: {p.fundSource}
                   </span>
                 )}
                 {p.procurementMode && (
-                  <span className="block text-xs text-slate-500">
+                  <span className="block text-xs text-slate-500 dark:text-slate-400">
                     Mode: {p.procurementMode}
                   </span>
                 )}
@@ -407,10 +413,12 @@ function ProjectCard({
               <div>
                 <dt className="text-xs font-semibold text-slate-400">Dates</dt>
                 <dd>
-                  <ul className="text-slate-700">
+                  <ul className="text-slate-700 dark:text-slate-300">
                     {p.dates.map((d) => (
                       <li key={`${d.label}-${d.date}`}>
-                        <span className="text-slate-500">{d.label}:</span>{" "}
+                        <span className="text-slate-500 dark:text-slate-400">
+                          {d.label}:
+                        </span>{" "}
                         {formatProjectDate(d.date)}
                       </li>
                     ))}
@@ -422,12 +430,12 @@ function ProjectCard({
         </dl>
 
         {p.note && (
-          <p className="rounded-lg bg-slate-50 px-3 py-2 text-xs text-slate-600">
+          <p className="rounded-lg bg-slate-50 px-3 py-2 text-xs text-slate-600 dark:bg-slate-950 dark:text-slate-400">
             {p.note}
           </p>
         )}
       </CardContent>
-      <CardFooter className="flex flex-col gap-1 border-slate-100 bg-slate-50/60 py-3 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between md:py-3">
+      <CardFooter className="flex flex-col gap-1 border-slate-100 bg-slate-50/60 py-3 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between md:py-3 dark:border-slate-800 dark:bg-slate-950/60 dark:text-slate-400">
         <span>
           Source: {source?.title}
           {p.sourcePage ? `, page ${p.sourcePage}` : ""} · {source?.asOfLabel}
@@ -436,7 +444,7 @@ function ProjectCard({
           href={p.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex shrink-0 items-center gap-1 font-semibold text-blue-700 hover:underline"
+          className="inline-flex shrink-0 items-center gap-1 font-semibold text-blue-700 hover:underline dark:text-blue-300"
         >
           View source <ExternalLink className="h-3.5 w-3.5" />
         </a>

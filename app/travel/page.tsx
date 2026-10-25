@@ -94,7 +94,7 @@ const HERO_PHOTO = {
 
 export default function TravelPage() {
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/" text="Go Home" />
       <SubpageHero>
         <SubpageHero.Title>Explore Dipolog</SubpageHero.Title>
@@ -107,8 +107,8 @@ export default function TravelPage() {
 
       <div className="container mx-auto space-y-12 px-4 py-8 md:px-6">
         <section className="grid gap-6 lg:grid-cols-5">
-          <figure className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm lg:col-span-3">
-            <div className="relative aspect-video bg-slate-100">
+          <figure className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm lg:col-span-3 dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative aspect-video bg-slate-100 dark:bg-slate-800">
               <Image
                 src={HERO_PHOTO.url}
                 alt="Dipolog Boulevard beach facing the Sulu Sea"
@@ -125,7 +125,7 @@ export default function TravelPage() {
                 href={HERO_PHOTO.source}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:text-slate-600"
+                className="underline hover:text-slate-600 dark:hover:text-slate-400"
               >
                 {HERO_PHOTO.credit}
               </a>{" "}
@@ -134,28 +134,34 @@ export default function TravelPage() {
           </figure>
 
           <div className="space-y-4 lg:col-span-2">
-            <h2 className="text-xl font-bold text-slate-900">Getting here</h2>
+            <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+              Getting here
+            </h2>
             <ul className="space-y-3">
               {QUICK_FACTS.map(({ icon: Icon, label, value }) => (
                 <li
                   key={label}
-                  className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
+                  className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
                 >
-                  <div className="shrink-0 rounded-lg bg-blue-50 p-2 text-blue-600">
+                  <div className="shrink-0 rounded-lg bg-blue-50 p-2 text-blue-600 dark:bg-blue-950/40 dark:text-blue-400">
                     <Icon className="h-5 w-5" aria-hidden />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-slate-900">{label}</p>
-                    <p className="text-sm text-slate-500">{value}</p>
+                    <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                      {label}
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      {value}
+                    </p>
                   </div>
                 </li>
               ))}
             </ul>
-            <div className="flex items-start gap-3 rounded-xl border border-amber-100 bg-amber-50 p-4">
-              <div className="shrink-0 rounded-lg bg-white p-2 text-amber-600">
+            <div className="flex items-start gap-3 rounded-xl border border-amber-100 bg-amber-50 p-4 dark:border-amber-900 dark:bg-amber-950/40">
+              <div className="shrink-0 rounded-lg bg-white p-2 text-amber-600 dark:bg-slate-900 dark:text-amber-400">
                 <Fish className="h-5 w-5" aria-hidden />
               </div>
-              <p className="text-sm text-amber-900">
+              <p className="text-sm text-amber-900 dark:text-amber-200">
                 <strong>Pasalubong:</strong> Dipolog is called the
                 &ldquo;Bottled Sardines Capital of the Philippines&rdquo; —
                 bottled sardines are among the city&apos;s major products.
@@ -165,8 +171,8 @@ export default function TravelPage() {
         </section>
 
         <section>
-          <div className="mb-6 border-b border-slate-200 pb-4">
-            <h2 className="text-2xl font-bold text-slate-900">
+          <div className="mb-6 border-b border-slate-200 pb-4 dark:border-slate-800">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               Plan your visit
             </h2>
           </div>
@@ -175,20 +181,20 @@ export default function TravelPage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:border-blue-300 hover:shadow-md"
+                className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:border-blue-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
               >
-                <div className="shrink-0 rounded-xl bg-blue-50 p-3 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+                <div className="shrink-0 rounded-xl bg-blue-50 p-3 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white dark:bg-blue-950/40 dark:text-blue-400">
                   <Icon className="h-6 w-6" aria-hidden />
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-1 text-lg font-bold text-slate-900 transition-colors group-hover:text-blue-700">
+                  <h3 className="mb-1 text-lg font-bold text-slate-900 transition-colors group-hover:text-blue-700 dark:text-slate-100 dark:group-hover:text-blue-300">
                     {item.name}
                   </h3>
-                  <p className="line-clamp-3 text-sm text-slate-500">
+                  <p className="line-clamp-3 text-sm text-slate-500 dark:text-slate-400">
                     {item.description}
                   </p>
                 </div>
-                <div className="mt-1 text-slate-400 transition-all group-hover:translate-x-1 group-hover:text-blue-600">
+                <div className="mt-1 text-slate-400 transition-all group-hover:translate-x-1 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                   <ArrowRight className="h-5 w-5" aria-hidden />
                 </div>
               </Link>

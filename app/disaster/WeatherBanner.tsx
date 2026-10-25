@@ -149,7 +149,7 @@ export default function WeatherBanner() {
             {Math.round(current.wind_speed)} km/h
           </span>
           {isFallback && (
-            <span className="rounded bg-white/20 px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase">
+            <span className="rounded bg-white/20 px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase dark:bg-slate-900/20">
               Cached
             </span>
           )}
@@ -157,7 +157,7 @@ export default function WeatherBanner() {
       </div>
 
       {advisory && (
-        <p className="mt-3 flex items-center gap-2 rounded-md bg-white/15 px-3 py-2 text-sm font-bold">
+        <p className="mt-3 flex items-center gap-2 rounded-md bg-white/15 px-3 py-2 text-sm font-bold dark:bg-slate-900/15">
           <TriangleAlert className="h-4 w-4 shrink-0" aria-hidden />
           Rain or storm conditions — monitor PAGASA and follow local advisories.
         </p>

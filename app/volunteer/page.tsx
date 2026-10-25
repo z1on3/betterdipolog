@@ -46,10 +46,10 @@ export default function VolunteerPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
       />
-      <main className="relative min-h-screen bg-slate-50 pb-24 font-sans">
+      <main className="relative min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
         <SubpageHero>
           <SubpageHero.Badges>
-            <span className="mx-auto flex w-fit items-center gap-1.5 rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-xs font-bold tracking-wider text-emerald-700 uppercase">
+            <span className="mx-auto flex w-fit items-center gap-1.5 rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-xs font-bold tracking-wider text-emerald-700 uppercase dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300">
               <HeartHandshake className="h-3.5 w-3.5" />
               Join the Movement
             </span>
@@ -68,10 +68,10 @@ export default function VolunteerPage() {
           {/* LEFT COLUMN: The Philosophy and Mission */}
           <div className="space-y-10 lg:col-span-7">
             <section className="space-y-4">
-              <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
+              <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
                 Get Involved, Stay Involved
               </h2>
-              <p className="text-lg leading-relaxed text-slate-600">
+              <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-400">
                 BetterDipolog's core mission is to advance civic technology and
                 make local governance accessible. The engine that drives this
                 mission comprises people like you who operate at the grass-roots
@@ -79,20 +79,20 @@ export default function VolunteerPage() {
                 gathering data, or educating the public, we owe everything to
                 the hard work and dedication of our volunteers.
               </p>
-              <p className="text-lg leading-relaxed text-slate-600">
+              <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-400">
                 Today we have more ways than ever for you to get involved,
                 ranging from technical contributions to community verification
                 and historical documentation.
               </p>
             </section>
 
-            <hr className="border-slate-200" />
+            <hr className="border-slate-200 dark:border-slate-800" />
 
             <section className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
                 Take a hand in leading BetterDipolog
               </h2>
-              <p className="text-lg leading-relaxed text-slate-600">
+              <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-400">
                 It's hard to overemphasize the value of the contributions made
                 by our community. This starts at the very foundation where
                 volunteers dictate what features get built next, what data needs
@@ -104,27 +104,31 @@ export default function VolunteerPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
                 Lend expertise <br className="sm:hidden" /> in your chosen field
               </h2>
-              <p className="text-lg leading-relaxed text-slate-600">
+              <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-400">
                 No matter where your expertise lies, there is a good chance that
                 BetterDipolog needs it. You do not need to be a programmer to
                 contribute to a tech-centric city.
               </p>
-              <p className="text-lg leading-relaxed text-slate-600">
+              <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-400">
                 We are actively looking for{" "}
-                <strong className="text-slate-900">government workers</strong>{" "}
+                <strong className="text-slate-900 dark:text-slate-100">
+                  government workers
+                </strong>{" "}
                 who understand the exact procedures of public services,{" "}
-                <strong className="text-slate-900">
+                <strong className="text-slate-900 dark:text-slate-100">
                   history and culture professors
                 </strong>{" "}
                 to accurately document our city's heritage, and{" "}
-                <strong className="text-slate-900">everyday citizens</strong>{" "}
+                <strong className="text-slate-900 dark:text-slate-100">
+                  everyday citizens
+                </strong>{" "}
                 who know the local commute, the local hotlines, and what
                 information the common folk actually need.
               </p>
-              <p className="text-lg leading-relaxed text-slate-600">
+              <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-400">
                 Your involvement enables you to remain at your most creative,
                 keep abreast of emerging civic tech trends, and take advantage
                 of networking possibilities that can advance your own career
@@ -134,11 +138,11 @@ export default function VolunteerPage() {
           </div>
 
           {/* RIGHT COLUMN: Actionable Steps */}
-          <div className="sticky top-24 rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/40 md:p-8 lg:col-span-5">
-            <h3 className="mb-2 text-2xl font-bold text-slate-900">
+          <div className="sticky top-24 rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/40 md:p-8 lg:col-span-5 dark:border-slate-800 dark:bg-slate-900">
+            <h3 className="mb-2 text-2xl font-bold text-slate-900 dark:text-slate-100">
               Ok, I'm ready — how do I get involved?
             </h3>
-            <p className="mb-8 text-sm leading-relaxed text-slate-500">
+            <p className="mb-8 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
               Consider the activities below that present important and
               fulfilling opportunities for you to make your mark on Dipolog
               City:
@@ -146,14 +150,14 @@ export default function VolunteerPage() {
 
             <ul className="mb-10 space-y-6">
               <li className="flex gap-4">
-                <div className="mt-1 h-fit rounded-lg bg-blue-50 p-2 text-blue-600">
+                <div className="mt-1 h-fit rounded-lg bg-blue-50 p-2 text-blue-600 dark:bg-blue-950/40 dark:text-blue-400">
                   <Code2 className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">
+                  <h4 className="font-bold text-slate-900 dark:text-slate-100">
                     Developers & Engineers
                   </h4>
-                  <p className="mt-1 text-sm text-slate-600">
+                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
                     Help us build open-source Next.js applications, manage
                     databases, and create APIs for public data.
                   </p>
@@ -161,14 +165,14 @@ export default function VolunteerPage() {
               </li>
 
               <li className="flex gap-4">
-                <div className="mt-1 h-fit rounded-lg bg-fuchsia-50 p-2 text-fuchsia-600">
+                <div className="mt-1 h-fit rounded-lg bg-fuchsia-50 p-2 text-fuchsia-600 dark:bg-fuchsia-950/40 dark:text-fuchsia-400">
                   <PenTool className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">
+                  <h4 className="font-bold text-slate-900 dark:text-slate-100">
                     Designers & UI/UX
                   </h4>
-                  <p className="mt-1 text-sm text-slate-600">
+                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
                     Craft accessible, beautiful interfaces that make finding
                     government information intuitive for everyone.
                   </p>
@@ -176,14 +180,14 @@ export default function VolunteerPage() {
               </li>
 
               <li className="flex gap-4">
-                <div className="mt-1 h-fit rounded-lg bg-sky-50 p-2 text-sky-600">
+                <div className="mt-1 h-fit rounded-lg bg-sky-50 p-2 text-sky-600 dark:bg-sky-950/40 dark:text-sky-400">
                   <Megaphone className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">
+                  <h4 className="font-bold text-slate-900 dark:text-slate-100">
                     Social Media & Content
                   </h4>
-                  <p className="mt-1 text-sm text-slate-600">
+                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
                     Spread the word, write clear copy for our service guides,
                     and manage our community outreach.
                   </p>
@@ -191,14 +195,14 @@ export default function VolunteerPage() {
               </li>
 
               <li className="flex gap-4">
-                <div className="mt-1 h-fit rounded-lg bg-amber-50 p-2 text-amber-600">
+                <div className="mt-1 h-fit rounded-lg bg-amber-50 p-2 text-amber-600 dark:bg-amber-950/40 dark:text-amber-400">
                   <Landmark className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">
+                  <h4 className="font-bold text-slate-900 dark:text-slate-100">
                     Academics & Gov Workers
                   </h4>
-                  <p className="mt-1 text-sm text-slate-600">
+                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
                     Provide domain expertise. Help us accurately document
                     Dipolog's history, culture, and bureaucratic procedures.
                   </p>
@@ -206,14 +210,14 @@ export default function VolunteerPage() {
               </li>
 
               <li className="flex gap-4">
-                <div className="mt-1 h-fit rounded-lg bg-emerald-50 p-2 text-emerald-600">
+                <div className="mt-1 h-fit rounded-lg bg-emerald-50 p-2 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400">
                   <SearchCheck className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">
+                  <h4 className="font-bold text-slate-900 dark:text-slate-100">
                     Community Verifiers
                   </h4>
-                  <p className="mt-1 text-sm text-slate-600">
+                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
                     You don't need a specific title. Test our platform, report
                     broken links, and tell us what the common folk need to see.
                   </p>

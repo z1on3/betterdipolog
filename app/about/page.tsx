@@ -22,16 +22,16 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageHero>
         <SubpageHero.Badges>
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-500 transition-colors hover:text-blue-600"
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-500 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
           >
             <ArrowLeft className="h-4 w-4" /> Back to Home
           </Link>
-          <span className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold tracking-wider text-blue-700 uppercase">
+          <span className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold tracking-wider text-blue-700 uppercase dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-300">
             Civic Tech Project
           </span>
         </SubpageHero.Badges>
@@ -45,24 +45,26 @@ export default function AboutPage() {
       <div className="mx-auto max-w-[800px] space-y-12 px-4 py-12 md:space-y-16 md:px-6">
         {/* 1. Our Mission */}
         <section className="space-y-6 text-center">
-          <div className="mb-2 inline-flex items-center justify-center rounded-2xl bg-blue-100 p-4 text-blue-600">
+          <div className="mb-2 inline-flex items-center justify-center rounded-2xl bg-blue-100 p-4 text-blue-600 dark:bg-blue-900/50 dark:text-blue-400">
             <Target className="h-8 w-8" />
           </div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
             Our Mission
           </h2>
-          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl dark:text-slate-400">
             BetterDipolog is a volunteer-led tech initiative committed to
             creating{" "}
-            <strong className="text-blue-600">#civictechprojects</strong> aimed
-            at making local government more transparent, efficient, and
+            <strong className="text-blue-600 dark:text-blue-400">
+              #civictechprojects
+            </strong>{" "}
+            aimed at making local government more transparent, efficient, and
             accessible to the citizens of Dipolog.
           </p>
         </section>
 
         {/* 2. Our Goals */}
-        <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-10">
-          <h3 className="mb-6 border-b border-slate-100 pb-4 text-2xl font-bold text-slate-900">
+        <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-10 dark:border-slate-800 dark:bg-slate-900">
+          <h3 className="mb-6 border-b border-slate-100 pb-4 text-2xl font-bold text-slate-900 dark:border-slate-800 dark:text-slate-100">
             Our Goals
           </h3>
           <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
@@ -76,7 +78,9 @@ export default function AboutPage() {
             ].map((goal, idx) => (
               <li key={idx} className="flex items-start gap-3">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
-                <span className="leading-relaxed text-slate-600">{goal}</span>
+                <span className="leading-relaxed text-slate-600 dark:text-slate-400">
+                  {goal}
+                </span>
               </li>
             ))}
           </ul>
@@ -86,11 +90,11 @@ export default function AboutPage() {
         <section className="space-y-6 px-2 md:px-0">
           <div className="flex items-center gap-3">
             <AlertTriangle className="h-6 w-6 text-amber-500" />
-            <h3 className="text-2xl font-bold text-slate-900">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               Why We&apos;re Building This
             </h3>
           </div>
-          <div className="space-y-4 text-lg leading-relaxed text-slate-600">
+          <div className="space-y-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
             <p>
               Finding local government contact numbers, utility rates, and
               service procedures in Dipolog can be fragmented and difficult. The
@@ -121,24 +125,24 @@ export default function AboutPage() {
         </section>
 
         {/* 4. The BetterGov Parent Initiative */}
-        <section className="rounded-3xl border border-blue-100 bg-blue-50 p-6 md:p-10">
+        <section className="rounded-3xl border border-blue-100 bg-blue-50 p-6 md:p-10 dark:border-blue-900 dark:bg-blue-950/40">
           <div className="mb-4 flex items-center gap-3">
-            <HeartHandshake className="h-7 w-7 text-blue-600" />
-            <h3 className="text-xl font-bold text-blue-900 md:text-2xl">
+            <HeartHandshake className="h-7 w-7 text-blue-600 dark:text-blue-400" />
+            <h3 className="text-xl font-bold text-blue-900 md:text-2xl dark:text-blue-200">
               Inspired by the BetterGov Movement
             </h3>
           </div>
-          <p className="mb-6 leading-relaxed text-blue-800">
+          <p className="mb-6 leading-relaxed text-blue-800 dark:text-blue-200">
             BetterDipolog follows the example of BetterGov.ph, a nationwide
             movement of citizen builders whose goal is to support, promote,
             consolidate, and empower developers across the Philippines to build
             impactful civic tech projects.
           </p>
-          <div className="mb-6 rounded-2xl bg-white/60 p-5">
-            <h4 className="mb-3 text-sm font-bold tracking-wider text-blue-900 uppercase">
+          <div className="mb-6 rounded-2xl bg-white/60 p-5 dark:bg-slate-900/60">
+            <h4 className="mb-3 text-sm font-bold tracking-wider text-blue-900 uppercase dark:text-blue-200">
               For Citizen Builders, BetterGov Provides:
             </h4>
-            <ul className="grid grid-cols-1 gap-2 text-sm text-blue-800 sm:grid-cols-2">
+            <ul className="grid grid-cols-1 gap-2 text-sm text-blue-800 sm:grid-cols-2 dark:text-blue-200">
               <li>• Infrastructure & Tools (Servers, AI Credits)</li>
               <li>• Tech Hackathons & Collaboration</li>
               <li>• Data & APIs for Gov Services</li>
@@ -160,7 +164,7 @@ export default function AboutPage() {
               href="https://bettergov.ph/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-white px-5 py-2.5 font-bold text-blue-700 transition-colors hover:bg-blue-100"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-white px-5 py-2.5 font-bold text-blue-700 transition-colors hover:bg-blue-100 dark:border-blue-800 dark:bg-slate-900 dark:text-blue-300 dark:hover:bg-blue-900/50"
             >
               Visit BetterGov.ph <ExternalLink className="h-4 w-4" />
             </a>
@@ -193,14 +197,14 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="rounded-3xl border border-emerald-100 bg-emerald-50 p-8 text-center shadow-sm md:p-12">
-          <div className="mb-5 inline-flex items-center justify-center rounded-full bg-emerald-100 p-3 text-emerald-600">
+        <section className="rounded-3xl border border-emerald-100 bg-emerald-50 p-8 text-center shadow-sm md:p-12 dark:border-emerald-900 dark:bg-emerald-950/40">
+          <div className="mb-5 inline-flex items-center justify-center rounded-full bg-emerald-100 p-3 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400">
             <Users className="h-8 w-8" />
           </div>
-          <h3 className="mb-4 text-2xl font-extrabold text-emerald-950 md:text-3xl">
+          <h3 className="mb-4 text-2xl font-extrabold text-emerald-950 md:text-3xl dark:text-emerald-100">
             Ready to Make an Impact?
           </h3>
-          <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-emerald-800">
+          <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-emerald-800 dark:text-emerald-200">
             Whether you're a developer, designer, researcher, or just someone
             who wants to help verify local data—we need you. Join our community
             of citizen builders and help shape the digital future of Dipolog
@@ -216,17 +220,17 @@ export default function AboutPage() {
         </section>
 
         {/* 6. Upstream credit */}
-        <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-10">
-          <h3 className="mb-4 text-xl font-bold text-slate-900 md:text-2xl">
+        <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-10 dark:border-slate-800 dark:bg-slate-900">
+          <h3 className="mb-4 text-xl font-bold text-slate-900 md:text-2xl dark:text-slate-100">
             Built on BetterIligan
           </h3>
-          <p className="leading-relaxed text-slate-600">
+          <p className="leading-relaxed text-slate-600 dark:text-slate-400">
             BetterDipolog is a fork of{" "}
             <a
               href="https://github.com/KishonShrill/BetterIligan"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-blue-600 underline decoration-blue-200 underline-offset-2 hover:text-blue-700"
+              className="font-bold text-blue-600 underline decoration-blue-200 underline-offset-2 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
             >
               BetterIligan
             </a>{" "}
@@ -238,20 +242,20 @@ export default function AboutPage() {
         </section>
 
         {/* 7. License */}
-        <section className="border-t border-slate-200 pt-8 text-center">
-          <div className="mb-4 inline-flex items-center justify-center rounded-full bg-slate-100 p-3 text-slate-500">
+        <section className="border-t border-slate-200 pt-8 text-center dark:border-slate-800">
+          <div className="mb-4 inline-flex items-center justify-center rounded-full bg-slate-100 p-3 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
             <Scale className="h-6 w-6" />
           </div>
-          <h4 className="mb-2 text-lg font-bold text-slate-900">
+          <h4 className="mb-2 text-lg font-bold text-slate-900 dark:text-slate-100">
             Open Source License
           </h4>
-          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-slate-500">
+          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-slate-500 dark:text-slate-400">
             This project's source code is released under the{" "}
             <a
               href="https://opensource.org/licenses/MIT"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-slate-700 underline decoration-slate-300 underline-offset-2 hover:text-blue-600"
+              className="font-bold text-slate-700 underline decoration-slate-300 underline-offset-2 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400"
             >
               MIT License
             </a>

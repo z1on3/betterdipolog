@@ -24,7 +24,7 @@ export default function Breadcrumbs({ items, className }: BreadcrumbsProps) {
   return (
     <nav
       className={cn(
-        "container flex items-center space-x-1 text-xs text-gray-600",
+        "container flex items-center space-x-1 text-xs text-gray-600 dark:text-gray-400",
         className,
       )}
       aria-label="Breadcrumb"
@@ -38,14 +38,14 @@ export default function Breadcrumbs({ items, className }: BreadcrumbsProps) {
           {item.href ? (
             <Link
               href={item.href}
-              className="hover:text-primary-600 max-w-[150px] truncate transition-colors"
+              className="hover:text-primary-600 dark:hover:text-primary-400 max-w-[150px] truncate transition-colors"
               title={item.label}
             >
               {item.label}
             </Link>
           ) : (
             <span
-              className="max-w-[200px] truncate font-medium text-gray-900"
+              className="max-w-[200px] truncate font-medium text-gray-900 dark:text-gray-100"
               title={item.label}
               aria-current="page"
             >

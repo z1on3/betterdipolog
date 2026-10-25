@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 
 export default function ContributorsPage() {
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/" text="Back to Home" />
 
       <SubpageHero>
         <SubpageHero.Badges>
-          <span className="mx-auto flex w-fit items-center gap-1.5 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold tracking-wider text-blue-700 uppercase">
+          <span className="mx-auto flex w-fit items-center gap-1.5 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold tracking-wider text-blue-700 uppercase dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-300">
             <Users className="h-3.5 w-3.5" />
             Our Team
           </span>

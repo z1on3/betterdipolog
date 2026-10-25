@@ -52,7 +52,8 @@ const UTILITIES: Utility[] = [
     description:
       "ZANECO is the electric cooperative that distributes power in Dipolog City and Zamboanga del Norte. Its Dipolog Main Office is on General Luna Street.",
     Icon: Zap,
-    accent: "bg-amber-50 text-amber-600",
+    accent:
+      "bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400",
     address: "General Luna St., Brgy. Central, Dipolog City",
     phones: [
       { label: "Hotline (Smart)", value: "0999-883-8636" },
@@ -74,7 +75,7 @@ const UTILITIES: Utility[] = [
     description:
       "Dipolog City Water District provides the city's Level III (piped, household connection) water supply. Some areas are also served by Level II government-installed systems.",
     Icon: Droplets,
-    accent: "bg-sky-50 text-sky-600",
+    accent: "bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400",
     address: "National Highway, Minaog, Dipolog City, 7100",
     phones: [
       { label: "General inquiries", value: "(065) 212-2574" },
@@ -108,11 +109,11 @@ const references = [
 
 export default function UtilitiesPage() {
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav />
       <SubpageHero>
         <SubpageHero.Badges>
-          <span className="rounded-full border border-amber-100 bg-amber-50 px-3 py-1 text-xs font-bold tracking-wider text-amber-700 uppercase">
+          <span className="rounded-full border border-amber-100 bg-amber-50 px-3 py-1 text-xs font-bold tracking-wider text-amber-700 uppercase dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-300">
             Public Utilities
           </span>
         </SubpageHero.Badges>
@@ -129,7 +130,7 @@ export default function UtilitiesPage() {
           <section
             key={utility.id}
             id={utility.id}
-            className="scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8"
+            className="scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8 dark:border-slate-800 dark:bg-slate-900"
           >
             <div className="mb-5 flex items-start gap-4">
               <div className={`shrink-0 rounded-xl p-3 ${utility.accent}`}>
@@ -139,16 +140,16 @@ export default function UtilitiesPage() {
                 <p className="text-xs font-bold tracking-wider text-slate-400 uppercase">
                   {utility.service}
                 </p>
-                <h2 className="text-2xl font-black tracking-tight text-slate-900">
+                <h2 className="text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100">
                   {utility.shortName}
                 </h2>
-                <p className="text-sm font-medium text-slate-500">
+                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
                   {utility.name}
                 </p>
               </div>
             </div>
 
-            <p className="mb-6 leading-relaxed text-slate-600">
+            <p className="mb-6 leading-relaxed text-slate-600 dark:text-slate-400">
               {utility.description}
             </p>
 
@@ -161,12 +162,12 @@ export default function UtilitiesPage() {
                   className="flex items-start gap-2 text-sm"
                 >
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
-                  <span className="text-blue-600 underline">
+                  <span className="text-blue-600 underline dark:text-blue-400">
                     {utility.address}
                   </span>
                 </a>
                 {utility.hours && (
-                  <p className="flex items-start gap-2 text-sm text-slate-600">
+                  <p className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
                     <Clock className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
                     {utility.hours}
                   </p>
@@ -175,7 +176,7 @@ export default function UtilitiesPage() {
                   <a
                     key={email}
                     href={`mailto:${email}`}
-                    className="flex items-start gap-2 text-sm text-slate-600 hover:text-blue-600"
+                    className="flex items-start gap-2 text-sm text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
                   >
                     <Mail className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
                     {email}
@@ -195,7 +196,7 @@ export default function UtilitiesPage() {
                       href={utility.facebookUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-blue-100 bg-blue-50 px-3 py-2 text-xs font-bold text-blue-600 hover:bg-blue-100"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-blue-100 bg-blue-50 px-3 py-2 text-xs font-bold text-blue-600 hover:bg-blue-100 dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-400 dark:hover:bg-blue-900/50"
                     >
                       <Facebook className="h-3.5 w-3.5" /> Facebook
                     </a>
@@ -203,7 +204,7 @@ export default function UtilitiesPage() {
                 </div>
               </div>
 
-              <div className="rounded-xl border border-slate-100 bg-slate-50 p-4">
+              <div className="rounded-xl border border-slate-100 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950">
                 <p className="mb-3 text-[11px] font-bold tracking-wider text-slate-400 uppercase">
                   Contact numbers
                 </p>
@@ -214,11 +215,13 @@ export default function UtilitiesPage() {
                       <div>
                         <a
                           href={`tel:${phone.value.replace(/[^0-9+]/g, "")}`}
-                          className="text-sm font-semibold text-blue-600 hover:underline"
+                          className="text-sm font-semibold text-blue-600 hover:underline dark:text-blue-400"
                         >
                           {phone.value}
                         </a>
-                        <p className="text-xs text-slate-500">{phone.label}</p>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                          {phone.label}
+                        </p>
                       </div>
                     </li>
                   ))}
@@ -227,11 +230,11 @@ export default function UtilitiesPage() {
             </div>
 
             {utility.notes.length > 0 && (
-              <ul className="mt-6 space-y-2 border-t border-slate-100 pt-5">
+              <ul className="mt-6 space-y-2 border-t border-slate-100 pt-5 dark:border-slate-800">
                 {utility.notes.map((note) => (
                   <li
                     key={note}
-                    className="flex items-start gap-2 text-sm text-slate-600"
+                    className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400"
                   >
                     <ShieldAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                     {note}

@@ -20,11 +20,11 @@ export default function ServicesSection() {
     <Section>
       {/* Header */}
       <div className="mb-7 text-center sm:mb-12">
-        <h2 className="mb-4 text-3xl font-extrabold text-slate-900 md:text-4xl">
+        <h2 className="mb-4 text-3xl font-extrabold text-slate-900 md:text-4xl dark:text-slate-100">
           City Services
         </h2>
         <Text
-          className="mx-auto max-w-2xl text-sm text-slate-500 md:text-base"
+          className="mx-auto max-w-2xl text-sm text-slate-500 md:text-base dark:text-slate-400"
           size="md"
         >
           Access all list of services quickly and easily. Find what you need for
@@ -42,7 +42,7 @@ export default function ServicesSection() {
               key={category.name}
               href={category.href}
               // ADDED: 'relative' to keep the absolute icon contained
-              className={`group relative flex h-full flex-col rounded-xl border border-slate-200 p-6 ${category.hoverBorder} transition-all duration-300 hover:shadow-md`}
+              className={`group relative flex h-full flex-col rounded-xl border border-slate-200 p-6 dark:border-slate-800 ${category.hoverBorder} transition-all duration-300 hover:shadow-md`}
             >
               {/* --- NEW: Mobile-only top-right icon --- */}
               <div className="absolute top-5 right-5 text-slate-300 transition-colors duration-200 group-hover:text-blue-500 md:hidden">
@@ -56,14 +56,14 @@ export default function ServicesSection() {
                 >
                   <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="pr-6 text-lg leading-tight font-bold text-slate-900">
+                <h3 className="pr-6 text-lg leading-tight font-bold text-slate-900 dark:text-slate-100">
                   {category.name}
                 </h3>
               </div>
 
               {category.description && (
                 <p
-                  className={`text-sm leading-relaxed text-slate-600 ${category.subItems.length > 0 ? "mb-5" : "mb-0 flex-1"}`}
+                  className={`text-sm leading-relaxed text-slate-600 dark:text-slate-400 ${category.subItems.length > 0 ? "mb-5" : "mb-0 flex-1"}`}
                 >
                   {category.description}
                 </p>
@@ -75,7 +75,7 @@ export default function ServicesSection() {
                   {category.subItems.map((item, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-2 text-sm text-slate-600"
+                      className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400"
                     >
                       <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-300" />
                       <span>{item}</span>
@@ -85,7 +85,7 @@ export default function ServicesSection() {
               )}
 
               {/* Action Link (Hidden on mobile, visible on desktop) */}
-              <span className="hidden w-fit items-center gap-1.5 self-end text-sm font-semibold text-blue-600 md:flex">
+              <span className="hidden w-fit items-center gap-1.5 self-end text-sm font-semibold text-blue-600 md:flex dark:text-blue-400">
                 View More
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>

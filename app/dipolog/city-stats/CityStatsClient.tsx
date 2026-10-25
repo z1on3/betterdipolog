@@ -53,10 +53,12 @@ function KeyValueRows({ rows }: { rows: KeyValueRow[] }) {
       {rows.map((row, idx) => (
         <div
           key={idx}
-          className={`flex items-center justify-between gap-3 py-1.5 ${idx !== rows.length - 1 ? "border-b border-[#E6F1FB]" : ""}`}
+          className={`flex items-center justify-between gap-3 py-1.5 ${idx !== rows.length - 1 ? "border-b border-[#E6F1FB] dark:border-blue-950" : ""}`}
         >
-          <span className="text-[13px] text-slate-500">{row.key}</span>
-          <span className="max-w-[60%] text-right text-[13px] font-medium text-[#0C447C]">
+          <span className="text-[13px] text-slate-500 dark:text-slate-400">
+            {row.key}
+          </span>
+          <span className="max-w-[60%] text-right text-[13px] font-medium text-[#0C447C] dark:text-blue-300">
             {row.value}
           </span>
         </div>
@@ -67,7 +69,7 @@ function KeyValueRows({ rows }: { rows: KeyValueRow[] }) {
 
 export default function CityStatsFullPage() {
   return (
-    <main className="min-h-screen scroll-mt-0 bg-slate-50 font-sans">
+    <main className="min-h-screen scroll-mt-0 bg-slate-50 font-sans dark:bg-slate-950">
       <h2 className="sr-only">
         Dipolog City official profile — demographics, government, economy,
         environment, and infrastructure.
@@ -136,18 +138,18 @@ export default function CityStatsFullPage() {
                 ).map(({ title, Icon, card }) => (
                   <div
                     key={title}
-                    className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5"
+                    className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5 dark:border-blue-900 dark:bg-slate-900"
                   >
-                    <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase">
+                    <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase dark:text-blue-400">
                       <Icon className="h-3.5 w-3.5 text-[#378ADD]" /> {title}
                     </div>
-                    <div className="text-[22px] leading-tight font-bold text-slate-900">
+                    <div className="text-[22px] leading-tight font-bold text-slate-900 dark:text-slate-100">
                       {card.value}
                     </div>
-                    <div className="mt-1 text-[11px] text-slate-500">
+                    <div className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
                       {card.subtext}
                     </div>
-                    <hr className="my-3 border-t border-[#E6F1FB]" />
+                    <hr className="my-3 border-t border-[#E6F1FB] dark:border-blue-950" />
                     <KeyValueRows rows={card.rows} />
                   </div>
                 ))}
@@ -155,12 +157,12 @@ export default function CityStatsFullPage() {
                   {cityData.keyFigures.map((figure, idx) => (
                     <div
                       key={idx}
-                      className="rounded-2xl border border-[#B5D4F4] bg-[#E6F1FB] p-4 text-center"
+                      className="rounded-2xl border border-[#B5D4F4] bg-[#E6F1FB] p-4 text-center dark:border-blue-900 dark:bg-blue-950/40"
                     >
-                      <div className="text-[26px] leading-none font-bold text-[#042C53]">
+                      <div className="text-[26px] leading-none font-bold text-[#042C53] dark:text-blue-200">
                         {figure.value}
                       </div>
-                      <div className="mt-1.5 text-[12px] text-[#185FA5]">
+                      <div className="mt-1.5 text-[12px] text-[#185FA5] dark:text-blue-400">
                         {figure.label}
                       </div>
                     </div>
@@ -174,33 +176,33 @@ export default function CityStatsFullPage() {
                   {cityData.demographics.grid.map((stat, idx) => (
                     <div
                       key={idx}
-                      className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5"
+                      className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5 dark:border-blue-900 dark:bg-slate-900"
                     >
-                      <div className="mb-0.5 text-[11px] font-medium text-[#185FA5]">
+                      <div className="mb-0.5 text-[11px] font-medium text-[#185FA5] dark:text-blue-400">
                         {stat.label}
                       </div>
-                      <div className="text-[22px] leading-tight font-bold text-slate-900">
+                      <div className="text-[22px] leading-tight font-bold text-slate-900 dark:text-slate-100">
                         {stat.value}
                       </div>
-                      <div className="mt-1 text-[11px] text-slate-500">
+                      <div className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
                         {stat.subtext}
                       </div>
                     </div>
                   ))}
                 </div>
-                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5">
-                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase">
+                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5 dark:border-blue-900 dark:bg-slate-900">
+                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase dark:text-blue-400">
                     <Info className="h-3.5 w-3.5 text-[#378ADD]" /> General info
                   </div>
                   {cityData.demographics.generalInfo.map((row, idx) => (
                     <div
                       key={idx}
-                      className={`flex items-center justify-between py-1.5 ${idx !== cityData.demographics.generalInfo.length - 1 ? "border-b border-[#E6F1FB]" : ""}`}
+                      className={`flex items-center justify-between py-1.5 ${idx !== cityData.demographics.generalInfo.length - 1 ? "border-b border-[#E6F1FB] dark:border-blue-950" : ""}`}
                     >
-                      <span className="text-[13px] text-slate-500">
+                      <span className="text-[13px] text-slate-500 dark:text-slate-400">
                         {row.key}
                       </span>
-                      <span className="max-w-[55%] text-right text-[13px] font-medium text-[#0C447C]">
+                      <span className="max-w-[55%] text-right text-[13px] font-medium text-[#0C447C] dark:text-blue-300">
                         {row.value}
                       </span>
                     </div>
@@ -210,39 +212,39 @@ export default function CityStatsFullPage() {
             ),
             government: (
               <>
-                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5">
-                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase">
+                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5 dark:border-blue-900 dark:bg-slate-900">
+                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase dark:text-blue-400">
                     <Landmark className="h-3.5 w-3.5 text-[#378ADD]" /> Local
                     government
                   </div>
                   {cityData.government.local.map((row, idx) => (
                     <div
                       key={idx}
-                      className={`flex items-center justify-between py-1.5 ${idx !== cityData.government.local.length - 1 ? "border-b border-[#E6F1FB]" : ""}`}
+                      className={`flex items-center justify-between py-1.5 ${idx !== cityData.government.local.length - 1 ? "border-b border-[#E6F1FB] dark:border-blue-950" : ""}`}
                     >
-                      <span className="text-[13px] text-slate-500">
+                      <span className="text-[13px] text-slate-500 dark:text-slate-400">
                         {row.key}
                       </span>
-                      <span className="max-w-[55%] text-right text-[13px] font-medium text-[#0C447C]">
+                      <span className="max-w-[55%] text-right text-[13px] font-medium text-[#0C447C] dark:text-blue-300">
                         {row.value}
                       </span>
                     </div>
                   ))}
                 </div>
-                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5">
-                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase">
+                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5 dark:border-blue-900 dark:bg-slate-900">
+                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase dark:text-blue-400">
                     <Calendar className="h-3.5 w-3.5 text-[#378ADD]" /> History
                     & classification
                   </div>
                   {cityData.government.history.map((row, idx) => (
                     <div
                       key={idx}
-                      className={`flex items-center justify-between py-1.5 ${idx !== cityData.government.history.length - 1 ? "border-b border-[#E6F1FB]" : ""}`}
+                      className={`flex items-center justify-between py-1.5 ${idx !== cityData.government.history.length - 1 ? "border-b border-[#E6F1FB] dark:border-blue-950" : ""}`}
                     >
-                      <span className="text-[13px] text-slate-500">
+                      <span className="text-[13px] text-slate-500 dark:text-slate-400">
                         {row.key}
                       </span>
-                      <span className="max-w-[55%] text-right text-[13px] font-medium text-[#0C447C]">
+                      <span className="max-w-[55%] text-right text-[13px] font-medium text-[#0C447C] dark:text-blue-300">
                         {row.value}
                       </span>
                     </div>
@@ -257,36 +259,36 @@ export default function CityStatsFullPage() {
                     <Link
                       key={idx}
                       href={stat.href ? stat.href : "#"}
-                      className={`block border border-[#B5D4F4] bg-white ${stat.href ? "cursor-pointer transition-colors hover:border-[#185FA5]" : "cursor-default"} rounded-2xl p-4 md:p-5`}
+                      className={`block border border-[#B5D4F4] bg-white dark:border-blue-900 dark:bg-slate-900 ${stat.href ? "cursor-pointer transition-colors hover:border-[#185FA5]" : "cursor-default"} rounded-2xl p-4 md:p-5`}
                     >
-                      <div className="mb-0.5 text-[11px] font-medium text-[#185FA5]">
+                      <div className="mb-0.5 text-[11px] font-medium text-[#185FA5] dark:text-blue-400">
                         {stat.label}
                       </div>
-                      <div className="text-[22px] leading-tight font-bold text-slate-900">
+                      <div className="text-[22px] leading-tight font-bold text-slate-900 dark:text-slate-100">
                         {stat.value}
                       </div>
                       {stat.subtext && (
-                        <div className="mt-1 text-[11px] text-slate-500">
+                        <div className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
                           {stat.subtext}
                         </div>
                       )}
                     </Link>
                   ))}
                 </div>
-                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5">
-                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase">
+                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5 dark:border-blue-900 dark:bg-slate-900">
+                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase dark:text-blue-400">
                     <PieChart className="h-3.5 w-3.5 text-[#378ADD]" /> Commerce
                     & services
                   </div>
                   {cityData.economy.commerce.map((row, idx) => (
                     <div
                       key={idx}
-                      className={`flex items-center justify-between py-1.5 ${idx !== cityData.economy.commerce.length - 1 ? "border-b border-[#E6F1FB]" : ""}`}
+                      className={`flex items-center justify-between py-1.5 ${idx !== cityData.economy.commerce.length - 1 ? "border-b border-[#E6F1FB] dark:border-blue-950" : ""}`}
                     >
-                      <span className="text-[13px] text-slate-500">
+                      <span className="text-[13px] text-slate-500 dark:text-slate-400">
                         {row.key}
                       </span>
-                      <span className="max-w-[55%] text-right text-[13px] font-medium text-[#0C447C]">
+                      <span className="max-w-[55%] text-right text-[13px] font-medium text-[#0C447C] dark:text-blue-300">
                         {row.value}
                       </span>
                     </div>
@@ -296,27 +298,27 @@ export default function CityStatsFullPage() {
             ),
             environment: (
               <>
-                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5">
-                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase">
+                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5 dark:border-blue-900 dark:bg-slate-900">
+                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase dark:text-blue-400">
                     <PieChart className="h-3.5 w-3.5 text-[#378ADD]" /> Land use
                     (hectares)
                   </div>
                   <KeyValueRows rows={cityData.environment.landUse} />
                 </div>
-                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5">
-                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase">
+                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5 dark:border-blue-900 dark:bg-slate-900">
+                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase dark:text-blue-400">
                     <Mountain className="h-3.5 w-3.5 text-[#378ADD]" />{" "}
                     Geography & climate
                   </div>
                   {cityData.environment.geography.map((row, idx) => (
                     <div
                       key={idx}
-                      className={`flex items-center justify-between py-1.5 ${idx !== cityData.environment.geography.length - 1 ? "border-b border-[#E6F1FB]" : ""}`}
+                      className={`flex items-center justify-between py-1.5 ${idx !== cityData.environment.geography.length - 1 ? "border-b border-[#E6F1FB] dark:border-blue-950" : ""}`}
                     >
-                      <span className="text-[13px] text-slate-500">
+                      <span className="text-[13px] text-slate-500 dark:text-slate-400">
                         {row.key}
                       </span>
-                      <span className="max-w-[55%] text-right text-[13px] font-medium text-[#0C447C]">
+                      <span className="max-w-[55%] text-right text-[13px] font-medium text-[#0C447C] dark:text-blue-300">
                         {row.value}
                       </span>
                     </div>
@@ -334,19 +336,19 @@ export default function CityStatsFullPage() {
                       <Link
                         href={infra.href ? infra.href : "#"}
                         key={idx}
-                        className={`cursor-default border border-[#B5D4F4] bg-white ${infra.href && "group cursor-pointer transition-colors duration-100 hover:border-[#185FA5] hover:bg-[#185FA5]"} flex items-start gap-3 rounded-2xl p-4`}
+                        className={`cursor-default border border-[#B5D4F4] bg-white dark:border-blue-900 dark:bg-slate-900 ${infra.href && "group cursor-pointer transition-colors duration-100 hover:border-[#185FA5] hover:bg-[#185FA5]"} flex items-start gap-3 rounded-2xl p-4`}
                       >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#E6F1FB] text-[#185FA5]">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#E6F1FB] text-[#185FA5] dark:bg-blue-950/40 dark:text-blue-400">
                           <IconComp className="h-[18px] w-[18px]" />
                         </div>
                         <div>
-                          <div className="mb-0.5 text-[11px] font-medium text-[#185FA5] group-hover:text-white">
+                          <div className="mb-0.5 text-[11px] font-medium text-[#185FA5] group-hover:text-white dark:text-blue-400">
                             {infra.label}
                           </div>
-                          <div className="my-0.5 text-[20px] font-bold text-slate-900 group-hover:text-white">
+                          <div className="my-0.5 text-[20px] font-bold text-slate-900 group-hover:text-white dark:text-slate-100">
                             {infra.value}
                           </div>
-                          <div className="text-[11px] text-slate-500 group-hover:text-white">
+                          <div className="text-[11px] text-slate-500 group-hover:text-white dark:text-slate-400">
                             {infra.subtext}
                           </div>
                         </div>
@@ -354,8 +356,8 @@ export default function CityStatsFullPage() {
                     );
                   })}
                 </div>
-                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5">
-                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase">
+                <div className="rounded-2xl border border-[#B5D4F4] bg-white p-4 md:p-5 dark:border-blue-900 dark:bg-slate-900">
+                  <div className="mb-3.5 flex items-center gap-1.5 text-[11px] font-medium tracking-wider text-[#185FA5] uppercase dark:text-blue-400">
                     <Wifi className="h-3.5 w-3.5 text-[#378ADD]" />{" "}
                     Communications
                   </div>
@@ -363,7 +365,7 @@ export default function CityStatsFullPage() {
                     {cityData.infrastructure.communications.map((comm, idx) => (
                       <div key={idx} className="flex items-start gap-2.5">
                         <div className="mt-1.5 h-[5px] w-[5px] shrink-0 rounded-full bg-[#378ADD]"></div>
-                        <div className="text-[13px] text-slate-900">
+                        <div className="text-[13px] text-slate-900 dark:text-slate-100">
                           {comm
                             .split(/(\d+[^ ]*)/)
                             .map((part, i) =>

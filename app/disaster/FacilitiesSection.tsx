@@ -27,16 +27,16 @@ export default function FacilitiesSection() {
     <section aria-labelledby="facilities-heading">
       <h2
         id="facilities-heading"
-        className="mb-2 text-2xl font-bold text-slate-900"
+        className="mb-2 text-2xl font-bold text-slate-900 dark:text-slate-100"
       >
         Emergency Facilities Map
       </h2>
-      <p className="mb-5 text-slate-600">
+      <p className="mb-5 text-slate-600 dark:text-slate-400">
         Find the nearest hospital, fire or police station, utility office, or
         evacuation landmark across Dipolog City.
       </p>
 
-      <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+      <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-slate-900">
         {/* Map-preview hero — a faint street grid with category pins so it
                     unmistakably reads as an interactive map. */}
         <div
@@ -61,22 +61,22 @@ export default function FacilitiesSection() {
               }}
             />
           ))}
-          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent dark:from-slate-900" />
         </div>
 
         <div className="flex flex-col gap-4 p-6 sm:flex-row sm:items-center">
           <div className="flex-1">
-            <p className="font-bold text-slate-900">
+            <p className="font-bold text-slate-900 dark:text-slate-100">
               {disasterFacilities.length} emergency locations, mapped
             </p>
-            <p className="mt-0.5 text-sm text-slate-500">
+            <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">
               Search, filter by type, and find what&apos;s nearest to you.
             </p>
             <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1.5">
               {present.map((c) => (
                 <span
                   key={c}
-                  className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-600"
+                  className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-600 dark:text-slate-400"
                 >
                   <span
                     className="h-2 w-2 rounded-full"

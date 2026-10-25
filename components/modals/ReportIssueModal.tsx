@@ -69,13 +69,15 @@ export default function ReportIssueModal({
 
   return (
     <div className="animate-in fade-in fixed inset-0 z-[999] flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm duration-200">
-      <div className="custom-scrollbar animate-in zoom-in-95 relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white shadow-2xl duration-200">
+      <div className="custom-scrollbar animate-in zoom-in-95 relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white shadow-2xl duration-200 dark:bg-slate-900">
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-100 bg-white p-5">
-          <h2 className="text-xl font-bold text-slate-900">Report an Issue</h2>
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-100 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+          <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+            Report an Issue
+          </h2>
           <button
             onClick={handleClose}
-            className="rounded-full p-2 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
+            className="rounded-full p-2 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-300"
           >
             <X className="h-5 w-5" />
           </button>
@@ -83,19 +85,19 @@ export default function ReportIssueModal({
 
         {status === "success" ? (
           <div className="p-8 text-center">
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400">
               <Send className="h-8 w-8" />
             </div>
-            <h3 className="mb-2 text-2xl font-bold text-slate-900">
+            <h3 className="mb-2 text-2xl font-bold text-slate-900 dark:text-slate-100">
               Sent Successfully!
             </h3>
-            <p className="text-slate-500">
+            <p className="text-slate-500 dark:text-slate-400">
               Thank you for helping keep BetterDipolog accurate. Our moderators
               will review your report shortly.
             </p>
             <button
               onClick={handleClose}
-              className="mt-6 rounded-xl bg-slate-100 px-6 py-2.5 font-bold text-slate-700 transition-colors hover:bg-slate-200"
+              className="mt-6 rounded-xl bg-slate-100 px-6 py-2.5 font-bold text-slate-700 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
             >
               Close Window
             </button>
@@ -104,7 +106,7 @@ export default function ReportIssueModal({
           <div className="space-y-6 p-6">
             {/* Submission Type Toggle */}
             <div className="space-y-3">
-              <label className="text-sm font-bold text-slate-700">
+              <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
                 What kind of issue is this?
               </label>
               <div className="grid grid-cols-2 gap-3">
@@ -117,7 +119,7 @@ export default function ReportIssueModal({
                     onChange={() => setReportType("info")}
                     className="peer sr-only"
                   />
-                  <div className="flex h-full items-center justify-center rounded-xl border-2 border-slate-200 p-3 text-center text-sm font-bold text-slate-500 transition-all peer-checked:border-orange-500 peer-checked:bg-orange-50 peer-checked:text-orange-700 hover:border-orange-300">
+                  <div className="flex h-full items-center justify-center rounded-xl border-2 border-slate-200 p-3 text-center text-sm font-bold text-slate-500 transition-all peer-checked:border-orange-500 peer-checked:bg-orange-50 peer-checked:text-orange-700 hover:border-orange-300 dark:border-slate-800 dark:text-slate-400 dark:peer-checked:bg-orange-950/40 dark:peer-checked:text-orange-300 dark:hover:border-orange-700">
                     Outdated / Incorrect Info
                   </div>
                 </label>
@@ -130,7 +132,7 @@ export default function ReportIssueModal({
                     onChange={() => setReportType("bug")}
                     className="peer sr-only"
                   />
-                  <div className="flex h-full items-center justify-center rounded-xl border-2 border-slate-200 p-3 text-center text-sm font-bold text-slate-500 transition-all peer-checked:border-slate-800 peer-checked:bg-slate-800 peer-checked:text-white hover:border-slate-400">
+                  <div className="flex h-full items-center justify-center rounded-xl border-2 border-slate-200 p-3 text-center text-sm font-bold text-slate-500 transition-all peer-checked:border-slate-800 peer-checked:bg-slate-800 peer-checked:text-white hover:border-slate-400 dark:border-slate-800 dark:text-slate-400">
                     Website Bug / Error
                   </div>
                 </label>
@@ -139,15 +141,15 @@ export default function ReportIssueModal({
 
             {/* CONDITIONAL RENDERING BASED ON TYPE */}
             {reportType === "bug" ? (
-              <div className="space-y-4 rounded-xl border border-slate-200 bg-slate-50 p-6 text-center">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm">
-                  <Github className="h-6 w-6 text-slate-800" />
+              <div className="space-y-4 rounded-xl border border-slate-200 bg-slate-50 p-6 text-center dark:border-slate-800 dark:bg-slate-950">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                  <Github className="h-6 w-6 text-slate-800 dark:text-slate-200" />
                 </div>
                 <div>
-                  <h3 className="mb-1 font-bold text-slate-900">
+                  <h3 className="mb-1 font-bold text-slate-900 dark:text-slate-100">
                     Found a technical bug?
                   </h3>
-                  <p className="text-sm leading-relaxed text-slate-500">
+                  <p className="text-sm leading-relaxed text-slate-500 dark:text-slate-400">
                     If you're a programmer and you see a bug or you want to help
                     a maintainer out, please file an issue directly on our
                     open-source repository.
@@ -168,7 +170,7 @@ export default function ReportIssueModal({
                 className="animate-in fade-in slide-in-from-bottom-2 space-y-5 duration-300"
               >
                 <div className="space-y-1.5">
-                  <label className="text-sm font-bold text-slate-700">
+                  <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
                     Which info is outdated or incorrect?{" "}
                     <span className="text-red-500">*</span>
                   </label>
@@ -177,12 +179,12 @@ export default function ReportIssueModal({
                     type="text"
                     name="targetInfo"
                     placeholder="e.g. Health Office Contact Number, Business Permit Requirements"
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 dark:border-slate-800"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-sm font-bold text-slate-700">
+                  <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
                     Explain the correction{" "}
                     <span className="text-red-500">*</span>
                   </label>
@@ -191,12 +193,12 @@ export default function ReportIssueModal({
                     name="description"
                     rows={4}
                     placeholder="Why is it outdated? What is the correct information?"
-                    className="w-full resize-none rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
+                    className="w-full resize-none rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 dark:border-slate-800"
                   ></textarea>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-sm font-bold text-slate-700">
+                  <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
                     Reference Link{" "}
                     <span className="font-normal text-slate-400">
                       (Optional)
@@ -206,12 +208,12 @@ export default function ReportIssueModal({
                     type="url"
                     name="referenceUrl"
                     placeholder="Link to official Facebook post or updated source"
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 dark:border-slate-800"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-sm font-bold text-slate-700">
+                  <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
                     Your Email{" "}
                     <span className="font-normal text-slate-400">
                       (Optional)
@@ -221,7 +223,7 @@ export default function ReportIssueModal({
                     type="email"
                     name="email"
                     placeholder="In case we need to clarify details"
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 dark:border-slate-800"
                   />
                 </div>
 
@@ -236,7 +238,7 @@ export default function ReportIssueModal({
                 )}
 
                 {status === "error" && (
-                  <div className="flex items-center gap-2 rounded-lg bg-red-50 p-3 text-sm font-medium text-red-600">
+                  <div className="flex items-center gap-2 rounded-lg bg-red-50 p-3 text-sm font-medium text-red-600 dark:bg-red-950/40 dark:text-red-400">
                     <AlertCircle className="h-4 w-4 shrink-0" />
                     Please complete the CAPTCHA or try again.
                   </div>

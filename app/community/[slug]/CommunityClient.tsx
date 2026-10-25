@@ -31,7 +31,7 @@ export default function CommunityClient({ community }: CommunityClientProps) {
   const CategoryIcon = categoryData?.icon || Briefcase;
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-20 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-20 font-sans dark:bg-slate-950">
       {/* Top Navigation Bar */}
       <SubpageNav />
 
@@ -43,16 +43,16 @@ export default function CommunityClient({ community }: CommunityClientProps) {
         logoUrl={community.type === "internal" ? community.logoUrl : undefined}
       >
         <SubpageHero.Badges>
-          <span className="rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-bold tracking-wider text-purple-700 uppercase">
+          <span className="rounded-full border border-purple-100 bg-purple-50 px-3 py-1 text-xs font-bold tracking-wider text-purple-700 uppercase dark:border-purple-900 dark:bg-purple-950/40 dark:text-purple-300">
             Community Profile
           </span>
 
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-bold tracking-wider text-slate-700 uppercase">
-            <CategoryIcon className="h-3.5 w-3.5 text-slate-500" />
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-bold tracking-wider text-slate-700 uppercase dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300">
+            <CategoryIcon className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400" />
             {community.category}
           </span>
 
-          <span className="inline-flex items-center gap-1 rounded border border-emerald-200 bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-700">
+          <span className="inline-flex items-center gap-1 rounded border border-emerald-200 bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300">
             <ShieldCheck className="h-3.5 w-3.5" /> Verified Partner
           </span>
         </SubpageHero.Badges>
@@ -69,8 +69,8 @@ export default function CommunityClient({ community }: CommunityClientProps) {
         {/* Left Column: Content */}
         <div className="lg:col-span-8">
           <div className="mb-8">
-            <h3 className="mb-6 flex items-center gap-2 text-xl font-bold text-slate-900">
-              <Briefcase className="h-6 w-6 text-blue-600" />
+            <h3 className="mb-6 flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-slate-100">
+              <Briefcase className="h-6 w-6 text-blue-600 dark:text-blue-400" />
               Programs & Services
             </h3>
 
@@ -81,19 +81,19 @@ export default function CommunityClient({ community }: CommunityClientProps) {
                 {community.offeredServices.map((serviceName, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-blue-300 hover:shadow-md"
+                    className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-blue-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
                   >
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
-                    <span className="text-sm leading-relaxed font-semibold text-slate-800 capitalize">
+                    <span className="text-sm leading-relaxed font-semibold text-slate-800 capitalize dark:text-slate-200">
                       {serviceName.replace(/-/g, " ")}
                     </span>
                   </li>
                 ))}
               </ul>
             ) : (
-              <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center">
+              <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center dark:border-slate-700 dark:bg-slate-900">
                 <Briefcase className="mb-3 h-8 w-8 text-slate-300" />
-                <p className="max-w-sm text-sm font-medium text-slate-500">
+                <p className="max-w-sm text-sm font-medium text-slate-500 dark:text-slate-400">
                   No specific programs have been listed for this partner yet.
                 </p>
               </div>
@@ -104,8 +104,8 @@ export default function CommunityClient({ community }: CommunityClientProps) {
         {/* Right Column: Quick Facts Sidebar */}
         <div className="space-y-6 lg:col-span-4">
           {/* Official Channels Card */}
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h3 className="mb-4 text-lg font-bold text-slate-900">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <h3 className="mb-4 text-lg font-bold text-slate-900 dark:text-slate-100">
               Official Channels
             </h3>
             <div className="flex flex-col gap-3">
@@ -114,11 +114,11 @@ export default function CommunityClient({ community }: CommunityClientProps) {
                   href={community.websiteUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center justify-between rounded-xl border border-slate-100 bg-slate-50 p-3.5 transition-colors hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700"
+                  className="group flex items-center justify-between rounded-xl border border-slate-100 bg-slate-50 p-3.5 transition-colors hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 dark:border-slate-800 dark:bg-slate-950 dark:hover:border-blue-700 dark:hover:bg-blue-950/40 dark:hover:text-blue-300"
                 >
                   <div className="flex items-center gap-3">
                     <Globe className="h-5 w-5 text-slate-400 transition-colors group-hover:text-blue-500" />
-                    <span className="text-sm font-semibold text-slate-700 transition-colors group-hover:text-blue-700">
+                    <span className="text-sm font-semibold text-slate-700 transition-colors group-hover:text-blue-700 dark:text-slate-300 dark:group-hover:text-blue-300">
                       Website
                     </span>
                   </div>
@@ -131,11 +131,11 @@ export default function CommunityClient({ community }: CommunityClientProps) {
                   href={community.facebookUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center justify-between rounded-xl border border-slate-100 bg-slate-50 p-3.5 transition-colors hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700"
+                  className="group flex items-center justify-between rounded-xl border border-slate-100 bg-slate-50 p-3.5 transition-colors hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 dark:border-slate-800 dark:bg-slate-950 dark:hover:border-blue-700 dark:hover:bg-blue-950/40 dark:hover:text-blue-300"
                 >
                   <div className="flex items-center gap-3">
                     <Facebook className="h-5 w-5 text-slate-400 transition-colors group-hover:text-blue-500" />
-                    <span className="text-sm font-semibold text-slate-700 transition-colors group-hover:text-blue-700">
+                    <span className="text-sm font-semibold text-slate-700 transition-colors group-hover:text-blue-700 dark:text-slate-300 dark:group-hover:text-blue-300">
                       Facebook Page
                     </span>
                   </div>
@@ -148,11 +148,11 @@ export default function CommunityClient({ community }: CommunityClientProps) {
                   href={community.instagramUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center justify-between rounded-xl border border-slate-100 bg-slate-50 p-3.5 transition-colors hover:border-pink-300 hover:bg-pink-50 hover:text-pink-700"
+                  className="group flex items-center justify-between rounded-xl border border-slate-100 bg-slate-50 p-3.5 transition-colors hover:border-pink-300 hover:bg-pink-50 hover:text-pink-700 dark:border-slate-800 dark:bg-slate-950 dark:hover:border-pink-700 dark:hover:bg-pink-950/40 dark:hover:text-pink-300"
                 >
                   <div className="flex items-center gap-3">
                     <Instagram className="h-5 w-5 text-slate-400 transition-colors group-hover:text-pink-500" />
-                    <span className="text-sm font-semibold text-slate-700 transition-colors group-hover:text-pink-700">
+                    <span className="text-sm font-semibold text-slate-700 transition-colors group-hover:text-pink-700 dark:text-slate-300 dark:group-hover:text-pink-300">
                       Instagram
                     </span>
                   </div>
@@ -164,7 +164,7 @@ export default function CommunityClient({ community }: CommunityClientProps) {
                 !community.websiteUrl &&
                 !community.facebookUrl &&
                 !community.instagramUrl && (
-                  <p className="px-2 text-xs text-slate-500 italic">
+                  <p className="px-2 text-xs text-slate-500 italic dark:text-slate-400">
                     No external links available.
                   </p>
                 )}
@@ -173,28 +173,28 @@ export default function CommunityClient({ community }: CommunityClientProps) {
 
           {/* Point of Contact Card */}
           {community.type === "internal" && community.representative && (
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="mb-4 text-lg font-bold text-slate-900">
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <h3 className="mb-4 text-lg font-bold text-slate-900 dark:text-slate-100">
                 Point of Contact
               </h3>
 
               <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-100 font-bold text-slate-600">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-100 font-bold text-slate-600 dark:border-slate-800 dark:bg-slate-800 dark:text-slate-400">
                   <User className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="line-clamp-1 text-sm font-bold text-slate-900">
+                  <p className="line-clamp-1 text-sm font-bold text-slate-900 dark:text-slate-100">
                     {community.representative.name}
                   </p>
-                  <p className="mt-0.5 text-[11px] font-medium tracking-wider text-slate-500 uppercase">
+                  <p className="mt-0.5 text-[11px] font-medium tracking-wider text-slate-500 uppercase dark:text-slate-400">
                     Representative
                   </p>
                 </div>
               </div>
 
-              <div className="flex flex-col gap-3 border-t border-slate-100 pt-4">
+              <div className="flex flex-col gap-3 border-t border-slate-100 pt-4 dark:border-slate-800">
                 {community.representative.contactNumber && (
-                  <div className="flex items-center gap-3 p-2 text-sm text-slate-700">
+                  <div className="flex items-center gap-3 p-2 text-sm text-slate-700 dark:text-slate-300">
                     <Phone className="h-4 w-4 shrink-0 text-slate-400" />
                     <span className="font-medium">
                       {community.representative.contactNumber}
@@ -207,9 +207,9 @@ export default function CommunityClient({ community }: CommunityClientProps) {
                     href={community.representative.messengerUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="group flex items-center gap-3 rounded-lg p-2 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-50 hover:text-blue-800"
+                    className="group flex items-center gap-3 rounded-lg p-2 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-50 hover:text-blue-800 dark:text-blue-300 dark:hover:bg-blue-950/40 dark:hover:text-blue-200"
                   >
-                    <MessageCircle className="h-4 w-4 shrink-0 text-blue-500 group-hover:text-blue-600" />
+                    <MessageCircle className="h-4 w-4 shrink-0 text-blue-500 group-hover:text-blue-600 dark:group-hover:text-blue-400" />
                     Message on Messenger
                   </a>
                 )}

@@ -74,13 +74,19 @@ export default function AttractionsMap({
                   className="mb-1.5 h-24 w-full rounded object-cover"
                 />
               )}
-              <p className="font-bold text-slate-900">{p.name}</p>
-              {p.area && <p className="text-xs text-slate-500">{p.area}</p>}
+              <p className="font-bold text-slate-900 dark:text-slate-100">
+                {p.name}
+              </p>
+              {p.area && (
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  {p.area}
+                </p>
+              )}
               <a
                 href={`https://www.google.com/maps/dir/?api=1&destination=${p.lat}%2C${p.lon}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-1.5 inline-block text-xs font-bold text-cyan-700 underline"
+                className="mt-1.5 inline-block text-xs font-bold text-cyan-700 underline dark:text-cyan-300"
               >
                 Directions →
               </a>

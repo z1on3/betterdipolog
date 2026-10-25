@@ -22,8 +22,10 @@ export default function ReferencesFooter({
   if (!references || references.length === 0) return null;
 
   return (
-    <div className={`mt-8 border-t border-slate-200 pt-8 ${className}`}>
-      <h3 className="mb-4 text-sm font-bold tracking-wider text-slate-900 uppercase">
+    <div
+      className={`mt-8 border-t border-slate-200 pt-8 dark:border-slate-800 ${className}`}
+    >
+      <h3 className="mb-4 text-sm font-bold tracking-wider text-slate-900 uppercase dark:text-slate-100">
         Sources & References
       </h3>
       <ul className="space-y-3">
@@ -33,7 +35,7 @@ export default function ReferencesFooter({
               href={ref.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 text-sm text-slate-500 transition-colors hover:text-blue-600"
+              className="group inline-flex items-center gap-2 text-sm text-slate-500 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
             >
               <ExternalLink className="h-3.5 w-3.5 shrink-0 text-slate-400 group-hover:text-blue-500" />
               <span>{ref.title}</span>

@@ -38,10 +38,10 @@ export default function CityTabs({
             key={tab}
             onClick={() => setActiveTab(tab)}
             role="tab"
-            className={`rounded-full border border-[#B5D4F4] px-3.5 py-1.5 text-[12px] font-medium whitespace-nowrap transition-all duration-150 ${
+            className={`rounded-full border border-[#B5D4F4] px-3.5 py-1.5 text-[12px] font-medium whitespace-nowrap transition-all duration-150 dark:border-blue-900 ${
               activeTab === tab
                 ? "border-[#042C53] bg-[#042C53] text-white"
-                : "bg-transparent text-[#0C447C] hover:bg-[#E6F1FB]"
+                : "bg-transparent text-[#0C447C] hover:bg-[#E6F1FB] dark:text-blue-300 dark:hover:bg-blue-950/40"
             }`}
           >
             {tab.charAt(0).toUpperCase() + tab.slice(1)}

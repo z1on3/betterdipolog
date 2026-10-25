@@ -74,11 +74,11 @@ export default function BudgetPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/transparency" text="Back to Transparency" />
       <SubpageHero>
         <SubpageHero.Badges>
-          <span className="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-xs font-bold tracking-wider text-emerald-700 uppercase">
+          <span className="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-xs font-bold tracking-wider text-emerald-700 uppercase dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300">
             Public Finance · FY{latest.fiscalYear}{" "}
             {latest.status === "preliminary" && "(Preliminary)"}
           </span>
@@ -95,11 +95,11 @@ export default function BudgetPage() {
         {/* --- ISOLATED CLIENT COMPONENT --- */}
         <BudgetInteractive data={budgetData} />
 
-        <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-8">
-          <h2 className="mb-1 text-lg font-bold text-slate-900">
+        <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-8 dark:border-slate-800 dark:bg-slate-900">
+          <h2 className="mb-1 text-lg font-bold text-slate-900 dark:text-slate-100">
             City budget & procurement documents
           </h2>
-          <p className="mb-4 text-sm text-slate-500">
+          <p className="mb-4 text-sm text-slate-500 dark:text-slate-400">
             Posted by the City Government of Dipolog under its disclosure pages.
             These open the city&apos;s own files.
           </p>
@@ -110,12 +110,12 @@ export default function BudgetPage() {
                   href={doc.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex h-full items-start justify-between gap-3 rounded-xl bg-slate-50 px-4 py-3 transition-colors hover:bg-blue-50"
+                  className="group flex h-full items-start justify-between gap-3 rounded-xl bg-slate-50 px-4 py-3 transition-colors hover:bg-blue-50 dark:bg-slate-950 dark:hover:bg-blue-950/40"
                 >
-                  <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700">
+                  <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700 dark:text-slate-300 dark:group-hover:text-blue-300">
                     {doc.title}
                   </span>
-                  <ExternalLink className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
+                  <ExternalLink className="mt-0.5 h-4 w-4 shrink-0 text-blue-600 dark:text-blue-400" />
                 </a>
               </li>
             ))}

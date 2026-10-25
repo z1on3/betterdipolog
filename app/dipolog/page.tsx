@@ -107,11 +107,11 @@ export default function DipologOverviewPage() {
   );
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/" text="Go Home" />
       <SubpageHero>
         <SubpageHero.Badges>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold tracking-wider text-blue-700 uppercase">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold tracking-wider text-blue-700 uppercase dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-300">
             <MapPin className="h-3.5 w-3.5" /> Zamboanga del Norte
           </span>
         </SubpageHero.Badges>
@@ -127,25 +127,26 @@ export default function DipologOverviewPage() {
       <div className="mx-auto max-w-6xl space-y-12 px-4 py-12 md:px-6">
         {/* At a glance */}
         <section>
-          <h2 className="mb-4 flex items-center gap-2 text-2xl font-black tracking-tight text-slate-900">
-            <Building2 className="h-6 w-6 text-blue-600" /> At a glance
+          <h2 className="mb-4 flex items-center gap-2 text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100">
+            <Building2 className="h-6 w-6 text-blue-600 dark:text-blue-400" />{" "}
+            At a glance
           </h2>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {AT_A_GLANCE.map((fact) => (
               <div
                 key={fact.label}
-                className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+                className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
               >
                 <p className="text-[11px] font-bold tracking-wider text-slate-400 uppercase">
                   {fact.label}
                 </p>
-                <p className="mt-1 font-semibold text-slate-800">
+                <p className="mt-1 font-semibold text-slate-800 dark:text-slate-200">
                   {fact.value}
                 </p>
               </div>
             ))}
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-slate-600">
+          <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
             The Subanen were Dipolog&apos;s original inhabitants, later joined
             by Muslim traders and migrants from Luzon and the Visayas, with
             Chinese and Spanish among the first foreign settlers. Today
@@ -156,7 +157,7 @@ export default function DipologOverviewPage() {
             trade, and services.{" "}
             <Link
               href="/dipolog/city-stats"
-              className="font-semibold text-blue-600 hover:underline"
+              className="font-semibold text-blue-600 hover:underline dark:text-blue-400"
             >
               See the full city profile →
             </Link>
@@ -165,15 +166,18 @@ export default function DipologOverviewPage() {
 
         {/* History */}
         <section>
-          <h2 className="mb-4 flex items-center gap-2 text-2xl font-black tracking-tight text-slate-900">
-            <ScrollText className="h-6 w-6 text-blue-600" /> History
+          <h2 className="mb-4 flex items-center gap-2 text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100">
+            <ScrollText className="h-6 w-6 text-blue-600 dark:text-blue-400" />{" "}
+            History
           </h2>
-          <ol className="relative space-y-5 border-l-2 border-blue-100 pl-6">
+          <ol className="relative space-y-5 border-l-2 border-blue-100 pl-6 dark:border-blue-900">
             {HISTORY.map((entry) => (
               <li key={entry.year} className="relative">
-                <span className="absolute top-1 -left-7.75 h-3 w-3 rounded-full border-2 border-white bg-blue-600 ring-2 ring-blue-100" />
-                <p className="text-sm font-black text-blue-700">{entry.year}</p>
-                <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                <span className="absolute top-1 -left-7.75 h-3 w-3 rounded-full border-2 border-white bg-blue-600 ring-2 ring-blue-100 dark:ring-blue-800" />
+                <p className="text-sm font-black text-blue-700 dark:text-blue-300">
+                  {entry.year}
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                   {entry.text}
                 </p>
               </li>
@@ -183,11 +187,11 @@ export default function DipologOverviewPage() {
 
         {/* Culture & festivals */}
         <section>
-          <h2 className="mb-4 flex items-center gap-2 text-2xl font-black tracking-tight text-slate-900">
-            <CalendarDays className="h-6 w-6 text-blue-600" /> Culture &
-            festivals
+          <h2 className="mb-4 flex items-center gap-2 text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100">
+            <CalendarDays className="h-6 w-6 text-blue-600 dark:text-blue-400" />{" "}
+            Culture & festivals
           </h2>
-          <p className="mb-4 text-sm leading-relaxed text-slate-600">
+          <p className="mb-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
             Dipolog is predominantly Roman Catholic, and much of its calendar
             follows the faith — from the Sinulog in January to the feast of the
             city&apos;s patroness, Our Lady of the Holy Rosary, every October 7.
@@ -196,14 +200,18 @@ export default function DipologOverviewPage() {
             {FESTIVALS.map((festival) => (
               <div
                 key={festival.name}
-                className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+                className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
               >
-                <div className="shrink-0 rounded-lg bg-amber-50 p-2 text-amber-600">
+                <div className="shrink-0 rounded-lg bg-amber-50 p-2 text-amber-600 dark:bg-amber-950/40 dark:text-amber-400">
                   <Landmark className="h-4 w-4" />
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900">{festival.name}</p>
-                  <p className="text-sm text-slate-500">{festival.when}</p>
+                  <p className="font-bold text-slate-900 dark:text-slate-100">
+                    {festival.name}
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    {festival.when}
+                  </p>
                 </div>
               </div>
             ))}
@@ -224,24 +232,24 @@ export default function DipologOverviewPage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:border-blue-300 hover:shadow-md"
+                className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:border-blue-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
               >
-                <div className="shrink-0 rounded-xl bg-blue-50 p-3 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+                <div className="shrink-0 rounded-xl bg-blue-50 p-3 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white dark:bg-blue-950/40 dark:text-blue-400">
                   <Building2 className="h-6 w-6" />
                 </div>
 
                 <div className="flex-1">
-                  <h3 className="mb-1 text-lg font-bold text-slate-900 transition-colors group-hover:text-blue-700">
+                  <h3 className="mb-1 text-lg font-bold text-slate-900 transition-colors group-hover:text-blue-700 dark:text-slate-100 dark:group-hover:text-blue-300">
                     {item.name}
                   </h3>
                   {item.description && (
-                    <p className="line-clamp-2 text-sm text-slate-500">
+                    <p className="line-clamp-2 text-sm text-slate-500 dark:text-slate-400">
                       {item.description}
                     </p>
                   )}
                 </div>
 
-                <div className="mt-1 text-slate-400 transition-all group-hover:translate-x-1 group-hover:text-blue-600">
+                <div className="mt-1 text-slate-400 transition-all group-hover:translate-x-1 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                   <ArrowRight className="h-5 w-5" />
                 </div>
               </Link>

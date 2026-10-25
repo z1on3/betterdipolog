@@ -22,6 +22,7 @@ import { headerDropdown } from "@/data/categories";
 import navigationJson from "@/data/navigation.json";
 import Breadcrumbs from "../ui/Breadcrumbs";
 import Button3D from "../ui/Button3D";
+import ThemeToggle from "../ui/ThemeToggle";
 import { HIDDEN_HEADER_PATHS } from "@/utils/variables";
 
 interface SubItem {
@@ -168,7 +169,7 @@ export default function Header({ className }: ClassName) {
     <header
       className={`${className ?? ""} ${
         hideHeader ? "hidden" : ""
-      } sticky top-0 z-50 w-full border-b border-slate-200 bg-white font-sans`}
+      } sticky top-0 z-50 w-full border-b border-slate-200 bg-white font-sans dark:border-slate-800 dark:bg-slate-900`}
     >
       <div className="relative" onMouseLeave={closeDropdown}>
         {/* ===== DESKTOP / MAIN HEADER ===== */}
@@ -188,7 +189,7 @@ export default function Header({ className }: ClassName) {
               <div className="block leading-[0.25]">
                 <Link
                   href="/"
-                  className="block text-xl leading-4.5 font-bold text-blue-900"
+                  className="block text-xl leading-4.5 font-bold text-blue-900 dark:text-blue-200"
                   onMouseEnter={closeDropdown}
                 >
                   Better
@@ -196,7 +197,7 @@ export default function Header({ className }: ClassName) {
                   Dipolog.org
                 </Link>
 
-                <span className="text-xs text-slate-500">
+                <span className="text-xs text-slate-500 dark:text-slate-400">
                   A community-run portal for Dipolognons
                 </span>
               </div>
@@ -210,7 +211,7 @@ export default function Header({ className }: ClassName) {
                   <Link
                     href="/"
                     onMouseEnter={closeDropdown}
-                    className="mr-4 flex items-center gap-1 py-2 text-base font-medium text-slate-700 transition-colors hover:text-blue-600"
+                    className="mr-4 flex items-center gap-1 py-2 text-base font-medium text-slate-700 transition-colors hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400"
                   >
                     <span className="relative py-1">
                       Home
@@ -233,8 +234,8 @@ export default function Header({ className }: ClassName) {
                       href={item.href}
                       className={`group flex items-center gap-1 py-2 text-base font-medium transition-colors ${
                         isActive
-                          ? "text-blue-600"
-                          : "text-slate-700 hover:text-blue-600"
+                          ? "text-blue-600 dark:text-blue-400"
+                          : "text-slate-700 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400"
                       }`}
                     >
                       <span className="relative py-1">
@@ -262,6 +263,8 @@ export default function Header({ className }: ClassName) {
 
             {/* ===== RIGHT SIDE ACTIONS ===== */}
             <div className="flex items-center gap-4">
+              <ThemeToggle />
+
               <Button3D
                 href="/volunteer"
                 text="Join Us!"
@@ -275,7 +278,7 @@ export default function Header({ className }: ClassName) {
                 type="button"
                 aria-label="Open main menu"
                 aria-expanded={isMobileMenuOpen}
-                className="rounded-lg border border-slate-200 bg-white/95 p-2 text-slate-700 shadow-lg shadow-slate-300/30 backdrop-blur transition-colors hover:bg-slate-700 hover:text-white active:translate-y-0 lg:hidden"
+                className="rounded-lg border border-slate-200 bg-white/95 p-2 text-slate-700 shadow-lg shadow-slate-300/30 backdrop-blur transition-colors hover:bg-slate-700 hover:text-white active:translate-y-0 lg:hidden dark:border-slate-800 dark:bg-slate-900/95 dark:text-slate-300"
                 onClick={() => {
                   setIsMobileMenuOpen(!isMobileMenuOpen);
                   setActiveDropdown(null);
@@ -290,13 +293,13 @@ export default function Header({ className }: ClassName) {
 
           {/* Breadcrumbs */}
           {pathname !== "/" && (
-            <Breadcrumbs className="mx-auto w-fit border-slate-200 bg-white pb-2 md:absolute md:rounded-b-2xl md:border-x md:border-b md:p-2" />
+            <Breadcrumbs className="mx-auto w-fit border-slate-200 bg-white pb-2 md:absolute md:rounded-b-2xl md:border-x md:border-b md:p-2 dark:border-slate-800 dark:bg-slate-900" />
           )}
         </div>
 
         {/* ===== DESKTOP MEGA MENU ===== */}
         <div
-          className={`absolute top-full left-0 z-50 hidden w-full border-t border-slate-100 bg-white shadow-[0_12px_30px_-12px_rgba(15,23,42,0.12)] transition-all duration-200 ease-out lg:block ${
+          className={`absolute top-full left-0 z-50 hidden w-full border-t border-slate-100 bg-white shadow-[0_12px_30px_-12px_rgba(15,23,42,0.12)] transition-all duration-200 ease-out lg:block dark:border-slate-800 dark:bg-slate-900 ${
             activeDropdown
               ? "pointer-events-auto translate-y-0 opacity-100"
               : "pointer-events-none -translate-y-2 opacity-0"
@@ -332,29 +335,29 @@ export default function Header({ className }: ClassName) {
                             key={subItem.name}
                             href={subItem.href}
                             onClick={closeDropdown}
-                            className="group flex min-h-[82px] gap-4 rounded-xl p-3 transition-colors hover:bg-slate-50"
+                            className="group flex min-h-[82px] gap-4 rounded-xl p-3 transition-colors hover:bg-slate-50 dark:hover:bg-slate-950"
                           >
                             {/* Icon */}
-                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 transition-colors group-hover:bg-blue-700">
-                              <Icon className="h-5 w-5 text-blue-800 group-hover:text-white" />
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 transition-colors group-hover:bg-blue-700 dark:bg-blue-950/40">
+                              <Icon className="h-5 w-5 text-blue-800 group-hover:text-white dark:text-blue-200" />
                             </div>
 
                             {/* Text */}
                             <div className="min-w-0 pt-0.5">
                               <div className="flex items-center gap-2">
-                                <span className="text-sm font-semibold text-slate-900 transition-colors group-hover:text-blue-700 group-hover:underline">
+                                <span className="text-sm font-semibold text-slate-900 transition-colors group-hover:text-blue-700 group-hover:underline dark:text-slate-100 dark:group-hover:text-blue-300">
                                   {subItem.name}
                                 </span>
 
                                 {subItem.upcoming && (
-                                  <span className="text-[10px] font-bold tracking-wide text-red-600 uppercase">
+                                  <span className="text-[10px] font-bold tracking-wide text-red-600 uppercase dark:text-red-400">
                                     Soon
                                   </span>
                                 )}
                               </div>
 
                               {subItem.description && (
-                                <p className="mt-1 line-clamp-2 text-sm leading-5 text-slate-500">
+                                <p className="mt-1 line-clamp-2 text-sm leading-5 text-slate-500 dark:text-slate-400">
                                   {subItem.description}
                                 </p>
                               )}
@@ -367,7 +370,7 @@ export default function Header({ className }: ClassName) {
 
                   {/* ===== MORE LINKS ===== */}
                   {moreItems.length > 0 && (
-                    <div className="col-span-2 border-l border-slate-100 pl-8">
+                    <div className="col-span-2 border-l border-slate-100 pl-8 dark:border-slate-800">
                       <p className="mb-5 text-xs font-semibold tracking-wider text-slate-400 uppercase">
                         More
                       </p>
@@ -378,14 +381,14 @@ export default function Header({ className }: ClassName) {
                             key={subItem.name}
                             href={subItem.href}
                             onClick={closeDropdown}
-                            className="group text-sm font-medium text-slate-700 transition-colors hover:text-blue-700"
+                            className="group text-sm font-medium text-slate-700 transition-colors hover:text-blue-700 dark:text-slate-300 dark:hover:text-blue-300"
                           >
                             <span className="group-hover:underline">
                               {subItem.name}
                             </span>
 
                             {subItem.upcoming && (
-                              <span className="ml-1 text-xs font-semibold text-red-600">
+                              <span className="ml-1 text-xs font-semibold text-red-600 dark:text-red-400">
                                 Soon
                               </span>
                             )}
@@ -395,7 +398,7 @@ export default function Header({ className }: ClassName) {
                         <Link
                           href={activeNavigation.href}
                           onClick={closeDropdown}
-                          className="group mt-1 flex items-center gap-1 text-sm font-semibold text-blue-700"
+                          className="group mt-1 flex items-center gap-1 text-sm font-semibold text-blue-700 dark:text-blue-300"
                         >
                           View all
                           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -443,15 +446,15 @@ export default function Header({ className }: ClassName) {
 
       {/* ===== MOBILE MENU ===== */}
       {isMobileMenuOpen && (
-        <div className="animate-in slide-in-from-top-2 fade-in absolute top-full left-0 flex max-h-[calc(100vh-81.1px-33.1px)] w-full flex-col items-center border-t border-t-gray-100 bg-white shadow-xl duration-200 lg:hidden">
+        <div className="animate-in slide-in-from-top-2 fade-in absolute top-full left-0 flex max-h-[calc(100vh-81.1px-33.1px)] w-full flex-col items-center border-t border-t-gray-100 bg-white shadow-xl duration-200 lg:hidden dark:bg-slate-900">
           {/* Mobile Navigation Links */}
           <div className="container flex h-fit flex-col gap-1 overflow-y-auto px-4 py-4">
             {pathname !== "/" && (
-              <div className="border-b border-slate-100">
+              <div className="border-b border-slate-100 dark:border-slate-800">
                 <Link
                   href="/"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block w-full py-2 text-left text-lg font-medium text-slate-800 transition-colors hover:text-blue-600"
+                  className="block w-full py-2 text-left text-lg font-medium text-slate-800 transition-colors hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-400"
                 >
                   Home
                 </Link>
@@ -461,11 +464,11 @@ export default function Header({ className }: ClassName) {
             {navigation.map((item) => (
               <div
                 key={item.name}
-                className="border-b border-slate-100 last:border-0"
+                className="border-b border-slate-100 last:border-0 dark:border-slate-800"
               >
                 <button
                   onClick={() => toggleAccordion(item.name)}
-                  className="flex w-full items-center justify-between py-2 text-left text-lg font-medium text-slate-800"
+                  className="flex w-full items-center justify-between py-2 text-left text-lg font-medium text-slate-800 dark:text-slate-200"
                 >
                   {item.name}
 
@@ -478,21 +481,23 @@ export default function Header({ className }: ClassName) {
 
                 {/* Mobile Dropdown */}
                 {activeAccordion === item.name && (
-                  <ul className="animate-in slide-in-from-top-2 fade-in border-l-2 border-blue-100 bg-gray-100 p-4 duration-200">
+                  <ul className="animate-in slide-in-from-top-2 fade-in border-l-2 border-blue-100 bg-gray-100 p-4 duration-200 dark:border-blue-900 dark:bg-gray-800">
                     {[...item.dropdown].map((subItem, idx) => (
                       <li key={subItem.name}>
                         <Link
                           href={subItem.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className={`block py-2 pl-4 text-base hover:bg-gray-200 hover:text-blue-600 ${
+                          className={`block py-2 pl-4 text-base hover:bg-gray-200 hover:text-blue-600 dark:hover:bg-gray-700 dark:hover:text-blue-400 ${
                             idx === 0
-                              ? "font-semibold text-blue-600"
-                              : "text-slate-600"
+                              ? "font-semibold text-blue-600 dark:text-blue-400"
+                              : "text-slate-600 dark:text-slate-400"
                           }`}
                         >
                           {subItem.name}{" "}
                           {subItem.upcoming && (
-                            <b className="text-red-700">(Coming Soon)</b>
+                            <b className="text-red-700 dark:text-red-300">
+                              (Coming Soon)
+                            </b>
                           )}
                         </Link>
                       </li>

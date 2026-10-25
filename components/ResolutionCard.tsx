@@ -29,14 +29,14 @@ export default function ResolutionCard({
       rel="noopener noreferrer"
       className="group block h-full"
     >
-      <div className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-4 text-left shadow-sm transition-all duration-200 hover:border-blue-300 hover:shadow-md md:p-6">
+      <div className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-4 text-left shadow-sm transition-all duration-200 hover:border-blue-300 hover:shadow-md md:p-6 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700">
         <div className="mb-4 flex items-start justify-between gap-3">
           <div
-            className={`${isOrdinance ? "bg-blue-50 text-blue-600" : "bg-emerald-50 text-emerald-600"} shrink-0 rounded-xl p-3`}
+            className={`${isOrdinance ? "bg-blue-50 text-blue-600 dark:bg-blue-950/40 dark:text-blue-400" : "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400"} shrink-0 rounded-xl p-3`}
           >
             <TypeIcon className="h-5 w-5" />
           </div>
-          <span className="rounded-md bg-slate-100 px-2.5 py-1 text-[10px] font-extrabold tracking-wider text-slate-600 uppercase">
+          <span className="rounded-md bg-slate-100 px-2.5 py-1 text-[10px] font-extrabold tracking-wider text-slate-600 uppercase dark:bg-slate-800 dark:text-slate-400">
             {isOrdinance ? "Ordinance" : "Resolution"} No. {resolution.number}
           </span>
         </div>
@@ -46,7 +46,7 @@ export default function ResolutionCard({
             {resolution.category}
           </p>
           <div className="group/title-tooltip relative mb-2 cursor-help">
-            <h3 className="line-clamp-4 text-sm leading-snug font-bold text-slate-900 transition-colors group-hover:text-blue-600">
+            <h3 className="line-clamp-4 text-sm leading-snug font-bold text-slate-900 transition-colors group-hover:text-blue-600 dark:text-slate-100 dark:group-hover:text-blue-400">
               {resolution.title}
             </h3>
 
@@ -59,13 +59,13 @@ export default function ResolutionCard({
           </div>
         </div>
 
-        <div className="mt-4 flex items-center justify-between gap-3 border-t border-slate-100 pt-4">
-          <span className="text-xs text-slate-500">
+        <div className="mt-4 flex items-center justify-between gap-3 border-t border-slate-100 pt-4 dark:border-slate-800">
+          <span className="text-xs text-slate-500 dark:text-slate-400">
             {resolution.date
               ? `Listed: ${formatDate(resolution.date)}`
               : "No date listed"}
           </span>
-          <span className="flex shrink-0 items-center gap-1 text-sm font-bold text-blue-600 transition-all group-hover:gap-2">
+          <span className="flex shrink-0 items-center gap-1 text-sm font-bold text-blue-600 transition-all group-hover:gap-2 dark:text-blue-400">
             View in SP index <ExternalLink className="h-4 w-4" />
           </span>
         </div>

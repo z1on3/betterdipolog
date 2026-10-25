@@ -85,7 +85,7 @@ export default function AssistanceClient({
   }, [programs, query, filter]);
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/" text="Go Home" />
       <SubpageHero>
         <SubpageHero.Title>Scholarships &amp; Assistance</SubpageHero.Title>
@@ -99,10 +99,10 @@ export default function AssistanceClient({
         {/* Trust disclaimer — this is not an official channel and cycles change. */}
         <div
           role="note"
-          className="flex items-start gap-3 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900"
+          className="flex items-start gap-3 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-200"
         >
           <TriangleAlert
-            className="mt-0.5 h-5 w-5 shrink-0 text-amber-600"
+            className="mt-0.5 h-5 w-5 shrink-0 text-amber-600 dark:text-amber-400"
             aria-hidden
           />
           <p>
@@ -116,7 +116,7 @@ export default function AssistanceClient({
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="relative w-full max-w-sm">
             <Search
-              className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-slate-500"
+              className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-slate-500 dark:text-slate-400"
               aria-hidden
             />
             <input
@@ -125,7 +125,7 @@ export default function AssistanceClient({
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search programs…"
               aria-label="Search programs"
-              className="w-full rounded-lg border border-slate-300 bg-white py-2.5 pr-3 pl-9 text-sm text-slate-900 shadow-sm placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 focus:outline-none"
+              className="w-full rounded-lg border border-slate-300 bg-white py-2.5 pr-3 pl-9 text-sm text-slate-900 shadow-sm placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-400"
             />
           </div>
           <div className="flex flex-wrap gap-2">
@@ -137,7 +137,7 @@ export default function AssistanceClient({
                 className={`rounded-full border px-3 py-1.5 text-xs font-bold transition-colors ${
                   filter === key
                     ? "border-transparent bg-slate-800 text-white"
-                    : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
+                    : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:bg-slate-950"
                 }`}
               >
                 {label}
@@ -152,7 +152,7 @@ export default function AssistanceClient({
             return (
               <article
                 key={p.name}
-                className="flex flex-col rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+                className="flex flex-col rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-slate-900"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
@@ -174,10 +174,10 @@ export default function AssistanceClient({
                   </span>
                 </div>
 
-                <h2 className="mt-3 text-lg font-bold text-slate-900">
+                <h2 className="mt-3 text-lg font-bold text-slate-900 dark:text-slate-100">
                   {p.name}
                 </h2>
-                <p className="mt-1 flex items-center gap-1.5 text-xs font-semibold text-slate-500">
+                <p className="mt-1 flex items-center gap-1.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
                   <Building2 className="h-3.5 w-3.5 shrink-0" aria-hidden />{" "}
                   {p.provider}
                 </p>
@@ -188,7 +188,7 @@ export default function AssistanceClient({
                       <Users className="h-3.5 w-3.5" aria-hidden /> Who
                       it&apos;s for
                     </dt>
-                    <dd className="mt-1 leading-relaxed text-slate-600">
+                    <dd className="mt-1 leading-relaxed text-slate-600 dark:text-slate-400">
                       {p.forWho}
                     </dd>
                   </div>
@@ -197,7 +197,7 @@ export default function AssistanceClient({
                       <ClipboardList className="h-3.5 w-3.5" aria-hidden /> How
                       to apply
                     </dt>
-                    <dd className="mt-1 leading-relaxed text-slate-600">
+                    <dd className="mt-1 leading-relaxed text-slate-600 dark:text-slate-400">
                       {p.howToApply}
                     </dd>
                   </div>
@@ -206,7 +206,7 @@ export default function AssistanceClient({
                       <CalendarClock className="h-3.5 w-3.5" aria-hidden />{" "}
                       Timing &amp; status
                     </dt>
-                    <dd className="mt-1 leading-relaxed text-slate-600">
+                    <dd className="mt-1 leading-relaxed text-slate-600 dark:text-slate-400">
                       {p.timing}
                     </dd>
                   </div>

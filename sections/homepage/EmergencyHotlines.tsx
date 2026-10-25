@@ -104,7 +104,7 @@ export default function EmergencyHotlines() {
         className="fixed right-4 bottom-4 z-40 flex cursor-pointer items-center gap-2 rounded-full bg-red-600 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-red-600/30 transition-all duration-200 hover:scale-[1.03] hover:bg-red-700 hover:shadow-xl active:scale-95 sm:right-6 sm:bottom-6 sm:px-5 sm:py-3.5"
       >
         <span className="relative flex h-5 w-5 items-center justify-center">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/30" />
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/30 dark:bg-slate-900/30" />
 
           <Phone className="relative h-4 w-4" strokeWidth={2.5} />
         </span>
@@ -132,24 +132,24 @@ export default function EmergencyHotlines() {
           role="dialog"
           aria-modal="true"
           aria-labelledby="emergency-hotlines-title"
-          className={`relative max-h-[92vh] w-full overflow-hidden rounded-t-3xl border border-slate-200 bg-white shadow-2xl transition-transform duration-300 ease-out sm:max-w-3xl sm:rounded-3xl ${
+          className={`relative max-h-[92vh] w-full overflow-hidden rounded-t-3xl border border-slate-200 bg-white shadow-2xl transition-transform duration-300 ease-out sm:max-w-3xl sm:rounded-3xl dark:border-slate-800 dark:bg-slate-900 ${
             isOpen ? "translate-y-0" : "translate-y-full"
           }`}
         >
-          <div className="flex items-start justify-between border-b border-slate-100 px-5 py-5 sm:px-7 sm:py-6">
+          <div className="flex items-start justify-between border-b border-slate-100 px-5 py-5 sm:px-7 sm:py-6 dark:border-slate-800">
             <div className="pr-8">
-              <p className="mb-1 text-[10px] font-bold tracking-widest text-red-600 uppercase sm:text-xs">
+              <p className="mb-1 text-[10px] font-bold tracking-widest text-red-600 uppercase sm:text-xs dark:text-red-400">
                 Emergency Services
               </p>
 
               <h2
                 id="emergency-hotlines-title"
-                className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"
+                className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-slate-100"
               >
                 Emergency Hotlines
               </h2>
 
-              <p className="mt-1.5 max-w-xl text-sm leading-5 text-slate-500 sm:text-base">
+              <p className="mt-1.5 max-w-xl text-sm leading-5 text-slate-500 sm:text-base dark:text-slate-400">
                 Tap any number below to call instantly from your mobile device.
               </p>
             </div>
@@ -158,7 +158,7 @@ export default function EmergencyHotlines() {
               type="button"
               onClick={() => setIsOpen(false)}
               aria-label="Close emergency hotlines"
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-colors hover:bg-slate-200 hover:text-slate-900"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-colors hover:bg-slate-200 hover:text-slate-900 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-slate-100"
             >
               <X className="h-5 w-5" />
             </button>
@@ -171,7 +171,7 @@ export default function EmergencyHotlines() {
                   key={label}
                   href={telHref(number)}
                   aria-label={`Call ${label} at ${number}`}
-                  className="group relative flex min-h-[96px] items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md active:scale-[0.99] sm:p-5"
+                  className="group relative flex min-h-[96px] items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md active:scale-[0.99] sm:p-5 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-slate-700"
                 >
                   {/* Icon */}
                   <div
@@ -190,17 +190,17 @@ export default function EmergencyHotlines() {
                       {label}
                     </p>
 
-                    <h3 className="text-xl font-black tracking-tight text-slate-800 transition-colors group-hover:text-blue-600">
+                    <h3 className="text-xl font-black tracking-tight text-slate-800 transition-colors group-hover:text-blue-600 dark:text-slate-200 dark:group-hover:text-blue-400">
                       {number}
                     </h3>
 
                     {alt && (
-                      <p className="text-xs font-semibold text-slate-500">
+                      <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
                         Alt: {alt}
                       </p>
                     )}
 
-                    <p className="mt-0.5 flex items-center gap-1.5 text-xs font-medium text-slate-500">
+                    <p className="mt-0.5 flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
                       <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
                       Tap to call
                     </p>
@@ -212,13 +212,13 @@ export default function EmergencyHotlines() {
               ))}
             </div>
 
-            <div className="mt-5 flex flex-col gap-4 rounded-2xl bg-blue-50 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+            <div className="mt-5 flex flex-col gap-4 rounded-2xl bg-blue-50 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5 dark:bg-blue-950/40">
               <div>
-                <p className="text-sm font-bold text-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
                   Want to be prepared?
                 </p>
 
-                <p className="mt-1 text-xs leading-5 text-slate-500 sm:text-sm">
+                <p className="mt-1 text-xs leading-5 text-slate-500 sm:text-sm dark:text-slate-400">
                   Learn what to do before, during, and after disasters.
                 </p>
               </div>

@@ -107,25 +107,25 @@ function ServicesDirectoryContent() {
   }, [deferredSearchQuery, selectedCategory]);
 
   return (
-    <main className="min-h-screen bg-[#F8FAFC] pb-24 font-sans">
+    <main className="min-h-screen bg-[#F8FAFC] pb-24 font-sans dark:bg-slate-950">
       <section className="px-4 pt-12 pb-4 text-center sm:pt-16 sm:pb-8 md:pt-20 md:pb-12">
-        <h1 className="mb-4 text-3xl font-extrabold tracking-tight text-slate-900 md:text-5xl">
+        <h1 className="mb-4 text-3xl font-extrabold tracking-tight text-slate-900 md:text-5xl dark:text-slate-100">
           Local Government Services
         </h1>
-        <p className="mx-auto mb-10 max-w-2xl text-[14px] text-slate-500 sm:text-lg">
+        <p className="mx-auto mb-10 max-w-2xl text-[14px] text-slate-500 sm:text-lg dark:text-slate-400">
           Explore City Government of Dipolog services from the Citizen&apos;s
           Charter, online services, and community contributions. Choose a
           category to filter or search below.
         </p>
 
         <div className="group relative mx-auto max-w-2xl">
-          <Search className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-blue-600" />
+          <Search className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-blue-600 dark:group-focus-within:text-blue-400" />
           <input
             type="text"
             placeholder="Search for services (e.g., Business Permit)..."
             value={searchQuery}
             onChange={handleSearchChange} /* Updated to use the new handler */
-            className="w-full rounded-xl border border-slate-200 bg-white py-4 pr-4 pl-12 text-base text-slate-900 shadow-sm transition-all duration-200 placeholder:text-slate-400 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none"
+            className="w-full rounded-xl border border-slate-200 bg-white py-4 pr-4 pl-12 text-base text-slate-900 shadow-sm transition-all duration-200 placeholder:text-slate-400 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:outline-none dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100"
           />
         </div>
       </section>
@@ -154,37 +154,37 @@ function ServicesDirectoryContent() {
               {/* Missing Service CTA - Injected into the grid like a card! */}
               <div
                 onClick={() => setIsContributionModalOpen(true)}
-                className="group flex h-full cursor-pointer flex-col justify-center rounded-2xl border border-slate-200 bg-[#F8FAFC] p-6 transition-all hover:border-blue-300 hover:shadow-md"
+                className="group flex h-full cursor-pointer flex-col justify-center rounded-2xl border border-slate-200 bg-[#F8FAFC] p-6 transition-all hover:border-blue-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-950 dark:hover:border-blue-700"
               >
-                <div className="mb-2 flex items-center gap-2 font-bold text-slate-800 transition-colors group-hover:text-blue-700">
+                <div className="mb-2 flex items-center gap-2 font-bold text-slate-800 transition-colors group-hover:text-blue-700 dark:text-slate-200 dark:group-hover:text-blue-300">
                   <PlusCircle className="h-5 w-5" />
                   Contribute or Report a Fix
                 </div>
-                <p className="mb-4 text-sm leading-relaxed text-slate-500">
+                <p className="mb-4 text-sm leading-relaxed text-slate-500 dark:text-slate-400">
                   Notice missing information or an outdated procedure? Help your
                   fellow citizens by updating the directory.
                 </p>
-                <div className="mt-auto block w-full rounded-lg border border-slate-200 bg-white py-2.5 text-center text-sm font-bold text-slate-700 shadow-sm transition-colors group-hover:border-blue-200 group-hover:bg-blue-50 group-hover:text-blue-700">
+                <div className="mt-auto block w-full rounded-lg border border-slate-200 bg-white py-2.5 text-center text-sm font-bold text-slate-700 shadow-sm transition-colors group-hover:border-blue-200 group-hover:bg-blue-50 group-hover:text-blue-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:group-hover:border-blue-800 dark:group-hover:bg-blue-950/40 dark:group-hover:text-blue-300">
                   Submit Information
                 </div>
               </div>
             </>
           ) : (
             /* Empty State - Span across all columns */
-            <div className="col-span-full flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-white p-12 text-center">
-              <div className="mb-4 rounded-full bg-slate-50 p-4">
+            <div className="col-span-full flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-white p-12 text-center dark:border-slate-800 dark:bg-slate-900">
+              <div className="mb-4 rounded-full bg-slate-50 p-4 dark:bg-slate-950">
                 <Search className="h-8 w-8 text-slate-400" />
               </div>
-              <h3 className="mb-2 text-lg font-bold text-slate-900">
+              <h3 className="mb-2 text-lg font-bold text-slate-900 dark:text-slate-100">
                 No services found
               </h3>
-              <p className="mx-auto max-w-sm text-sm text-slate-500">
+              <p className="mx-auto max-w-sm text-sm text-slate-500 dark:text-slate-400">
                 We couldn&apos;t find any services matching &ldquo;{searchQuery}
                 &rdquo; in {selectedCategory}.
               </p>
               <button
                 onClick={clearFilters}
-                className="mt-6 text-sm font-semibold text-blue-600 hover:underline"
+                className="mt-6 text-sm font-semibold text-blue-600 hover:underline dark:text-blue-400"
               >
                 Clear all filters
               </button>
@@ -203,7 +203,11 @@ function ServicesDirectoryContent() {
 
 export default function ServicesClient() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#F8FAFC]"></div>}>
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-[#F8FAFC] dark:bg-slate-950"></div>
+      }
+    >
       <ServicesDirectoryContent />
     </Suspense>
   );

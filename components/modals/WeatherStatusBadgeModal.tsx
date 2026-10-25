@@ -31,14 +31,14 @@ const WeatherStatusBadge = ({
       {isFallback ? (
         <button
           onClick={handleOpen}
-          className="cursor-help rounded bg-amber-400 px-2 py-0.5 text-[10px] font-bold tracking-wider text-amber-950 uppercase transition-colors hover:bg-amber-300"
+          className="cursor-help rounded bg-amber-400 px-2 py-0.5 text-[10px] font-bold tracking-wider text-amber-950 uppercase transition-colors hover:bg-amber-300 dark:text-amber-100"
         >
           Offline
         </button>
       ) : (
         <button
           onClick={handleOpen}
-          className="flex cursor-help items-center gap-2 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 backdrop-blur-sm transition-colors hover:bg-white/20"
+          className="flex cursor-help items-center gap-2 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 backdrop-blur-sm transition-colors hover:bg-white/20 dark:bg-slate-900/10 dark:hover:bg-slate-900/20"
         >
           <div className="flex items-center gap-1">
             <div
@@ -65,7 +65,7 @@ const WeatherStatusBadge = ({
           <div className="animate-in fade-in absolute inset-0 bg-slate-900/60 backdrop-blur-sm duration-200" />
 
           <div
-            className="animate-in zoom-in-95 relative w-full max-w-md overflow-hidden rounded-2xl bg-white text-left shadow-2xl duration-200"
+            className="animate-in zoom-in-95 relative w-full max-w-md overflow-hidden rounded-2xl bg-white text-left shadow-2xl duration-200 dark:bg-slate-900"
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal box
           >
             {/* Modal Header */}
@@ -76,25 +76,25 @@ const WeatherStatusBadge = ({
               </div>
               <button
                 onClick={handleClose}
-                className="rounded-full bg-white/10 p-1.5 transition-colors hover:bg-white/20"
+                className="rounded-full bg-white/10 p-1.5 transition-colors hover:bg-white/20 dark:bg-slate-900/10 dark:hover:bg-slate-900/20"
               >
                 <X className="h-4 w-4" />
               </button>
             </div>
 
             {/* Modal Body */}
-            <div className="space-y-4 bg-slate-50 p-6">
-              <p className="text-sm text-slate-600">
+            <div className="space-y-4 bg-slate-50 p-6 dark:bg-slate-950">
+              <p className="text-sm text-slate-600 dark:text-slate-400">
                 BetterDipolog uses a dual-provider system to ensure weather data
                 remains available even if one service experiences downtime.
               </p>
 
               {isFallback ? (
-                <div className="rounded-xl border border-amber-200 bg-amber-50 p-4">
-                  <p className="mb-1 text-sm font-bold text-amber-800">
+                <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-950/40">
+                  <p className="mb-1 text-sm font-bold text-amber-800 dark:text-amber-200">
                     ⚠️ Offline Mode
                   </p>
-                  <p className="text-xs text-amber-700">
+                  <p className="text-xs text-amber-700 dark:text-amber-300">
                     Both primary weather APIs are currently unreachable. You are
                     viewing cached fallback data. Please check your connection
                     or try again later.
@@ -107,17 +107,17 @@ const WeatherStatusBadge = ({
                     href="https://openweathermap.org/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-blue-400 hover:shadow-md"
+                    className="block rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-blue-400 hover:shadow-md dark:border-slate-800 dark:bg-slate-900"
                   >
                     <div className="mb-2 flex items-center justify-between">
-                      <span className="text-sm font-bold text-slate-800 transition-colors group-hover:text-blue-600">
+                      <span className="text-sm font-bold text-slate-800 transition-colors group-hover:text-blue-600 dark:text-slate-200 dark:group-hover:text-blue-400">
                         OpenWeatherMap
                       </span>
                       <span
                         className={`rounded px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase ${
                           weatherData.sources?.open_weather
-                            ? "bg-emerald-100 text-emerald-700"
-                            : "bg-rose-100 text-rose-700"
+                            ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300"
+                            : "bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300"
                         }`}
                       >
                         {weatherData.sources?.open_weather
@@ -125,7 +125,7 @@ const WeatherStatusBadge = ({
                           : "Offline"}
                       </span>
                     </div>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
                       Primary source for current real-time conditions
                       (temperature, humidity, wind).
                     </p>
@@ -136,31 +136,31 @@ const WeatherStatusBadge = ({
                     href="https://open-meteo.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-blue-400 hover:shadow-md"
+                    className="block rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-blue-400 hover:shadow-md dark:border-slate-800 dark:bg-slate-900"
                   >
                     <div className="mb-2 flex items-center justify-between">
-                      <span className="text-sm font-bold text-slate-800 transition-colors group-hover:text-blue-600">
+                      <span className="text-sm font-bold text-slate-800 transition-colors group-hover:text-blue-600 dark:text-slate-200 dark:group-hover:text-blue-400">
                         Open-Meteo
                       </span>
                       <span
                         className={`rounded px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase ${
                           weatherData.sources?.open_meteo
-                            ? "bg-emerald-100 text-emerald-700"
-                            : "bg-rose-100 text-rose-700"
+                            ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300"
+                            : "bg-rose-100 text-rose-700 dark:bg-rose-900/50 dark:text-rose-300"
                         }`}
                       >
                         {weatherData.sources?.open_meteo ? "Online" : "Offline"}
                       </span>
                     </div>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
                       Primary source for the detailed 7-day forecast, rain
                       probabilities, and UV index.
                     </p>
                   </Link>
 
-                  <div className="mt-4 text-center text-xs text-slate-500">
+                  <div className="mt-4 text-center text-xs text-slate-500 dark:text-slate-400">
                     Current conditions routed via{" "}
-                    <strong className="text-slate-700">
+                    <strong className="text-slate-700 dark:text-slate-300">
                       {weatherData.current.source === "openweather"
                         ? "OpenWeatherMap"
                         : "Open-Meteo"}

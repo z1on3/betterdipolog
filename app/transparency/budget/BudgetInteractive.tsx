@@ -157,43 +157,43 @@ export default function BudgetInteractive({ data }: BudgetInteractiveProps) {
   return (
     <>
       {/* Ledger strip */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-8">
-        <h2 className="mb-4 text-lg font-bold text-slate-900">
+      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-8 dark:border-slate-800 dark:bg-slate-900">
+        <h2 className="mb-4 text-lg font-bold text-slate-900 dark:text-slate-100">
           At a glance · FY{latest.fiscalYear}
         </h2>
         <div className="flex items-baseline gap-3 py-2.5">
-          <span className="text-sm whitespace-nowrap text-slate-500">
+          <span className="text-sm whitespace-nowrap text-slate-500 dark:text-slate-400">
             Net Operating Surplus
           </span>
-          <span className="flex-1 translate-y-[-4px] border-b border-dotted border-slate-300" />
-          <span className="font-mono text-xl font-extrabold text-emerald-700 tabular-nums">
+          <span className="flex-1 translate-y-[-4px] border-b border-dotted border-slate-300 dark:border-slate-700" />
+          <span className="font-mono text-xl font-extrabold text-emerald-700 tabular-nums dark:text-emerald-300">
             {PESO(latest.netOperatingSurplus)}
           </span>
         </div>
-        <div className="flex items-baseline gap-3 border-t border-slate-100 py-2.5">
-          <span className="text-sm whitespace-nowrap text-slate-500">
+        <div className="flex items-baseline gap-3 border-t border-slate-100 py-2.5 dark:border-slate-800">
+          <span className="text-sm whitespace-nowrap text-slate-500 dark:text-slate-400">
             Capital Outlay
           </span>
-          <span className="flex-1 translate-y-[-4px] border-b border-dotted border-slate-300" />
-          <span className="font-mono text-xl font-extrabold text-slate-900 tabular-nums">
+          <span className="flex-1 translate-y-[-4px] border-b border-dotted border-slate-300 dark:border-slate-700" />
+          <span className="font-mono text-xl font-extrabold text-slate-900 tabular-nums dark:text-slate-100">
             {PESO(latest.capitalOutlay)}
           </span>
         </div>
-        <div className="flex items-baseline gap-3 border-t border-slate-100 py-2.5">
-          <span className="text-sm whitespace-nowrap text-slate-500">
+        <div className="flex items-baseline gap-3 border-t border-slate-100 py-2.5 dark:border-slate-800">
+          <span className="text-sm whitespace-nowrap text-slate-500 dark:text-slate-400">
             Total Income
           </span>
-          <span className="flex-1 translate-y-[-4px] border-b border-dotted border-slate-300" />
-          <span className="font-mono text-sm text-slate-600 tabular-nums">
+          <span className="flex-1 translate-y-[-4px] border-b border-dotted border-slate-300 dark:border-slate-700" />
+          <span className="font-mono text-sm text-slate-600 tabular-nums dark:text-slate-400">
             {PESO(latest.income.total)}
           </span>
         </div>
-        <div className="flex items-baseline gap-3 border-t border-slate-100 py-2.5">
-          <span className="text-sm whitespace-nowrap text-slate-500">
+        <div className="flex items-baseline gap-3 border-t border-slate-100 py-2.5 dark:border-slate-800">
+          <span className="text-sm whitespace-nowrap text-slate-500 dark:text-slate-400">
             Total Expenditure
           </span>
-          <span className="flex-1 translate-y-[-4px] border-b border-dotted border-slate-300" />
-          <span className="font-mono text-sm text-slate-600 tabular-nums">
+          <span className="flex-1 translate-y-[-4px] border-b border-dotted border-slate-300 dark:border-slate-700" />
+          <span className="font-mono text-sm text-slate-600 tabular-nums dark:text-slate-400">
             {PESO(latest.expenditure.total)}
           </span>
         </div>
@@ -202,15 +202,15 @@ export default function BudgetInteractive({ data }: BudgetInteractiveProps) {
       {/* Composition */}
       <div>
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-          <h2 className="text-lg font-bold text-slate-900">
+          <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
             Revenue & spending breakdown
           </h2>
-          <div className="inline-flex rounded-lg border border-slate-200 bg-white p-1">
+          <div className="inline-flex rounded-lg border border-slate-200 bg-white p-1 dark:border-slate-800 dark:bg-slate-900">
             {data.years.map((y) => (
               <button
                 key={y.fiscalYear}
                 onClick={() => setSelectedYear(y.fiscalYear)}
-                className={`rounded-md px-3 py-1.5 text-xs font-bold transition-colors ${y.fiscalYear === selectedYear ? "bg-emerald-700 text-white" : "text-slate-500 hover:text-slate-900"}`}
+                className={`rounded-md px-3 py-1.5 text-xs font-bold transition-colors ${y.fiscalYear === selectedYear ? "bg-emerald-700 text-white" : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"}`}
               >
                 {yearLabel(y)}
               </button>
@@ -219,11 +219,11 @@ export default function BudgetInteractive({ data }: BudgetInteractiveProps) {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-8">
-            <h3 className="mb-1 text-base font-bold text-slate-900">
+          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-8 dark:border-slate-800 dark:bg-slate-900">
+            <h3 className="mb-1 text-base font-bold text-slate-900 dark:text-slate-100">
               Where the money comes from
             </h3>
-            <p className="mb-3 text-sm text-slate-500">
+            <p className="mb-3 text-sm text-slate-500 dark:text-slate-400">
               Revenue sources, FY{shownYear.fiscalYear}
             </p>
             <ResponsiveContainer width="100%" height={300}>
@@ -273,11 +273,11 @@ export default function BudgetInteractive({ data }: BudgetInteractiveProps) {
             </ResponsiveContainer>
           </div>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-8">
-            <h3 className="mb-1 text-base font-bold text-slate-900">
+          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-8 dark:border-slate-800 dark:bg-slate-900">
+            <h3 className="mb-1 text-base font-bold text-slate-900 dark:text-slate-100">
               Where the money goes
             </h3>
-            <p className="mb-3 text-sm text-slate-500">
+            <p className="mb-3 text-sm text-slate-500 dark:text-slate-400">
               Expenditure by sector, FY{shownYear.fiscalYear}
             </p>
             <ResponsiveContainer width="100%" height={300}>
@@ -330,9 +330,11 @@ export default function BudgetInteractive({ data }: BudgetInteractiveProps) {
       </div>
 
       {/* Trend */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-8">
+      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-8 dark:border-slate-800 dark:bg-slate-900">
         <div className="mb-1 flex flex-wrap items-center justify-between gap-3">
-          <h2 className="text-lg font-bold text-slate-900">Trend over time</h2>
+          <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+            Trend over time
+          </h2>
           <div className="flex items-center gap-2">
             <div className="relative">
               <select
@@ -340,7 +342,7 @@ export default function BudgetInteractive({ data }: BudgetInteractiveProps) {
                 onChange={(e) =>
                   setSelectedMetric(e.target.value as "totals" | MetricKey)
                 }
-                className="cursor-pointer appearance-none rounded-lg border border-slate-200 bg-white py-1.5 pr-8 pl-3 text-xs font-bold text-slate-700 [color-scheme:light] hover:border-slate-300"
+                className="cursor-pointer appearance-none rounded-lg border border-slate-200 bg-white py-1.5 pr-8 pl-3 text-xs font-bold text-slate-700 [color-scheme:light] hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:border-slate-700"
               >
                 <option value="totals">Total Income & Expenditure</option>
                 {(Object.keys(METRICS) as MetricKey[]).map((key) => (
@@ -361,10 +363,10 @@ export default function BudgetInteractive({ data }: BudgetInteractiveProps) {
               }
               className={`rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors ${
                 selectedMetric === "totals"
-                  ? "cursor-not-allowed border-slate-100 text-slate-300"
+                  ? "cursor-not-allowed border-slate-100 text-slate-300 dark:border-slate-800"
                   : showPercent
                     ? "border-emerald-700 bg-emerald-700 text-white"
-                    : "border-slate-200 bg-white text-slate-600 hover:border-slate-300"
+                    : "border-slate-200 bg-white text-slate-600 hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:border-slate-700"
               }`}
             >
               % of{" "}
@@ -375,7 +377,7 @@ export default function BudgetInteractive({ data }: BudgetInteractiveProps) {
             </button>
           </div>
         </div>
-        <p className="mb-3 text-sm text-slate-500">
+        <p className="mb-3 text-sm text-slate-500 dark:text-slate-400">
           {selectedMetric === "totals"
             ? "Is the city collecting more than it spends?"
             : showPercent

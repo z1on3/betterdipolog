@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 
 export default function OpenDataPage() {
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/" text="Go Home" />
       <SubpageHero>
         <SubpageHero.Badges>
-          <span className="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-xs font-bold tracking-wider text-emerald-700 uppercase">
+          <span className="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-xs font-bold tracking-wider text-emerald-700 uppercase dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300">
             For Developers & Researchers
           </span>
         </SubpageHero.Badges>
@@ -30,13 +30,13 @@ export default function OpenDataPage() {
 
       <div className="mx-auto max-w-[1000px] px-4 py-12 md:px-6">
         {/* Anti-Scraping Notice */}
-        <div className="mb-8 flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50 p-6">
-          <ShieldAlert className="mt-0.5 h-6 w-6 shrink-0 text-blue-600" />
+        <div className="mb-8 flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50 p-6 dark:border-blue-900 dark:bg-blue-950/40">
+          <ShieldAlert className="mt-0.5 h-6 w-6 shrink-0 text-blue-600 dark:text-blue-400" />
           <div>
-            <h3 className="mb-1 text-sm font-bold tracking-wider text-blue-900 uppercase">
+            <h3 className="mb-1 text-sm font-bold tracking-wider text-blue-900 uppercase dark:text-blue-200">
               Please Do Not Scrape Our HTML
             </h3>
-            <p className="text-sm leading-relaxed text-blue-800">
+            <p className="text-sm leading-relaxed text-blue-800 dark:text-blue-200">
               To ensure our servers remain fast and reliable for the citizens of
               Dipolog, we kindly ask developers and researchers{" "}
               <strong>not</strong> to write web scrapers for our user interface.
@@ -46,22 +46,22 @@ export default function OpenDataPage() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
           {/* Endpoint Details */}
-          <div className="border-b border-slate-100 p-6 md:p-8">
+          <div className="border-b border-slate-100 p-6 md:p-8 dark:border-slate-800">
             <div className="mb-6 flex items-center gap-3">
-              <div className="shrink-0 rounded-lg bg-slate-100 p-2 text-slate-600">
+              <div className="shrink-0 rounded-lg bg-slate-100 p-2 text-slate-600 dark:bg-slate-800 dark:text-slate-400">
                 <Database className="h-6 w-6" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
                 Available Endpoints
               </h2>
             </div>
 
-            <p className="mb-6 text-slate-600">
+            <p className="mb-6 text-slate-600 dark:text-slate-400">
               We currently offer four separate REST endpoints to keep data
               payloads small and highly targeted. All endpoints accept standard{" "}
-              <code className="rounded bg-slate-100 px-1.5 py-0.5 text-slate-800">
+              <code className="rounded bg-slate-100 px-1.5 py-0.5 text-slate-800 dark:bg-slate-800 dark:text-slate-200">
                 GET
               </code>{" "}
               requests and return JSON.
@@ -132,15 +132,15 @@ export default function OpenDataPage() {
           </div>
 
           {/* Code Examples */}
-          <div className="border-b border-slate-100 bg-slate-50/50 p-6 md:p-8">
-            <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-slate-900">
+          <div className="border-b border-slate-100 bg-slate-50/50 p-6 md:p-8 dark:border-slate-800 dark:bg-slate-950/50">
+            <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-slate-100">
               <Terminal className="h-5 w-5 text-slate-400" /> Example Requests
             </h3>
 
             <div className="space-y-6">
               {/* Fetch Example */}
               <div>
-                <p className="mb-2 text-sm font-semibold text-slate-500">
+                <p className="mb-2 text-sm font-semibold text-slate-500 dark:text-slate-400">
                   JavaScript (Fetch API)
                 </p>
                 <pre className="custom-scrollbar overflow-x-auto rounded-xl bg-slate-900 p-4 font-mono text-sm leading-relaxed text-slate-300">
@@ -152,7 +152,7 @@ export default function OpenDataPage() {
 
               {/* cURL Example */}
               <div>
-                <p className="mb-2 text-sm font-semibold text-slate-500">
+                <p className="mb-2 text-sm font-semibold text-slate-500 dark:text-slate-400">
                   cURL
                 </p>
                 <pre className="custom-scrollbar overflow-x-auto rounded-xl bg-slate-900 p-4 font-mono text-sm leading-relaxed text-slate-300">
@@ -165,12 +165,12 @@ export default function OpenDataPage() {
 
           {/* Response Format */}
           <div className="p-6 md:p-8">
-            <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-slate-900">
+            <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-slate-900 dark:text-slate-100">
               <Code className="h-5 w-5 text-slate-400" /> Response Schema
             </h3>
-            <p className="mb-4 text-sm text-slate-600">
+            <p className="mb-4 text-sm text-slate-600 dark:text-slate-400">
               The API returns a JSON object containing metadata and a{" "}
-              <code className="rounded bg-slate-100 px-1.5 py-0.5 text-slate-800">
+              <code className="rounded bg-slate-100 px-1.5 py-0.5 text-slate-800 dark:bg-slate-800 dark:text-slate-200">
                 data
               </code>{" "}
               array containing the service objects.

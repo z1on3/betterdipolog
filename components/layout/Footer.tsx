@@ -169,13 +169,13 @@ export default function Footer({ className }: ClassName) {
         {/* 3. BOTTOM: Copyright & Sitemap */}
         <div>
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-center text-sm text-slate-500 sm:text-left">
+            <p className="text-center text-sm text-slate-500 sm:text-left dark:text-slate-400">
               &copy; {new Date().getFullYear()} BetterDipolog · Not an official
               government website
             </p>
             <Link
               href="/site-map"
-              className="shrink-0 text-sm text-slate-500 transition-colors hover:text-white"
+              className="shrink-0 text-sm text-slate-500 transition-colors hover:text-white dark:text-slate-400"
             >
               Sitemap
             </Link>

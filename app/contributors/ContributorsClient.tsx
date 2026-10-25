@@ -61,7 +61,7 @@ function ContributorGrid({ people }: { people: GitHubContributor[] }) {
           href={contributor.html_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative flex flex-col items-center rounded-2xl border border-slate-200 bg-white p-5 text-center transition-all hover:border-blue-300 hover:shadow-md"
+          className="group relative flex flex-col items-center rounded-2xl border border-slate-200 bg-white p-5 text-center transition-all hover:border-blue-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
         >
           <Github className="absolute top-4 right-4 h-4 w-4 text-slate-300 transition-colors group-hover:text-blue-500" />
           <Image
@@ -71,12 +71,12 @@ function ContributorGrid({ people }: { people: GitHubContributor[] }) {
             height={128}
             loading="lazy"
             unoptimized
-            className="mb-3 h-18 w-18 rounded-full shadow-sm transition-all group-hover:ring-2 group-hover:ring-blue-100"
+            className="mb-3 h-18 w-18 rounded-full shadow-sm transition-all group-hover:ring-2 group-hover:ring-blue-100 dark:group-hover:ring-blue-800"
           />
-          <h3 className="line-clamp-1 font-bold text-slate-900 transition-colors group-hover:text-blue-600">
+          <h3 className="line-clamp-1 font-bold text-slate-900 transition-colors group-hover:text-blue-600 dark:text-slate-100 dark:group-hover:text-blue-400">
             {contributor.login}
           </h3>
-          <span className="mt-2 rounded-md bg-slate-100 px-2.5 py-1 text-[10px] font-extrabold tracking-wider text-slate-600 uppercase">
+          <span className="mt-2 rounded-md bg-slate-100 px-2.5 py-1 text-[10px] font-extrabold tracking-wider text-slate-600 uppercase dark:bg-slate-800 dark:text-slate-400">
             {contributor.contributions} Contribution
             {contributor.contributions !== 1 ? "s" : ""}
           </span>
@@ -131,12 +131,14 @@ export default function ContributorsClient() {
       {/* --- SECTION 1: THE OWNER/LEAD --- */}
       {!isLoading && owner && (
         <section className="animate-in fade-in space-y-6 duration-500">
-          <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
-            <ShieldCheck className="h-6 w-6 text-emerald-600" />
-            <h2 className="text-2xl font-bold text-slate-900">Project Lead</h2>
+          <div className="flex items-center gap-3 border-b border-slate-200 pb-4 dark:border-slate-800">
+            <ShieldCheck className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+              Project Lead
+            </h2>
           </div>
 
-          <div className="flex max-w-2xl flex-col items-center gap-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:flex-row sm:items-start">
+          <div className="flex max-w-2xl flex-col items-center gap-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:flex-row sm:items-start dark:border-slate-800 dark:bg-slate-900">
             <Image
               src={`${owner.avatar_url}&s=128`}
               alt={owner.login}
@@ -144,17 +146,17 @@ export default function ContributorsClient() {
               height={128}
               unoptimized
               loading="lazy"
-              className="h-24 w-24 rounded-full border-4 border-slate-50 shadow-md sm:h-32 sm:w-32"
+              className="h-24 w-24 rounded-full border-4 border-slate-50 shadow-md sm:h-32 sm:w-32 dark:border-slate-800"
             />
             <div className="flex-1 text-center sm:text-left">
-              <h3 className="text-2xl font-bold text-slate-900">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
                 {owner.login}
               </h3>
-              <p className="mb-4 font-medium text-slate-500">
+              <p className="mb-4 font-medium text-slate-500 dark:text-slate-400">
                 BetterDipolog Maintainer
               </p>
               <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
-                <span className="rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-600">
+                <span className="rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-400">
                   {owner.contributions} Contribution
                   {owner.contributions !== 1 ? "s" : ""}
                 </span>
@@ -162,7 +164,7 @@ export default function ContributorsClient() {
                   href={owner.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-1.5 text-sm font-bold text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:text-blue-600"
+                  className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-1.5 text-sm font-bold text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:text-blue-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-950 dark:hover:text-blue-400"
                 >
                   <Github className="h-4 w-4" />
                   GitHub Profile
@@ -176,9 +178,9 @@ export default function ContributorsClient() {
       {/* --- SECTION 2: GITHUB MAINTAINERS --- */}
       {!isLoading && (
         <section className="animate-in fade-in space-y-6 delay-100 duration-500">
-          <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
-            <Github className="h-6 w-6 text-slate-700" />
-            <h2 className="text-2xl font-bold text-slate-900">
+          <div className="flex items-center gap-3 border-b border-slate-200 pb-4 dark:border-slate-800">
+            <Github className="h-6 w-6 text-slate-700 dark:text-slate-300" />
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               Code Contributors
             </h2>
           </div>
@@ -186,14 +188,14 @@ export default function ContributorsClient() {
           {maintainers.length > 0 ? (
             <ContributorGrid people={maintainers} />
           ) : (
-            <div className="flex flex-col items-center rounded-3xl border border-dashed border-slate-200 bg-white p-10 text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-slate-500">
+            <div className="flex flex-col items-center rounded-3xl border border-dashed border-slate-200 bg-white p-10 text-center dark:border-slate-800 dark:bg-slate-900">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
                 <Github className="h-8 w-8" />
               </div>
-              <h3 className="mb-2 text-xl font-bold text-slate-900">
+              <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">
                 No contributors to show right now
               </h3>
-              <p className="mx-auto max-w-md text-slate-500">
+              <p className="mx-auto max-w-md text-slate-500 dark:text-slate-400">
                 {
                   "We couldn't load the contributor list from GitHub. Check back shortly, or view the project directly on GitHub."
                 }
@@ -206,19 +208,19 @@ export default function ContributorsClient() {
       {/* --- SECTION 3: UPSTREAM CREDITS (BetterIligan) --- */}
       {!isLoading && (
         <section className="animate-in fade-in space-y-6 delay-150 duration-500">
-          <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
-            <Github className="h-6 w-6 text-slate-700" />
-            <h2 className="text-2xl font-bold text-slate-900">
+          <div className="flex items-center gap-3 border-b border-slate-200 pb-4 dark:border-slate-800">
+            <Github className="h-6 w-6 text-slate-700 dark:text-slate-300" />
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               Upstream: BetterIligan
             </h2>
           </div>
-          <p className="max-w-3xl text-slate-600">
+          <p className="max-w-3xl text-slate-600 dark:text-slate-400">
             BetterDipolog is a fork of{" "}
             <a
               href={`https://github.com/${UPSTREAM_REPO}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-blue-600 hover:text-blue-700"
+              className="font-bold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
             >
               BetterIligan
             </a>{" "}
@@ -231,7 +233,7 @@ export default function ContributorsClient() {
               href={upstreamFounder.html_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex max-w-2xl items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-blue-300 hover:shadow-md"
+              className="flex max-w-2xl items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-blue-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
             >
               <Image
                 src={`${upstreamFounder.avatar_url}&s=128`}
@@ -243,10 +245,10 @@ export default function ContributorsClient() {
                 className="h-16 w-16 rounded-full shadow-sm"
               />
               <div>
-                <h3 className="font-bold text-slate-900">
+                <h3 className="font-bold text-slate-900 dark:text-slate-100">
                   {upstreamFounder.login}
                 </h3>
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
                   BetterIligan Founder &amp; Lead Developer
                 </p>
               </div>
@@ -258,14 +260,14 @@ export default function ContributorsClient() {
           )}
 
           {upstreamContributors.length === 0 && (
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-slate-500 dark:text-slate-400">
               Couldn&apos;t load the upstream contributor list from GitHub right
               now. See it on{" "}
               <a
                 href={`https://github.com/${UPSTREAM_REPO}/graphs/contributors`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold text-blue-600 hover:text-blue-700"
+                className="font-bold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
               >
                 GitHub
               </a>
@@ -278,16 +280,16 @@ export default function ContributorsClient() {
       {/* --- SECTION 4: COMMUNITY VOLUNTEERS (STATIC JSON) --- */}
       {/* Renders instantly, independent of GitHub loading */}
       <section className="space-y-6">
-        <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+        <div className="flex items-center justify-between border-b border-slate-200 pb-4 dark:border-slate-800">
           <div className="flex items-center gap-3">
             <Heart className="h-6 w-6 text-rose-500" />
-            <h2 className="text-2xl font-bold text-slate-900">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               Community Volunteers
             </h2>
           </div>
           <Link
             href="/volunteer"
-            className="hidden text-sm font-bold text-blue-600 transition-colors hover:text-blue-700 sm:block"
+            className="hidden text-sm font-bold text-blue-600 transition-colors hover:text-blue-700 sm:block dark:text-blue-400 dark:hover:text-blue-300"
           >
             Become a volunteer &rarr;
           </Link>
@@ -298,7 +300,7 @@ export default function ContributorsClient() {
             {volunteers.map((volunteer, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+                className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900"
               >
                 {volunteer.profile_pic ? (
                   <Image
@@ -307,18 +309,18 @@ export default function ContributorsClient() {
                     width={56}
                     height={56}
                     unoptimized // Good practice for external links to save CPU
-                    className="h-14 w-14 shrink-0 rounded-full bg-slate-100 object-cover shadow-sm"
+                    className="h-14 w-14 shrink-0 rounded-full bg-slate-100 object-cover shadow-sm dark:bg-slate-800"
                   />
                 ) : (
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-950/40 dark:text-blue-400">
                     <User className="h-6 w-6" />
                   </div>
                 )}
                 <div className="min-w-0">
-                  <h3 className="line-clamp-1 font-bold text-slate-900">
+                  <h3 className="line-clamp-1 font-bold text-slate-900 dark:text-slate-100">
                     {volunteer.name}
                   </h3>
-                  <span className="mt-1.5 line-clamp-1 inline-block rounded-md bg-slate-100 px-2.5 py-1 text-[10px] font-extrabold tracking-wider text-slate-600 uppercase">
+                  <span className="mt-1.5 line-clamp-1 inline-block rounded-md bg-slate-100 px-2.5 py-1 text-[10px] font-extrabold tracking-wider text-slate-600 uppercase dark:bg-slate-800 dark:text-slate-400">
                     {volunteer.profession}
                   </span>
                 </div>
@@ -326,14 +328,14 @@ export default function ContributorsClient() {
             ))}
           </div>
         ) : (
-          <div className="flex flex-col items-center rounded-3xl border border-dashed border-slate-200 bg-white p-10 text-center">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-rose-50 text-rose-500">
+          <div className="flex flex-col items-center rounded-3xl border border-dashed border-slate-200 bg-white p-10 text-center dark:border-slate-800 dark:bg-slate-900">
+            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-rose-50 text-rose-500 dark:bg-rose-950/40">
               <Heart className="h-8 w-8" />
             </div>
-            <h3 className="mb-2 text-xl font-bold text-slate-900">
+            <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">
               Be the first to join!
             </h3>
-            <p className="mx-auto mb-6 max-w-md text-slate-500">
+            <p className="mx-auto mb-6 max-w-md text-slate-500 dark:text-slate-400">
               We currently have no public community volunteers listed. Whether
               you are a government worker, teacher, or everyday citizen, we need
               your help.

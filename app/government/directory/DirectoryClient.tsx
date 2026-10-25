@@ -76,11 +76,11 @@ export default function DirectoryClient({
       : allAgencies.filter((agency) => agency.category === activeCategory);
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav />
       <SubpageHero>
         <SubpageHero.Badges>
-          <span className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold tracking-wider text-blue-700 uppercase">
+          <span className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold tracking-wider text-blue-700 uppercase dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-300">
             Official Directory
           </span>
         </SubpageHero.Badges>
@@ -112,11 +112,11 @@ export default function DirectoryClient({
             {filteredAgencies.map((agency, idx) => (
               <div
                 key={idx}
-                className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md dark:border-slate-800 dark:bg-slate-900"
               >
                 {/* Top: Logo & Category Badge */}
                 <div className="mb-4 flex items-start justify-between">
-                  <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-100 bg-slate-50 p-2">
+                  <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-100 bg-slate-50 p-2 dark:border-slate-800 dark:bg-slate-950">
                     {agency.logoUrl ? (
                       <Image
                         src={agency.logoUrl}
@@ -126,25 +126,25 @@ export default function DirectoryClient({
                         sizes="56px"
                       />
                     ) : initials(agency.name) ? (
-                      <span className="text-xs font-black tracking-tight text-slate-500">
+                      <span className="text-xs font-black tracking-tight text-slate-500 dark:text-slate-400">
                         {initials(agency.name)}
                       </span>
                     ) : (
                       <Building className="h-6 w-6 text-slate-400" />
                     )}
                   </div>
-                  <span className="rounded bg-slate-100 px-2 py-1 text-[10px] font-bold tracking-wider text-slate-500 uppercase">
+                  <span className="rounded bg-slate-100 px-2 py-1 text-[10px] font-bold tracking-wider text-slate-500 uppercase dark:bg-slate-800 dark:text-slate-400">
                     {agency.category}
                   </span>
                 </div>
 
                 {/* Middle: Title & Address */}
                 <div className="mb-6 flex-1">
-                  <h3 className="mb-2 text-lg leading-tight font-bold text-slate-900">
+                  <h3 className="mb-2 text-lg leading-tight font-bold text-slate-900 dark:text-slate-100">
                     {agency.name}
                   </h3>
                   {agency.address ? (
-                    <p className="flex items-start gap-1.5 text-sm text-slate-500">
+                    <p className="flex items-start gap-1.5 text-sm text-slate-500 dark:text-slate-400">
                       <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
                       <span className="line-clamp-2">{agency.address}</span>
                     </p>
@@ -155,7 +155,7 @@ export default function DirectoryClient({
                     </p>
                   )}
                   {agency.numbers && agency.numbers.length > 0 && (
-                    <div className="mt-2 flex items-start gap-1.5 text-sm text-slate-600">
+                    <div className="mt-2 flex items-start gap-1.5 text-sm text-slate-600 dark:text-slate-400">
                       <Phone className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
                       <div className="flex flex-col gap-0.5">
                         {agency.numbers.map((number) =>
@@ -165,7 +165,7 @@ export default function DirectoryClient({
                             <a
                               key={number}
                               href={`tel:${number.replace(/[^0-9+]/g, "")}`}
-                              className="hover:text-blue-600"
+                              className="hover:text-blue-600 dark:hover:text-blue-400"
                             >
                               {number}
                             </a>
@@ -175,14 +175,14 @@ export default function DirectoryClient({
                     </div>
                   )}
                   {agency.emails && agency.emails.length > 0 && (
-                    <div className="mt-2 flex items-start gap-1.5 text-sm text-slate-600">
+                    <div className="mt-2 flex items-start gap-1.5 text-sm text-slate-600 dark:text-slate-400">
                       <Mail className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
                       <div className="flex flex-col gap-0.5">
                         {agency.emails.map((email) => (
                           <a
                             key={email}
                             href={`mailto:${email}`}
-                            className="break-all hover:text-blue-600"
+                            className="break-all hover:text-blue-600 dark:hover:text-blue-400"
                           >
                             {email}
                           </a>
@@ -195,7 +195,7 @@ export default function DirectoryClient({
                       href={agency.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-3 inline-flex items-center gap-1 text-[11px] text-slate-400 hover:text-blue-600"
+                      className="mt-3 inline-flex items-center gap-1 text-[11px] text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
                     >
                       <ExternalLink className="h-3 w-3" /> Source
                     </a>
@@ -203,7 +203,7 @@ export default function DirectoryClient({
                 </div>
 
                 {/* Bottom: Action Buttons */}
-                <div className="flex gap-2 border-t border-slate-100 pt-4">
+                <div className="flex gap-2 border-t border-slate-100 pt-4 dark:border-slate-800">
                   {/* Primary Map Button */}
                   <a
                     href={`https://maps.google.com/?q=${encodeURIComponent(
@@ -224,7 +224,7 @@ export default function DirectoryClient({
                       href={agency.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-slate-600 transition-colors hover:bg-slate-100"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-slate-600 transition-colors hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400 dark:hover:bg-slate-800"
                       title="Visit Website"
                     >
                       <Globe className="h-4 w-4" />
@@ -237,7 +237,7 @@ export default function DirectoryClient({
                       href={agency.facebookUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-blue-100 bg-blue-50 text-blue-600 transition-colors hover:bg-blue-100"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-blue-100 bg-blue-50 text-blue-600 transition-colors hover:bg-blue-100 dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-400 dark:hover:bg-blue-900/50"
                       title="Visit Facebook Page"
                     >
                       <Facebook className="h-4 w-4" />

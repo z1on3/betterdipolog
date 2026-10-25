@@ -216,10 +216,10 @@ function HubCard({ hub }: { hub: Hub }) {
   return (
     <article
       id={hub.id}
-      className="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+      className="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900"
     >
       {hub.photo && (
-        <div className="relative aspect-video bg-slate-100">
+        <div className="relative aspect-video bg-slate-100 dark:bg-slate-800">
           <Image
             src={hub.photo.url}
             alt={hub.name}
@@ -232,20 +232,20 @@ function HubCard({ hub }: { hub: Hub }) {
       )}
       <div className="flex flex-1 flex-col p-6">
         <div className="mb-4 flex items-center gap-3">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-950/40 dark:text-blue-400">
             <Icon className="h-6 w-6" aria-hidden />
           </div>
           <div>
-            <p className="text-[10px] font-bold tracking-wider text-blue-600 uppercase">
+            <p className="text-[10px] font-bold tracking-wider text-blue-600 uppercase dark:text-blue-400">
               {hub.kicker}
             </p>
-            <h3 className="text-lg leading-tight font-bold text-slate-900">
+            <h3 className="text-lg leading-tight font-bold text-slate-900 dark:text-slate-100">
               {hub.name}
             </h3>
           </div>
         </div>
 
-        <p className="mb-4 flex items-start gap-2 text-sm text-slate-600">
+        <p className="mb-4 flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
           <MapPin
             className="mt-0.5 h-4 w-4 shrink-0 text-slate-400"
             aria-hidden
@@ -253,7 +253,7 @@ function HubCard({ hub }: { hub: Hub }) {
           {hub.location}
         </p>
 
-        <ul className="mb-4 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-slate-600">
+        <ul className="mb-4 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
           {hub.facts.map((f) => (
             <li key={f}>{f}</li>
           ))}
@@ -271,7 +271,7 @@ function HubCard({ hub }: { hub: Hub }) {
                   href={o.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300 dark:hover:border-blue-800 dark:hover:bg-blue-950/40 dark:hover:text-blue-300"
                 >
                   <ExternalLink className="h-3.5 w-3.5" aria-hidden />
                   {o.label}
@@ -283,7 +283,7 @@ function HubCard({ hub }: { hub: Hub }) {
 
         <div className="flex-1" />
 
-        <div className="flex flex-wrap gap-2 border-t border-slate-100 pt-4">
+        <div className="flex flex-wrap gap-2 border-t border-slate-100 pt-4 dark:border-slate-800">
           <a
             href={`https://www.google.com/maps/dir/?api=1&destination=${hub.lat}%2C${hub.lon}`}
             target="_blank"
@@ -295,7 +295,7 @@ function HubCard({ hub }: { hub: Hub }) {
           {hub.contact && (
             <a
               href={`tel:${hub.contact.tel}`}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300 dark:hover:border-blue-800 dark:hover:bg-blue-950/40 dark:hover:text-blue-300"
               aria-label={`Call ${hub.contact.label}`}
             >
               <Phone className="h-3.5 w-3.5" aria-hidden />
@@ -312,7 +312,7 @@ function HubCard({ hub }: { hub: Hub }) {
                 href={hub.photo.source}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:text-slate-600"
+                className="underline hover:text-slate-600 dark:hover:text-slate-400"
               >
                 {hub.photo.credit}
               </a>{" "}
@@ -325,7 +325,7 @@ function HubCard({ hub }: { hub: Hub }) {
               href={hub.osm}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:text-slate-600"
+              className="underline hover:text-slate-600 dark:hover:text-slate-400"
             >
               OpenStreetMap
             </a>{" "}
@@ -339,7 +339,7 @@ function HubCard({ hub }: { hub: Hub }) {
 
 export default function TransportationPage() {
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/travel" text="Back to Travel" />
       <SubpageHero>
         <SubpageHero.Title>Transportation</SubpageHero.Title>
@@ -351,11 +351,11 @@ export default function TransportationPage() {
 
       <div className="container mx-auto space-y-12 px-4 py-8 md:px-6">
         <section>
-          <div className="mb-6 border-b border-slate-200 pb-4">
-            <h2 className="text-2xl font-bold text-slate-900">
+          <div className="mb-6 border-b border-slate-200 pb-4 dark:border-slate-800">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               Getting to Dipolog
             </h2>
-            <p className="mt-1 text-slate-500">
+            <p className="mt-1 text-slate-500 dark:text-slate-400">
               Terminals, ports, and the operators that serve them.
             </p>
           </div>
@@ -367,24 +367,26 @@ export default function TransportationPage() {
         </section>
 
         <section>
-          <div className="mb-6 border-b border-slate-200 pb-4">
-            <h2 className="text-2xl font-bold text-slate-900">
+          <div className="mb-6 border-b border-slate-200 pb-4 dark:border-slate-800">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
               Getting Around the City
             </h2>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
             <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400">
                 <Bike className="h-6 w-6" aria-hidden />
               </div>
-              <div className="space-y-3 text-sm leading-relaxed text-slate-600">
+              <div className="space-y-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                 <p>
-                  <strong className="text-slate-900">Tricycles</strong> (locally
-                  called <em>motorcab</em>) are the main way to get around the
-                  city, alongside <em>sikad</em> (bicycle-powered pedicabs) and{" "}
-                  <em>habal-habal</em> (motorcycles for hire), which are also
-                  the usual last-mile ride to upland spots such as Sungkilaw
-                  Falls.
+                  <strong className="text-slate-900 dark:text-slate-100">
+                    Tricycles
+                  </strong>{" "}
+                  (locally called <em>motorcab</em>) are the main way to get
+                  around the city, alongside <em>sikad</em> (bicycle-powered
+                  pedicabs) and <em>habal-habal</em> (motorcycles for hire),
+                  which are also the usual last-mile ride to upland spots such
+                  as Sungkilaw Falls.
                 </p>
                 <p>
                   Jeepneys and buses to outlying barangays and nearby towns load
@@ -392,7 +394,7 @@ export default function TransportationPage() {
                 </p>
               </div>
             </div>
-            <p className="mt-5 flex items-start gap-2 rounded-lg border border-amber-100 bg-amber-50 p-3 text-xs text-amber-800">
+            <p className="mt-5 flex items-start gap-2 rounded-lg border border-amber-100 bg-amber-50 p-3 text-xs text-amber-800 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-200">
               <Info className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
               Tricycle franchises and fares are regulated by the City
               Government. We have not published fares here because we could not

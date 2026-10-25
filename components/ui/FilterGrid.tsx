@@ -48,8 +48,10 @@ FilterGrid.Content = function FilterGridContent({
     <div className={containerSpanClass}>
       {/* Header: Title and Count Badge */}
       <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-xl font-bold text-slate-900">{title}</h2>
-        <span className="rounded-full bg-slate-200 px-2.5 py-1 text-xs font-bold text-slate-500">
+        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+          {title}
+        </h2>
+        <span className="rounded-full bg-slate-200 px-2.5 py-1 text-xs font-bold text-slate-500 dark:bg-slate-700 dark:text-slate-400">
           {itemCount} Listed
         </span>
       </div>

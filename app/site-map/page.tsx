@@ -97,7 +97,7 @@ const sections: SitemapSection[] = [
 
 function SitemapLinkItem({ link }: { link: SitemapLink }) {
   const className =
-    "text-sm text-slate-600 hover:text-blue-600 transition-colors";
+    "text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors";
 
   if (link.external) {
     return (
@@ -121,12 +121,12 @@ function SitemapLinkItem({ link }: { link: SitemapLink }) {
 
 export default function SitemapPage() {
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageHero>
         <SubpageHero.Badges>
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-500 transition-colors hover:text-blue-600"
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-slate-500 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400"
           >
             <ArrowLeft className="h-4 w-4" /> Back to Home
           </Link>
@@ -142,11 +142,11 @@ export default function SitemapPage() {
           {sections.map((section) => (
             <div
               key={section.title}
-              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900"
             >
               <div className="mb-4 flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-blue-600" />
-                <h2 className="text-lg font-bold text-slate-900">
+                <MapPin className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                   {section.title}
                 </h2>
               </div>

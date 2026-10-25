@@ -20,15 +20,15 @@ export default function FilterGridSidebar({
 
   return (
     <div className="lg:sticky lg:top-24 lg:col-span-3">
-      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="flex w-full items-center justify-between border-b border-slate-100 px-4 py-3 transition-colors md:px-5 md:py-4 lg:pointer-events-none lg:cursor-default"
+          className="flex w-full items-center justify-between border-b border-slate-100 px-4 py-3 transition-colors md:px-5 md:py-4 lg:pointer-events-none lg:cursor-default dark:border-slate-800"
         >
-          <h3 className="text-[11px] font-extrabold tracking-widest text-slate-500 uppercase">
+          <h3 className="text-[11px] font-extrabold tracking-widest text-slate-500 uppercase dark:text-slate-400">
             {title}
           </h3>
-          <div className="rounded-md border border-slate-200 bg-white p-1 text-slate-500 shadow-sm lg:hidden">
+          <div className="rounded-md border border-slate-200 bg-white p-1 text-slate-500 shadow-sm lg:hidden dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400">
             {isMobileMenuOpen ? (
               <X className="h-4 w-4" />
             ) : (
@@ -49,8 +49,8 @@ export default function FilterGridSidebar({
                 }}
                 className={`w-full border-l-2 px-5 py-3.5 text-left text-sm font-medium transition-colors ${
                   activeCategory === category
-                    ? "border-blue-600 bg-blue-50/50 text-blue-700"
-                    : "border-transparent text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                    ? "border-blue-600 bg-blue-50/50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300"
+                    : "border-transparent text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-950 dark:hover:text-slate-100"
                 }`}
               >
                 {category}

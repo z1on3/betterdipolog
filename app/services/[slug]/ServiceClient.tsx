@@ -62,25 +62,25 @@ export default function ServicePage({ service }: ServiceClientProps) {
   };
 
   return (
-    <main className="min-h-screen bg-slate-50 pb-20 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-20 font-sans dark:bg-slate-950">
       {/* Top Navigation Bar */}
       <SubpageNav text="Back to Directory" href="/services" />
 
       {/* Hero Section */}
       <SubpageHero>
         <SubpageHero.Badges>
-          <span className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold tracking-wider text-blue-700 uppercase">
+          <span className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-bold tracking-wider text-blue-700 uppercase dark:border-blue-900 dark:bg-blue-950/40 dark:text-blue-300">
             {service.category}
           </span>
 
           {service.source === "official" && (
-            <span className="inline-flex items-center gap-1 rounded border border-emerald-200 bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-700">
+            <span className="inline-flex items-center gap-1 rounded border border-emerald-200 bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300">
               <BadgeCheck className="h-3.5 w-3.5" /> Official Data
             </span>
           )}
 
           {service.source === "community" && (
-            <span className="inline-flex items-center gap-1 rounded border border-amber-200 bg-amber-50 px-2 py-1 text-xs font-semibold text-amber-700">
+            <span className="inline-flex items-center gap-1 rounded border border-amber-200 bg-amber-50 px-2 py-1 text-xs font-semibold text-amber-700 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-300">
               <ExternalLink className="h-3.5 w-3.5" /> Community Info
             </span>
           )}
@@ -97,15 +97,15 @@ export default function ServicePage({ service }: ServiceClientProps) {
         <div className="lg:col-span-8">
           {/* Dynamic Tab Navigation (Only renders if tabs exist) */}
           {availableTabs.length > 0 && (
-            <div className="hide-scrollbar mb-8 flex overflow-x-auto border-b border-slate-200">
+            <div className="hide-scrollbar mb-8 flex overflow-x-auto border-b border-slate-200 dark:border-slate-800">
               {availableTabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`border-b-2 px-6 py-3 text-sm font-bold whitespace-nowrap transition-colors ${
                     activeTab === tab.id
-                      ? "border-blue-600 text-blue-600"
-                      : "border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-700"
+                      ? "border-blue-600 text-blue-600 dark:text-blue-400"
+                      : "border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-700 dark:text-slate-400 dark:hover:border-slate-700 dark:hover:text-slate-300"
                   }`}
                 >
                   {tab.label}
@@ -121,7 +121,7 @@ export default function ServicePage({ service }: ServiceClientProps) {
               <div className="animate-in fade-in duration-300">
                 {service.requirements.map((group, idx) => (
                   <div key={idx} className="mb-8 last:mb-0">
-                    <h3 className="mb-4 inline-block rounded-lg bg-slate-100 px-4 py-2 text-lg font-bold text-slate-900">
+                    <h3 className="mb-4 inline-block rounded-lg bg-slate-100 px-4 py-2 text-lg font-bold text-slate-900 dark:bg-slate-800 dark:text-slate-100">
                       {group.groupName}
                     </h3>
                     <ul className="space-y-3">
@@ -139,7 +139,7 @@ export default function ServicePage({ service }: ServiceClientProps) {
                               className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border transition-colors duration-200 ${
                                 isChecked
                                   ? "border-emerald-500 bg-emerald-500"
-                                  : "border-slate-300 bg-white group-hover:border-emerald-400"
+                                  : "border-slate-300 bg-white group-hover:border-emerald-400 dark:border-slate-700 dark:bg-slate-900"
                               }`}
                             >
                               {isChecked && (
@@ -153,7 +153,7 @@ export default function ServicePage({ service }: ServiceClientProps) {
                               className={`leading-relaxed transition-all duration-200 select-none ${
                                 isChecked
                                   ? "text-slate-400 line-through"
-                                  : "text-slate-700 group-hover:text-slate-900"
+                                  : "text-slate-700 group-hover:text-slate-900 dark:text-slate-300 dark:group-hover:text-slate-100"
                               }`}
                             >
                               {item}
@@ -175,13 +175,13 @@ export default function ServicePage({ service }: ServiceClientProps) {
                 {service.procedures.map((step) => (
                   <div
                     key={step.stepNumber}
-                    className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+                    className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900"
                   >
-                    <div className="mb-4 flex items-center gap-3 border-b border-slate-100 pb-4">
+                    <div className="mb-4 flex items-center gap-3 border-b border-slate-100 pb-4 dark:border-slate-800">
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">
                         {step.stepNumber}
                       </div>
-                      <h3 className="text-lg font-bold text-slate-900">
+                      <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                         Step {step.stepNumber}
                       </h3>
                     </div>
@@ -191,7 +191,7 @@ export default function ServicePage({ service }: ServiceClientProps) {
                         <p className="mb-2 text-xs font-bold tracking-wider text-slate-400 uppercase">
                           Applicant Action
                         </p>
-                        <p className="text-sm leading-relaxed text-slate-700">
+                        <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
                           {step.clientAction}
                         </p>
                       </div>
@@ -199,22 +199,22 @@ export default function ServicePage({ service }: ServiceClientProps) {
                         <p className="mb-2 text-xs font-bold tracking-wider text-slate-400 uppercase">
                           LGU Action
                         </p>
-                        <p className="text-sm leading-relaxed text-slate-700">
+                        <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
                           {step.providerAction}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-4 rounded-lg bg-slate-50 p-4 text-sm">
-                      <div className="flex items-center gap-2 text-slate-600">
+                    <div className="flex flex-wrap gap-4 rounded-lg bg-slate-50 p-4 text-sm dark:bg-slate-950">
+                      <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
                         <Clock className="h-4 w-4 text-blue-500" />
                         <span className="font-medium">{step.duration}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-slate-600">
+                      <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
                         <FileText className="h-4 w-4 text-emerald-500" />
                         <span className="font-medium">{step.fee}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-slate-600">
+                      <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
                         <Users className="h-4 w-4 text-purple-500" />
                         <span className="font-medium">
                           {step.personInCharge}
@@ -228,12 +228,12 @@ export default function ServicePage({ service }: ServiceClientProps) {
 
           {/* Fallback for External Links / Services with zero tabs */}
           {availableTabs.length === 0 && service.type === "external" && (
-            <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
+            <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm dark:border-slate-800 dark:bg-slate-900">
               <Info className="mx-auto mb-4 h-12 w-12 text-blue-500" />
-              <h3 className="mb-2 text-xl font-bold text-slate-900">
+              <h3 className="mb-2 text-xl font-bold text-slate-900 dark:text-slate-100">
                 External Portal Redirection
               </h3>
-              <p className="mx-auto mb-6 max-w-md text-slate-600">
+              <p className="mx-auto mb-6 max-w-md text-slate-600 dark:text-slate-400">
                 This service is processed via an external platform or agency
                 portal. Click the button below to visit their live link.
               </p>
@@ -253,18 +253,18 @@ export default function ServicePage({ service }: ServiceClientProps) {
         {/* Right Column: Quick Facts Sidebar */}
         <div className="space-y-6 lg:col-span-4">
           {/* Action/Status Card */}
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h3 className="mb-4 text-lg font-bold text-slate-900">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <h3 className="mb-4 text-lg font-bold text-slate-900 dark:text-slate-100">
               Availability
             </h3>
             <div className="mb-6 flex flex-wrap gap-2">
               {service.isWalkIn && (
-                <span className="rounded-lg border border-slate-200 bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-700">
+                <span className="rounded-lg border border-slate-200 bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-700 dark:border-slate-800 dark:bg-slate-800 dark:text-slate-300">
                   Walk-in Available
                 </span>
               )}
               {service.isOnline && (
-                <span className="rounded-lg border border-blue-200 bg-blue-50 px-3 py-1.5 text-sm font-medium text-blue-700">
+                <span className="rounded-lg border border-blue-200 bg-blue-50 px-3 py-1.5 text-sm font-medium text-blue-700 dark:border-blue-800 dark:bg-blue-950/40 dark:text-blue-300">
                   Online Application
                 </span>
               )}
@@ -277,7 +277,7 @@ export default function ServicePage({ service }: ServiceClientProps) {
                 </p>
                 {service.type !== "internal" &&
                   service.type !== "custom_link" && (
-                    <p className="text-sm leading-relaxed font-medium text-slate-800">
+                    <p className="text-sm leading-relaxed font-medium text-slate-800 dark:text-slate-200">
                       {service.department}
                     </p>
                   )}
@@ -288,7 +288,7 @@ export default function ServicePage({ service }: ServiceClientProps) {
                     <p className="mb-1 flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-400 uppercase">
                       <Clock className="h-3.5 w-3.5" /> Schedule
                     </p>
-                    <p className="text-sm leading-relaxed font-medium text-slate-800">
+                    <p className="text-sm leading-relaxed font-medium text-slate-800 dark:text-slate-200">
                       {service.schedule}
                     </p>
                   </div>
@@ -297,7 +297,7 @@ export default function ServicePage({ service }: ServiceClientProps) {
                     <p className="mb-1 flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-400 uppercase">
                       <Users className="h-3.5 w-3.5" /> Who may avail
                     </p>
-                    <p className="text-sm leading-relaxed font-medium text-slate-800">
+                    <p className="text-sm leading-relaxed font-medium text-slate-800 dark:text-slate-200">
                       {service.whoMayAvail}
                     </p>
                   </div>
@@ -307,7 +307,7 @@ export default function ServicePage({ service }: ServiceClientProps) {
                       <p className="mb-1 flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-400 uppercase">
                         <MapPin className="h-3.5 w-3.5" /> Office location
                       </p>
-                      <p className="text-sm leading-relaxed font-medium text-slate-800">
+                      <p className="text-sm leading-relaxed font-medium text-slate-800 dark:text-slate-200">
                         {service.contact.location}
                       </p>
                     </div>
@@ -318,7 +318,7 @@ export default function ServicePage({ service }: ServiceClientProps) {
                       <p className="mb-1 flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-400 uppercase">
                         <Phone className="h-3.5 w-3.5" /> Telephone
                       </p>
-                      <p className="text-sm leading-relaxed font-medium text-slate-800">
+                      <p className="text-sm leading-relaxed font-medium text-slate-800 dark:text-slate-200">
                         {service.contact.phone}
                       </p>
                     </div>
@@ -331,7 +331,7 @@ export default function ServicePage({ service }: ServiceClientProps) {
                       </p>
                       <a
                         href={`mailto:${service.contact.email}`}
-                        className="text-sm leading-relaxed font-medium break-all text-blue-700 hover:underline"
+                        className="text-sm leading-relaxed font-medium break-all text-blue-700 hover:underline dark:text-blue-300"
                       >
                         {service.contact.email}
                       </a>
@@ -345,11 +345,11 @@ export default function ServicePage({ service }: ServiceClientProps) {
           {service.type === "standard" &&
             service.notes &&
             service.notes.length > 0 && (
-              <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 shadow-sm">
-                <h3 className="mb-3 flex items-center gap-2 text-base font-bold text-amber-900">
+              <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 shadow-sm dark:border-amber-800 dark:bg-amber-950/40">
+                <h3 className="mb-3 flex items-center gap-2 text-base font-bold text-amber-900 dark:text-amber-200">
                   <Info className="h-4 w-4" /> Good to know
                 </h3>
-                <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-amber-900">
+                <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-amber-900 dark:text-amber-200">
                   {service.notes.map((note, idx) => (
                     <li key={idx}>{note}</li>
                   ))}
@@ -359,20 +359,21 @@ export default function ServicePage({ service }: ServiceClientProps) {
 
           {(service.type === "standard" || service.type === "external") &&
             service.reference && (
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 className="mb-2 flex items-center gap-2 text-base font-bold text-slate-900">
-                  <BookOpen className="h-4 w-4 text-emerald-600" /> Source
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <h3 className="mb-2 flex items-center gap-2 text-base font-bold text-slate-900 dark:text-slate-100">
+                  <BookOpen className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />{" "}
+                  Source
                 </h3>
                 <a
                   href={service.reference.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-start gap-1.5 text-sm leading-relaxed font-medium text-blue-700 hover:underline"
+                  className="inline-flex items-start gap-1.5 text-sm leading-relaxed font-medium text-blue-700 hover:underline dark:text-blue-300"
                 >
                   {service.reference.title}
                   <ExternalLink className="mt-1 h-3.5 w-3.5 shrink-0" />
                 </a>
-                <p className="mt-2 text-xs leading-relaxed text-slate-500">
+                <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
                   Fees, requirements and steps can change. Confirm with the
                   office before you go.
                 </p>
@@ -387,7 +388,7 @@ export default function ServicePage({ service }: ServiceClientProps) {
               If you notice outdated information or need assistance
               understanding these requirements, please let the community know.
             </p>
-            <button className="w-full rounded-lg bg-white py-2.5 text-sm font-bold text-blue-700 transition-colors hover:bg-blue-50">
+            <button className="w-full rounded-lg bg-white py-2.5 text-sm font-bold text-blue-700 transition-colors hover:bg-blue-50 dark:bg-slate-900 dark:text-blue-300 dark:hover:bg-blue-950/40">
               Suggest an Edit
             </button>
           </div>

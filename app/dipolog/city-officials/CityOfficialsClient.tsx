@@ -37,11 +37,11 @@ const cityOfficialsReferences = [
 
 export default function CityOfficialsClient() {
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav />
       <SubpageHero>
         <SubpageHero.Badges>
-          <span className="rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1 text-xs font-bold tracking-wider text-indigo-700 uppercase">
+          <span className="rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1 text-xs font-bold tracking-wider text-indigo-700 uppercase dark:border-indigo-900 dark:bg-indigo-950/40 dark:text-indigo-300">
             Local Government · {officialsData.term}
           </span>
         </SubpageHero.Badges>
@@ -55,15 +55,15 @@ export default function CityOfficialsClient() {
       <div className="mx-auto max-w-[1200px] px-4 py-12 md:px-6">
         {/* --- EXECUTIVE BRANCH --- */}
         <section className="mb-16">
-          <div className="mb-6 flex items-center gap-3 border-b border-slate-200 pb-4">
-            <div className="shrink-0 rounded-lg bg-blue-100 p-2 text-blue-700">
+          <div className="mb-6 flex items-center gap-3 border-b border-slate-200 pb-4 dark:border-slate-800">
+            <div className="shrink-0 rounded-lg bg-blue-100 p-2 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300">
               <Landmark className="h-6 w-6" />
             </div>
             <div>
-              <h2 className="text-2xl font-black tracking-tight text-slate-900">
+              <h2 className="text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100">
                 Executive Branch
               </h2>
-              <p className="text-sm font-medium text-slate-500">
+              <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
                 Office of the City Mayor · 4F City Hall, Rizal Ave. · (065)
                 212-2484
               </p>
@@ -74,20 +74,20 @@ export default function CityOfficialsClient() {
             {officialsData.executive.map((official, idx) => (
               <div
                 key={idx}
-                className="group relative overflow-hidden rounded-3xl border border-blue-100 bg-white p-8 shadow-sm transition-all hover:border-blue-300 hover:shadow-md"
+                className="group relative overflow-hidden rounded-3xl border border-blue-100 bg-white p-8 shadow-sm transition-all hover:border-blue-300 hover:shadow-md dark:border-blue-900 dark:bg-slate-900 dark:hover:border-blue-700"
               >
                 {/* Decorative background accent */}
-                <div className="absolute top-0 right-0 -mt-16 -mr-16 h-32 w-32 rounded-bl-full bg-blue-50 transition-transform group-hover:scale-110"></div>
+                <div className="absolute top-0 right-0 -mt-16 -mr-16 h-32 w-32 rounded-bl-full bg-blue-50 transition-transform group-hover:scale-110 dark:bg-blue-950/40"></div>
 
                 <div className="relative z-10 flex items-start gap-5">
                   <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-sm">
                     <ShieldCheck className="h-8 w-8" />
                   </div>
                   <div>
-                    <p className="mb-1 text-xs font-extrabold tracking-widest text-blue-600 uppercase">
+                    <p className="mb-1 text-xs font-extrabold tracking-widest text-blue-600 uppercase dark:text-blue-400">
                       {official.position}
                     </p>
-                    <h3 className="text-2xl font-black text-slate-900">
+                    <h3 className="text-2xl font-black text-slate-900 dark:text-slate-100">
                       Hon. {official.name}
                     </h3>
                   </div>
@@ -99,15 +99,15 @@ export default function CityOfficialsClient() {
 
         {/* --- LEGISLATIVE BRANCH --- */}
         <section className="mb-16">
-          <div className="mb-6 flex items-center gap-3 border-b border-slate-200 pb-4">
-            <div className="shrink-0 rounded-lg bg-emerald-100 p-2 text-emerald-700">
+          <div className="mb-6 flex items-center gap-3 border-b border-slate-200 pb-4 dark:border-slate-800">
+            <div className="shrink-0 rounded-lg bg-emerald-100 p-2 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300">
               <Gavel className="h-6 w-6" />
             </div>
             <div>
-              <h2 className="text-2xl font-black tracking-tight text-slate-900">
+              <h2 className="text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100">
                 Legislative Branch
               </h2>
-              <p className="text-sm font-medium text-slate-500">
+              <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
                 {officialsData.council} (City Council)
               </p>
             </div>
@@ -121,13 +121,13 @@ export default function CityOfficialsClient() {
               return (
                 <div
                   key={idx}
-                  className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-emerald-200 hover:shadow-md"
+                  className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-emerald-200 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-emerald-800"
                 >
                   <div
                     className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${
                       isExOfficio
-                        ? "bg-amber-100 text-amber-600"
-                        : "bg-slate-100 text-slate-500 group-hover:bg-emerald-50 group-hover:text-emerald-600"
+                        ? "bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-400"
+                        : "bg-slate-100 text-slate-500 group-hover:bg-emerald-50 group-hover:text-emerald-600 dark:bg-slate-800 dark:text-slate-400 dark:group-hover:bg-emerald-950/40 dark:group-hover:text-emerald-400"
                     } transition-colors`}
                   >
                     {isExOfficio ? (
@@ -137,7 +137,7 @@ export default function CityOfficialsClient() {
                     )}
                   </div>
                   <div>
-                    <h3 className="text-sm leading-tight font-bold text-slate-900 transition-colors group-hover:text-emerald-700">
+                    <h3 className="text-sm leading-tight font-bold text-slate-900 transition-colors group-hover:text-emerald-700 dark:text-slate-100 dark:group-hover:text-emerald-300">
                       Hon. {official.name}
                     </h3>
                     <p className="mt-1 text-[11px] font-bold tracking-wider text-slate-400 uppercase">
@@ -152,15 +152,15 @@ export default function CityOfficialsClient() {
 
         {/* --- COMMITTEES --- */}
         <section>
-          <div className="mb-6 flex items-center gap-3 border-b border-slate-200 pb-4">
-            <div className="shrink-0 rounded-lg bg-violet-100 p-2 text-violet-700">
+          <div className="mb-6 flex items-center gap-3 border-b border-slate-200 pb-4 dark:border-slate-800">
+            <div className="shrink-0 rounded-lg bg-violet-100 p-2 text-violet-700 dark:bg-violet-900/50 dark:text-violet-300">
               <Users className="h-6 w-6" />
             </div>
             <div>
-              <h2 className="text-2xl font-black tracking-tight text-slate-900">
+              <h2 className="text-2xl font-black tracking-tight text-slate-900 dark:text-slate-100">
                 Committees
               </h2>
-              <p className="text-sm font-medium text-slate-500">
+              <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
                 Committee chairs and members of the {officialsData.council}
               </p>
             </div>
@@ -170,22 +170,22 @@ export default function CityOfficialsClient() {
             {officialsData.committees.map((committee, idx) => (
               <details
                 key={idx}
-                className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm open:border-violet-200"
+                className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm open:border-violet-200 dark:border-slate-800 dark:bg-slate-900 dark:open:border-violet-800"
               >
                 <summary className="flex cursor-pointer list-none items-start justify-between gap-3">
                   <div>
-                    <h3 className="text-sm leading-tight font-bold text-slate-900">
+                    <h3 className="text-sm leading-tight font-bold text-slate-900 dark:text-slate-100">
                       {committee.name}
                     </h3>
-                    <p className="mt-1.5 text-xs text-slate-500">
-                      <span className="font-semibold text-slate-700">
+                    <p className="mt-1.5 text-xs text-slate-500 dark:text-slate-400">
+                      <span className="font-semibold text-slate-700 dark:text-slate-300">
                         Chair:
                       </span>{" "}
                       Hon. {committee.chairperson}
                       {committee.viceChairperson && (
                         <>
                           {" · "}
-                          <span className="font-semibold text-slate-700">
+                          <span className="font-semibold text-slate-700 dark:text-slate-300">
                             Vice:
                           </span>{" "}
                           Hon. {committee.viceChairperson}
@@ -196,7 +196,7 @@ export default function CityOfficialsClient() {
                   <ChevronDown className="mt-0.5 h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" />
                 </summary>
                 {committee.members.length > 0 && (
-                  <ul className="mt-3 space-y-1 border-t border-slate-100 pt-3 text-xs text-slate-600">
+                  <ul className="mt-3 space-y-1 border-t border-slate-100 pt-3 text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400">
                     {committee.members.map((member) => (
                       <li key={member}>Hon. {member}</li>
                     ))}

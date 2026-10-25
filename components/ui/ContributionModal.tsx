@@ -55,15 +55,15 @@ export default function ContributionModal({
 
   return (
     <div className="animate-in fade-in fixed inset-0 z-[999] flex items-center justify-center bg-slate-900/50 p-4 backdrop-blur-sm duration-200">
-      <div className="custom-scrollbar animate-in zoom-in-95 relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white shadow-2xl duration-200">
+      <div className="custom-scrollbar animate-in zoom-in-95 relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white shadow-2xl duration-200 dark:bg-slate-900">
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-100 bg-white p-5">
-          <h2 className="text-xl font-bold text-slate-900">
+        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-100 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+          <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">
             Contribute to BetterDipolog
           </h2>
           <button
             onClick={onClose}
-            className="rounded-full p-2 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
+            className="rounded-full p-2 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-300"
           >
             <X className="h-5 w-5" />
           </button>
@@ -71,13 +71,13 @@ export default function ContributionModal({
 
         {status === "success" ? (
           <div className="p-8 text-center">
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400">
               <Send className="h-8 w-8" />
             </div>
-            <h3 className="mb-2 text-2xl font-bold text-slate-900">
+            <h3 className="mb-2 text-2xl font-bold text-slate-900 dark:text-slate-100">
               Sent Successfully!
             </h3>
-            <p className="text-slate-500">
+            <p className="text-slate-500 dark:text-slate-400">
               Thank you for helping improve our city's directory. Our moderators
               will review this shortly.
             </p>
@@ -86,7 +86,7 @@ export default function ContributionModal({
           <form onSubmit={handleSubmit} className="space-y-5 p-6">
             {/* Submission Type */}
             <div className="space-y-3">
-              <label className="text-sm font-bold text-slate-700">
+              <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
                 What would you like to do?
               </label>
               <div className="grid grid-cols-2 gap-3">
@@ -98,7 +98,7 @@ export default function ContributionModal({
                     className="peer sr-only"
                     defaultChecked
                   />
-                  <div className="rounded-xl border-2 border-slate-200 p-3 text-center font-medium text-slate-500 transition-all peer-checked:border-blue-600 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:border-blue-300">
+                  <div className="rounded-xl border-2 border-slate-200 p-3 text-center font-medium text-slate-500 transition-all peer-checked:border-blue-600 peer-checked:bg-blue-50 peer-checked:text-blue-700 hover:border-blue-300 dark:border-slate-800 dark:text-slate-400 dark:peer-checked:bg-blue-950/40 dark:peer-checked:text-blue-300 dark:hover:border-blue-700">
                     Suggest New Service
                   </div>
                 </label>
@@ -109,7 +109,7 @@ export default function ContributionModal({
                     value="report"
                     className="peer sr-only"
                   />
-                  <div className="rounded-xl border-2 border-slate-200 p-3 text-center font-medium text-slate-500 transition-all peer-checked:border-orange-500 peer-checked:bg-orange-50 peer-checked:text-orange-700 hover:border-orange-300">
+                  <div className="rounded-xl border-2 border-slate-200 p-3 text-center font-medium text-slate-500 transition-all peer-checked:border-orange-500 peer-checked:bg-orange-50 peer-checked:text-orange-700 hover:border-orange-300 dark:border-slate-800 dark:text-slate-400 dark:peer-checked:bg-orange-950/40 dark:peer-checked:text-orange-300 dark:hover:border-orange-700">
                     Report an Update/Fix
                   </div>
                 </label>
@@ -118,7 +118,7 @@ export default function ContributionModal({
 
             {/* Basic Info */}
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-700">
+              <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
                 Service Name / Office
               </label>
               <input
@@ -126,18 +126,18 @@ export default function ContributionModal({
                 type="text"
                 name="title"
                 placeholder="e.g. City Health Office"
-                className="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-500 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+                className="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-500 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 dark:border-slate-800 dark:placeholder:text-slate-400"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-700">
+              <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
                 Category
               </label>
               <select
                 required
                 name="category"
-                className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-500 transition-all outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+                className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-500 transition-all outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400"
               >
                 <option value="">Select a category...</option>
                 {headerDropdown.map((subItem) => (
@@ -150,7 +150,7 @@ export default function ContributionModal({
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-700">
+              <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
                 Details, Procedures, or Links
               </label>
               <textarea
@@ -158,12 +158,12 @@ export default function ContributionModal({
                 name="details"
                 rows={4}
                 placeholder="Paste requirements, Facebook links, or describe the procedures here..."
-                className="w-full resize-none rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-500 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+                className="w-full resize-none rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-500 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 dark:border-slate-800 dark:placeholder:text-slate-400"
               ></textarea>
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-700">
+              <label className="text-sm font-bold text-slate-700 dark:text-slate-300">
                 Your Email{" "}
                 <span className="font-normal text-slate-400">(Optional)</span>
               </label>
@@ -171,7 +171,7 @@ export default function ContributionModal({
                 type="email"
                 name="email"
                 placeholder="In case we need to clarify details"
-                className="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-500 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+                className="w-full rounded-xl border border-slate-200 px-4 py-3 transition-all outline-none placeholder:text-slate-500 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 dark:border-slate-800 dark:placeholder:text-slate-400"
               />
             </div>
 
@@ -186,7 +186,7 @@ export default function ContributionModal({
             )}
 
             {status === "error" && (
-              <div className="flex items-center gap-2 rounded-lg bg-red-50 p-3 text-sm font-medium text-red-600">
+              <div className="flex items-center gap-2 rounded-lg bg-red-50 p-3 text-sm font-medium text-red-600 dark:bg-red-950/40 dark:text-red-400">
                 <AlertCircle className="h-4 w-4 shrink-0" />
                 Please complete the CAPTCHA or try again.
               </div>

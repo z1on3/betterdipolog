@@ -28,7 +28,7 @@ import {
 const DisasterMapLeaflet = dynamic(() => import("./DisasterMapLeaflet"), {
   ssr: false,
   loading: () => (
-    <div className="flex h-full w-full animate-pulse items-center justify-center bg-slate-100 font-medium text-slate-500">
+    <div className="flex h-full w-full animate-pulse items-center justify-center bg-slate-100 font-medium text-slate-500 dark:bg-slate-800 dark:text-slate-400">
       Loading map…
     </div>
   ),
@@ -135,9 +135,9 @@ export default function DisasterMapView({
   }
 
   return (
-    <div className="flex h-[calc(100dvh-4rem)] min-h-[520px] flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm lg:flex-row">
+    <div className="flex h-[calc(100dvh-4rem)] min-h-[520px] flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm lg:flex-row dark:border-gray-800 dark:bg-slate-900">
       {/* SIDEBAR: search, filters, list or detail */}
-      <div className="flex h-2/5 shrink-0 flex-col border-b border-slate-100 lg:h-full lg:w-96 lg:border-r lg:border-b-0">
+      <div className="flex h-2/5 shrink-0 flex-col border-b border-slate-100 lg:h-full lg:w-96 lg:border-r lg:border-b-0 dark:border-slate-800">
         {selected ? (
           <FacilityDetail
             facility={selected}
@@ -150,7 +150,7 @@ export default function DisasterMapView({
           />
         ) : (
           <>
-            <div className="space-y-3 border-b border-slate-100 p-3">
+            <div className="space-y-3 border-b border-slate-100 p-3 dark:border-slate-800">
               <div className="relative">
                 <Search
                   className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-slate-400"
@@ -162,7 +162,7 @@ export default function DisasterMapView({
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search facilities…"
                   aria-label="Search facilities"
-                  className="w-full rounded-lg border border-slate-200 py-2 pr-3 pl-9 text-sm focus:ring-2 focus:ring-blue-200 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-200 py-2 pr-3 pl-9 text-sm focus:ring-2 focus:ring-blue-200 focus:outline-none dark:border-slate-800 dark:focus:ring-blue-800"
                 />
               </div>
 
@@ -178,7 +178,7 @@ export default function DisasterMapView({
                       className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-bold transition-all ${
                         on
                           ? "border-transparent text-white"
-                          : "border-slate-200 bg-white text-slate-500"
+                          : "border-slate-200 bg-white text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400"
                       }`}
                       style={on ? { backgroundColor: color } : undefined}
                     >
@@ -216,7 +216,7 @@ export default function DisasterMapView({
                       className={`inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors ${
                         on
                           ? "border-transparent bg-slate-800 text-white"
-                          : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50"
+                          : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:bg-slate-950"
                       }`}
                     >
                       <Icon className="h-4 w-4" />
@@ -226,7 +226,9 @@ export default function DisasterMapView({
                 })}
               </div>
               {locError && (
-                <p className="mt-1.5 text-xs text-red-600">{locError}</p>
+                <p className="mt-1.5 text-xs text-red-600 dark:text-red-400">
+                  {locError}
+                </p>
               )}
             </div>
 
@@ -245,14 +247,14 @@ export default function DisasterMapView({
                   <li key={f.name}>
                     <button
                       onClick={() => setSelected(f)}
-                      className="w-full rounded-lg border border-slate-100 p-3 text-left transition-all hover:border-blue-200 hover:bg-slate-50"
+                      className="w-full rounded-lg border border-slate-100 p-3 text-left transition-all hover:border-blue-200 hover:bg-slate-50 dark:border-slate-800 dark:hover:border-blue-800 dark:hover:bg-slate-950"
                     >
                       <div className="flex items-center gap-2">
                         <span
                           className="h-2.5 w-2.5 shrink-0 rounded-full"
                           style={{ backgroundColor: color }}
                         />
-                        <span className="text-sm leading-tight font-bold text-slate-900">
+                        <span className="text-sm leading-tight font-bold text-slate-900 dark:text-slate-100">
                           {f.name}
                         </span>
                       </div>
@@ -261,7 +263,7 @@ export default function DisasterMapView({
                           {label}
                         </span>
                         {dist !== null && (
-                          <span className="text-[10px] font-bold text-blue-600">
+                          <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400">
                             {dist.toFixed(1)} km
                           </span>
                         )}
@@ -276,7 +278,7 @@ export default function DisasterMapView({
       </div>
 
       {/* MAP */}
-      <div className="relative isolate z-0 h-3/5 flex-1 bg-slate-100 lg:h-full">
+      <div className="relative isolate z-0 h-3/5 flex-1 bg-slate-100 lg:h-full dark:bg-slate-800">
         <DisasterMapLeaflet
           facilities={visible}
           selected={selected}
@@ -292,14 +294,16 @@ export default function DisasterMapView({
               return (
                 <div
                   key={key}
-                  className="rounded-lg border border-slate-200 bg-white/95 px-3 py-2 text-[11px] shadow-md backdrop-blur-sm"
+                  className="rounded-lg border border-slate-200 bg-white/95 px-3 py-2 text-[11px] shadow-md backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/95"
                 >
-                  <p className="mb-1 font-bold text-slate-700">{legend}</p>
+                  <p className="mb-1 font-bold text-slate-700 dark:text-slate-300">
+                    {legend}
+                  </p>
                   <div className="flex items-center gap-3">
                     {(["Low", "Medium", "High"] as const).map((l, i) => (
                       <span
                         key={l}
-                        className="inline-flex items-center gap-1 text-slate-600"
+                        className="inline-flex items-center gap-1 text-slate-600 dark:text-slate-400"
                       >
                         <span
                           className="h-3 w-3 rounded-sm"
@@ -312,7 +316,7 @@ export default function DisasterMapView({
                 </div>
               );
             })}
-            <p className="px-1 text-[10px] text-slate-500">
+            <p className="px-1 text-[10px] text-slate-500 dark:text-slate-400">
               Source:{" "}
               <a
                 href={HAZARD_SOURCE.url}
@@ -343,17 +347,17 @@ function FacilityDetail({
   const { label, color } = CATEGORY_META[facility.category];
   return (
     <div className="flex h-full flex-col">
-      <div className="flex items-center justify-between border-b border-slate-100 p-3">
+      <div className="flex items-center justify-between border-b border-slate-100 p-3 dark:border-slate-800">
         <button
           onClick={onBack}
-          className="inline-flex items-center gap-1 text-sm font-semibold text-slate-600 hover:text-slate-900"
+          className="inline-flex items-center gap-1 text-sm font-semibold text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
         >
           <ChevronLeft className="h-4 w-4" /> All facilities
         </button>
         <button
           onClick={onBack}
           aria-label="Close details"
-          className="p-1 text-slate-400 hover:text-slate-700"
+          className="p-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-300"
         >
           <X className="h-4 w-4" />
         </button>
@@ -366,14 +370,16 @@ function FacilityDetail({
         >
           {label}
         </span>
-        <h2 className="text-lg leading-tight font-bold text-slate-900">
+        <h2 className="text-lg leading-tight font-bold text-slate-900 dark:text-slate-100">
           {facility.name}
         </h2>
         {facility.address && (
-          <p className="mt-1 text-sm text-slate-500">{facility.address}</p>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+            {facility.address}
+          </p>
         )}
         {distance !== null && (
-          <p className="mt-2 text-sm font-bold text-blue-600">
+          <p className="mt-2 text-sm font-bold text-blue-600 dark:text-blue-400">
             {distance.toFixed(1)} km from you
           </p>
         )}
@@ -391,7 +397,7 @@ function FacilityDetail({
             href={`https://www.openstreetmap.org/directions?to=${facility.lat}%2C${facility.lon}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-slate-100 py-2.5 text-sm font-bold text-slate-700 transition-colors hover:bg-slate-200"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-slate-100 py-2.5 text-sm font-bold text-slate-700 transition-colors hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
           >
             <MapPin className="h-4 w-4" /> Get directions
           </a>
@@ -403,7 +409,7 @@ function FacilityDetail({
             href={facility.source}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline hover:text-slate-600"
+            className="underline hover:text-slate-600 dark:hover:text-slate-400"
           >
             OpenStreetMap
           </a>{" "}

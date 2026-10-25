@@ -101,11 +101,11 @@ const CITY_LINKS = [
 
 export default function TransparencyDirectory() {
   return (
-    <main className="min-h-screen bg-slate-50 pb-24 font-sans">
+    <main className="min-h-screen bg-slate-50 pb-24 font-sans dark:bg-slate-950">
       <SubpageNav href="/" text="Go Home" />
       <SubpageHero>
         <SubpageHero.Badges>
-          <span className="inline-flex items-center gap-1 rounded border border-emerald-200 bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-700">
+          <span className="inline-flex items-center gap-1 rounded border border-emerald-200 bg-emerald-50 px-2 py-1 text-xs font-semibold text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300">
             <ShieldCheck className="h-3.5 w-3.5" /> Fiscal Accountability
           </span>
         </SubpageHero.Badges>
@@ -130,20 +130,20 @@ export default function TransparencyDirectory() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:border-emerald-300 hover:shadow-md"
+                className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:border-emerald-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-emerald-700"
               >
-                <div className="shrink-0 rounded-xl bg-emerald-50 p-3 text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
+                <div className="shrink-0 rounded-xl bg-emerald-50 p-3 text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-950/40 dark:text-emerald-400">
                   <Icon className="h-6 w-6" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-1 text-lg font-bold text-slate-900 transition-colors group-hover:text-emerald-700">
+                  <h3 className="mb-1 text-lg font-bold text-slate-900 transition-colors group-hover:text-emerald-700 dark:text-slate-100 dark:group-hover:text-emerald-300">
                     {item.name}
                   </h3>
-                  <p className="line-clamp-2 text-sm text-slate-500">
+                  <p className="line-clamp-2 text-sm text-slate-500 dark:text-slate-400">
                     {item.description}
                   </p>
                 </div>
-                <div className="mt-1 text-slate-400 transition-all group-hover:translate-x-1 group-hover:text-emerald-600">
+                <div className="mt-1 text-slate-400 transition-all group-hover:translate-x-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
                   <ArrowRight className="h-5 w-5" />
                 </div>
               </Link>
@@ -165,20 +165,20 @@ export default function TransparencyDirectory() {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:border-blue-300 hover:shadow-md"
+              className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:border-blue-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-blue-700"
             >
-              <div className="shrink-0 rounded-xl bg-blue-50 p-3 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+              <div className="shrink-0 rounded-xl bg-blue-50 p-3 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white dark:bg-blue-950/40 dark:text-blue-400">
                 <FileText className="h-6 w-6" />
               </div>
               <div className="flex-1">
-                <h3 className="mb-1 text-base font-bold text-slate-900 transition-colors group-hover:text-blue-700">
+                <h3 className="mb-1 text-base font-bold text-slate-900 transition-colors group-hover:text-blue-700 dark:text-slate-100 dark:group-hover:text-blue-300">
                   {item.name}
                 </h3>
-                <p className="line-clamp-2 text-sm text-slate-500">
+                <p className="line-clamp-2 text-sm text-slate-500 dark:text-slate-400">
                   {item.description}
                 </p>
               </div>
-              <div className="mt-1 text-slate-400 group-hover:text-blue-600">
+              <div className="mt-1 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                 <ExternalLink className="h-4 w-4" />
               </div>
             </a>

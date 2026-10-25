@@ -32,7 +32,10 @@ export default function LoginForm() {
   return (
     <form onSubmit={onSubmit} className="mt-6 space-y-4">
       <div className="space-y-1.5">
-        <label htmlFor="password" className="text-sm font-bold text-slate-700">
+        <label
+          htmlFor="password"
+          className="text-sm font-bold text-slate-700 dark:text-slate-300"
+        >
           Password
         </label>
         <input
@@ -41,10 +44,14 @@ export default function LoginForm() {
           type="password"
           required
           autoFocus
-          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"
+          className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-900 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 dark:border-slate-800 dark:text-slate-100"
         />
       </div>
-      {error && <p className="text-sm font-medium text-red-600">{error}</p>}
+      {error && (
+        <p className="text-sm font-medium text-red-600 dark:text-red-400">
+          {error}
+        </p>
+      )}
       <button
         type="submit"
         disabled={submitting}

@@ -48,7 +48,7 @@ export default function EmergencyQuickCall() {
           key={label}
           href={telHref(number)}
           aria-label={`Call ${label} at ${number}`}
-          className="group flex h-full items-center gap-2.5 overflow-hidden rounded-lg border border-gray-200 bg-white p-3.5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-md active:scale-[0.98] active:bg-slate-50"
+          className="group flex h-full items-center gap-2.5 overflow-hidden rounded-lg border border-gray-200 bg-white p-3.5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-md active:scale-[0.98] active:bg-slate-50 dark:border-gray-800 dark:bg-slate-900 dark:hover:border-gray-700 dark:active:bg-slate-950"
         >
           <span
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg"
@@ -57,7 +57,7 @@ export default function EmergencyQuickCall() {
             <Icon className="h-5 w-5" style={{ color }} aria-hidden />
           </span>
           <span className="flex min-w-0 flex-col leading-tight">
-            <span className="text-[11px] font-semibold tracking-wide text-slate-500 uppercase">
+            <span className="text-[11px] font-semibold tracking-wide text-slate-500 uppercase dark:text-slate-400">
               {label}
             </span>
             {/* Phone icon + colored number reads as a tap-to-call action,

@@ -8,7 +8,7 @@ import { CloudRain, Waves, Activity, ChevronDown } from "lucide-react";
 function renderEmphasis(text: string) {
   return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
     part.startsWith("**") && part.endsWith("**") ? (
-      <strong key={i} className="font-bold text-slate-900">
+      <strong key={i} className="font-bold text-slate-900 dark:text-slate-100">
         {part.slice(2, -2)}
       </strong>
     ) : (
@@ -62,11 +62,11 @@ export default function GuidesSection() {
     <section aria-labelledby="guides-heading">
       <h2
         id="guides-heading"
-        className="mb-2 text-2xl font-bold text-slate-900"
+        className="mb-2 text-2xl font-bold text-slate-900 dark:text-slate-100"
       >
         What to do: Preparedness Guides
       </h2>
-      <p className="mb-6 text-slate-600">
+      <p className="mb-6 text-slate-600 dark:text-slate-400">
         Simple checklists for before, during, and after each hazard — adapted
         from NDRRMC and Philippine Red Cross public guidance.
       </p>
@@ -79,7 +79,7 @@ export default function GuidesSection() {
             <details
               key={guide.hazard}
               open={i === 0}
-              className="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm"
+              className="group overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-slate-900"
             >
               <summary className="cursor-pointer list-none select-none [&::-webkit-details-marker]:hidden">
                 {/* Themed illustration header with the hazard title overlaid. */}
@@ -93,7 +93,7 @@ export default function GuidesSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
                   <div className="relative flex h-full items-end gap-3 p-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm dark:bg-slate-900/20">
                       <Icon className="h-5 w-5 text-white" aria-hidden />
                     </span>
                     <span className="min-w-0 flex-1">
@@ -111,7 +111,7 @@ export default function GuidesSection() {
                   </div>
                 </div>
               </summary>
-              <div className="grid gap-6 border-t border-slate-100 px-5 pt-1 pb-6 md:grid-cols-3">
+              <div className="grid gap-6 border-t border-slate-100 px-5 pt-1 pb-6 md:grid-cols-3 dark:border-slate-800">
                 {PHASES.map((phase) => (
                   <div key={phase}>
                     <h3
@@ -124,7 +124,7 @@ export default function GuidesSection() {
                       {guide.phases[phase].map((item, idx) => (
                         <li
                           key={idx}
-                          className="border-l-2 pl-3 text-sm leading-relaxed text-slate-600"
+                          className="border-l-2 pl-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400"
                           style={{ borderColor: `${color}40` }}
                         >
                           {renderEmphasis(item)}
