@@ -79,12 +79,17 @@ const footerSections: FooterSection[] = [
 export default function Footer({ className }: ClassName) {
   const pathname = usePathname();
   const hideHeader = HIDDEN_HEADER_PATHS.includes(pathname);
+  // The homepage's last section fades into the footer colour, so it needs no
+  // top padding; every other page ends on a light background.
+  const isHome = pathname === "/";
 
   return (
     <footer
       className={`${className} ${hideHeader && "hidden"} overflow-hidden bg-slate-900 font-sans text-white`}
     >
-      <div className="container mx-auto flex min-h-full flex-col px-4 pt-0 pb-8">
+      <div
+        className={`container mx-auto flex min-h-full flex-col px-4 pb-8 ${isHome ? "pt-0" : "pt-12 md:pt-16"}`}
+      >
         {/* Description & Socials nested right above the giant logo */}
         <div className="mb-6 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center sm:gap-6 md:mb-8">
           <p className="max-w-[350px] text-sm leading-relaxed text-slate-400">
@@ -155,7 +160,7 @@ export default function Footer({ className }: ClassName) {
               height={200}
               className="h-auto w-[12vw] max-w-[140px] min-w-[50px] shrink-0 rounded-xl object-cover select-none sm:rounded-2xl"
             />
-            <div className="truncate text-right text-[clamp(2rem,9vw,10rem)] leading-none font-black tracking-tighter text-white select-none">
+            <div className="truncate pb-[0.2em] text-right text-[clamp(2rem,9vw,10rem)] leading-none font-black tracking-tighter text-white select-none">
               BetterDipolog
             </div>
           </div>
