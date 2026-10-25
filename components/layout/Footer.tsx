@@ -154,7 +154,7 @@ export default function Footer({ className }: ClassName) {
           {/* The Dynamically Expanding Logo & Name */}
           <div className="flex w-full items-center justify-center gap-3 sm:gap-6">
             <Image
-              src="/images/logos/betterdipolog-logo.svg"
+              src="/images/logos/betterdipolog-logo.png"
               alt="BetterDipolog Logo"
               width={200}
               height={200}

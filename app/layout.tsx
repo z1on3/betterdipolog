@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   // TODO(owner): upstream's Facebook App ID (fb:app_id) was removed. Add
   // BetterDipolog's own `facebook: { appId }` here once one exists.
   other: {
-    "og:logo": "https://betterdipolog.org/icon.svg",
+    "og:logo": "https://betterdipolog.org/icon.png",
   },
 };
 

@@ -177,7 +177,7 @@ export default function Header({ className }: ClassName) {
             {/* Logo */}
             <div className="flex shrink-0 items-center gap-1 sm:gap-3">
               <Image
-                src="/images/logos/betterdipolog-logo.svg"
+                src="/images/logos/betterdipolog-logo.png"
                 alt="BetterDipolog Logo"
                 width={75}
                 height={75}

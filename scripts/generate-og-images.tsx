@@ -54,14 +54,14 @@ async function generateImages() {
   }
 
   // Embed the local logo as a data URI so generation needs no network access.
-  const logoDataUri = `data:image/svg+xml;base64,${fs
+  const logoDataUri = `data:image/png;base64,${fs
     .readFileSync(
       path.join(
         process.cwd(),
         "public",
         "images",
         "logos",
-        "betterdipolog-logo.svg",
+        "betterdipolog-logo.png",
       ),
     )
     .toString("base64")}`;

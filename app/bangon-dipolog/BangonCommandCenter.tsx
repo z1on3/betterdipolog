@@ -119,7 +119,7 @@ export default function BangonCommandCenter({
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
             <Image
-              src="/images/logos/betterdipolog-logo.svg"
+              src="/images/logos/betterdipolog-logo.png"
               alt="BetterDipolog"
               width={28}
               height={28}
