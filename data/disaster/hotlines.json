@@ -5,74 +5,81 @@
     "numbers": ["911"],
     "hours": "24/7",
     "source": "https://ehotlines.e.gov.ph/",
-    "verifiedAt": "2026-07-03"
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Dipolog City Disaster Risk Reduction and Management Office (CDRRMO)",
+    "category": "rescue",
+    "numbers": ["(065) 212-1506", "(065) 212-1508"],
+    "source": "https://dipologcity.gov.ph/executive/",
+    "verifiedAt": "2026-10-25"
   },
   {
     "name": "Philippine Red Cross",
     "category": "rescue",
-    "numbers": ["143", "(02) 8790-2300"],
-    "source": "https://redcross.org.ph/contact-us/",
-    "verifiedAt": "2026-07-03"
+    "numbers": ["143"],
+    "source": "https://redcross.org.ph/where-to-donate-and-avail-blood/",
+    "verifiedAt": "2026-10-25"
   },
   {
-    "name": "Iligan City Disaster Risk Reduction and Management Office (CDRRMO)",
+    "name": "Philippine Red Cross – Zamboanga del Norte Chapter (Dipolog)",
     "category": "rescue",
-    "numbers": ["811", "812", "221-8459", "0997-726-2692", "0929-466-5777"],
-    "source": "https://www.iligan.gov.ph/forresidents/hotelinedirectory",
-    "verifiedAt": "2026-07-03"
+    "numbers": ["(065) 212-3566"],
+    "source": "https://redcross.org.ph/where-to-donate-and-avail-blood/",
+    "verifiedAt": "2026-10-25"
   },
   {
-    "name": "Iligan City Police Office (ICPO)",
+    "name": "Philippine Coast Guard Sub-Station Dipolog",
+    "category": "rescue",
+    "numbers": ["0963-560-3347"],
+    "source": "https://www.coastguard.gov.ph/index.php/districts/cgd-southwestern-mindanao",
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Dipolog City Police Station (PNP)",
     "category": "police",
-    "numbers": ["0917-712-7411", "0998-955-3538", "221-6699", "167"],
-    "source": "https://www.iligan.gov.ph/forresidents/hotelinedirectory",
-    "verifiedAt": "2026-07-03"
+    "numbers": ["0998-598-6778"],
+    "source": "https://www.facebook.com/DipologCityPoliceStation/",
+    "verifiedAt": "2026-10-25"
   },
   {
-    "name": "Iligan City Fire Department (BFP Iligan Fire Stations)",
+    "name": "Dipolog City Fire Station (BFP)",
     "category": "fire",
-    "numbers": [
-      "160",
-      "161",
-      "221-9055",
-      "221-9056",
-      "0930-116-5433",
-      "0967-871-4388"
-    ],
-    "source": "https://www.iligan.gov.ph/forresidents/hotelinedirectory",
-    "verifiedAt": "2026-07-03"
+    "numbers": ["0918-406-5888", "0965-297-9888"],
+    "source": "https://www.facebook.com/DipologCFS/",
+    "verifiedAt": "2026-10-25"
   },
   {
-    "name": "Gregorio T. Lluch Memorial Hospital (Iligan City Hospital)",
+    "name": "Corazon C. Aquino Hospital (City Hospital)",
     "category": "medical",
-    "numbers": ["223-0602"],
-    "source": "https://www.iligan.gov.ph/forresidents/hotelinedirectory",
-    "verifiedAt": "2026-07-03"
+    "numbers": ["(065) 212-5555", "(065) 212-5860"],
+    "source": "https://dipologcity.gov.ph/executive/",
+    "verifiedAt": "2026-10-25"
   },
   {
-    "name": "Iligan City Ambulance (GTLMH)",
+    "name": "Dipolog City Health Office",
     "category": "medical",
-    "numbers": ["221-0081", "221-6775"],
-    "source": "https://www.iligan.gov.ph/forresidents/hotelinedirectory",
-    "verifiedAt": "2026-07-03"
+    "numbers": ["(065) 212-3400", "(065) 212-2490"],
+    "source": "https://dipologcity.gov.ph/executive/",
+    "verifiedAt": "2026-10-25"
   },
   {
-    "name": "Iligan Light and Power, Inc. (ILPI)",
+    "name": "Zamboanga del Norte Electric Cooperative (ZANECO)",
     "category": "utility",
     "numbers": [
-      "(063) 221-5708",
-      "(063) 221-5709",
-      "(063) 223-1188",
-      "(063) 222-2777"
+      "(065) 212-3444",
+      "(065) 212-3445",
+      "(065) 212-3446",
+      "(065) 212-3447"
     ],
-    "source": "https://www.iliganlight.com/emergencies.php",
-    "verifiedAt": "2026-07-03"
+    "source": "https://prod-cms.doe.gov.ph/documents/d/epimb/program-partners-distribution-utilities-pdf",
+    "verifiedAt": "2026-10-25"
   },
   {
-    "name": "Iligan City Waterworks System",
+    "name": "Dipolog City Water District (DCWD)",
     "category": "utility",
-    "numbers": ["223-3233", "09168358802"],
-    "source": "https://www.iligan.gov.ph/forresidents/hotelinedirectory",
-    "verifiedAt": "2026-07-03"
+    "numbers": ["(065) 212-2574", "(065) 212-6742", "(065) 908-0154"],
+    "source": "https://dipologwater.gov.ph/contact-us/",
+    "verifiedAt": "2026-10-25"
   }
 ]

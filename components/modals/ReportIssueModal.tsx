@@ -11,7 +11,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import toast from "react-hot-toast";
-// import { submitReport } from '@/actions/report'; // <-- Update this to your actual server action
+import { submitReport } from "@/actions/contribute";
 
 interface ReportIssueModalProps {
   isOpen: boolean;
@@ -43,18 +43,12 @@ export default function ReportIssueModal({
       }
 
       const formData = new FormData(e.currentTarget);
+      const result = await submitReport(formData, captchaToken);
 
-      // --- REPLACE WITH YOUR ACTUAL BACKEND/SERVER ACTION ---
-      // const result = await submitReport(formData, captchaToken);
-
-      // Simulating API call for now
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      const result = { success: true };
-
-      if (result?.success) {
+      if (result.success) {
         setStatus("success");
       } else {
-        toast.error("Failed to submit report.");
+        toast.error(result.error);
         recaptchaRef.current?.reset();
       }
     } catch (error) {
@@ -96,7 +90,7 @@ export default function ReportIssueModal({
               Sent Successfully!
             </h3>
             <p className="text-slate-500">
-              Thank you for helping keep BetterIligan accurate. Our moderators
+              Thank you for helping keep BetterDipolog accurate. Our moderators
               will review your report shortly.
             </p>
             <button
@@ -160,7 +154,7 @@ export default function ReportIssueModal({
                   </p>
                 </div>
                 <a
-                  href="https://github.com/KishonShrill/BetterIligan/issues"
+                  href="https://github.com/z1on3/betterdipolog/issues"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 py-3 font-bold text-white shadow-sm transition-all hover:bg-slate-800"

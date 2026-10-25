@@ -65,7 +65,7 @@ export default function VolunteerModalClient() {
         className="group flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 p-4 font-bold text-white shadow-sm transition-all hover:bg-slate-800 focus:ring-4 focus:ring-slate-900/20 focus:outline-none"
       >
         <Users className="h-5 w-5" />
-        Join the BetterIligan Community
+        Join the BetterDipolog Community
         <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
       </button>
 
@@ -90,9 +90,8 @@ export default function VolunteerModalClient() {
             {/* Content Links */}
             <div className="space-y-4 p-6">
               <p className="mb-6 text-sm leading-relaxed text-slate-600">
-                We coordinate online! Jump into our Discord server to talk to
-                the team, check out our code on GitHub, or follow our official
-                pages for updates.
+                We coordinate online! Join the BetterGov.ph Discord to meet
+                civic tech builders, or check out the source code on GitHub.
               </p>
 
               {/* 1. Discord */}
@@ -108,10 +107,10 @@ export default function VolunteerModalClient() {
                   </div>
                   <div>
                     <div className="font-bold text-slate-900 transition-colors group-hover:text-[#5865F2]">
-                      Discord Server
+                      BetterGov.ph Discord
                     </div>
                     <div className="text-xs text-slate-500">
-                      Chat with the devs & volunteers
+                      Chat with civic tech builders nationwide
                     </div>
                   </div>
                 </div>
@@ -120,7 +119,7 @@ export default function VolunteerModalClient() {
 
               {/* 2. GitHub */}
               <a
-                href="https://github.com/KishonShrill/BetterIligan"
+                href="https://github.com/z1on3/betterdipolog"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between rounded-xl border border-slate-200 p-4 transition-all hover:border-slate-800 hover:bg-slate-50"
@@ -134,37 +133,17 @@ export default function VolunteerModalClient() {
                       GitHub Repository
                     </div>
                     <div className="text-xs text-slate-500">
-                      Contribute to the source code
+                      BetterDipolog source code
                     </div>
                   </div>
                 </div>
                 <ExternalLink className="h-5 w-5 text-slate-300 group-hover:text-slate-900" />
               </a>
 
-              {/* 3. BetterIligan FB */}
-              <a
-                href="https://www.facebook.com/BetterIliganCity.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-xl border border-slate-200 p-4 transition-all hover:border-[#1877F2] hover:bg-[#1877F2]/5"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#1877F2] text-white shadow-sm">
-                    <FacebookIcon className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-slate-900 transition-colors group-hover:text-[#1877F2]">
-                      BetterIligan FB Page
-                    </div>
-                    <div className="text-xs text-slate-500">
-                      Local city updates & announcements
-                    </div>
-                  </div>
-                </div>
-                <ExternalLink className="h-5 w-5 text-slate-300 group-hover:text-[#1877F2]" />
-              </a>
+              {/* TODO(owner): add BetterDipolog's own Facebook page / community
+                  links here once they exist. */}
 
-              {/* 4. BetterGov FB */}
+              {/* 3. BetterGov FB */}
               <a
                 href="https://www.facebook.com/bettergovph"
                 target="_blank"
@@ -180,7 +159,7 @@ export default function VolunteerModalClient() {
                       BetterGov.ph FB Page
                     </div>
                     <div className="text-xs text-slate-500">
-                      National parent organization
+                      Nationwide civic tech movement
                     </div>
                   </div>
                 </div>

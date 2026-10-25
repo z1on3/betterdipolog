@@ -1,8 +1,9 @@
 import {
   Building2,
   FileText,
-  HeartPulse,
+  HandHeart,
   HardHat,
+  Landmark,
   Car,
   PawPrint,
   ShieldAlert,
@@ -47,15 +48,27 @@ export const serviceCategories = [
     subItems: [],
   },
   {
-    name: "Health and Wellness",
-    slug: "health-and-wellness",
+    name: "Social Welfare",
+    slug: "social-welfare",
     description:
-      "Public health services, medical assistance, community wellness programs, and access to local healthcare facilities.",
-    href: "/services?category=Health+and+Wellness",
-    icon: HeartPulse,
+      "City social welfare services such as crisis (medical and burial) assistance and PWD, senior citizen, and solo parent IDs.",
+    href: "/services?category=Social+Welfare",
+    icon: HandHeart,
     secondaryColor: "bg-rose-50",
     primaryColor: "text-rose-600",
     hoverBorder: "hover:border-rose-300",
+    subItems: [],
+  },
+  {
+    name: "Taxes and Real Property",
+    slug: "taxes-and-real-property",
+    description:
+      "Real property tax payment, realty tax clearances, and tax declarations from the City Treasurer's and City Assessor's offices.",
+    href: "/services?category=Taxes+and+Real+Property",
+    icon: Landmark,
+    secondaryColor: "bg-teal-50",
+    primaryColor: "text-teal-600",
+    hoverBorder: "hover:border-teal-300",
     subItems: [],
   },
   {
@@ -107,6 +120,12 @@ export const serviceCategories = [
     subItems: [],
   },
   /* --- PENDING CATEGORIES (Awaiting Data) --- */
+  /*
+    Health and Wellness: removed until sourced Dipolog City Health Office
+    services are added (the City's Citizen's Charter has none listed).
+    Re-add with icon HeartPulse, colors rose, href
+    '/services?category=Health+and+Wellness'.
+  */
   /*
     {
         name: 'Garbage and Waste Disposal',

@@ -1,12 +1,13 @@
 import { Metadata } from "next";
 import { safeJsonLd } from "@/lib/utils";
+import { allDepartments } from "@/data/government/departments";
 import DepartmentClient from "./DepartmentClient";
 
 // 1. STATIC METADATA (Server Side)
 export const metadata: Metadata = {
-  title: "Iligan City Departments Directory",
+  title: "Dipolog City Departments Directory",
   description:
-    "Official contact directory for all local government departments and offices within Iligan City Hall.",
+    "Contact directory of Dipolog City local government departments and offices — department heads, phone numbers, and emails.",
 };
 
 // 2. MAIN PAGE COMPONENT (Server Side)
@@ -15,17 +16,17 @@ export default function CityDepartmentsPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Iligan City Departments Directory",
+    name: "Dipolog City Departments Directory",
     description:
-      "Directory of local government departments, administrative offices, and public services under the Iligan City Local Government Unit (LGU).",
-    url: "https://betteriligancity.org/government/departments",
+      "Directory of local government departments, administrative offices, and public services under the Dipolog City Local Government Unit (LGU).",
+    url: "https://betterdipolog.org/government/departments",
     about: {
       "@type": "GovernmentOrganization",
-      name: "Iligan City Local Government Unit",
-      alternateName: "Iligan City Hall",
+      name: "City Government of Dipolog",
+      alternateName: "Dipolog City Hall",
       location: {
         "@type": "City",
-        name: "Iligan City",
+        name: "Dipolog City",
       },
     },
   };
@@ -39,7 +40,7 @@ export default function CityDepartmentsPage() {
       />
 
       {/* Render your interactive Client UI */}
-      <DepartmentClient />
+      <DepartmentClient allDepartments={allDepartments} />
     </>
   );
 }

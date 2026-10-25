@@ -13,28 +13,36 @@ import {
 } from "lucide-react";
 import SubpageNav from "@/components/ui/SubpageNav";
 import SubpageHero from "@/components/ui/SubpageHero";
-import { allDepartments } from "@/data/government/departments";
-import { DepartmentCategory } from "@/validations/agencySchema";
+import type {
+  Department,
+  DepartmentCategory,
+} from "@/validations/agencySchema";
 import FilterGrid from "@/components/ui/FilterGrid";
 import ReferencesFooter from "@/components/ui/ReferencesFooter";
 
 const CATEGORIES: DepartmentCategory[] = [
   "All Departments",
+  "City Mayors Office",
   "Social Services",
   "Public Administration",
   "Infrastructure",
   "Fiscal Management",
-  "City Mayors Office",
+  "Economic Enterprises",
 ];
 
-export default function DirectoryClient() {
+export default function DepartmentClient({
+  allDepartments,
+}: {
+  allDepartments: Department[];
+}) {
   const [activeCategory, setActiveCategory] =
     useState<DepartmentCategory>("All Departments");
 
   const departmentReferences = [
     {
-      title: "iligan.gov.ph - Departments",
-      url: "https://iligan.gov.ph/forresidents/departments?1405408361",
+      title:
+        "dipologcity.gov.ph — Executive: Chiefs of Office / Department and Division Heads",
+      url: "https://dipologcity.gov.ph/executive/",
     },
   ];
 
@@ -56,9 +64,9 @@ export default function DirectoryClient() {
         </SubpageHero.Badges>
         <SubpageHero.Title>Government Departments</SubpageHero.Title>
         <SubpageHero.Description>
-          Explore the official directory of Iligan City&apos;s local government
-          departments, administrative offices, and public services operating
-          under the City Hall.
+          Department heads, phone numbers, and emails for Dipolog City&apos;s
+          local government offices, as published by the City Government. All
+          landlines use the (065) area code.
         </SubpageHero.Description>
       </SubpageHero>
 
@@ -156,7 +164,7 @@ export default function DirectoryClient() {
                                   (number, i) => (
                                     <a
                                       key={i}
-                                      href={`tel:${number}`}
+                                      href={`tel:${number.replace(/[^0-9+]/g, "")}`}
                                       className="break-all transition-colors hover:text-blue-600"
                                     >
                                       {number}
@@ -226,7 +234,11 @@ export default function DirectoryClient() {
             })}
           </FilterGrid.Content>
         </FilterGrid>
-        <ReferencesFooter className="mx-4" references={departmentReferences} />
+        <ReferencesFooter
+          className="mx-4"
+          references={departmentReferences}
+          disclaimer="Office heads and contact details are as listed on the official Dipolog City website and may change. Some offices have no published number or email yet — help us gather this data."
+        />
       </div>
     </main>
   );

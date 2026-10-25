@@ -7,7 +7,7 @@ import { Code, Terminal, Database, ShieldAlert } from "lucide-react";
 export const metadata: Metadata = {
   title: "Open Data API",
   description:
-    "Documentation for the BetterIliganCity Open Data API. Access our directory of local government units, services, and public facilities.",
+    "Documentation for the BetterDipolog Open Data API. Access our directory of local government units, services, and public facilities.",
 };
 
 export default function OpenDataPage() {
@@ -23,7 +23,7 @@ export default function OpenDataPage() {
         <SubpageHero.Title>Open Data API</SubpageHero.Title>
         <SubpageHero.Description>
           We believe public information belongs to the public. Access our
-          directory of Iligan City services, contact details, and facilities
+          directory of Dipolog City services, contact details, and facilities
           through our free, structured JSON API.
         </SubpageHero.Description>
       </SubpageHero>
@@ -38,7 +38,7 @@ export default function OpenDataPage() {
             </h3>
             <p className="text-sm leading-relaxed text-blue-800">
               To ensure our servers remain fast and reliable for the citizens of
-              Iligan, we kindly ask developers and researchers{" "}
+              Dipolog, we kindly ask developers and researchers{" "}
               <strong>not</strong> to write web scrapers for our user interface.
               Please use the officially supported API endpoint documented below
               instead.
@@ -90,7 +90,7 @@ export default function OpenDataPage() {
                     2. City Hall Departments
                   </p>
                   <p className="text-xs text-slate-400">
-                    Returns LGU offices managed directly by the City of Iligan.
+                    Returns LGU offices managed directly by the City of Dipolog.
                   </p>
                 </div>
                 <code className="rounded-lg border border-white/10 bg-black/30 px-3 py-1.5 font-mono text-sm whitespace-nowrap text-emerald-400">
@@ -120,7 +120,7 @@ export default function OpenDataPage() {
                     4. Budget & Finances
                   </p>
                   <p className="text-xs text-slate-400">
-                    Returns Iligan City&apos;s annual revenue and expenditure
+                    Returns Dipolog City&apos;s annual revenue and expenditure
                     breakdown.
                   </p>
                 </div>
@@ -144,7 +144,7 @@ export default function OpenDataPage() {
                   JavaScript (Fetch API)
                 </p>
                 <pre className="custom-scrollbar overflow-x-auto rounded-xl bg-slate-900 p-4 font-mono text-sm leading-relaxed text-slate-300">
-                  {`fetch('https://betteriligancity.org/api/v1/services')
+                  {`fetch('https://betterdipolog.org/api/v1/services')
   .then(response => response.json())
   .then(data => console.log(data));`}
                 </pre>
@@ -156,7 +156,7 @@ export default function OpenDataPage() {
                   cURL
                 </p>
                 <pre className="custom-scrollbar overflow-x-auto rounded-xl bg-slate-900 p-4 font-mono text-sm leading-relaxed text-slate-300">
-                  {`curl -X GET "https://betteriligancity.org/api/v1/services" \\
+                  {`curl -X GET "https://betterdipolog.org/api/v1/services" \\
   -H "Accept: application/json"`}
                 </pre>
               </div>
@@ -181,7 +181,7 @@ export default function OpenDataPage() {
   "meta": {
     "total": 142,
     "lastUpdated": "2026-06-17T12:00:00Z",
-    "source": "BetterIliganCity Open Data API"
+    "source": "BetterDipolog Open Data API"
   },
   "data": [
     {

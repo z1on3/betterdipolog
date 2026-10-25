@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "main": "vinext/server/fetch-handler",
-  "name": "betteriligan",
+  "name": "betterdipolog",
   "compatibility_date": "2026-05-29",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
@@ -15,7 +15,7 @@
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "betteriligan",
+      "service": "betterdipolog",
     },
   ],
   "images": {
@@ -27,22 +27,31 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "betteriligan-bangon",
-      "database_id": "d63d85bc-25b5-4f27-a406-a6d28dfcc4e2",
+      "database_name": "betterdipolog-bangon",
+      "database_id": "16579494-75c6-4a38-a871-9787f21705af",
       "migrations_dir": "migrations",
     },
   ],
   "vars": {
-    "NEXT_PUBLIC_WEATHER_CITY_ID": "1711082",
+    "NEXT_PUBLIC_WEATHER_CITY_ID": "1715348",
   },
   "kv_namespaces": [
     {
       "binding": "VINEXT_KV_CACHE",
-      "id": "1ade0e8ba40547f887581e768548bd3b",
+      "id": "6870a76710dc4041aabfc0f1d5298940",
     },
     {
       "binding": "WEATHER_CACHE",
-      "id": "731a32de778c488b9f6c51d3ecf7e78e",
+      "id": "de62889de35b43e189aa5b8604555e03",
+    },
+  ],
+  // Edge rate limit for public forms (lib/formGuard.ts): 3 submissions per
+  // minute per IP per form. namespace_id is any account-unique integer string.
+  "ratelimits": [
+    {
+      "name": "FORM_RATE_LIMITER",
+      "namespace_id": "1001",
+      "simple": { "limit": 3, "period": 60 },
     },
   ],
 }

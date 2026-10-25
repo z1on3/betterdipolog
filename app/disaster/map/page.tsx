@@ -5,9 +5,9 @@ import { disasterFacilities } from "@/data/disaster";
 import DisasterMapView from "./DisasterMapView";
 
 export const metadata: Metadata = {
-  title: "Iligan City Emergency Facilities Map",
+  title: "Dipolog City Emergency Facilities Map",
   description:
-    "Interactive map of hospitals, fire and police stations, utilities, and evacuation landmarks across Iligan City.",
+    "Interactive map of hospitals, fire and police stations, utilities, and evacuation landmarks across Dipolog City.",
 };
 
 export default function DisasterMapPage() {
@@ -24,7 +24,28 @@ export default function DisasterMapPage() {
           <p className="mt-1 text-sm text-slate-500">
             Tap a pin or list item for its number and directions. Pin locations
             are community-sourced from OpenStreetMap and are approximate —
-            confirm official evacuation centers with the Iligan City CDRRMO.
+            confirm official evacuation centers with the Dipolog City CDRRMO.
+          </p>
+          <p className="mt-1 text-sm text-slate-500">
+            For an official hazard assessment of a specific location, check{" "}
+            <a
+              href="https://hazardhunter.georisk.gov.ph/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-emerald-700 underline hover:text-emerald-800"
+            >
+              GeoRiskPH HazardHunter
+            </a>{" "}
+            or{" "}
+            <a
+              href="https://noah.up.edu.ph/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-emerald-700 underline hover:text-emerald-800"
+            >
+              UP NOAH
+            </a>
+            .
           </p>
         </div>
 

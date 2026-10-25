@@ -43,9 +43,9 @@ const CATEGORY_META: Record<
 
 function telHref(display: string): string {
   const cleaned = display.replace(/[^+\d]/g, "");
-  // LGU-published landlines are 7-digit local numbers; prepend the Iligan
+  // LGU-published landlines are 7-digit local numbers; prepend the Dipolog
   // area code so tap-to-call routes from mobile phones.
-  return `tel:${cleaned.length === 7 ? `063${cleaned}` : cleaned}`;
+  return `tel:${cleaned.length === 7 ? `065${cleaned}` : cleaned}`;
 }
 
 export default function HotlinesSection() {
@@ -63,8 +63,8 @@ export default function HotlinesSection() {
         Emergency Hotlines
       </h2>
       <p className="mb-6 text-slate-600">
-        Tap any number to call. Short codes like 811 or 160 work inside Iligan;
-        from outside the city, use the full landline or mobile numbers.
+        Tap any number to call. Landlines use the Dipolog area code (065); from
+        a mobile phone, dial the full number including the area code.
       </p>
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -127,9 +127,9 @@ export default function HotlinesSection() {
         })}
       </div>
 
-      {/* Curated, maintained full directory from the BetterGov project. */}
+      {/* Curated, maintained nationwide directory from the BetterGov project. */}
       <a
-        href="https://hotlines.bettergov.ph/?city=iligan+city&province=lanao+del+norte"
+        href="https://hotlines.bettergov.ph/"
         target="_blank"
         rel="noopener noreferrer"
         className="group mt-6 flex items-center gap-4 rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-md"
@@ -142,7 +142,7 @@ export default function HotlinesSection() {
             See the full hotline directory
           </span>
           <span className="block text-sm text-slate-500">
-            A complete, regularly-maintained list for Iligan City, curated by
+            A regularly-maintained nationwide emergency directory, curated by
             BetterGov.ph.
           </span>
         </span>

@@ -1,6 +1,6 @@
 import { OpenWeatherResponse } from "@/types/weather";
 export const FALLBACK_WEATHER: OpenWeatherResponse = {
-  coord: { lon: 124.4, lat: 8.25 },
+  coord: { lon: 123.3409, lat: 8.5883 },
   weather: [
     { id: 804, main: "Clouds", description: "overcast clouds", icon: "04d" },
   ],
@@ -19,7 +19,7 @@ export const FALLBACK_WEATHER: OpenWeatherResponse = {
   dt: 1780456118, // Represents the last known update
   sys: { country: "PH", sunrise: 1780435404, sunset: 1780480673 },
   timezone: 28800,
-  id: 1711082,
-  name: "Iligan City",
+  id: 1715348,
+  name: "Dipolog City",
   cod: 200,
 };

@@ -68,141 +68,413 @@
   },
   {
     "slug": "application-for-birth-certificate",
-    "title": "Application For Birth Certificate",
+    "title": "Birth Registration (Timely and Delayed)",
     "category": "Certificates and Vital Records",
-    "description": "Register a timely or delayed Certificate of Live Birth (COLB) with the City Civil Registrar.",
+    "description": "Register a birth that occurred in Dipolog City with the Office of the City Civil Registrar, on time (within 30 days) or as a delayed registration.",
+    "tags": [
+      "birth certificate",
+      "COLB",
+      "late registration",
+      "civil registrar",
+      "AUSF"
+    ],
     "source": "official",
     "isWalkIn": true,
     "isOnline": false,
-    "department": "City Civil Registry (CCR)",
-    "schedule": "Monday 9:00 AM - 5:00 PM (Flag Raising from 8:00 AM - 9:00 AM) | Tuesday to Friday, 8:30 AM to 5:00 PM (Morning Prayer 8:00 AM - 8:30 AM) | No noon break",
-    "whoMayAvail": "Concerned person of legal age, parents, guardians, attendant-at-birth, barangay secretary and civil registrar agents.",
+    "department": "Office of the City Civil Registrar (CCRO)",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Residents of Dipolog City (for births that occurred in the city)",
     "type": "standard",
     "requirements": [
       {
-        "groupName": "Timely Registration (Within 1-30 days after birth)",
+        "groupName": "Timely Registration (within 30 days): Legitimate Child",
         "items": [
-          "Duly accomplished Certificate of Live Birth, MF-102, in 4 copies",
-          "Duly accomplished Muslim/IP Attachment - MF-102 for Muslim/Indigenous Peoples, in 3 copies",
-          "If legitimate child, marriage contract of parents",
-          "If illegitimate child, Duly accomplished Affidavit of Acknowledgement/ Paternity executed by the father and mother (personal appearance) at the back of the COLB, for illegitimate child and Affidavit to use Surname of the father (AUSF)"
+          "Duly accomplished Certificate of Live Birth (COLB), 4 original copies, with Data Sheet (1 copy), from the hospital, clinic, or trained hilot/midwife who assisted the birth",
+          "Marriage Contract of the parents, 1 photocopy (from PSA or the Local Civil Registrar where the marriage took place)"
         ]
       },
       {
-        "groupName": "Delayed Registration (Beyond 30 days after birth)",
+        "groupName": "Timely Registration: Child Not Acknowledged by the Father (uses mother's surname)",
         "items": [
-          "Duly accomplished Certificate of Live Birth (COLB) MF-102, in 4 copies",
-          "Duly accomplished Muslim/IP attachment MF-102 for Muslim/Indigenous Peoples, in 3 copies",
-          "NSO Negative Certificate",
-          "Barangay Captain Certification, if born at home",
-          "Duly accomplished Affidavit of Acknowledgement/ Paternity executed by the father and mother (personal appearance) at the back of the COLB, for illegitimate child",
-          "Duly accomplished Affidavit of Delayed Registration executed by the informant at the back of the COLB",
-          "Community Tax Cert. No., date, place of issue",
-          "Approval of Indorsement to City Prosecutor’s Office",
-          "Posting period of 10 days",
-          "Sworn Affidavit of 2 disinterested persons attesting to the facts and circumstances of birth",
-          "Any 2 documents (public or private) showing the facts and circumstances of birth",
-          "Affidavit to Use the Surname of the Father (AUSF), if illegitimate child"
+          "Duly accomplished Certificate of Live Birth (COLB), 4 original copies, with Data Sheet (1 copy), from the hospital, clinic, or trained hilot/midwife who assisted the birth"
+        ]
+      },
+      {
+        "groupName": "Timely or Delayed: Child Acknowledged by the Father (uses father's surname)",
+        "items": [
+          "Duly accomplished Certificate of Live Birth (COLB), 4 original copies, with Data Sheet (1 copy), from the hospital, clinic, or trained hilot/midwife who assisted the birth",
+          "Valid identification documents of the parents, 1 copy per parent",
+          "Community Tax Certificates (cedula) of the parents, 1 original or photocopy per parent (Barangay Hall or City Hall)"
+        ]
+      },
+      {
+        "groupName": "Delayed Registration (beyond 30 days): Legitimate Child",
+        "items": [
+          "Duly accomplished Certificate of Live Birth (COLB), 4 original copies, with Data Sheet (1 copy), from the hospital, clinic, or trained hilot/midwife who assisted the birth",
+          "Marriage Contract of the parents, 1 photocopy (from PSA or the Local Civil Registrar where the marriage took place)",
+          "Community Tax Certificates (cedula) of the parents, 1 original or photocopy"
+        ]
+      },
+      {
+        "groupName": "Delayed Registration: Child Not Acknowledged by the Father",
+        "items": [
+          "Duly accomplished Certificate of Live Birth (COLB), 4 original copies, with Data Sheet (1 copy), from the hospital, clinic, or trained hilot/midwife who assisted the birth",
+          "Community Tax Certificate (cedula) of the parent, 1 original or photocopy"
         ]
       }
     ],
     "procedures": [
       {
         "stepNumber": 1,
-        "clientAction": "Submit duly accomplished COLB or submit for interview as to the facts and circumstances of birth and comply with all requirements",
-        "providerAction": "Receive and review duly accomplished COLB and documentary evidences or prepare COLB to be accomplished by the concerned signatories",
-        "duration": "10 mins If with prepared COLB, 30 mins If without prepared COLB",
-        "personInCharge": "Reg. Ofcr. II/Bookbinder II",
-        "fee": "Php 0.00"
+        "clientAction": "Submit the requirements to the frontline personnel. For delayed registration or acknowledgment by the father, wait for the Order of Payment and pay at the City Treasurer's Office.",
+        "providerAction": "Receive and cross-check the COLB entries for errors (documents with errors are returned for correction). Assess fees and release the Order of Payment when fees apply.",
+        "duration": "3 to 6 minutes",
+        "personInCharge": "Designated front desk staff",
+        "fee": "None for timely registration (legitimate child, or child using the mother's surname). ₱50.00 verification fee for delayed registration. ₱200.00 acknowledgment fee if the child is acknowledged by the father (₱250.00 total if also delayed)."
       },
       {
         "stepNumber": 2,
-        "clientAction": "Wait for the approval and release of duty registered COLB if timely registered",
-        "providerAction": "Process the registration and release of approved COLB, if timely registered.",
-        "duration": "30 minutes",
-        "personInCharge": "Reg. Ofcr. IV//Reg. Ofcr. IV",
-        "fee": "Php 0.00"
+        "clientAction": "Present the official receipt (if fees were paid).",
+        "providerAction": "Process the registration. For delayed registration, type the Affidavit for Delayed Registration at the back of the COLB. For acknowledgment, type the Affidavit of Acknowledgment/Admission of Paternity and print the Affidavit to Use the Surname of the Father (AUSF).",
+        "duration": "13 to 22 minutes",
+        "personInCharge": "Designated front desk staff",
+        "fee": "None"
       },
       {
         "stepNumber": 3,
-        "clientAction": "In case of delayed registration, hand carry the referral letter prepared by CCR to the City Prosecutor for appropriate action, get it back and submit it to CCR",
-        "providerAction": "In case of delayed registration, prepare referral letter addressed to the City Prosecutor and request the application/client to hand carry it to the said office, after which, submit same CCR.",
-        "duration": "5 minutes",
-        "personInCharge": "Reg. Ofcr. IV",
-        "fee": "Php 50.00 (Prosecutor’s Fee)"
+        "clientAction": "Sign the prepared affidavits (if any).",
+        "providerAction": "Ask the client to sign the affidavits; the City Civil Registrar signs the COLBs.",
+        "duration": "3 to 5 minutes",
+        "personInCharge": "City Civil Registrar / designated front desk staff",
+        "fee": "None"
       },
       {
         "stepNumber": 4,
-        "clientAction": "You wait...",
-        "providerAction": "Post the application for 10 consecutive days in CCR Bulletin Board",
-        "duration": "10 days",
-        "personInCharge": "Bookbinder II",
-        "fee": "Php 0.00"
+        "clientAction": "Delayed registration only: receive a claim slip and come back after ten (10) calendar days, on a workday.",
+        "providerAction": "Post the registration for the ten-day posting period, then assign the registry number and record it in the logbook.",
+        "duration": "10-day posting period",
+        "personInCharge": "Designated front desk staff",
+        "fee": "None"
       },
       {
         "stepNumber": 5,
-        "clientAction": "Wait for the release of late COLB",
-        "providerAction": "Process the registration and release of approved delayed registered COLB on the 11th day.",
-        "duration": "20 minutes",
-        "personInCharge": "Reg. Ofcr. IV",
-        "fee": "Php 0.00"
+        "clientAction": "Sign the logbook and receive the registered documents.",
+        "providerAction": "Release the registered Certificate of Live Birth (1 original copy), plus the Affidavit to Use the Surname of the Father (1 original copy) if applicable.",
+        "duration": "2 to 4 minutes",
+        "personInCharge": "Designated front desk staff",
+        "fee": "None"
       }
-    ]
+    ],
+    "contact": {
+      "location": "Office of the City Civil Registrar, Ground Floor, Dipolog City Hall",
+      "phone": "(065) 212-3663",
+      "email": "ccrodipolog@gmail.com"
+    },
+    "notes": [
+      "Total processing time per the Charter: 20 minutes (timely), 34 minutes (timely, acknowledged by the father), 33 minutes plus the 10-day posting (delayed), 45 minutes plus the 10-day posting (delayed, acknowledged by the father).",
+      "This registers the birth with the city. Security-paper (PSA) copies are requested separately from the Philippine Statistics Authority."
+    ],
+    "reference": {
+      "title": "City of Dipolog Citizen's Charter 2022 (1st Edition)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf"
+    }
   },
   {
-    "slug": "pre-marriage-counseling-certificate",
-    "title": "Pre-Marriage Counseling Certificate (P.D 965) - Preparation and Issuance",
+    "slug": "application-for-marriage-license",
+    "title": "Application for Marriage License",
     "category": "Certificates and Vital Records",
-    "description": "Requirements for the preparation and issuance of a Pre-Marriage Counseling Certificate (P.D 965) for couples applying for a marriage license.",
+    "description": "Apply for a marriage license at the Office of the City Civil Registrar. The license is issued after a ten-day posting period and after the couple completes pre-marriage counseling.",
+    "tags": [
+      "marriage license",
+      "kasal",
+      "CENOMAR",
+      "civil registrar",
+      "wedding"
+    ],
     "source": "official",
     "isWalkIn": true,
     "isOnline": false,
-    "department": "City Mayor's Office - City Population Office",
-    "schedule": "8:00 AM - 5:00 PM Daily excluding Saturdays, Sundays and Holidays. On Mondays provision of services starts after flag raising. No noon break.",
-    "whoMayAvail": "\"Couples to be\" who are applying for a Marriage License",
+    "department": "Office of the City Civil Registrar (CCRO)",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Residents of Dipolog City",
+    "type": "standard",
+    "requirements": [
+      {
+        "groupName": "For Filipino Applicants",
+        "items": [
+          "PSA Certificate of No Marriage (CENOMAR), 1 original copy per applicant",
+          "PSA Certificate of Live Birth, 1 photocopy per applicant",
+          "Certificate of Residency, 1 original copy (Barangay Hall)",
+          "Proof of religion (Baptismal Certificate, Parish Certificate, etc.), 1 photocopy",
+          "Valid ID of the applicant, 1 photocopy (present the original), per applicant",
+          "If an applicant is 18 to 24 years old: valid ID of the applicant's parents, 1 photocopy (present the original), per parent"
+        ]
+      },
+      {
+        "groupName": "For Foreign Applicants",
+        "items": [
+          "Legal Capacity or Certificate of No Impediment to Marry, 1 original or certified true copy (from the foreigner's embassy in the Philippines)",
+          "PSA Certificate of No Marriage (CENOMAR), 1 original copy",
+          "Birth certificate or passport, 1 photocopy (present the original)",
+          "If divorced: divorce papers",
+          "If an applicant is 18 to 24 years old: valid ID of the applicant's parents, 1 photocopy (present the original), per parent"
+        ]
+      }
+    ],
+    "procedures": [
+      {
+        "stepNumber": 1,
+        "clientAction": "Submit the requirements to the frontline personnel.",
+        "providerAction": "Receive and cross-check document entries; documents with errors are returned for compliance.",
+        "duration": "3 minutes",
+        "personInCharge": "Designated front desk staff",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 2,
+        "clientAction": "Fill out and sign the data sheet for the application (if 18 to 20 years old, the parents also sign a Consent to Marriage; if 21 to 24, an Advice Upon Intended Marriage), then receive the Order of Payment and pay at the City Treasurer's Office.",
+        "providerAction": "Prepare the application documents, have them signed, assess fees and release the Order of Payment.",
+        "duration": "17 to 22 minutes",
+        "personInCharge": "Designated front desk staff",
+        "fee": "Application fee: ₱100.00 if both applicants are residents of Dipolog City; ₱120.00 if one applicant is not a resident; ₱500.00 if one applicant is a foreigner."
+      },
+      {
+        "stepNumber": 3,
+        "clientAction": "Present the official receipt.",
+        "providerAction": "Assign a registry number, record the application and have the City Civil Registrar sign it. Ask the couple to come back after ten (10) calendar days, on a workday, and after attending Pre-Marriage Counseling.",
+        "duration": "About 8 to 13 minutes",
+        "personInCharge": "Designated front desk staff / City Civil Registrar",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 4,
+        "clientAction": "After the ten-day period and pre-marriage counseling, submit the Pre-Marriage Counseling Certificate.",
+        "providerAction": "Receive the certificate and prepare the Marriage License for the City Civil Registrar's signature.",
+        "duration": "About 10 minutes",
+        "personInCharge": "Designated front desk staff / City Civil Registrar",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 5,
+        "clientAction": "Pay the marriage license fee and receive the marriage license documents.",
+        "providerAction": "Release the Marriage License (serves as the official receipt), the Application for Marriage License, and the Consent or Advice document if applicable.",
+        "duration": "2 minutes",
+        "personInCharge": "Designated front desk staff",
+        "fee": "Marriage license fee: ₱120.00"
+      }
+    ],
+    "contact": {
+      "location": "Office of the City Civil Registrar, Ground Floor, Dipolog City Hall",
+      "phone": "(065) 212-3663",
+      "email": "ccrodipolog@gmail.com"
+    },
+    "notes": [
+      "Total fees per the Charter: ₱220.00 (both residents), ₱240.00 (one non-resident) or ₱520.00 (one foreigner).",
+      "Total processing time per the Charter is about 40 minutes, not counting the ten-day posting period.",
+      "See Pre-Marriage Counseling Certificate for the counseling requirement."
+    ],
+    "reference": {
+      "title": "City of Dipolog Citizen's Charter 2022 (1st Edition)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf"
+    }
+  },
+  {
+    "slug": "pre-marriage-counseling-certificate",
+    "title": "Certificate of Compliance for Pre-Marriage Counseling",
+    "category": "Certificates and Vital Records",
+    "description": "Attend pre-marriage counseling and get the Certificate of Compliance that the City Civil Registrar requires before issuing a marriage license (Section 15, RA 10354).",
+    "tags": [
+      "pre-marriage counseling",
+      "PMC",
+      "PMOC",
+      "marriage license",
+      "POPCOM"
+    ],
+    "source": "official",
+    "isWalkIn": true,
+    "isOnline": false,
+    "department": "City Population Management & Development Division (POPCOM), City Mayor's Office",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Couples applying for a marriage license",
     "type": "standard",
     "requirements": [
       {
         "groupName": "Checklist of Requirements",
         "items": [
-          "Individual Residence Certificate (CEDULA) (1 original copy) - Secure from Barangay/City Hall",
-          "Passport (For Foreigners Only) - Secure from Person concerned"
+          "Official receipt for the ₱300.00 certification fee (paid at the City Treasurer's Office)"
         ]
       }
     ],
     "procedures": [
       {
         "stepNumber": 1,
-        "clientAction": "Request for a schedule of Pre-Marriage counseling seminar",
-        "providerAction": "a. Give logbook to client\nb. Conduct interview for profiling",
-        "duration": "8 Minutes",
-        "personInCharge": "Population Program Officer I or Population Program Officer III (City Population Office, City Mayor’s Office)",
-        "fee": "Php 0.00"
+        "clientAction": "Ask for a Pre-Marriage Orientation and Counseling (PMOC) schedule and present the official receipt for the required payment.",
+        "providerAction": "Verify the payment, have the couple fill out the PMOC form and the Marriage Expectation Inventory (MEI), and explain the schedule and the do's and don'ts during the seminar.",
+        "duration": "10 minutes",
+        "personInCharge": "Designated staff",
+        "fee": "₱300.00 certification fee (City Treasurer's Office)"
       },
       {
         "stepNumber": 2,
-        "clientAction": "Pay for PreMarriage Counseling (PMC) fee",
-        "providerAction": "Inform couple about the PMC fee and instruct to pay to the deputized collector",
-        "duration": "3 minutes",
-        "personInCharge": "Population Program Officer I or Population Program Officer III (City Population Office, City Mayor’s Office)",
-        "fee": "Php 250.00"
+        "clientAction": "Attend the PMOC on the scheduled date.",
+        "providerAction": "Conduct the PMOC.",
+        "duration": "4 hours",
+        "personInCharge": "Population Program Officer I & II",
+        "fee": "None"
       },
       {
         "stepNumber": 3,
-        "clientAction": "Accomplish and submit Marriage Expectation Inventory (MEI) questionnaire",
-        "providerAction": "a. Ask couple to answer MEI questionnaire\nb. Receive accomplished MEI and review answers",
-        "duration": "45 Minutes",
-        "personInCharge": "Population Program Officer I or Population Program Officer III (City Population Office, City Mayor's Office)",
-        "fee": "Php 0.00"
+        "clientAction": "Receive the Certificate of Compliance (needed for the marriage license).",
+        "providerAction": "Issue the Certificate of Compliance.",
+        "duration": "3 minutes",
+        "personInCharge": "Designated staff",
+        "fee": "None"
+      }
+    ],
+    "contact": {
+      "phone": "(065) 212-3699",
+      "email": "popcomdipolog@gmail.com"
+    },
+    "notes": [
+      "Under Section 15 of RA 10354, no marriage license is issued unless the applicants present a Certificate of Compliance from the local Population Office."
+    ],
+    "reference": {
+      "title": "City of Dipolog Citizen's Charter 2022 (1st Edition)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf"
+    }
+  },
+  {
+    "slug": "certified-true-copy-of-civil-registry-documents",
+    "title": "Certified True Copies of Civil Registry Documents",
+    "category": "Certificates and Vital Records",
+    "description": "Get certified true copies of birth, marriage and death records registered in Dipolog City from the Office of the City Civil Registrar.",
+    "tags": [
+      "certified true copy",
+      "CTC",
+      "birth",
+      "marriage",
+      "death",
+      "civil registrar"
+    ],
+    "source": "official",
+    "isWalkIn": true,
+    "isOnline": false,
+    "department": "Office of the City Civil Registrar (CCRO)",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Residents of Dipolog City",
+    "type": "standard",
+    "requirements": [
+      {
+        "groupName": "Checklist of Requirements",
+        "items": [
+          "Clear photocopies of the civil registry document (birth, marriage or death) registered in Dipolog City. The Charter lists at least 5 photocopies; the fee covers 1 to 5 copies"
+        ]
+      }
+    ],
+    "procedures": [
+      {
+        "stepNumber": 1,
+        "clientAction": "Present the photocopied civil registry documents and wait for the Order of Payment, then pay at the City Treasurer's Office.",
+        "providerAction": "Cross-check the validity of the document and assess the payment.",
+        "duration": "3 minutes",
+        "personInCharge": "Designated front desk staff",
+        "fee": "₱50.00 for birth and death records; ₱60.00 for marriage records (1 to 5 photocopies)"
       },
       {
-        "stepNumber": 4,
-        "clientAction": "Receive schedule of PreMarriage Orientation",
-        "providerAction": "Provide couple specific date of pre marriage counseling schedule",
-        "duration": "3 minutes",
-        "personInCharge": "Population Program Officer I or Population Program Officer III (City Population Office, City Mayor’s Office)",
-        "fee": "Php 0.00"
+        "stepNumber": 2,
+        "clientAction": "Present the official receipt.",
+        "providerAction": "Stamp the copies as certified true copies with the date received and the city's dry seal; the City Civil Registrar signs.",
+        "duration": "6 minutes",
+        "personInCharge": "Designated front desk staff / City Civil Registrar",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 3,
+        "clientAction": "Receive the certified true copies.",
+        "providerAction": "Release the certified true copies (1 to 5 copies).",
+        "duration": "1 minute",
+        "personInCharge": "Designated front desk staff",
+        "fee": "None"
       }
-    ]
+    ],
+    "contact": {
+      "location": "Office of the City Civil Registrar, Ground Floor, Dipolog City Hall",
+      "phone": "(065) 212-3663",
+      "email": "ccrodipolog@gmail.com"
+    },
+    "notes": ["Total processing time per the Charter: 10 minutes."],
+    "reference": {
+      "title": "City of Dipolog Citizen's Charter 2022 (1st Edition)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf"
+    }
+  },
+  {
+    "slug": "issuance-of-mayors-clearance",
+    "title": "Mayor's Clearance",
+    "category": "Certificates and Vital Records",
+    "description": "A Mayor's Clearance certifies that a person has no pending case with the Office of the Mayor and/or the police. Issued by the City Mayor's Office – Business Permits & Licensing Division.",
+    "tags": [
+      "mayor's clearance",
+      "clearance",
+      "employment",
+      "overseas",
+      "firearms"
+    ],
+    "source": "official",
+    "isWalkIn": true,
+    "isOnline": false,
+    "department": "City Mayor's Office – Business Permits & Licensing Division (BPLD)",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Any individual / employee living in Dipolog City",
+    "type": "standard",
+    "requirements": [
+      {
+        "groupName": "Checklist of Requirements (all originals)",
+        "items": [
+          "Barangay Clearance (barangay of residence)",
+          "Philippine National Police (PNP) Clearance",
+          "Municipal Trial Court in Cities (MTCC) Clearance (MTCC at the Bulwagan ng Katarungan)",
+          "City Prosecutor's Clearance (City Prosecutor's Office at the Bulwagan ng Katarungan)",
+          "Traffic Management Office (TMO) Clearance",
+          "Health Environment (Ord. 123) Clearance (City Health Office)"
+        ]
+      }
+    ],
+    "procedures": [
+      {
+        "stepNumber": 1,
+        "clientAction": "Submit all required documents to BPLD.",
+        "providerAction": "Receive and check the documents and prepare the order of payment.",
+        "duration": "4 minutes",
+        "personInCharge": "BPLD staff",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 2,
+        "clientAction": "Pay the required fee.",
+        "providerAction": "Accept payment and issue an official receipt.",
+        "duration": "5 minutes",
+        "personInCharge": "Revenue Collectors, City Treasurer's Office",
+        "fee": "Local employment: ₱100.00; occupational fee: ₱50.00; for firearms license: ₱250.00; for overseas employment / travel abroad: ₱350.00"
+      },
+      {
+        "stepNumber": 3,
+        "clientAction": "Claim the Mayor's Clearance.",
+        "providerAction": "Print the clearance, have it countersigned by the Head of BPLD and approved/signed by the City Administrator, then release it with the receipt and other requirements.",
+        "duration": "About 50 minutes (signing by the City Administrator is listed at 40 minutes)",
+        "personInCharge": "BPLD staff / Head, BPLD / City Administrator",
+        "fee": "None"
+      }
+    ],
+    "contact": {
+      "location": "Business Permit & License Division, Ground Floor, Dipolog City Hall, Rizal Ave.",
+      "phone": "(065) 212-2486",
+      "email": "dplgbusinesspermitandlicenses@gmail.com"
+    },
+    "notes": ["Total processing time per the Charter: 1 hour."],
+    "reference": {
+      "title": "City Mayor's Office – Business Permits & Licensing Division Citizen's Charter (posted September 2023)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2023/09/CMO-BPLD-Citizens-Charter-2023.pdf"
+    }
   }
 ]

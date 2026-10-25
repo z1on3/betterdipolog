@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 
-// Minimal shared-secret admin auth for the Bangon Iligan moderation surface.
+// Minimal shared-secret admin auth for the Bangon Dipolog moderation surface.
 // A single ADMIN_PASSWORD grants a signed, HttpOnly session cookie — no user
 // accounts, no DB. Designed to be swapped for Cloudflare Access or real auth
 // later without touching the moderation UI.
@@ -11,7 +11,7 @@ import { cookies } from "next/headers";
 //                         ADMIN_PASSWORD, then a dev-only default)
 
 const COOKIE_NAME = "bangon_admin";
-const COOKIE_PATH = "/bangon-iligan";
+const COOKIE_PATH = "/bangon-dipolog";
 const SESSION_TTL_SECONDS = 7 * 24 * 60 * 60; // 7 days
 
 function isProd(): boolean {
@@ -22,7 +22,7 @@ function isProd(): boolean {
 // local `next dev` usable without secrets but never apply in production.
 function adminPassword(): string | undefined {
   return (
-    process.env.ADMIN_PASSWORD ?? (isProd() ? undefined : "iligan-admin-dev")
+    process.env.ADMIN_PASSWORD ?? (isProd() ? undefined : "dipolog-admin-dev")
   );
 }
 

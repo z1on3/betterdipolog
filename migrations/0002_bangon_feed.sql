@@ -1,4 +1,4 @@
--- Bangon Iligan — ingested official-source feed (earthquakes, advisories…).
+-- Bangon Dipolog — ingested official-source feed (earthquakes, advisories…).
 --
 -- Populated by the ingestion route (/api/bangon/ingest), which pulls from
 -- external adapters (USGS earthquakes to start) and upserts here. Distinct from

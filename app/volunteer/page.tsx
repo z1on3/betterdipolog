@@ -14,38 +14,29 @@ import VolunteerModalClient from "./VolunteerModalClient";
 export const metadata: Metadata = {
   title: "Volunteer",
   description:
-    "Join our volunteer-led civic tech initiative to make Iligan City’s government more transparent and accessible.",
+    "Join our volunteer-led civic tech initiative to make Dipolog City’s government more transparent and accessible.",
 };
 
 export default function VolunteerPage() {
-  // JSON-LD to establish BetterIliganCity as a civic organization
-  // and explicitly link it to the national BetterGov Philippines initiative.
+  // JSON-LD to establish BetterDipolog as a civic organization.
+  // (Upstream's parentOrganization/JoinAction pointing at BetterGov were
+  // removed: BetterDipolog has no formal affiliation to declare yet.)
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Volunteer for BetterIliganCity",
+    name: "Volunteer for BetterDipolog",
     description:
-      "Information on how to volunteer, contribute code, or verify data for the BetterIliganCity civic tech project.",
-    url: "https://betteriligancity.org/volunteer",
+      "Information on how to volunteer, contribute code, or verify data for the BetterDipolog civic tech project.",
+    url: "https://betterdipolog.org/volunteer",
     about: {
       "@type": "NGO",
-      name: "BetterIliganCity",
+      name: "BetterDipolog",
       description:
-        "A volunteer-led civic tech initiative building digital public goods for Iligan City.",
+        "A volunteer-led civic tech initiative building digital public goods for Dipolog City.",
       location: {
         "@type": "Place",
-        name: "Iligan City, Northern Mindanao, Philippines",
+        name: "Dipolog City, Zamboanga del Norte, Philippines",
       },
-      parentOrganization: {
-        "@type": "NGO",
-        name: "BetterGov Philippines",
-        url: "https://bettergov.ph/",
-      },
-    },
-    potentialAction: {
-      "@type": "JoinAction",
-      name: "Join BetterIliganCity Community",
-      target: "https://discord.gg/bettergovph",
     },
   };
 
@@ -64,11 +55,11 @@ export default function VolunteerPage() {
             </span>
           </SubpageHero.Badges>
           <SubpageHero.Title className="text-center">
-            Volunteer for Iligan
+            Volunteer for Dipolog
           </SubpageHero.Title>
           <SubpageHero.Description className="mx-auto text-center">
-            Help us build a more tech-centric, informed, and connected City of
-            Majestic Waterfalls. Everyone has a role to play.
+            Help us build a more tech-centric, informed, and connected Dipolog
+            City. Everyone has a role to play.
           </SubpageHero.Description>
         </SubpageHero>
 
@@ -81,7 +72,7 @@ export default function VolunteerPage() {
                 Get Involved, Stay Involved
               </h2>
               <p className="text-lg leading-relaxed text-slate-600">
-                BetterIligan's core mission is to advance civic technology and
+                BetterDipolog's core mission is to advance civic technology and
                 make local governance accessible. The engine that drives this
                 mission comprises people like you who operate at the grass-roots
                 level. Whether these activities pertain to writing code,
@@ -99,13 +90,13 @@ export default function VolunteerPage() {
 
             <section className="space-y-4">
               <h2 className="text-2xl font-bold text-slate-900">
-                Take a hand in leading BetterIligan
+                Take a hand in leading BetterDipolog
               </h2>
               <p className="text-lg leading-relaxed text-slate-600">
                 It's hard to overemphasize the value of the contributions made
                 by our community. This starts at the very foundation where
                 volunteers dictate what features get built next, what data needs
-                verifying, and how we present Iligan to the world. If you want
+                verifying, and how we present Dipolog to the world. If you want
                 to work with a passionate team to shape the digital future of
                 our city, you can take a leadership role in our upcoming
                 projects.
@@ -118,7 +109,7 @@ export default function VolunteerPage() {
               </h2>
               <p className="text-lg leading-relaxed text-slate-600">
                 No matter where your expertise lies, there is a good chance that
-                BetterIligan needs it. You do not need to be a programmer to
+                BetterDipolog needs it. You do not need to be a programmer to
                 contribute to a tech-centric city.
               </p>
               <p className="text-lg leading-relaxed text-slate-600">
@@ -130,7 +121,7 @@ export default function VolunteerPage() {
                 </strong>{" "}
                 to accurately document our city's heritage, and{" "}
                 <strong className="text-slate-900">everyday citizens</strong>{" "}
-                who know the jeepney routes, the local hotlines, and what
+                who know the local commute, the local hotlines, and what
                 information the common folk actually need.
               </p>
               <p className="text-lg leading-relaxed text-slate-600">
@@ -149,7 +140,8 @@ export default function VolunteerPage() {
             </h3>
             <p className="mb-8 text-sm leading-relaxed text-slate-500">
               Consider the activities below that present important and
-              fulfilling opportunities for you to make your mark on Iligan City:
+              fulfilling opportunities for you to make your mark on Dipolog
+              City:
             </p>
 
             <ul className="mb-10 space-y-6">
@@ -208,7 +200,7 @@ export default function VolunteerPage() {
                   </h4>
                   <p className="mt-1 text-sm text-slate-600">
                     Provide domain expertise. Help us accurately document
-                    Iligan's history, culture, and bureaucratic procedures.
+                    Dipolog's history, culture, and bureaucratic procedures.
                   </p>
                 </div>
               </li>

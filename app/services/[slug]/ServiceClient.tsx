@@ -10,6 +10,10 @@ import {
   BadgeCheck,
   Info,
   ExternalLink,
+  MapPin,
+  Phone,
+  Mail,
+  BookOpen,
 } from "lucide-react";
 
 import SubpageNav from "@/components/ui/SubpageNav";
@@ -297,10 +301,83 @@ export default function ServicePage({ service }: ServiceClientProps) {
                       {service.whoMayAvail}
                     </p>
                   </div>
+
+                  {service.contact?.location && (
+                    <div>
+                      <p className="mb-1 flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-400 uppercase">
+                        <MapPin className="h-3.5 w-3.5" /> Office location
+                      </p>
+                      <p className="text-sm leading-relaxed font-medium text-slate-800">
+                        {service.contact.location}
+                      </p>
+                    </div>
+                  )}
+
+                  {service.contact?.phone && (
+                    <div>
+                      <p className="mb-1 flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-400 uppercase">
+                        <Phone className="h-3.5 w-3.5" /> Telephone
+                      </p>
+                      <p className="text-sm leading-relaxed font-medium text-slate-800">
+                        {service.contact.phone}
+                      </p>
+                    </div>
+                  )}
+
+                  {service.contact?.email && (
+                    <div>
+                      <p className="mb-1 flex items-center gap-1.5 text-xs font-bold tracking-wider text-slate-400 uppercase">
+                        <Mail className="h-3.5 w-3.5" /> Email
+                      </p>
+                      <a
+                        href={`mailto:${service.contact.email}`}
+                        className="text-sm leading-relaxed font-medium break-all text-blue-700 hover:underline"
+                      >
+                        {service.contact.email}
+                      </a>
+                    </div>
+                  )}
                 </>
               )}
             </div>
           </div>
+
+          {service.type === "standard" &&
+            service.notes &&
+            service.notes.length > 0 && (
+              <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 shadow-sm">
+                <h3 className="mb-3 flex items-center gap-2 text-base font-bold text-amber-900">
+                  <Info className="h-4 w-4" /> Good to know
+                </h3>
+                <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-amber-900">
+                  {service.notes.map((note, idx) => (
+                    <li key={idx}>{note}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+          {(service.type === "standard" || service.type === "external") &&
+            service.reference && (
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <h3 className="mb-2 flex items-center gap-2 text-base font-bold text-slate-900">
+                  <BookOpen className="h-4 w-4 text-emerald-600" /> Source
+                </h3>
+                <a
+                  href={service.reference.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-start gap-1.5 text-sm leading-relaxed font-medium text-blue-700 hover:underline"
+                >
+                  {service.reference.title}
+                  <ExternalLink className="mt-1 h-3.5 w-3.5 shrink-0" />
+                </a>
+                <p className="mt-2 text-xs leading-relaxed text-slate-500">
+                  Fees, requirements and steps can change. Confirm with the
+                  office before you go.
+                </p>
+              </div>
+            )}
 
           {/* Help Box */}
           <div className="rounded-2xl bg-blue-600 p-6 text-white shadow-md">

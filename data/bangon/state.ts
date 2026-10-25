@@ -1,4 +1,4 @@
-// SERVER-ONLY — resolves the effective Bangon Iligan page config by overlaying
+// SERVER-ONLY — resolves the effective Bangon Dipolog page config by overlaying
 // the runtime D1 incident state (bangon_incident_state) onto the committed
 // static config (incident.json).
 //

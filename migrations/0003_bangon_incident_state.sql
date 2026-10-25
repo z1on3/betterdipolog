@@ -1,5 +1,5 @@
 -- 0003_bangon_incident_state.sql
--- Runtime activation state for the Bangon Iligan standby↔active switch.
+-- Runtime activation state for the Bangon Dipolog standby↔active switch.
 --
 -- The `active` flag + active-incident summary used to live only in the committed
 -- data/bangon/incident.json — a build-time import, so flipping it required an

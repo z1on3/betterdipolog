@@ -54,7 +54,7 @@ export default function DisasterMapView({
   facilities: DisasterFacility[];
 }) {
   const [query, setQuery] = useState("");
-  // Barangay pins (44) start hidden so emergency services read clearly; the
+  // Barangay hall pins start hidden so emergency services read clearly; the
   // filter chip reveals them on demand.
   const [active, setActive] = useState<Set<Category>>(
     () => new Set(CATEGORY_ORDER.filter((c) => c !== "barangay")),

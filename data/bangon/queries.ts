@@ -1,4 +1,4 @@
-// SERVER-ONLY — D1 read helpers for the Bangon Iligan surfaces.
+// SERVER-ONLY — D1 read helpers for the Bangon Dipolog surfaces.
 //
 // Every helper is defensive: if the D1 binding is unavailable (e.g. a preview
 // build without the database attached) it logs and returns an empty result so

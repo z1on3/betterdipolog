@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { Cloud, CloudRain, Sun, CloudLightning, Phone } from "lucide-react";
 import { HIDDEN_HEADER_PATHS } from "@/utils/variables";
 
-const ILIGAN_LAT = 8.228;
-const ILIGAN_LNG = 124.2452;
+const DIPOLOG_LAT = 8.5883;
+const DIPOLOG_LNG = 123.3409;
 const CURRENCIES = ["USD", "EUR", "JPY", "GBP", "AUD", "SGD", "KRW", "CNY"];
 
 type ClassName = { className?: string };
@@ -22,7 +22,7 @@ export default function TopBanner({ className }: ClassName) {
 
   useEffect(() => {
     fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${ILIGAN_LAT}&longitude=${ILIGAN_LNG}&current=temperature_2m,weather_code`,
+      `https://api.open-meteo.com/v1/forecast?latitude=${DIPOLOG_LAT}&longitude=${DIPOLOG_LNG}&current=temperature_2m,weather_code`,
     )
       .then(
         (r) =>
@@ -99,10 +99,10 @@ export default function TopBanner({ className }: ClassName) {
           </a>
           <span className="mx-1 hidden text-slate-300 sm:inline">·</span>
           <a
-            href="tel:09171234567"
+            href="tel:+63652121506"
             className="hover:text-primary-600 hidden text-slate-600 sm:inline"
           >
-            CDRRMO Iligan
+            CDRRMO Dipolog
           </a>
         </div>
       </div>

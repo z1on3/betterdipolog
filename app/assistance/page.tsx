@@ -6,17 +6,17 @@ import AssistanceClient from "./AssistanceClient";
 export const metadata: Metadata = {
   title: "Scholarships & Assistance",
   description:
-    "Scholarships and financial-assistance programs open to Iligan City residents — the City Mayor's Scholarship plus national programs from CHED, DOST-SEI, TESDA, and DSWD.",
+    "Scholarships and financial-assistance programs open to Dipolog City residents — the city scholarship program and CSWDO crisis assistance, plus national programs from CHED, DOST-SEI, TESDA, and DSWD.",
 };
 
 export default function AssistancePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Scholarships & Assistance Programs for Iligan City",
+    name: "Scholarships & Assistance Programs for Dipolog City",
     description:
-      "Community-maintained directory of scholarships and financial-assistance programs available to Iligan City residents.",
-    url: "https://betteriligancity.org/assistance",
+      "Community-maintained directory of scholarships and financial-assistance programs available to Dipolog City residents.",
+    url: "https://betterdipolog.org/assistance",
     itemListElement: assistancePrograms.map((p, i) => ({
       "@type": "ListItem",
       position: i + 1,

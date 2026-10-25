@@ -85,7 +85,7 @@ const WeatherStatusBadge = ({
             {/* Modal Body */}
             <div className="space-y-4 bg-slate-50 p-6">
               <p className="text-sm text-slate-600">
-                BetterIligan uses a dual-provider system to ensure weather data
+                BetterDipolog uses a dual-provider system to ensure weather data
                 remains available even if one service experiences downtime.
               </p>
 

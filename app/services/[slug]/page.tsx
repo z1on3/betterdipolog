@@ -6,7 +6,7 @@ import ServiceClient from "./ServiceClient";
 import { StandardService } from "@/validations/serviceSchema";
 
 export const dynamicParams = false;
-const SITE_URL = "https://betteriligancity.org";
+const SITE_URL = "https://betterdipolog.org";
 // 1. STATIC PARAMS
 export async function generateStaticParams() {
   const standardServices = allServices.filter(
@@ -43,7 +43,7 @@ export async function generateMetadata({
           height: 630,
         },
       ],
-      siteName: "BetterIligan",
+      siteName: "BetterDipolog",
       locale: "en_PH",
       type: "website",
     },
@@ -79,7 +79,7 @@ export default async function ServicePage({
       name: service.department,
     },
     serviceType: service.category,
-    url: `https://betteriligancity.org/services/${service.slug}`,
+    url: `https://betterdipolog.org/services/${service.slug}`,
   };
 
   return (

@@ -22,30 +22,35 @@ import Button3D from "@/components/ui/Button3D";
 import { allServices } from "@/data/services";
 import { AllService } from "@/validations/serviceSchema";
 
-const QUICK_LINKS = [
+const QUICK_LINKS: {
+  title: string;
+  description: string;
+  href: string;
+  Icon: typeof Search;
+  badge?: string;
+}[] = [
   {
-    title: "Mugna Festival",
-    description: "Event schedules & guides",
-    href: "/travel/mugna",
+    title: "Festivals & Events",
+    description: "City festivals & event guides",
+    href: "/travel/festivals",
     Icon: Sparkles,
-    badge: "Featured",
   },
   {
-    title: "Electricity Rate",
-    description: "Power schedules & advisories",
-    href: "/iligan/electricity#ilpi",
+    title: "Utilities",
+    description: "Power & water providers",
+    href: "/dipolog/utilities",
     Icon: Zap,
   },
   {
-    title: "Jeepney Routes",
-    description: "City-wide routes & fares",
-    href: "/travel/transportation/jeepney",
+    title: "Getting Around",
+    description: "Airport, terminal & ports",
+    href: "/travel/transportation",
     Icon: Bus,
   },
   {
     title: "Emergency",
     description: "Disaster recovery & alerts",
-    href: "/bangon-iligan",
+    href: "/bangon-dipolog",
     Icon: ShieldAlert,
   },
 ];
@@ -144,14 +149,14 @@ export default function HeroSection() {
         {/* Left Column */}
         <div className="mx-auto max-w-404 text-center lg:mx-0 lg:text-left">
           <h1 className="mb-3 text-4xl leading-tight font-extrabold tracking-tight text-white min-[767px]:text-5xl md:leading-[1.1] lg:text-left xl:text-6xl">
-            Welcome to <br /> BetterIliganCity.org
+            Welcome to <br /> BetterDipolog.org
           </h1>
 
           <p
             className={`text-base text-blue-100 lg:max-w-lg lg:text-left lg:text-lg ${!isMobileSearchVisible ? "mb-6" : "mb-3"} leading-relaxed`}
           >
             A modernized, volunteer-driven portal to access government services,
-            public data, and resources for the people of Iligan.
+            public data, and resources for the people of Dipolog City.
           </p>
 
           {/* Action Buttons */}
@@ -276,11 +281,11 @@ export default function HeroSection() {
                               </span>
                               <span className="line-clamp-1 text-xs text-blue-700 md:text-sm">
                                 {service.type === "standard"
-                                  ? `betteriligancity.org/services/${service.slug}`
+                                  ? `betterdipolog.org/services/${service.slug}`
                                   : service.type === "internal"
-                                    ? `betteriligancity.org/community/${service.slug}`
+                                    ? `betterdipolog.org/community/${service.slug}`
                                     : service.type === "custom_link"
-                                      ? `betteriligancity.org${service.href}` // <-- Displays the custom path
+                                      ? `betterdipolog.org${service.href}` // <-- Displays the custom path
                                       : service.externalUrl}
                               </span>
                             </div>
@@ -329,7 +334,7 @@ export default function HeroSection() {
               Quick Access
             </h2>
             <p className="mt-1 text-sm text-blue-100">
-              Direct links to Iligan's most frequently used tools and current
+              Direct links to Dipolog's most frequently used tools and current
               events.
             </p>
           </div>

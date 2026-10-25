@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-// A scholarship or assistance program available to Iligan residents. Because
+// A scholarship or assistance program available to Dipolog residents. Because
 // deadlines and amounts change every cycle, the durable fields (provider, who
 // it's for, how to apply, official link) are required, while `timing` captures
 // the point-in-time status and recurring cycle — always paired with `verifiedAt`

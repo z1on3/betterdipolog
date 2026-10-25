@@ -1,10 +1,10 @@
-# Scheduled trigger for the Bangon Iligan feed ingester.
+# Scheduled trigger for the Bangon Dipolog feed ingester.
 #
 # Every 30 minutes it POSTs to the deployed /api/bangon/ingest endpoint, which
 # pulls official feeds (USGS earthquakes to start) into Cloudflare D1.
 #
 # Configure two repository secrets to activate it (until then it no-ops):
-#   BANGON_INGEST_URL   e.g. https://betteriligancity.org/api/bangon/ingest
+#   BANGON_INGEST_URL   e.g. https://betterdipolog.org/api/bangon/ingest
 #   INGEST_SECRET       the same value set on the Worker (Authorization bearer)
 #
 # Alternative: a Cloudflare Cron Trigger calling the same endpoint.

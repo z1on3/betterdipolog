@@ -33,7 +33,7 @@ export default function FacilitiesSection() {
       </h2>
       <p className="mb-5 text-slate-600">
         Find the nearest hospital, fire or police station, utility office, or
-        evacuation landmark across Iligan City.
+        evacuation landmark across Dipolog City.
       </p>
 
       <div className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">

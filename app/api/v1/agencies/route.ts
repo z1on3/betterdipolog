@@ -9,9 +9,9 @@ export async function GET() {
       meta: {
         total: allAgencies.length,
         lastUpdated: new Date().toISOString(),
-        source: "BetterIliganCity Open Data API",
+        source: "BetterDipolog Open Data API",
         description:
-          "National government agencies, GOCCs, and regional offices in Iligan City.",
+          "National government agencies, GOCCs, and regional offices in Dipolog City.",
       },
       data: allAgencies,
     },

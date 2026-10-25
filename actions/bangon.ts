@@ -1,6 +1,6 @@
 "use server";
 
-import { headers } from "next/headers";
+import { checkRateLimit, getClientIp, verifyCaptcha } from "@/lib/formGuard";
 import { getDb } from "@/lib/db";
 import {
   BoardMessageInputSchema,
@@ -8,51 +8,6 @@ import {
 } from "@/validations/bangonSchema";
 
 type ActionResult = { success: true } | { success: false; error: string };
-
-// In-memory IP rate limiter — mirrors actions/contribute.ts. Resets when the
-// Worker instance spins down, but stops rapid-fire loops within a live one.
-const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
-
-function rateLimit(ip: string, max: number, windowMs: number): boolean {
-  if (ip === "unknown") return true;
-  const now = Date.now();
-  const status = rateLimitMap.get(ip) ?? { count: 0, timestamp: now };
-  if (now - status.timestamp > windowMs) {
-    status.count = 1;
-    status.timestamp = now;
-  } else {
-    status.count++;
-  }
-  rateLimitMap.set(ip, status);
-  return status.count <= max;
-}
-
-// Verifies the reCAPTCHA token — but only when a secret key is configured, so
-// local dev works without one (same pragmatic stance as actions/contribute.ts).
-// Returns false only on an actual verification failure.
-async function verifyCaptcha(token: string, ip: string): Promise<boolean> {
-  const secret = process.env.RECAPTCHA_SECRET_KEY;
-  if (!secret) return true;
-  try {
-    const body = new URLSearchParams({ secret, response: token });
-    if (ip !== "unknown") body.append("remoteip", ip);
-    const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: body.toString(),
-    });
-    const data = (await res.json()) as { success?: boolean };
-    return data.success === true;
-  } catch (err) {
-    console.error("reCAPTCHA verification error:", err);
-    return false;
-  }
-}
-
-async function clientIp(): Promise<string> {
-  const headersList = await headers();
-  return headersList.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-}
 
 function firstError(fieldErrors: Record<string, string[] | undefined>): string {
   for (const messages of Object.values(fieldErrors)) {
@@ -68,8 +23,8 @@ export async function postBoardMessage(
   captchaToken: string,
 ): Promise<ActionResult> {
   try {
-    const ip = await clientIp();
-    if (!rateLimit(ip, 3, 60_000)) {
+    const ip = await getClientIp();
+    if (!(await checkRateLimit(ip, "bangon-board"))) {
       return {
         success: false,
         error: "You are posting too fast. Please wait a minute.",
@@ -115,8 +70,8 @@ export async function submitHazardReport(
   captchaToken: string,
 ): Promise<ActionResult> {
   try {
-    const ip = await clientIp();
-    if (!rateLimit(ip, 3, 60_000)) {
+    const ip = await getClientIp();
+    if (!(await checkRateLimit(ip, "bangon-report"))) {
       return {
         success: false,
         error: "You are submitting too fast. Please wait a minute.",

@@ -9,11 +9,12 @@ const AgencyCategories = z.enum([
 ]);
 const DepartmentCategories = z.enum([
   "All Departments",
+  "City Mayors Office",
   "Social Services",
   "Public Administration",
   "Infrastructure",
   "Fiscal Management",
-  "City Mayors Office",
+  "Economic Enterprises",
 ]);
 
 const Representative = z.object({
@@ -32,6 +33,10 @@ const BaseSchema = z.object({
 
 export const AgencySchema = BaseSchema.extend({
   category: AgencyCategories,
+  numbers: z.array(z.string()).optional(),
+  emails: z.array(z.string()).optional(),
+  // Where the address/contact details were taken from (shown to users)
+  sourceUrl: z.string().optional(),
 });
 
 export const DepartmentSchema = BaseSchema.extend({

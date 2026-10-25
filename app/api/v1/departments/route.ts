@@ -9,9 +9,9 @@ export async function GET() {
       meta: {
         total: allDepartments.length,
         lastUpdated: new Date().toISOString(),
-        source: "BetterIliganCity Open Data API",
+        source: "BetterDipolog Open Data API",
         description:
-          "Local Government Unit (LGU) departments and offices inside Iligan City Hall.",
+          "Local Government Unit (LGU) departments and offices of the City Government of Dipolog.",
       },
       data: allDepartments,
     },

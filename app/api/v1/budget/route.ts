@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { BudgetSchema } from "@/validations/budgetSchema";
-import rawBudgetData from "@/data/iligan/budget.json";
+import rawBudgetData from "@/data/dipolog/budget.json";
 
 const budgetData = BudgetSchema.parse(rawBudgetData);
 
@@ -11,9 +11,9 @@ export async function GET() {
       meta: {
         total: budgetData.years.length,
         lastUpdated: new Date().toISOString(),
-        source: "BetterIliganCity Open Data API",
+        source: "BetterDipolog Open Data API",
         description:
-          "Iligan City annual revenue and expenditure breakdown, sourced from BLGF's Statement of Receipts and Expenditures.",
+          "Dipolog City annual revenue and expenditure breakdown (PHP millions), sourced from BLGF's Statement of Receipts and Expenditures by LGU.",
       },
       data: budgetData,
     },

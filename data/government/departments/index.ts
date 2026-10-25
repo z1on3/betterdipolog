@@ -1,7 +1,7 @@
 import { DepartmentArraySchema } from "@/validations/agencySchema";
 
-import iliganDepartments from "./departments.json";
+import dipologDepartments from "./departments.json";
 
 export const allDepartments = DepartmentArraySchema.parse(
-  iliganDepartments.sort((a, b) => a.name.localeCompare(b.name)),
+  dipologDepartments.sort((a, b) => a.name.localeCompare(b.name)),
 );

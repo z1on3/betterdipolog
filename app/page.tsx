@@ -10,20 +10,20 @@ import DonationSection from "@/sections/homepage/DonationSection";
 import ReportIssueSection from "@/sections/homepage/ReportIssue";
 
 export const metadata: Metadata = {
-  title: { absolute: "Iligan City Website | Civic Tech Portal" },
+  title: { absolute: "Dipolog City Website | Civic Tech Portal" },
 };
 
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "BetterIligan",
+    name: "BetterDipolog",
     alternateName: [
-      "BetterIligan City",
-      "Better Iligan City",
-      "BetterIliganCity.org",
+      "BetterDipolog City",
+      "Better Dipolog City",
+      "BetterDipolog.org",
     ],
-    url: "https://betteriligancity.org/",
+    url: "https://betterdipolog.org/",
   };
 
   return (

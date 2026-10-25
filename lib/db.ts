@@ -1,7 +1,7 @@
 import { env } from "cloudflare:workers";
 
 /**
- * Returns the Bangon Iligan D1 database (the `DB` binding from wrangler.jsonc).
+ * Returns the Bangon Dipolog D1 database (the `DB` binding from wrangler.jsonc).
  *
  * Uses the async form of getCloudflareContext so it is safe to call from
  * statically-analysed server components as well as dynamic server actions and

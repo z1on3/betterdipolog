@@ -1,0 +1,271 @@
+[
+  {
+    "slug": "aid-to-individuals-in-crisis-situation",
+    "title": "Aid to Individuals in Crisis Situation (AICS): Medical and Burial Assistance",
+    "category": "Social Welfare",
+    "description": "Medical or burial assistance from the Dipolog City Social Welfare and Development Office (CSWDO) for indigent residents in crisis.",
+    "tags": [
+      "AICS",
+      "medical assistance",
+      "burial assistance",
+      "indigent",
+      "CSWDO",
+      "tabang"
+    ],
+    "source": "official",
+    "isWalkIn": true,
+    "isOnline": false,
+    "department": "City Social Welfare and Development Office (CSWDO)",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Residents of Dipolog City, indigents only",
+    "type": "standard",
+    "requirements": [
+      {
+        "groupName": "Medical Assistance",
+        "items": [
+          "Barangay Certification signed by the Barangay Chairman certifying that the bearer is in dire need of assistance and belongs to an indigent/low-income family",
+          "Medical Certificate from the hospital where the patient was confined",
+          "CSWDO Intake Form, signed by the client (accomplished with the designated staff)"
+        ]
+      },
+      {
+        "groupName": "Burial Assistance",
+        "items": [
+          "Barangay Certification signed by the Barangay Chairman certifying that the bearer is in dire need of assistance and belongs to an indigent/low-income family",
+          "Death Certificate of the deceased",
+          "CSWDO Intake Form, signed by the client (accomplished with the designated staff)"
+        ]
+      }
+    ],
+    "procedures": [
+      {
+        "stepNumber": 1,
+        "clientAction": "Sit for a one-on-one interview.",
+        "providerAction": "Interview the client to get important information.",
+        "duration": "3 minutes",
+        "personInCharge": "CSWDO district in-charge & staff",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 2,
+        "clientAction": "Submit all required documents and sign the Intake Form.",
+        "providerAction": "Review the documents and prepare them for the City Mayor's signature, then notify the client of the approval of the assistance by letter or other means.",
+        "duration": "7 minutes",
+        "personInCharge": "CSWDO district in-charge & staff",
+        "fee": "None"
+      }
+    ],
+    "contact": {
+      "location": "CSWDO, Brgy. Sta. Isabel (address per the 2022 Citizen's Charter office list)",
+      "phone": "(065) 212-2783 / 212-4566"
+    },
+    "notes": [
+      "Total processing time per the Charter: 10 minutes, plus the time for the City Mayor's approval. No fee is listed for this service.",
+      "Patients referred by hospitals can also ask the CSWDO for a referral letter or social case study report (Barangay Certification of indigency and Medical Certificate required; medical abstract optional)."
+    ],
+    "reference": {
+      "title": "City of Dipolog Citizen's Charter 2022 (1st Edition)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf"
+    }
+  },
+  {
+    "slug": "pwd-id",
+    "title": "Person with Disability (PWD) ID",
+    "category": "Social Welfare",
+    "description": "Apply for or replace a PWD Identification Card at the Dipolog City Social Welfare and Development Office (CSWDO).",
+    "tags": ["PWD", "ID", "disability", "discount", "CSWDO", "PDAO"],
+    "source": "official",
+    "isWalkIn": true,
+    "isOnline": false,
+    "department": "City Social Welfare and Development Office (CSWDO)",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Persons with disability who are residents of Dipolog City",
+    "type": "standard",
+    "requirements": [
+      {
+        "groupName": "Requirements for the ID",
+        "items": [
+          "Birth Certificate or Baptismal Certificate",
+          "Income Tax Return (if any)",
+          "Certificate of Residency from the Barangay Captain",
+          "Two (2) copies of 1x1 ID picture",
+          "Accomplished membership information sheet (c/o the PWD Center)"
+        ]
+      },
+      {
+        "groupName": "For Replacement",
+        "items": ["Affidavit of Loss", "Barangay or police blotter"]
+      }
+    ],
+    "procedures": [
+      {
+        "stepNumber": 1,
+        "clientAction": "Sit for a one-on-one interview.",
+        "providerAction": "Interview the person with disability to get pertinent information.",
+        "duration": "2 minutes",
+        "personInCharge": "CSWDO district in-charge & staff",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 2,
+        "clientAction": "Fill out the application form and submit the required documents.",
+        "providerAction": "Receive the application form and documents.",
+        "duration": "10 minutes",
+        "personInCharge": "CSWDO district in-charge & staff",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 3,
+        "clientAction": "Receive the PWD ID.",
+        "providerAction": "Approve the application, sign the identification card and release the ID.",
+        "duration": "About 1 minute",
+        "personInCharge": "CSWDO / City Mayor in-charge & staff",
+        "fee": "None"
+      }
+    ],
+    "contact": {
+      "location": "CSWDO, Brgy. Sta. Isabel (address per the 2022 Citizen's Charter office list)",
+      "phone": "(065) 212-2783 / 212-4566"
+    },
+    "notes": [
+      "Total processing time per the Charter: 12 minutes and 45 seconds. No fee is listed.",
+      "With the PWD ID, you can get a purchase slip/booklet from the CSWDO for discounts on medicines."
+    ],
+    "reference": {
+      "title": "City of Dipolog Citizen's Charter 2022 (1st Edition)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf"
+    }
+  },
+  {
+    "slug": "senior-citizen-id",
+    "title": "Senior Citizen ID",
+    "category": "Social Welfare",
+    "description": "Apply for or replace a Senior Citizen Identification Card (for residents 60 years old and above) through the CSWDO and the Office of Senior Citizens Affairs (OSCA).",
+    "tags": ["senior citizen", "OSCA", "ID", "60", "discount", "CSWDO"],
+    "source": "official",
+    "isWalkIn": true,
+    "isOnline": false,
+    "department": "City Social Welfare and Development Office (CSWDO) / Office of Senior Citizens Affairs (OSCA)",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Residents of Dipolog City aged 60 and above",
+    "type": "standard",
+    "requirements": [
+      {
+        "groupName": "Requirements for the ID",
+        "items": [
+          "Birth Certificate or Baptismal Certificate",
+          "Income Tax Return (if any)",
+          "Certificate of Residency from the Barangay Captain",
+          "Two (2) copies of 1x1 ID picture",
+          "Accomplished membership information sheet (c/o the Senior Citizen Center)"
+        ]
+      },
+      {
+        "groupName": "For Replacement",
+        "items": ["Affidavit of Loss", "Barangay or police blotter"]
+      }
+    ],
+    "procedures": [
+      {
+        "stepNumber": 1,
+        "clientAction": "Sit for a one-on-one interview.",
+        "providerAction": "Interview the senior citizen to get pertinent information.",
+        "duration": "2 minutes",
+        "personInCharge": "CSWDO district in-charge & staff",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 2,
+        "clientAction": "Fill out the application form and submit the required documents.",
+        "providerAction": "Receive the application form and documents.",
+        "duration": "10 minutes",
+        "personInCharge": "OSCA Head / City Mayor in-charge & staff",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 3,
+        "clientAction": "Receive the Senior Citizen ID and sign the logbook.",
+        "providerAction": "Approve the application, sign the identification card and release the ID.",
+        "duration": "About 1 minute",
+        "personInCharge": "OSCA Head / City Mayor in-charge & staff",
+        "fee": "None"
+      }
+    ],
+    "contact": {
+      "location": "CSWDO, Brgy. Sta. Isabel (address per the 2022 Citizen's Charter office list)",
+      "phone": "(065) 212-2783 / 212-4566"
+    },
+    "notes": [
+      "Total processing time per the Charter: 12 minutes and 45 seconds. No fee is listed.",
+      "With the Senior Citizen ID and your old booklet, you can get a purchase slip/booklet for discounts on medicines."
+    ],
+    "reference": {
+      "title": "City of Dipolog Citizen's Charter 2022 (1st Edition)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf"
+    }
+  },
+  {
+    "slug": "solo-parent-id",
+    "title": "Solo Parent ID",
+    "category": "Social Welfare",
+    "description": "Apply for a Solo Parent Identification Card at the Dipolog City Social Welfare and Development Office (CSWDO).",
+    "tags": ["solo parent", "ID", "single parent", "CSWDO"],
+    "source": "official",
+    "isWalkIn": true,
+    "isOnline": false,
+    "department": "City Social Welfare and Development Office (CSWDO)",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Solo parents who are residents of Dipolog City",
+    "type": "standard",
+    "requirements": [
+      {
+        "groupName": "Checklist of Requirements",
+        "items": [
+          "Barangay certification of the solo parent's residency in the barangay for the last six (6) months",
+          "Affidavit of circumstance stating the reason for becoming a solo parent",
+          "Supporting certificates, e.g. birth certificates of the children, death certificate of the spouse (if applicable), and other appropriate documents",
+          "Income Tax Return or any document that establishes the income level of the solo parent",
+          "1x1 ID picture"
+        ]
+      }
+    ],
+    "procedures": [
+      {
+        "stepNumber": 1,
+        "clientAction": "Sit for a one-on-one interview.",
+        "providerAction": "Interview the client to get pertinent information.",
+        "duration": "30 minutes",
+        "personInCharge": "CSWDO district in-charge & staff",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 2,
+        "clientAction": "Fill out the application form.",
+        "providerAction": "Receive the application and other documentary requirements.",
+        "duration": "10 minutes",
+        "personInCharge": "CSWDO / City Mayor in-charge & staff",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 3,
+        "clientAction": "Receive the ID and sign the receiving logbook.",
+        "providerAction": "Approve the application, sign the identification card and release the ID.",
+        "duration": "About 1.5 minutes",
+        "personInCharge": "CSWDO in-charge & staff",
+        "fee": "None"
+      }
+    ],
+    "contact": {
+      "location": "CSWDO, Brgy. Sta. Isabel (address per the 2022 Citizen's Charter office list)",
+      "phone": "(065) 212-2783 / 212-4566"
+    },
+    "notes": [
+      "The Solo Parent ID is renewable every three (3) years. Total processing time per the Charter: 41 minutes and 30 seconds. No fee is listed.",
+      "The 2022 Charter cites RA 8972. That law has since been expanded by RA 11861 (Expanded Solo Parents Welfare Act), so ask the CSWDO whether the requirements have changed."
+    ],
+    "reference": {
+      "title": "City of Dipolog Citizen's Charter 2022 (1st Edition)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf"
+    }
+  }
+]

@@ -38,7 +38,7 @@ export default async function ActiveIncidentBanner() {
           </div>
         </div>
         <Link
-          href="/bangon-iligan"
+          href="/bangon-dipolog"
           className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-bold text-red-700 shadow-sm transition-colors hover:bg-red-50"
         >
           Open relief command center <ArrowRight className="h-4 w-4" />

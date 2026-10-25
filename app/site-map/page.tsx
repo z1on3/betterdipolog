@@ -7,7 +7,7 @@ import SubpageHero from "@/components/ui/SubpageHero";
 export const metadata: Metadata = {
   title: "Sitemap",
   description:
-    "Complete sitemap of BetterIliganCity.org - find all pages, services, and resources for Iligan City.",
+    "Complete sitemap of BetterDipolog.org - find all pages, services, and resources for Dipolog City.",
 };
 
 interface SitemapLink {
@@ -30,41 +30,28 @@ const sections: SitemapSection[] = [
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms of Service", href: "/terms-of-service" },
       { label: "Volunteer", href: "/volunteer" },
+      { label: "Contributors", href: "/contributors" },
     ],
   },
   {
-    title: "Iligan City",
+    title: "Dipolog City",
     links: [
-      { label: "All About Iligan", href: "/iligan" },
-      { label: "City Profile & Stats", href: "/iligan/city-stats" },
-      { label: "City Officials", href: "/iligan/city-officials" },
-      { label: "Barangays", href: "/iligan/barangays" },
-      { label: "Electricity", href: "/iligan/electricity" },
+      { label: "All About Dipolog", href: "/dipolog" },
+      { label: "City Profile & Stats", href: "/dipolog/city-stats" },
+      { label: "City Officials", href: "/dipolog/city-officials" },
+      { label: "Barangays", href: "/dipolog/barangays" },
+      { label: "Utilities", href: "/dipolog/utilities" },
+      { label: "Disaster Preparedness Hub", href: "/disaster" },
+      { label: "Bangon Dipolog", href: "/bangon-dipolog" },
     ],
   },
   {
     title: "Travel",
     links: [
-      {
-        label: "Explore Travel",
-        href: "travel",
-      },
-      {
-        label: "Transportation Guide",
-        href: "/travel/transportation",
-      },
-      {
-        label: "Jeepney Routes",
-        href: "/travel/transportation/jeepney",
-      },
-      {
-        label: "Bus Schedules",
-        href: "/travel/transportation/bus",
-      },
-      {
-        label: "Waterfalls",
-        href: "/travel/waterfalls",
-      },
+      { label: "Explore Dipolog", href: "/travel" },
+      { label: "Attractions", href: "/travel/attractions" },
+      { label: "Festivals & Events", href: "/travel/festivals" },
+      { label: "Getting Around", href: "/travel/transportation" },
     ],
   },
   {
@@ -89,7 +76,10 @@ const sections: SitemapSection[] = [
     title: "Transparency",
     links: [
       { label: "Transparency Overview", href: "/transparency" },
-      { label: "Budget & Finances", href: "/transparency/budget" },
+      { label: "Bids & Procurement", href: "/transparency/bids" },
+      { label: "Budget & Financial Documents", href: "/transparency/budget" },
+      { label: "Projects", href: "/transparency/projects" },
+      { label: "Ordinances & Resolutions", href: "/transparency/resolutions" },
     ],
   },
   {
@@ -97,8 +87,8 @@ const sections: SitemapSection[] = [
     links: [
       { label: "Open Data", href: "/open-data" },
       {
-        label: "iligan.gov.ph",
-        href: "https://iligan.gov.ph/",
+        label: "dipologcity.gov.ph",
+        href: "https://dipologcity.gov.ph/",
         external: true,
       },
     ],
@@ -143,7 +133,7 @@ export default function SitemapPage() {
         </SubpageHero.Badges>
         <SubpageHero.Title>Sitemap</SubpageHero.Title>
         <SubpageHero.Description>
-          Find every page on BetterIliganCity.org, organized by section.
+          Find every page on BetterDipolog.org, organized by section.
         </SubpageHero.Description>
       </SubpageHero>
 

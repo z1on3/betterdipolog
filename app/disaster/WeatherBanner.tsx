@@ -134,7 +134,7 @@ export default function WeatherBanner() {
               {Math.round(current.temperature)}°C
             </p>
             <p className="mt-1 text-sm font-medium capitalize opacity-90">
-              {description} · Iligan City
+              {description} · Dipolog City
             </p>
           </div>
         </div>

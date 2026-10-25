@@ -9,9 +9,9 @@ import GuidesSection from "./GuidesSection";
 import EmergencyQuickCall from "./EmergencyQuickCall";
 
 export const metadata: Metadata = {
-  title: "Iligan City Disaster Preparedness Hub",
+  title: "Dipolog City Disaster Preparedness Hub",
   description:
-    "Emergency hotlines and typhoon, flood, and earthquake preparedness guides for Iligan City.",
+    "Emergency hotlines and typhoon, flood, and earthquake preparedness guides for Dipolog City.",
 };
 
 const REFERENCES = [
@@ -27,17 +27,17 @@ const REFERENCES = [
     title: "Philippine Red Cross — Safety and preparedness resources",
     url: "https://redcross.org.ph/",
   },
-  { title: "Iligan City Government", url: "https://iligan.gov.ph/" },
+  { title: "Dipolog City Government", url: "https://dipologcity.gov.ph/" },
 ];
 
 export default function DisasterPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Iligan City Disaster Preparedness Hub",
+    name: "Dipolog City Disaster Preparedness Hub",
     description:
-      "Community-maintained emergency hotlines and disaster preparedness guides for Iligan City.",
-    url: "https://betteriligancity.org/disaster",
+      "Community-maintained emergency hotlines and disaster preparedness guides for Dipolog City.",
+    url: "https://betterdipolog.org/disaster",
   };
 
   return (
@@ -54,7 +54,7 @@ export default function DisasterPage() {
         <SubpageHero.Title>Disaster Preparedness</SubpageHero.Title>
         <SubpageHero.Description>
           Emergency numbers, a facilities map, and simple what-to-do guides for
-          Iliganons — all on one fast page.
+          Dipolognons — all on one fast page.
         </SubpageHero.Description>
       </SubpageHero>
 
@@ -71,7 +71,7 @@ export default function DisasterPage() {
           />
           <p>
             Community-maintained — <strong>not an official LGU channel</strong>.
-            In an emergency, always follow the Iligan City CDRRMO and your
+            In an emergency, always follow the Dipolog City CDRRMO and your
             barangay officials. Every number lists its source and verify date.
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function DisasterPage() {
 
         <ReferencesFooter
           references={REFERENCES}
-          disclaimer="Compiled by volunteers from publicly available sources. Verify critical information with the Iligan City CDRRMO."
+          disclaimer="Compiled by volunteers from publicly available sources. Verify critical information with the Dipolog City CDRRMO."
         />
       </div>
     </main>

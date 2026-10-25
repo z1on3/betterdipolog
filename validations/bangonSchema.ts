@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-// Bangon Iligan — schemas for the live command-center datastore.
+// Bangon Dipolog — schemas for the live command-center datastore.
 //
 // Two layers per entity:
 //   *InputSchema  validates untrusted public form submissions (server actions).

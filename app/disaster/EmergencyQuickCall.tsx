@@ -11,10 +11,15 @@ const QUICK_CONTACTS: {
   Icon: typeof Phone;
   color: string;
 }[] = [
-  { label: "Rescue / CDRRMO", number: "811", Icon: LifeBuoy, color: "#059669" },
-  { label: "Fire", number: "160", Icon: Flame, color: "#ea580c" },
-  { label: "Police", number: "167", Icon: Shield, color: "#2563eb" },
-  { label: "Ambulance", number: "221-0081", Icon: Cross, color: "#dc2626" },
+  {
+    label: "Rescue / CDRRMO",
+    number: "212-1506",
+    Icon: LifeBuoy,
+    color: "#059669",
+  },
+  { label: "Fire", number: "0918-406-5888", Icon: Flame, color: "#ea580c" },
+  { label: "Police", number: "0998-598-6778", Icon: Shield, color: "#2563eb" },
+  { label: "City Hospital", number: "212-5555", Icon: Cross, color: "#dc2626" },
 ];
 
 export default function EmergencyQuickCall() {
@@ -57,10 +62,10 @@ export default function EmergencyQuickCall() {
             </span>
             {/* Phone icon + colored number reads as a tap-to-call action,
                             not a static div — the mobile affordance the review asked for.
-                            Sized to fit "221-0081" on one line at phone widths; the tile
-                            also clips so nothing spills past its rounded border. */}
+                            Mobile numbers (11 digits) may wrap at phone widths rather
+                            than clip — a truncated number is worse than a wrapped one. */}
             <span
-              className="flex items-center gap-1.5 text-sm font-extrabold whitespace-nowrap sm:text-base"
+              className="flex items-center gap-1.5 text-sm font-extrabold break-all sm:text-base"
               style={{ color }}
             >
               <Phone className="h-3.5 w-3.5 shrink-0" aria-hidden />

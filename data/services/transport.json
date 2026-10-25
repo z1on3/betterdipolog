@@ -1,105 +1,188 @@
 [
   {
-    "slug": "application-for-traffic-clearance",
-    "title": "Application For Traffic Clearance",
+    "slug": "tmo-clearance",
+    "title": "Traffic Management Office (TMO) Clearance / Certification",
     "category": "Transport and Driving",
-    "description": "Requirements for securing a traffic clearance from the Iligan City Traffic and Parking Management Office.",
+    "description": "Get a certification from the Dipolog City Traffic Management Office that you have no pending traffic case or violation.",
+    "tags": ["traffic clearance", "TMO", "certification", "violation"],
     "source": "official",
     "isWalkIn": true,
     "isOnline": false,
-    "department": "Iligan City Traffic and Parking Management Office",
-    "schedule": "8:00 AM - 5:00 PM Daily excluding Saturdays, Sundays and Holidays. On Mondays provision of services starts after flag raising. No noon break.",
-    "whoMayAvail": "All government agencies, LGUs, GOCC, and other government instrumentalities and owners or operators/drivers of public and private conveyances including individual who may have concern with traffic.",
+    "department": "City Mayor's Office – Traffic Management Division (TMO)",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "All",
     "type": "standard",
     "requirements": [
       {
-        "groupName": "Requirements For Traffic Clearance",
+        "groupName": "Checklist of Requirements",
         "items": [
-          "Affidavit of loss three (3) copies, one (1) original and two (2) photocopies.",
-          "Police Blotter Report Fee (Official Receipt issued by CTO)",
-          "Certificate Fee (Official Receipt issued by CTO)",
-          "Police Blotter Extract",
-          "Supporting documents: (Not Compulsory)",
-          "Deed of Sale",
-          "Photocopy of OR/CR",
-          "SPA",
-          "Authorization Letter"
+          "Official receipt for the certification fee (City Treasurer's Office)"
         ]
       }
     ],
     "procedures": [
       {
         "stepNumber": 1,
-        "clientAction": "Fill out Iligan City Government Registry Form and present required documents.",
-        "providerAction": "Receive/Check Requirements: Official Receipt for Traffic Clearance Fee, Official Receipt for Police Blotter Report Fee, Affidavit of Loss (3 copies), and Police Blotter Report.",
-        "duration": "2 minutes",
-        "personInCharge": "Information Desk Officer Incharge / TCT Case In-charge",
-        "fee": "Php 0.00"
+        "clientAction": "Pay the TMO certification fee at the City Treasurer's Office cashier.",
+        "providerAction": "Accept payment and issue the official receipt.",
+        "duration": "5 minutes",
+        "personInCharge": "Cashier, City Treasurer's Office",
+        "fee": "₱100.00"
       },
       {
         "stepNumber": 2,
-        "clientAction": "Proceed to secure Official Receipt.",
-        "providerAction": "If the requirement is complete, advise client to proceed at the Collection Services Division, City Treasurer’s Office, IBJT, East Bldg., Tambo, Hinaplanon, Iligan City. Process payment and issue corresponding Official Receipt.",
-        "duration": "8 minutes",
-        "personInCharge": "Cashier",
-        "fee": "Certification Fee Php 50.00, Police Report Fee Php 50.00"
+        "clientAction": "Present the official receipt to the TMO admin staff.",
+        "providerAction": "Check the database for pending or unpaid traffic violations. If there is a pending violation, the applicant must settle it first before the certification can be issued.",
+        "duration": "5 minutes",
+        "personInCharge": "TMO staff",
+        "fee": "None"
       },
       {
         "stepNumber": 3,
-        "clientAction": "Return to ICTPMO and submit official receipt. Wait for the process and further advice from the service provider.",
-        "providerAction": "If no pending traffic violations/cases and information is accurate, encode and print. Review Data/Findings, affix signature/initial on the copy of certification, and segregate. Affix signature on the certification. Advise client to proceed to PNP Traffic Unit for the next step.",
-        "duration": "6 minutes (1 min + 5 mins)",
-        "personInCharge": "Information Desk Officer Incharge / Data Encoder / TCT Case Incharge / Chief, ICTPMO Admin In-charge",
-        "fee": "Php 100.00"
-      },
-      {
-        "stepNumber": 4,
-        "clientAction": "Follow advice if documents are lacking.",
-        "providerAction": "If the client is lacking requirements (e.g., Affidavit of Loss): Advise client to secure one from any lawyer and provide a photocopy. If there is no Police Blotter Report, advise clients to proceed to the Police Station with jurisdiction over the lost incident.",
-        "duration": "2 minutes",
-        "personInCharge": "Information Desk Officer Incharge / TCT Case In-charge",
-        "fee": "Php 0.00"
-      },
-      {
-        "stepNumber": 5,
-        "clientAction": "Return to ICPTMO and submit requirements together with official receipt.",
-        "providerAction": "Receive/Check Requirements: Official Receipt for Traffic Clearance Fee, Official Receipt for Police Blotter Report Fee, Affidavit of Loss, and Police Blotter Report. Indicate in the logbook the proof of payment (official receipt) and client information.",
-        "duration": "1 minute",
-        "personInCharge": "Information Desk Officer Incharge",
-        "fee": "Php 0.00"
-      },
-      {
-        "stepNumber": 6,
-        "clientAction": "Wait for the data check and for further advise from the service provider.",
-        "providerAction": "Verify/validate data and information based on records available. If found on record to have unsettled traffic violation/s, clients are advised to settle pending violation/s or cases; issue order of payment for the client to pay to the cashier.",
+        "clientAction": "Claim the certification.",
+        "providerAction": "Issue the certification.",
         "duration": "5 minutes",
-        "personInCharge": "Data Encoder TCT Case Incharge",
-        "fee": "Php 0.00"
-      },
-      {
-        "stepNumber": 7,
-        "clientAction": "Pay to the cashier.",
-        "providerAction": "Advise client to proceed at the Collection Services Division, City Treasurer’s Office, IBJT East Bldg., Tambo, Hinaplanon, Iligan City.",
-        "duration": "8 minutes",
-        "personInCharge": "Cashier",
-        "fee": "Fines and penalties in accordance with the provision of the New Traffic Code of Iligan City"
-      },
-      {
-        "stepNumber": 8,
-        "clientAction": "Proceed to Iligan City Traffic Management Office and wait for processing of clearance.",
-        "providerAction": "For Unsettled Traffic Violation: Receive/check proof of payment, indicate the O.R. number and amount paid, record Official Receipt Information. For Traffic Clearance: Receive/check official receipt and record information in the logbook. Encode personal details as indicated in affidavit of loss and print certification in three (3) copies.",
-        "duration": "3 minutes",
-        "personInCharge": "TCT Case Incharge Data Encoder",
-        "fee": "Php 0.00"
-      },
-      {
-        "stepNumber": 9,
-        "clientAction": "Wait for processing of traffic clearance.",
-        "providerAction": "If no pending traffic violation/s/case and information is accurate, encode and print. Review Data/Findings and affix signature/initial on the copy of certification and segregate. Affix Signature on the certification. Advise clients to proceed to PNP Traffic Unit, Iligan City Police Office for a signature of Chief Traffic Unit.",
-        "duration": "5 minutes",
-        "personInCharge": "Data Encoder / TCT Case Incharge / Chief, ICTPMO Admin In-charge",
-        "fee": "Php 100.00"
+        "personInCharge": "TMO staff",
+        "fee": "None"
       }
-    ]
+    ],
+    "contact": {
+      "phone": "(065) 212-4508",
+      "email": "tmodipolog@gmail.com"
+    },
+    "notes": ["Total processing time per the Charter: 15 minutes."],
+    "reference": {
+      "title": "City of Dipolog Citizen's Charter 2022 (1st Edition)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf"
+    }
+  },
+  {
+    "slug": "settlement-of-traffic-violations",
+    "title": "Settlement of Traffic Ordinance Violations",
+    "category": "Transport and Driving",
+    "description": "Settle a traffic citation issued in Dipolog City, including what to do if you lost your citation ticket.",
+    "tags": ["traffic violation", "citation ticket", "TMO", "fines", "huli"],
+    "source": "official",
+    "isWalkIn": true,
+    "isOnline": false,
+    "department": "City Mayor's Office – Traffic Management Division (TMO)",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Traffic violators",
+    "type": "standard",
+    "requirements": [
+      {
+        "groupName": "With Citation Ticket",
+        "items": ["Citation ticket, or court order / court subpoena"]
+      },
+      {
+        "groupName": "Lost Citation Ticket",
+        "items": [
+          "ID of the client/violator",
+          "Name of the violator and the vehicle plate number (given to the TMO admin staff)"
+        ]
+      }
+    ],
+    "procedures": [
+      {
+        "stepNumber": 1,
+        "clientAction": "Go to the Traffic Management Office (TMO) within seven (7) days from apprehension and present the citation ticket or subpoena. (Lost ticket: give the violator's name and plate number.)",
+        "providerAction": "Review the ticket (or look up the violation in the database) and compute the fines.",
+        "duration": "5 to 10 minutes",
+        "personInCharge": "TMO staff",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 2,
+        "clientAction": "Pay the fines at the Cashier, City Treasurer's Office.",
+        "providerAction": "Review the ticket or assessment, accept payment and issue the official receipt.",
+        "duration": "5 minutes",
+        "personInCharge": "Cashier, City Treasurer's Office",
+        "fee": "Based on the traffic violation; see the schedule of penalties"
+      },
+      {
+        "stepNumber": 3,
+        "clientAction": "Return to the TMO and present the official receipt.",
+        "providerAction": "Record the payment in the database. For a court order or subpoena, the client is advised to proceed to the Bulwagan ng Katarungan.",
+        "duration": "5 minutes",
+        "personInCharge": "TMO staff",
+        "fee": "None"
+      }
+    ],
+    "contact": {
+      "phone": "(065) 212-4508",
+      "email": "tmodipolog@gmail.com"
+    },
+    "reference": {
+      "title": "City of Dipolog Citizen's Charter 2022 (1st Edition)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf"
+    }
+  },
+  {
+    "slug": "renewal-of-mtop",
+    "title": "Renewal of Motorized Tricycle Operator's Permit (MTOP)",
+    "category": "Transport and Driving",
+    "description": "Renew the Motorized Tricycle Operator's Permit required by the LTO to operate a tricycle as public conveyance within Dipolog City.",
+    "tags": ["MTOP", "tricycle", "franchise", "TODA", "LTO"],
+    "source": "official",
+    "isWalkIn": true,
+    "isOnline": false,
+    "department": "City Mayor's Office – Business Permits & Licensing Division (BPLD)",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Any motorized tricycle operator or driver recognized as a member of a registered Tricycle Operators and Drivers Association (TODA), who is a resident of Dipolog City and wishes to operate a tricycle unit within the city",
+    "type": "standard",
+    "requirements": [
+      {
+        "groupName": "Checklist of Requirements",
+        "items": [
+          "Accomplished application form, original (CMO – Permits & License Division)",
+          "Previous Motorized Tricycle Operator's Permit (MTOP), original",
+          "Recent LTO Official Receipt (OR), original",
+          "Certificate of Registration (CR), 1 photocopy (letter size)",
+          "Barangay Clearance, original (barangay where the operator resides)",
+          "Driver's License / Certificate of Appearance, original",
+          "Motor inspection (Traffic Management Office)"
+        ]
+      }
+    ],
+    "procedures": [
+      {
+        "stepNumber": 1,
+        "clientAction": "Submit all requirements for MTOP renewal to BPLD (Window 7).",
+        "providerAction": "Receive and check the documents and prepare the order of payment; inspect the motorcycle unit.",
+        "duration": "13 minutes",
+        "personInCharge": "BPLD staff",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 2,
+        "clientAction": "Pay the required fees.",
+        "providerAction": "Accept payment and issue the official receipt.",
+        "duration": "5 minutes",
+        "personInCharge": "Revenue Collectors, City Treasurer's Office",
+        "fee": "MTOP: ₱910.00; motorcycle unit sticker: ₱35.00"
+      },
+      {
+        "stepNumber": 3,
+        "clientAction": "Claim the MTOP.",
+        "providerAction": "Print the MTOP, have it signed by the Head of BPLD and approved by the City Administrator, then release it with the receipt.",
+        "duration": "About 40 minutes (approval by the City Administrator is listed at 30 minutes)",
+        "personInCharge": "BPLD staff / Head, BPLD / City Administrator",
+        "fee": "None"
+      }
+    ],
+    "contact": {
+      "location": "Business Permit & License Division, Ground Floor, Dipolog City Hall, Rizal Ave.",
+      "phone": "(065) 212-2486",
+      "email": "dplgbusinesspermitandlicenses@gmail.com"
+    },
+    "notes": [
+      "The MTOP must be renewed based on the renewal of the motorcycle's plate number with the LTO.",
+      "Total processing time per the Charter: 1 hour.",
+      "The Charter also covers transfer of ownership (₱910.00), substitution of unit (₱100.00 plus ₱100.00 for re-issuance) and dropping of an MTOP (₱100.00). Ask BPLD for those requirements."
+    ],
+    "reference": {
+      "title": "City Mayor's Office – Business Permits & Licensing Division Citizen's Charter (posted September 2023)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2023/09/CMO-BPLD-Citizens-Charter-2023.pdf"
+    }
   }
 ]

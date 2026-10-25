@@ -21,44 +21,98 @@ interface CommunityVolunteer {
   profile_pic?: string;
 }
 
+// This fork's repository. Contributor fetches fail soft (empty list) until it is public.
+const REPO = "z1on3/betterdipolog";
+const REPO_OWNER = REPO.split("/")[0];
+
+// Upstream project this site is forked from (MIT License). Keep this credit.
+const UPSTREAM_REPO = "KishonShrill/BetterIligan";
+const UPSTREAM_OWNER = "KishonShrill";
+
+async function fetchContributors(repo: string): Promise<GitHubContributor[]> {
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${repo}/contributors`,
+      {
+        headers: {
+          Accept: "application/vnd.github.v3+json",
+        },
+      },
+    );
+
+    if (!res.ok) throw new Error(`Failed to fetch contributors for ${repo}`);
+
+    const data = await res.json();
+
+    // Defensive check in case GitHub rate-limits the user's IP
+    return Array.isArray(data) ? (data as GitHubContributor[]) : [];
+  } catch (error) {
+    console.error("Error fetching contributors:", error);
+    return [];
+  }
+}
+
+function ContributorGrid({ people }: { people: GitHubContributor[] }) {
+  return (
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+      {people.map((contributor) => (
+        <a
+          key={contributor.id}
+          href={contributor.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative flex flex-col items-center rounded-2xl border border-slate-200 bg-white p-5 text-center transition-all hover:border-blue-300 hover:shadow-md"
+        >
+          <Github className="absolute top-4 right-4 h-4 w-4 text-slate-300 transition-colors group-hover:text-blue-500" />
+          <Image
+            src={`${contributor.avatar_url}&s=128`}
+            alt={contributor.login}
+            width={128}
+            height={128}
+            loading="lazy"
+            unoptimized
+            className="mb-3 h-18 w-18 rounded-full shadow-sm transition-all group-hover:ring-2 group-hover:ring-blue-100"
+          />
+          <h3 className="line-clamp-1 font-bold text-slate-900 transition-colors group-hover:text-blue-600">
+            {contributor.login}
+          </h3>
+          <span className="mt-2 rounded-md bg-slate-100 px-2.5 py-1 text-[10px] font-extrabold tracking-wider text-slate-600 uppercase">
+            {contributor.contributions} Contribution
+            {contributor.contributions !== 1 ? "s" : ""}
+          </span>
+        </a>
+      ))}
+    </div>
+  );
+}
+
 export default function ContributorsClient() {
   const [contributors, setContributors] = useState<GitHubContributor[]>([]);
+  const [upstreamContributors, setUpstreamContributors] = useState<
+    GitHubContributor[]
+  >([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchContributors = async () => {
-      try {
-        const res = await fetch(
-          "https://api.github.com/repos/KishonShrill/BetterIligan/contributors",
-          {
-            headers: {
-              "User-Agent": "BetterIligan-Contributors-Page",
-              Accept: "application/vnd.github.v3+json",
-            },
-          },
-        );
-
-        if (!res.ok) throw new Error("Failed to fetch GitHub contributors");
-
-        const data = await res.json();
-
-        // Defensive check in case GitHub rate-limits the user's IP
-        if (Array.isArray(data)) {
-          setContributors(data);
-        }
-      } catch (error) {
-        console.error("Error fetching contributors:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchContributors();
+    Promise.all([
+      fetchContributors(REPO),
+      fetchContributors(UPSTREAM_REPO),
+    ]).then(([fork, upstream]) => {
+      setContributors(fork);
+      setUpstreamContributors(upstream);
+      setIsLoading(false);
+    });
   }, []);
 
-  const owner = contributors.find((c) => c.login === "KishonShrill");
+  const owner = contributors.find((c) => c.login === REPO_OWNER);
   const maintainers = contributors.filter(
-    (c) => c.login !== "KishonShrill" && c.type === "User",
+    (c) => c.login !== REPO_OWNER && c.type === "User",
+  );
+  const upstreamFounder = upstreamContributors.find(
+    (c) => c.login === UPSTREAM_OWNER,
+  );
+  const upstreamOthers = upstreamContributors.filter(
+    (c) => c.login !== UPSTREAM_OWNER && c.type === "User",
   );
   const volunteers = communityVolunteers as CommunityVolunteer[];
 
@@ -97,7 +151,7 @@ export default function ContributorsClient() {
                 {owner.login}
               </h3>
               <p className="mb-4 font-medium text-slate-500">
-                Founder & Lead Developer
+                BetterDipolog Maintainer
               </p>
               <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
                 <span className="rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-600">
@@ -130,35 +184,7 @@ export default function ContributorsClient() {
           </div>
 
           {maintainers.length > 0 ? (
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-              {maintainers.map((contributor) => (
-                <a
-                  key={contributor.id}
-                  href={contributor.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative flex flex-col items-center rounded-2xl border border-slate-200 bg-white p-5 text-center transition-all hover:border-blue-300 hover:shadow-md"
-                >
-                  <Github className="absolute top-4 right-4 h-4 w-4 text-slate-300 transition-colors group-hover:text-blue-500" />
-                  <Image
-                    src={`${contributor.avatar_url}&s=128`}
-                    alt={contributor.login}
-                    width={128}
-                    height={128}
-                    loading="lazy"
-                    unoptimized
-                    className="mb-3 h-18 w-18 rounded-full shadow-sm transition-all group-hover:ring-2 group-hover:ring-blue-100"
-                  />
-                  <h3 className="line-clamp-1 font-bold text-slate-900 transition-colors group-hover:text-blue-600">
-                    {contributor.login}
-                  </h3>
-                  <span className="mt-2 rounded-md bg-slate-100 px-2.5 py-1 text-[10px] font-extrabold tracking-wider text-slate-600 uppercase">
-                    {contributor.contributions} Contribution
-                    {contributor.contributions !== 1 ? "s" : ""}
-                  </span>
-                </a>
-              ))}
-            </div>
+            <ContributorGrid people={maintainers} />
           ) : (
             <div className="flex flex-col items-center rounded-3xl border border-dashed border-slate-200 bg-white p-10 text-center">
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-slate-500">
@@ -168,15 +194,88 @@ export default function ContributorsClient() {
                 No contributors to show right now
               </h3>
               <p className="mx-auto max-w-md text-slate-500">
-                We couldn&apos;t load the contributor list from GitHub. Check
-                back shortly, or view the project directly on GitHub.
+                {
+                  "We couldn't load the contributor list from GitHub. Check back shortly, or view the project directly on GitHub."
+                }
               </p>
             </div>
           )}
         </section>
       )}
 
-      {/* --- SECTION 3: COMMUNITY VOLUNTEERS (STATIC JSON) --- */}
+      {/* --- SECTION 3: UPSTREAM CREDITS (BetterIligan) --- */}
+      {!isLoading && (
+        <section className="animate-in fade-in space-y-6 delay-150 duration-500">
+          <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
+            <Github className="h-6 w-6 text-slate-700" />
+            <h2 className="text-2xl font-bold text-slate-900">
+              Upstream: BetterIligan
+            </h2>
+          </div>
+          <p className="max-w-3xl text-slate-600">
+            BetterDipolog is a fork of{" "}
+            <a
+              href={`https://github.com/${UPSTREAM_REPO}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-blue-600 hover:text-blue-700"
+            >
+              BetterIligan
+            </a>{" "}
+            by Chriscent Louis June Pingol and contributors (MIT License). The
+            people below built the foundation this site runs on.
+          </p>
+
+          {upstreamFounder && (
+            <a
+              href={upstreamFounder.html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex max-w-2xl items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-blue-300 hover:shadow-md"
+            >
+              <Image
+                src={`${upstreamFounder.avatar_url}&s=128`}
+                alt={upstreamFounder.login}
+                width={64}
+                height={64}
+                unoptimized
+                loading="lazy"
+                className="h-16 w-16 rounded-full shadow-sm"
+              />
+              <div>
+                <h3 className="font-bold text-slate-900">
+                  {upstreamFounder.login}
+                </h3>
+                <p className="text-sm text-slate-500">
+                  BetterIligan Founder &amp; Lead Developer
+                </p>
+              </div>
+            </a>
+          )}
+
+          {upstreamOthers.length > 0 && (
+            <ContributorGrid people={upstreamOthers} />
+          )}
+
+          {upstreamContributors.length === 0 && (
+            <p className="text-sm text-slate-500">
+              Couldn&apos;t load the upstream contributor list from GitHub right
+              now. See it on{" "}
+              <a
+                href={`https://github.com/${UPSTREAM_REPO}/graphs/contributors`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-blue-600 hover:text-blue-700"
+              >
+                GitHub
+              </a>
+              .
+            </p>
+          )}
+        </section>
+      )}
+
+      {/* --- SECTION 4: COMMUNITY VOLUNTEERS (STATIC JSON) --- */}
       {/* Renders instantly, independent of GitHub loading */}
       <section className="space-y-6">
         <div className="flex items-center justify-between border-b border-slate-200 pb-4">

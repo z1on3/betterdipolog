@@ -131,7 +131,7 @@ export default function DisasterMapLeaflet({
 }) {
   return (
     <MapContainer
-      center={[8.228, 124.2452]}
+      center={[8.5883, 123.3409]}
       zoom={13}
       className="h-full w-full"
       zoomControl={false}

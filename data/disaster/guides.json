@@ -3,7 +3,7 @@
     "hazard": "typhoon",
     "phases": {
       "before": [
-        "Monitor **PAGASA bulletins** and **Iligan CDRRMO advisories** once a storm enters PAR.",
+        "Monitor **PAGASA bulletins** and **Dipolog City CDRRMO advisories** once a storm enters PAR.",
         "Prepare a **go-bag**: drinking water, ready-to-eat food for **3 days**, flashlight, power bank, whistle, first-aid kit, medicines, and copies of IDs in a waterproof pouch.",
         "**Charge phones and power banks** while electricity is available.",
         "**Secure or bring inside** loose objects that strong wind can blow away (roofing sheets, signage, potted plants).",
@@ -32,11 +32,12 @@
     "hazard": "flood",
     "phases": {
       "before": [
-        "Know whether your area is **flood-prone** — low-lying riverside barangays flood first during heavy rain.",
+        "Know whether your area is **flood-prone** — in Dipolog, low-lying areas near the **Dipolog River** and its tributaries flood first during heavy rain, as in the floods of **November 2018** and **January 2023**.",
         "**Move valuables, documents, and electronics** above expected flood height.",
         "Prepare a **go-bag** (water, food, flashlight, medicines, IDs) that every family member can grab.",
         "Agree on a **family meeting point** in case members are separated.",
-        "Monitor rainfall advisories: **yellow** means monitor, **orange** means prepare to evacuate, **red** means evacuate flood-prone areas."
+        "Monitor rainfall advisories: **yellow** means monitor, **orange** means prepare to evacuate, **red** means evacuate flood-prone areas.",
+        "Expect the **wettest months from June to December** (especially June, October, and November) — keep your go-bag ready through that season."
       ],
       "during": [
         "**Evacuate immediately** when water starts rising or when told to — floodwater rises faster than people expect.",
@@ -69,7 +70,7 @@
         "If outdoors, **move away from buildings**, power lines, and trees; stay in the open.",
         "If driving, **pull over** away from bridges and overpasses and stay inside the vehicle.",
         "**Do not rush to exits** or use elevators.",
-        "If near the coast and the shaking is strong or long, **move to high ground immediately** after it stops — do not wait for a tsunami warning."
+        "Dipolog faces the **Sulu Sea** — if you are near the coast or the Boulevard and the shaking is strong or long, **move to high ground immediately** after it stops; do not wait for a tsunami warning."
       ],
       "after": [
         "Expect **aftershocks**; each one can further weaken damaged structures.",

@@ -41,7 +41,11 @@ const FILTERS: { key: "all" | Category; label: string }[] = [
 ];
 
 const REFERENCES = [
-  { title: "Iligan City Government", url: "https://iligan.gov.ph/" },
+  { title: "City Government of Dipolog", url: "https://dipologcity.gov.ph/" },
+  {
+    title: "City of Dipolog Citizen's Charter 2022 (CSWDO and PESO services)",
+    url: "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf",
+  },
   {
     title: "CHED – UniFAST (TES & Tulong Dunong)",
     url: "https://ched.gov.ph/unifast/",
@@ -86,7 +90,7 @@ export default function AssistanceClient({
       <SubpageHero>
         <SubpageHero.Title>Scholarships &amp; Assistance</SubpageHero.Title>
         <SubpageHero.Description>
-          Scholarships and financial-assistance programs open to Iligan
+          Scholarships and financial-assistance programs open to Dipolog
           residents — from the city government and national agencies.
         </SubpageHero.Description>
       </SubpageHero>
@@ -105,7 +109,7 @@ export default function AssistanceClient({
             Community-maintained — <strong>not an official channel</strong>.
             Deadlines, amounts, and requirements change every cycle, so always
             confirm the current details on the official page or with the office
-            before applying. Last checked <strong>8 July 2026</strong>.
+            before applying. Each program shows the date it was last checked.
           </p>
         </div>
 
@@ -166,7 +170,7 @@ export default function AssistanceClient({
                     </span>
                   </div>
                   <span className="text-[10px] font-bold tracking-wider text-slate-400 uppercase">
-                    {p.scope === "city" ? "Iligan City" : "National"}
+                    {p.scope === "city" ? "Dipolog City" : "National"}
                   </span>
                 </div>
 

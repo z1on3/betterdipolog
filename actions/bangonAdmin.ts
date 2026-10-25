@@ -48,7 +48,7 @@ export async function adminLogin(formData: FormData): Promise<ActionResult> {
 
 export async function adminLogout(): Promise<void> {
   await destroyAdminSession();
-  redirect("/bangon-iligan/admin/login");
+  redirect("/bangon-dipolog/admin/login");
 }
 
 async function setBoardStatus(
@@ -64,8 +64,8 @@ async function setBoardStatus(
     .bind(status, id)
     .run();
   await audit(`board:${status}`, "board_message", id);
-  revalidatePath("/bangon-iligan");
-  revalidatePath("/bangon-iligan/admin");
+  revalidatePath("/bangon-dipolog");
+  revalidatePath("/bangon-dipolog/admin");
 }
 
 // Bound with the row id in the form; the trailing FormData is supplied by the
@@ -91,8 +91,8 @@ export async function unpublishBoardMessage(id: string): Promise<void> {
     .bind(id)
     .run();
   await audit("board:unpublished", "board_message", id);
-  revalidatePath("/bangon-iligan");
-  revalidatePath("/bangon-iligan/admin");
+  revalidatePath("/bangon-dipolog");
+  revalidatePath("/bangon-dipolog/admin");
 }
 
 // Hard-deletes a board message — for accidentally-approved or abusive posts.
@@ -104,8 +104,8 @@ export async function deleteBoardMessage(id: string): Promise<void> {
     .bind(id)
     .run();
   await audit("board:deleted", "board_message", id);
-  revalidatePath("/bangon-iligan");
-  revalidatePath("/bangon-iligan/admin");
+  revalidatePath("/bangon-dipolog");
+  revalidatePath("/bangon-dipolog/admin");
 }
 
 async function setIncident(
@@ -126,8 +126,8 @@ async function setIncident(
     "incident",
     id,
   );
-  revalidatePath("/bangon-iligan");
-  revalidatePath("/bangon-iligan/admin");
+  revalidatePath("/bangon-dipolog");
+  revalidatePath("/bangon-dipolog/admin");
 }
 
 export async function verifyIncident(id: string): Promise<void> {
@@ -152,8 +152,8 @@ export async function unverifyIncident(id: string): Promise<void> {
     .bind(id)
     .run();
   await audit("incident:unverified", "incident", id);
-  revalidatePath("/bangon-iligan");
-  revalidatePath("/bangon-iligan/admin");
+  revalidatePath("/bangon-dipolog");
+  revalidatePath("/bangon-dipolog/admin");
 }
 
 // Hard-deletes a report — for accidentally-verified or bogus reports.
@@ -162,8 +162,8 @@ export async function deleteIncident(id: string): Promise<void> {
   const db = await getDb();
   await db.prepare("DELETE FROM bangon_incidents WHERE id = ?1").bind(id).run();
   await audit("incident:deleted", "incident", id);
-  revalidatePath("/bangon-iligan");
-  revalidatePath("/bangon-iligan/admin");
+  revalidatePath("/bangon-dipolog");
+  revalidatePath("/bangon-dipolog/admin");
 }
 
 // Marks an already-verified report as resolved ("cleared"). Stays verified so
@@ -178,8 +178,8 @@ export async function resolveIncident(id: string): Promise<void> {
     .bind(id)
     .run();
   await audit("incident:resolved", "incident", id);
-  revalidatePath("/bangon-iligan");
-  revalidatePath("/bangon-iligan/admin");
+  revalidatePath("/bangon-dipolog");
+  revalidatePath("/bangon-dipolog/admin");
 }
 
 // ── Incident activation (runtime standby↔active switch) ──────────────
@@ -189,7 +189,7 @@ export async function resolveIncident(id: string): Promise<void> {
 //
 // Returns a result instead of throwing so a missing table (migration 0003 not
 // applied to the remote D1) surfaces as an actionable message in the admin UI
-// rather than a silent form failure — see docs/bangon-iligan.md troubleshooting.
+// rather than a silent form failure — see docs/bangon-dipolog.md troubleshooting.
 export async function activateIncident(
   _prev: ActionResult,
   formData: FormData,
@@ -230,8 +230,8 @@ export async function activateIncident(
   }
   await audit("incident_state:activated", "incident_state", "current");
   revalidatePath("/");
-  revalidatePath("/bangon-iligan");
-  revalidatePath("/bangon-iligan/admin");
+  revalidatePath("/bangon-dipolog");
+  revalidatePath("/bangon-dipolog/admin");
   return { success: true };
 }
 
@@ -258,7 +258,7 @@ export async function deactivateIncident(): Promise<ActionResult> {
   }
   await audit("incident_state:deactivated", "incident_state", "current");
   revalidatePath("/");
-  revalidatePath("/bangon-iligan");
-  revalidatePath("/bangon-iligan/admin");
+  revalidatePath("/bangon-dipolog");
+  revalidatePath("/bangon-dipolog/admin");
   return { success: true };
 }

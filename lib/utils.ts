@@ -30,6 +30,8 @@ export function getCategoryStyles(categoryName: string) {
     "Education and Scholarships": { bg: "#ecfeff", text: "#0891b2" },
     "Health and Wellness": { bg: "#fff1f2", text: "#e11d48" },
     "Infrastructure and Public Works": { bg: "#fff7ed", text: "#ea580c" },
+    "Social Welfare": { bg: "#fff1f2", text: "#e11d48" }, // rose-50, rose-600
+    "Taxes and Real Property": { bg: "#f0fdfa", text: "#0d9488" }, // teal-50, teal-600
     "Transport and Driving": { bg: "#f5f3ff", text: "#7c3aed" },
   };
 

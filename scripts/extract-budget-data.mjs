@@ -28,10 +28,11 @@ const status = statusArg;
 //const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const budgetJsonPath = path.join(
   import.meta.dirname,
-  "../data/iligan/budget.json",
+  "../data/dipolog/budget.json",
 );
 
-const ILIGAN_ROW = 215; // Confirmed for FY2024/FY2025 files; verify column D ("LGU NAME") still reads "Iligan City" for new years.
+const LGU_NAME = "Dipolog City";
+const PROVINCE = "Zamboanga Del Norte";
 
 async function main() {
   const res = await fetch(xlsxUrl, {
@@ -48,11 +49,20 @@ async function main() {
   await workbook.xlsx.load(buffer);
   const sheet = workbook.worksheets[0];
 
-  const row = sheet.getRow(ILIGAN_ROW);
-  const lguName = row.getCell(4).value;
-  if (String(lguName).trim() !== "Iligan City") {
+  // BLGF re-sorts rows between releases, so look the LGU up by name
+  // (column C = PROVINCE, column D = LGU NAME) instead of a fixed row number.
+  let row = null;
+  sheet.eachRow((r) => {
+    if (
+      String(r.getCell(4).value ?? "").trim() === LGU_NAME &&
+      String(r.getCell(3).value ?? "").trim() === PROVINCE
+    ) {
+      row = r;
+    }
+  });
+  if (!row) {
     throw new Error(
-      `Row ${ILIGAN_ROW} is "${lguName}", not "Iligan City" — BLGF likely re-sorted the sheet. Find the correct row manually.`,
+      `No row with LGU NAME "${LGU_NAME}" / PROVINCE "${PROVINCE}" — check the sheet layout manually.`,
     );
   }
 
@@ -87,7 +97,7 @@ async function main() {
 
   writeFileSync(budgetJsonPath, JSON.stringify(current, null, 4) + "\n");
   console.log(
-    `Updated data/iligan/budget.json with FY${fiscalYear} (${status}).`,
+    `Updated data/dipolog/budget.json with FY${fiscalYear} (${status}).`,
   );
   console.log(
     "Run `npm run build` to confirm it still validates against validations/budgetSchema.ts.",

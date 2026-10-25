@@ -69,3 +69,7 @@ Desktop.ini
 
 /dist/
 .vinext/
+
+# local research scratch
+.research/
+.playwright-mcp/

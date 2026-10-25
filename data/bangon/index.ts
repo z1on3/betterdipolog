@@ -1,4 +1,4 @@
-// SERVER-ONLY MODULE — parses the Bangon Iligan page config at build/render
+// SERVER-ONLY MODULE — parses the Bangon Dipolog page config at build/render
 // time. Do NOT import from a 'use client' file (it would bundle zod + the JSON
 // into the browser). Mirrors data/disaster/index.ts.
 import { BangonConfigSchema } from "@/validations/bangonSchema";

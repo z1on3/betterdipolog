@@ -1,111 +1,231 @@
 [
   {
     "slug": "application-for-business-permit",
-    "title": "Application For Business Permit",
+    "title": "Application for a New Business Permit (Mayor's Permit)",
     "category": "Business, Trade and Investment",
-    "description": "Requirements and guidelines for securing a new business permit or renewing an existing one at the City Mayor's Office.",
+    "description": "Requirements and steps for getting a Business/Mayor's Permit for a new business in Dipolog City, from the City Mayor's Office – Business Permits & Licensing Division (BPLD).",
+    "tags": [
+      "mayor's permit",
+      "business permit",
+      "BPLD",
+      "DTI",
+      "SEC",
+      "negosyo"
+    ],
     "source": "official",
     "isWalkIn": true,
-    "isOnline": false,
-    "department": "City Mayor's Office",
-    "schedule": "8:00 AM - 5:00 PM Daily excluding Saturdays, Sundays and Holidays. On Mondays, provision of services starts after flag raising. No noon break.",
-    "whoMayAvail": "Business Operators",
+    "isOnline": true,
+    "department": "City Mayor's Office – Business Permits & Licensing Division (BPLD)",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Enterprises / business owners in Dipolog City",
     "type": "standard",
     "requirements": [
       {
-        "groupName": "For New Business",
+        "groupName": "Basic Requirements",
         "items": [
-          "DTI Registration",
-          "Barangay Clearance (Location of Business)",
-          "Occupancy Permit (City Engineer's Office)",
-          "Lease Contract (If business space is rented)",
-          "Compliance of Zoning Ordinance (if applicable)"
+          "Unified Business Permit Application Form, original (from CMO – Permits & License Division). If filed by an authorized representative: photocopy of the representative's valid ID and an authorization letter",
+          "Proof of business registration, 1 photocopy (whole set, letter size): DTI registration (sole proprietorship), SEC registration (partnership/corporation) or CDA registration (cooperative)",
+          "Photo of the owner, one of the incorporators, or the manager: 1 colored copy, letter size",
+          "Photo of the establishment (inside and outside view): 1 colored copy, letter size",
+          "Valid government-issued ID, not expired: 1 colored photocopy",
+          "Location of the business (Google Map print-out) showing the precise location and/or directions from the establishment to City Hall: 1 colored copy",
+          "If renting: updated lease contract and the lessor's business permit, 1 photocopy each. If not renting: certificate of non-rental, if applicable (original)",
+          "Certificate of Annual Inspection, original (legal size)"
         ]
       },
       {
-        "groupName": "For Partnership, Corporation and Cooperative",
+        "groupName": "Special Requirements by Line of Business",
         "items": [
-          "SEC Registration and Article of Incorporation",
-          "CDA Certificate for Cooperative",
-          "Barangay Clearance (Location of Business)",
-          "Occupancy Permit (City Engineer's Office)",
-          "Lease Contract (If business space is rented)",
-          "Compliance of Zoning Ordinance (if applicable)"
+          "Real estate lessors: Occupancy Permit and Building Permit, 1 photocopy each (Office of the Building Official)",
+          "Market stall, bus terminal stall, fishport, Boulevard Commercial Complex and airport stall owners: Certificate of Award, 1 photocopy and original",
+          "Meat shops, dressed chicken dealers, lechon manok/belly, fried chicken dealers, lechon services and similar: Meat Handler Certificate, original (City Veterinary Office)",
+          "Hotels, pension houses, inns, lodging houses and other Mabuhay accommodations, consultancy, travel and tours: confirmed application from the Department of Tourism and/or Affidavit of Undertaking, 1 photocopy",
+          "Lending services, lending investors and lending institutions: Certificate of Authority, 1 photocopy",
+          "Retailers of medicine/herbal products, drugs and cosmetics, bakeries, food supplements and similar: Affidavit of Undertaking to submit the License to Operate (FDA), if available, 1 photocopy",
+          "Banks, pawnshops, money remittance, money transfer and money exchange: BSP Certificate of Authority/Certificate of Registration or Affidavit of Undertaking, 1 photocopy",
+          "Gasoline stations and LPG dealers: Department of Energy Standard Certificate of Compliance or Affidavit of Undertaking, 1 photocopy",
+          "Water refilling stations: certification from Sanitation and Tax Declaration for machineries; laundry services: Tax Declaration for machineries (City Assessor's Office), 1 photocopy",
+          "Cooperatives: Certificate of Compliance from the City Cooperative Office, 1 photocopy and original",
+          "Junkshops, lumber and similar: Environmental Clearance from CENRO, 1 photocopy",
+          "Bars, music lounges and similar: Affidavit of Undertaking",
+          "Internet cafés, pisonet, WiFi vendo and similar: Affidavit of Undertaking, signage (original) and latest internet bill (PLDT/Globe/other provider)",
+          "Private schools: CHED accreditation (college) or DepEd accreditation (elementary and high school), 1 photocopy",
+          "Insurance, manpower agencies, radio/telecom/VAS providers, security agencies, gun and ammunition retailers, and pest control services: license, accreditation or registration from the national regulator, or an Affidavit of Undertaking (see the BPLD Citizen's Charter for the specific agency)"
         ]
       },
       {
-        "groupName": "For Renewal of Business Permit",
+        "groupName": "Submitted Upon Issuance of the Business Permit",
         "items": [
-          "Basis for computing taxes, fees and charges (Income Tax Return)",
-          "Barangay Clearance (Location of Business)"
+          "Fire Safety Inspection Certificate, original (Bureau of Fire Protection)",
+          "Police Clearance, original (Philippine National Police)",
+          "Sanitary Permit to Operate, original (Sanitary/Health Office)"
         ]
       }
     ],
     "procedures": [
       {
         "stepNumber": 1,
-        "clientAction": "Secure Application for Business Permit form and checklist of requirements as to type of business applied for.",
-        "providerAction": "Issue Application of Business Permit form and checklist. Instruct applicant how to comply with requirements.",
-        "duration": "1 minute",
-        "personInCharge": "Victoria de Guzman",
-        "fee": "Php 0.00"
+        "clientAction": "Submit the accomplished application form and requirements to BPLD (Window 4).",
+        "providerAction": "Receive and evaluate the documents, assess capitalization, taxes, fees and charges, then encode details and print the Tax Order of Payment (TOP).",
+        "duration": "25 minutes",
+        "personInCharge": "BPLD frontline staff / Head, BPLD",
+        "fee": "None"
       },
       {
         "stepNumber": 2,
-        "clientAction": "Receive, fill up and submit application form and all requirements.",
-        "providerAction": "Receive the whole documents. Verify and check information on the Application for Business Permit form and the requirements.",
-        "duration": "5 minutes",
-        "personInCharge": "ResaDerama / Victoria de Guzman",
-        "fee": "Php 0.00"
+        "clientAction": "Pay the required taxes, fees and charges.",
+        "providerAction": "Receive the Tax Order of Payment, accept payment and issue an official receipt.",
+        "duration": "10 minutes",
+        "personInCharge": "Revenue Collectors, City Treasurer's Office",
+        "fee": "Based on Tax Ordinance No. 96-001, Series of 1996 (The Revised Revenue Code of 1997) and its amendments. For new businesses, business tax is based on capitalization."
       },
       {
         "stepNumber": 3,
-        "clientAction": "Wait while the encoding/processing is going on.",
-        "providerAction": "Encode all the data in the computer and print UNIFIED Form. Transmit information (applicant’s data) to City Engineer’s Office for assessment of regulatory fees.",
-        "duration": "5 minutes",
-        "personInCharge": "Mila Mahinay / Victoria de Guzman / Resa Derama",
-        "fee": "Php 0.00"
-      },
-      {
-        "stepNumber": 4,
-        "clientAction": "Proceed to Business Tax & Fees Division of City Treasurer’s Office for assessment and payment of business tax.",
-        "providerAction": "Advice client to proceed to City Treasurer’s Office for assessment of business taxes and other fees.",
-        "duration": "1 minute",
-        "personInCharge": "Mila Mahinay / Victoria de Guzman / Resa Derama",
-        "fee": "Php 0.00"
-      },
-      {
-        "stepNumber": 5,
-        "clientAction": "Submit all documents, together with the Official Receipt to Permits & Licensing Division.",
-        "providerAction": "Check the compliance of requirements including the Bureau of Fire Protection Certificate.",
-        "duration": "3 minutes",
-        "personInCharge": "Judith Surmion / Carmen Magnaye",
-        "fee": "Php 0.00"
-      },
-      {
-        "stepNumber": 6,
-        "clientAction": "Wait for the processing of the business permit.",
-        "providerAction": "Print Business Permit and countersign the Business Permit as to recommending approval.",
-        "duration": "2 minutes",
-        "personInCharge": "Judith Surmion / Carmen Magnaye",
-        "fee": "Php 0.00"
-      },
-      {
-        "stepNumber": 7,
-        "clientAction": "Receive and review duly approved Business Permit and corresponding Business Plate Number.",
-        "providerAction": "Forward Business Permit to the City Mayor for approval. Release the Business Permit with corresponding Business Plate Number.",
-        "duration": "2 minutes",
-        "personInCharge": "ResaDerama",
-        "fee": "Php 0.00"
-      },
-      {
-        "stepNumber": 8,
-        "clientAction": "Affix signature in the logbook as proof of receipt.",
-        "providerAction": "Require applicant to affix signature in the logbook as proof of receipt.",
-        "duration": "1 minute",
-        "personInCharge": "ResaDerama",
-        "fee": "Php 0.00"
+        "clientAction": "Claim the Business Permit.",
+        "providerAction": "Receive receipts and other requirements, print the business permit, have it approved and signed, then record and release the permit and business plate.",
+        "duration": "25 minutes",
+        "personInCharge": "BPLD staff / Head, BPLD",
+        "fee": "None"
       }
-    ]
+    ],
+    "contact": {
+      "location": "Business Permit & License Division, Ground Floor, Dipolog City Hall, Rizal Ave.",
+      "phone": "(065) 212-2486",
+      "email": "dplgbusinesspermitandlicenses@gmail.com"
+    },
+    "notes": [
+      "Business permits must be renewed from January 1 to 20 every year; penalties apply after that unless the Sangguniang Panlungsod authorizes an extension.",
+      "Business tax may be paid annually, semi-annually or quarterly. Quarterly deadlines: January 20, April 20, July 20 and October 20. Late payment incurs surcharges and interest.",
+      "Other requirements under law and ordinance go through a post-audit: after you get the permit, the establishment is subject to inspection by the relevant city offices.",
+      "The Charter's one-hour total processing time does not apply during peak season, bulk transactions or system failure, and excludes time spent at other offices.",
+      "You can also apply for a new business permit or renew online through the Dipolog City Online Services Portal (eservices.dipologcity.gov.ph)."
+    ],
+    "reference": {
+      "title": "City Mayor's Office – Business Permits & Licensing Division Citizen's Charter (posted September 2023)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2023/09/CMO-BPLD-Citizens-Charter-2023.pdf"
+    }
+  },
+  {
+    "slug": "renewal-of-business-permit",
+    "title": "Renewal of Business Permit (Mayor's Permit)",
+    "category": "Business, Trade and Investment",
+    "description": "Requirements and steps for renewing an existing Business/Mayor's Permit in Dipolog City at the City Mayor's Office – Business Permits & Licensing Division (BPLD).",
+    "tags": [
+      "mayor's permit",
+      "business permit",
+      "renewal",
+      "BPLD",
+      "gross sales"
+    ],
+    "source": "official",
+    "isWalkIn": true,
+    "isOnline": true,
+    "department": "City Mayor's Office – Business Permits & Licensing Division (BPLD)",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Enterprises / business owners in Dipolog City",
+    "type": "standard",
+    "requirements": [
+      {
+        "groupName": "Basic Requirements",
+        "items": [
+          "Unified Business Permit Application Form, original (from CMO – Permits & License Division). If filed by an authorized representative: photocopy of the representative's valid ID and an authorization letter",
+          "Latest Business Permit, original",
+          "Financial documents: Audited Financial Statement of the preceding year and/or Certification of Gross Sales signed by the manager or proprietor, 1 clear photocopy (letter size)",
+          "Proof of business registration, if applicable: DTI registration (sole proprietorship; renewed by the proprietor every 5 years), 1 photocopy (whole set)",
+          "Photo of the establishment (inside and outside view), if applicable: 1 colored copy, submitted every 3 years. Capture the whole building/establishment",
+          "Valid government-issued ID, if applicable: 1 colored photocopy",
+          "If renting: updated lease contract, 1 photocopy"
+        ]
+      },
+      {
+        "groupName": "Special Requirements by Line of Business",
+        "items": [
+          "Market stall: Market Clearance, original",
+          "Bus terminal stall: Bus Terminal Clearance, 1 photocopy and original",
+          "Fishport: Fish Port Clearance, 1 photocopy and original",
+          "Boulevard Commercial Complex: Boulevard Clearance, 1 photocopy and original",
+          "Airport stall owners: Clearance, 1 photocopy and original",
+          "Meat shops, dressed chicken dealers, lechon and fried chicken businesses: Meat Handler Certificate, original",
+          "Hotels, lodging, travel and tours: Certificate of Accreditation, 1 photocopy",
+          "Drug, cosmetic, bakery and food supplement businesses: License to Operate, if applicable, 1 photocopy",
+          "Gasoline stations and LPG dealers: Standard Certificate of Compliance, if applicable, 1 photocopy",
+          "Water refilling stations and laundry services: Tax Clearance for machineries, 1 photocopy",
+          "Cooperatives: Certificate of Compliance, 1 photocopy and original",
+          "Junkshops, lumber and similar: Environmental Clearance, 1 photocopy and original",
+          "Internet cafés, pisonet, WiFi vendo: latest internet bill, 1 photocopy",
+          "Private schools: CHED or DepEd accreditation, if applicable",
+          "Insurance, manpower, telecom, security agencies, gun retailers, pest control: license/accreditation from the national regulator, if applicable"
+        ]
+      },
+      {
+        "groupName": "Submitted Upon Issuance of the Business Permit",
+        "items": [
+          "Fire Safety Inspection Certificate, original (Bureau of Fire Protection)",
+          "Police Clearance, original (Philippine National Police)",
+          "Sanitary Permit to Operate, original (Sanitary/Health Office)"
+        ]
+      }
+    ],
+    "procedures": [
+      {
+        "stepNumber": 1,
+        "clientAction": "Submit the accomplished application form and requirements to BPLD (Window 4).",
+        "providerAction": "Receive and evaluate the documents, assess gross sales, taxes, fees and charges, then encode details and print the Tax Order of Payment (TOP).",
+        "duration": "25 minutes",
+        "personInCharge": "BPLD frontline staff / Head, BPLD",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 2,
+        "clientAction": "Pay the required taxes, fees and charges.",
+        "providerAction": "Receive the Tax Order of Payment, accept payment and issue an official receipt.",
+        "duration": "10 minutes",
+        "personInCharge": "Revenue Collectors, City Treasurer's Office",
+        "fee": "Based on Tax Ordinance No. 96-001, Series of 1996 (The Revised Revenue Code of 1997) and its amendments. For renewals, business tax is computed as a percentage of gross receipts/sales."
+      },
+      {
+        "stepNumber": 3,
+        "clientAction": "Claim the Business Permit.",
+        "providerAction": "Receive receipts and other requirements, print the business permit, have it approved and signed, then record and release the permit.",
+        "duration": "25 minutes",
+        "personInCharge": "BPLD staff / Head, BPLD",
+        "fee": "None"
+      }
+    ],
+    "contact": {
+      "location": "Business Permit & License Division, Ground Floor, Dipolog City Hall, Rizal Ave.",
+      "phone": "(065) 212-2486",
+      "email": "dplgbusinesspermitandlicenses@gmail.com"
+    },
+    "notes": [
+      "Business permits must be renewed from January 1 to 20 every year; penalties apply after that unless the Sangguniang Panlungsod authorizes an extension.",
+      "Business tax may be paid annually, semi-annually or quarterly. Quarterly deadlines: January 20, April 20, July 20 and October 20. Late payment incurs surcharges and interest.",
+      "Other requirements under law and ordinance go through a post-audit: after you get the permit, the establishment is subject to inspection by the relevant city offices.",
+      "The Charter's one-hour total processing time does not apply during peak season, bulk transactions or system failure, and excludes time spent at other offices.",
+      "You can also apply for a new business permit or renew online through the Dipolog City Online Services Portal (eservices.dipologcity.gov.ph)."
+    ],
+    "reference": {
+      "title": "City Mayor's Office – Business Permits & Licensing Division Citizen's Charter (posted September 2023)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2023/09/CMO-BPLD-Citizens-Charter-2023.pdf"
+    }
+  },
+  {
+    "title": "Online Business Permit: New Application and Renewal",
+    "category": "Business, Trade and Investment",
+    "description": "Apply for a new business permit or renew your existing one online through the City Government of Dipolog's Online Services Portal. Sign up for an account first.",
+    "tags": [
+      "online",
+      "eservices",
+      "business permit",
+      "renewal",
+      "mayor's permit",
+      "BPLS"
+    ],
+    "source": "official",
+    "isWalkIn": false,
+    "isOnline": true,
+    "department": "City Government of Dipolog – Online Services Portal",
+    "type": "external",
+    "externalUrl": "https://eservices.dipologcity.gov.ph/Dipolog/OnlineServices/login"
   }
 ]

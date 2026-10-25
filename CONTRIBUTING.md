@@ -1,6 +1,6 @@
-# Contributing to BetterIliganCity.org 🌊
+# Contributing to BetterDipolog.org 🌊
 
-First off, thank you for considering contributing to BetterIliganCity.org! It's people like you that make this community-run portal a reality.
+First off, thank you for considering contributing to BetterDipolog.org! It's people like you that make this community-run portal a reality.
 
 Whether you're a seasoned developer or a resident who just spotted a broken link, there's a place for you here. Below are the guidelines to help you get started.
 
@@ -12,11 +12,13 @@ If you want to get your hands dirty with the codebase, here is our standard work
 
 ### 1. Fork the Repository
 
+Repository: [https://github.com/z1on3/betterdipolog](https://github.com/z1on3/betterdipolog) · [Issues](https://github.com/z1on3/betterdipolog/issues)
+
 Start by forking the project repository to your own GitHub account and cloning it to your local machine.
 
 ### 2. Find an Issue or Build a Feature
 
-Check out our [Issues tab](https://github.com/KishonShrill/BetterIligan/issues) to see if there's any task that interests you or needs fixing. Alternatively, if you have a specific code change or improvement you want to make, feel free to start working on it!
+Check out our Issues tab on GitHub to see if there's any task that interests you or needs fixing. Alternatively, if you have a specific code change or improvement you want to make, feel free to start working on it!
 
 ### 3. Make a Pull Request (PR)
 
@@ -71,7 +73,7 @@ _Example PR Title:_ `[feat: add dark mode toggle to the navigation bar]`
 
 You do not need to know how to code to make a massive impact on this project! If you want to report a broken page, suggest a new feature, or request that something be added to the website, you can do so by creating an **Issue**.
 
-Head over to our [Issues tab](https://github.com/KishonShrill/BetterIligan/issues) and click **New Issue**.
+Head over to our Issues tab on GitHub and click **New Issue**. You can also use the "Report an issue" form on the website or email [reports@betterdipolog.org](mailto:reports@betterdipolog.org).
 
 ### Issue Title Format
 
@@ -97,4 +99,6 @@ In the description of your issue, please clearly provide:
 
 ---
 
-Thank you for helping us build a better digital space for Iligan!
+Thank you for helping us build a better digital space for Dipolog!
+
+> BetterDipolog is a fork of [BetterIligan](https://github.com/KishonShrill/BetterIligan) (MIT License). Improvements that are not Dipolog-specific (bug fixes, UI components) may also be worth contributing upstream.

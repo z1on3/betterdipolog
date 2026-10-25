@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Sinulog sa Dipolog",
+    "schedule": "4th Saturday of January",
+    "month": 1,
+    "description": "Dipolog's own Sinulog — the street-dance festival held in January in honour of the Santo Niño.",
+    "note": "The City's socio-economic profile lists the 4th Saturday of January; Wikipedia lists the 3rd Saturday. Confirm the date with the City Tourism Office.",
+    "sources": [
+      "https://dipologcity.gov.ph/socio-economic-profile/",
+      "https://en.wikipedia.org/wiki/Dipolog"
+    ],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Katkat Sakripisyo",
+    "schedule": "Good Friday",
+    "month": 3,
+    "monthLabel": "Mar–Apr",
+    "description": "A spiritual trek up the 3,003 Steps to Linabo Peak and a re-enactment of the passion and death of Jesus Christ, gathering the Catholic community of Zamboanga del Norte and visitors.",
+    "note": "Good Friday falls in March or April depending on the year.",
+    "sources": ["https://dipologcity.gov.ph/events/"],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Dipolog P'gsalabuk Festival",
+    "schedule": "Starts the 3rd week of April; culminates July 1",
+    "month": 4,
+    "description": "P'gsalabuk is a Subanen term meaning \"togetherness\". Billed as a celebration of unity amidst diversity among Mindanao's tri-people (Subanen, Muslims and Christians), the festival features ethnic street dancing, sports, concerts, a pageant and cultural shows. A highlight is the annual triathlon of swimming, running and cycling. The celebration culminates on July 1, Adlaw sa Dipolog.",
+    "note": "The City's published dates vary between pages (3rd week of April to the 4th Saturday of May, or through July 1). Check the City's announcements for the current year's programme.",
+    "sources": [
+      "https://dipologcity.gov.ph/events/",
+      "https://dipologcity.gov.ph/socio-economic-profile/",
+      "https://en.wikipedia.org/wiki/Dipolog",
+      "https://www.molave.gov.ph/dipolog-city-marks-pagsalabuk-festival-source-philippine-news-agency/"
+    ],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Feast of St. Vincent Ferrer",
+    "schedule": "3rd Saturday of May",
+    "month": 5,
+    "description": "The Dipolog City fiesta in honour of the city's patron saint. A religious procession winds through the city's major streets and ends at the church patio, where devotees dance before the image of St. Vincent Ferrer to the beat of drums.",
+    "sources": [
+      "https://dipologcity.gov.ph/events/",
+      "https://dipologcity.gov.ph/socio-economic-profile/"
+    ],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Adlaw sa Dipolog (Araw ng Dipolog)",
+    "schedule": "Last week of June to July 1",
+    "month": 6,
+    "description": "Dipolog City's founding anniversary — Dipolog became a municipality on July 1, 1913 and a chartered city effective July 1, 1970. Celebrated with inter-government-agency sports activities and the recognition of exemplary Dipolognons.",
+    "sources": [
+      "https://dipologcity.gov.ph/events/",
+      "https://dipologcity.gov.ph/socio-economic-profile/"
+    ],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Dahunog sa Dipolog",
+    "schedule": "Last week of September to October 7",
+    "month": 9,
+    "description": "A series of interschool competitions highlighted by a parade band competition and the Miss Teen Tourism Dipolog pageant. The festival takes its name from the sound (dahunog) of the bands and drums that fill the city streets.",
+    "sources": [
+      "https://dipologcity.gov.ph/events/",
+      "https://dipologcity.gov.ph/socio-economic-profile/"
+    ],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Feast of Our Lady of the Holy Rosary",
+    "schedule": "October 7",
+    "month": 10,
+    "description": "The feast of the titular patroness of Dipolog Cathedral. The Marian celebration runs for the whole month and ends with a Rosary Crusade at the city plaza on October 31.",
+    "sources": [
+      "https://dipologcity.gov.ph/events/",
+      "https://dipologcity.gov.ph/socio-economic-profile/"
+    ],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Pasko sa Dipolog (PASADI)",
+    "schedule": "December",
+    "month": 12,
+    "description": "In preparation for Christmas, Dipolog holds nightly shows and decorates its streets and plazas with lights and decorations to inspire holiday spirit and unity.",
+    "sources": [
+      "https://dipologcity.gov.ph/events/",
+      "https://dipologcity.gov.ph/socio-economic-profile/"
+    ],
+    "verifiedAt": "2026-10-25"
+  }
+]

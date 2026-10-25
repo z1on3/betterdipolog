@@ -98,11 +98,11 @@ export default function ServiceCard({ service }: ServiceCardProps) {
         {/* UPDATED: Dynamic URL resolution display */}
         <p className="mt-0.5 w-full text-xs text-blue-700">
           {service.type === "standard"
-            ? `betteriligancity.org/services/${service.slug}`
+            ? `betterdipolog.org/services/${service.slug}`
             : service.type === "internal"
-              ? `betteriligancity.org/community/${service.slug}`
+              ? `betterdipolog.org/community/${service.slug}`
               : service.type === "custom_link"
-                ? `betteriligancity.org${service.href}`
+                ? `betterdipolog.org${service.href}`
                 : service.externalUrl}
         </p>
       </div>

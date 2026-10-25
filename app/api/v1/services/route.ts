@@ -11,7 +11,7 @@ export async function GET() {
       meta: {
         total: allServices.length,
         lastUpdated: new Date().toISOString(), // Optional: gives developers a timestamp
-        source: "BetterIliganCity Open Data API",
+        source: "BetterDipolog Open Data API",
       },
       data: allServices,
     },

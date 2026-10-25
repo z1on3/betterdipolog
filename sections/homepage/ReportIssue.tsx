@@ -23,9 +23,9 @@ export default function ReportIssueSection() {
               Spot an error or outdated info?
             </h2>
             <p className="max-w-xl text-sm leading-relaxed text-slate-500 md:text-base">
-              BetterIliganCity relies on community feedback. If you notice a
-              broken link, incorrect procedure, or outdated contact detail, let
-              us know so we can fix it!
+              BetterDipolog relies on community feedback. If you notice a broken
+              link, incorrect procedure, or outdated contact detail, let us know
+              so we can fix it!
             </p>
           </div>
         </div>

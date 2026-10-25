@@ -15,6 +15,20 @@ const ProcedureSchema = z.object({
   fee: z.string(),
 });
 
+// Where to go / whom to call for a service. All optional: only fill in what an
+// official source (e.g. the city's Executive directory) actually states.
+const OfficeContactSchema = z.object({
+  location: z.string().optional(),
+  phone: z.string().optional(),
+  email: z.string().optional(),
+});
+
+// The official document a service's requirements/steps/fees were taken from.
+const SourceReferenceSchema = z.object({
+  title: z.string(),
+  url: z.string().url(),
+});
+
 const ContactPersonSchema = z.object({
   name: z.string(),
   contactNumber: z.string().optional(),
@@ -42,7 +56,7 @@ export const CustomLinkServiceSchema = BaseServiceSchema.extend({
   href: z.string(),
 });
 
-// Used when BetterIligan hosts the step-by-step guide
+// Used when BetterDipolog hosts the step-by-step guide
 const StandardServiceSchema = BaseServiceSchema.extend({
   slug: z.string(),
   department: z.string(),
@@ -51,6 +65,9 @@ const StandardServiceSchema = BaseServiceSchema.extend({
   whoMayAvail: z.string(),
   requirements: z.array(RequirementSchema),
   procedures: z.array(ProcedureSchema),
+  contact: OfficeContactSchema.optional(),
+  notes: z.array(z.string()).optional(),
+  reference: SourceReferenceSchema.optional(),
 });
 
 // Used when we just want to redirect them to another portal
@@ -58,6 +75,7 @@ const ExternalServiceSchema = BaseServiceSchema.extend({
   department: z.string(),
   type: z.literal("external"),
   externalUrl: z.string(),
+  reference: SourceReferenceSchema.optional(),
 });
 
 export const CommunityProfileSchema = BaseServiceSchema.extend({

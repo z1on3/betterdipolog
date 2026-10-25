@@ -1,14 +1,25 @@
 [
   {
-    "name": "Iligan City Mayor's Scholarship Program",
-    "provider": "City Government of Iligan — CMO Scholarship & OJT Division / City HRMO",
+    "name": "Dipolog City Scholarship and Educational Financial Assistance Program",
+    "provider": "City Government of Dipolog — Scholarship Program Management Unit (SPMU), City Mayor's Office",
     "scope": "city",
     "category": "scholarship",
-    "forWho": "College students who are Iligan City residents (at least 10 years), high-school graduates from an Iligan school (or AET passers), with a passing average (around 80% GWA) and family income within the program cap, and who are not holding another scholarship.",
-    "howToApply": "Get the form and full list of requirements from the CMO Scholarship & OJT Division, City Hall (Buhanginan Hills, Pala-o); submit to the City Human Resource Management Office, 2nd Floor, Main Building.",
-    "timing": "Annual. Applications for SY 2026–2027 ran 1–30 April 2026 and have closed; the next window typically opens around April. Watch the city's official announcements for exact dates.",
-    "officialUrl": "https://www.facebook.com/p/Iligan-City-Mayors-Scholarship-OJT-Division-61580964120854/",
-    "verifiedAt": "2026-07-08"
+    "forWho": "Incoming college students who have lived in Dipolog City for at least 5 years, with a barangay indigency certification and a certificate of good moral character from their school. The SY 2025–2026 call also asked for a minimum 85% average in Senior High School.",
+    "howToApply": "For the SY 2025–2026 cycle, applicants submitted a letter of intent, photocopy of the Senior High School card (1st and 2nd semester), Certificate of Good Moral Character, Barangay Residency Certification (at least 5 years), Indigency Certification and one 2x2 photo to the SPMU, 3rd Floor, Dipolog City Hall, then took a scholarship exam. Ask the SPMU or call the City Mayor's Office at (065) 212-2484 for the current cycle's requirements.",
+    "timing": "Annual. The SY 2025–2026 cycle closed on April 16, 2025, with the exam on April 27, 2025. Details come from a reposted city announcement, and no newer cycle was found online. Watch the City Government's official announcements.",
+    "officialUrl": "https://dipologcity.gov.ph/",
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "CSWDO Aid to Individuals in Crisis Situation (AICS) — Medical and Burial Assistance",
+    "provider": "City Social Welfare and Development Office (CSWDO), City Government of Dipolog",
+    "scope": "city",
+    "category": "financial-assistance",
+    "forWho": "Indigent residents of Dipolog City in a crisis situation who need medical or burial assistance.",
+    "howToApply": "Go to the CSWDO for a one-on-one interview. Bring a Barangay Certification of indigency plus a Medical Certificate from the hospital (medical aid) or the Death Certificate (burial aid), and sign the CSWDO intake form. Approval is signed by the City Mayor.",
+    "timing": "Walk-in. No fee is listed. Processing is listed at about 10 minutes plus the time for the Mayor's approval (2022 Citizen's Charter).",
+    "officialUrl": "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf",
+    "verifiedAt": "2026-10-25"
   },
   {
     "name": "CHED Tulong Dunong Program (TDP)",
@@ -49,7 +60,7 @@
     "scope": "national",
     "category": "training",
     "forWho": "Individuals seeking free technical-vocational training and national assessment (e.g., TWSP, PESFA, and STEP programs).",
-    "howToApply": "Enroll through a TESDA-accredited training institution, or inquire at the TESDA Provincial/District Office serving Iligan.",
+    "howToApply": "Enroll through a TESDA-accredited training institution, or inquire at the TESDA office serving Zamboanga del Norte.",
     "timing": "Rolling — depends on the course offering and provider. Check TESDA's scholarship page or your local TESDA office for open courses.",
     "officialUrl": "https://www.tesda.gov.ph/About/TESDA/1279",
     "verifiedAt": "2026-07-08"

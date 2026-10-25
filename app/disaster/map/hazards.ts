@@ -3,7 +3,8 @@ import { Waves, Mountain, Wind } from "lucide-react";
 export type HazardKey = "flood" | "landslide" | "stormsurge";
 
 // Hazard overlays sourced from UP NOAH (project-noah-hazard-maps, ODbL),
-// clipped to Iligan and served on demand. `lvl` 1/2/3 = Low/Medium/High.
+// clipped to the Dipolog City boundary (OSM relation 20372225) and served on
+// demand. `lvl` 1/2/3 = Low/Medium/High.
 export const HAZARDS: Record<
   HazardKey,
   {

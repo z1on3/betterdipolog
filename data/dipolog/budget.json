@@ -1,0 +1,86 @@
+{
+  "currency": "PHP",
+  "unit": "million",
+  "years": [
+    {
+      "fiscalYear": 2022,
+      "status": "final",
+      "income": {
+        "localTax": 113.13,
+        "localNonTax": 189.45,
+        "nationalTaxAllotment": 1058.24,
+        "otherExternal": 4.26,
+        "total": 1365.09
+      },
+      "expenditure": {
+        "generalPublicServices": 481.74,
+        "socialServices": 128.09,
+        "economicServices": 147.5,
+        "debtService": 17.29,
+        "total": 774.62
+      },
+      "capitalOutlay": 220.75,
+      "netOperatingSurplus": 590.47
+    },
+    {
+      "fiscalYear": 2023,
+      "status": "final",
+      "income": {
+        "localTax": 149.13,
+        "localNonTax": 176.02,
+        "nationalTaxAllotment": 901.72,
+        "otherExternal": 36.31,
+        "total": 1263.18
+      },
+      "expenditure": {
+        "generalPublicServices": 542.65,
+        "socialServices": 205.71,
+        "economicServices": 158.38,
+        "debtService": 33.84,
+        "total": 940.57
+      },
+      "capitalOutlay": 188.61,
+      "netOperatingSurplus": 322.61
+    },
+    {
+      "fiscalYear": 2024,
+      "status": "preliminary",
+      "income": {
+        "localTax": 162.66,
+        "localNonTax": 129.63,
+        "nationalTaxAllotment": 955.7,
+        "otherExternal": 12.6,
+        "total": 1260.59
+      },
+      "expenditure": {
+        "generalPublicServices": 561.8,
+        "socialServices": 176.25,
+        "economicServices": 118.6,
+        "debtService": 42.37,
+        "total": 899.01
+      },
+      "capitalOutlay": 172.86,
+      "netOperatingSurplus": 361.58
+    },
+    {
+      "fiscalYear": 2025,
+      "status": "preliminary",
+      "income": {
+        "localTax": 175.93,
+        "localNonTax": 113.39,
+        "nationalTaxAllotment": 1133.75,
+        "otherExternal": 10.16,
+        "total": 1433.23
+      },
+      "expenditure": {
+        "generalPublicServices": 678.4,
+        "socialServices": 182.05,
+        "economicServices": 137.88,
+        "debtService": 46.14,
+        "total": 1044.47
+      },
+      "capitalOutlay": 48.55,
+      "netOperatingSurplus": 388.76
+    }
+  ]
+}

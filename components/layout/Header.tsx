@@ -177,8 +177,8 @@ export default function Header({ className }: ClassName) {
             {/* Logo */}
             <div className="flex shrink-0 items-center gap-1 sm:gap-3">
               <Image
-                src="/images/logos/betteriligan-logo.svg"
-                alt="BetterIligan Logo"
+                src="/images/logos/betterdipolog-logo.svg"
+                alt="BetterDipolog Logo"
                 width={75}
                 height={75}
                 loading="eager"
@@ -193,11 +193,11 @@ export default function Header({ className }: ClassName) {
                 >
                   Better
                   <br />
-                  IliganCity.org
+                  Dipolog.org
                 </Link>
 
                 <span className="text-xs text-slate-500">
-                  A community-run portal for Iliganons
+                  A community-run portal for Dipolognons
                 </span>
               </div>
             </div>
@@ -410,11 +410,11 @@ export default function Header({ className }: ClassName) {
                       <div className="flex h-full flex-col">
                         <div className="mb-4">
                           <p className="mb-2 text-xs font-semibold tracking-wider text-blue-200 uppercase">
-                            BetterIliganCity
+                            BetterDipolog
                           </p>
 
                           <h3 className="text-lg leading-tight font-bold">
-                            Help make Iligan better
+                            Help make Dipolog better
                           </h3>
 
                           <p className="mt-2 text-sm leading-5 text-blue-100">
@@ -505,21 +505,18 @@ export default function Header({ className }: ClassName) {
 
           {/* Mobile Bottom Info Bar */}
           <div className="w-full shrink-0 bg-[#1a2b4c] px-4 py-3 text-white">
+            {/* Emergency numbers (replaces upstream's hardcoded, non-live
+                temperature readings) */}
             <div className="flex items-center justify-center gap-8 text-xs font-medium">
-              <div className="flex flex-col items-center">
-                <span className="opacity-70">ILIGAN</span>
-                <span>31°C</span>
-              </div>
+              <a href="tel:911" className="flex flex-col items-center">
+                <span className="opacity-70">EMERGENCY</span>
+                <span>911</span>
+              </a>
 
-              <div className="flex flex-col items-center">
-                <span className="opacity-70">CDO</span>
-                <span>32°C</span>
-              </div>
-
-              <div className="flex flex-col items-center">
-                <span className="opacity-70">MANILA</span>
-                <span>33°C</span>
-              </div>
+              <a href="tel:+63652121506" className="flex flex-col items-center">
+                <span className="opacity-70">CDRRMO DIPOLOG</span>
+                <span>(065) 212-1506</span>
+              </a>
             </div>
           </div>
         </div>

@@ -52,7 +52,7 @@ export default async function CommunityProfilePage({
 
   const schemaUrl = community.websiteUrl
     ? community.websiteUrl
-    : `https://betteriligancity.org/community/${community.slug}`;
+    : `https://betterdipolog.org/community/${community.slug}`;
 
   const jsonLd = {
     "@context": "https://schema.org",

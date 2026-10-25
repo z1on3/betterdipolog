@@ -113,8 +113,9 @@ function ServicesDirectoryContent() {
           Local Government Services
         </h1>
         <p className="mx-auto mb-10 max-w-2xl text-[14px] text-slate-500 sm:text-lg">
-          Explore official municipal services from the Citizens Charter and
-          community contributions. Choose a category to filter or search below.
+          Explore City Government of Dipolog services from the Citizen&apos;s
+          Charter, online services, and community contributions. Choose a
+          category to filter or search below.
         </p>
 
         <div className="group relative mx-auto max-w-2xl">

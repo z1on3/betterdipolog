@@ -4,9 +4,9 @@ import ServicesClient from "./ServicesClient";
 
 // 1. STATIC METADATA (Server Side)
 export const metadata: Metadata = {
-  title: "Iligan City Services Directory",
+  title: "Dipolog City Services Directory",
   description:
-    "Explore official municipal services, Citizens Charter procedures, and community contributions for Iligan City.",
+    "Explore Dipolog City government services, Citizen's Charter requirements and procedures, and online services in one directory.",
 };
 
 // 2. MAIN PAGE COMPONENT (Server Side)
@@ -15,10 +15,10 @@ export default function ServicesDirectoryPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Iligan City Services Directory",
+    name: "Dipolog City Services Directory",
     description:
-      "A comprehensive directory of local government services, application procedures, and community resources in Iligan City.",
-    url: "https://betteriligancity.org/services",
+      "A directory of City Government of Dipolog services, application procedures, and community resources.",
+    url: "https://betterdipolog.org/services",
   };
 
   return (

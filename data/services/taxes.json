@@ -1,0 +1,150 @@
+[
+  {
+    "slug": "payment-of-real-property-tax",
+    "title": "Computation and Payment of Real Property Tax (Amilyar)",
+    "category": "Taxes and Real Property",
+    "description": "Have your real property tax computed and pay it at the City Treasurer's Office, and get a Realty Tax Clearance if you need one.",
+    "tags": [
+      "real property tax",
+      "RPT",
+      "amilyar",
+      "tax clearance",
+      "treasurer",
+      "land tax"
+    ],
+    "source": "official",
+    "isWalkIn": true,
+    "isOnline": true,
+    "department": "City Treasurer's Office",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Owners of real properties within Dipolog City",
+    "type": "standard",
+    "requirements": [
+      {
+        "groupName": "Checklist of Requirements",
+        "items": [
+          "Tax Declaration (updated)",
+          "Notice of Assessment (NOA) from the City Assessor's Office",
+          "Previous official receipt of real property tax payment"
+        ]
+      },
+      {
+        "groupName": "For a Realty Tax Clearance",
+        "items": [
+          "Updated Tax Declaration or official receipt of updated realty tax payments",
+          "Official receipt for the certification fee"
+        ]
+      }
+    ],
+    "procedures": [
+      {
+        "stepNumber": 1,
+        "clientAction": "Submit the requirements and wait for the computation of the tax due.",
+        "providerAction": "Check the documents and the system to see whether tax payments are updated, then compute the tax due.",
+        "duration": "5 minutes",
+        "personInCharge": "Designated staff / cashier",
+        "fee": "Assessed Value × 3%, plus penalty if delinquent, less discount if paid in advance (as stated in the Charter)"
+      },
+      {
+        "stepNumber": 2,
+        "clientAction": "Pay the tax due.",
+        "providerAction": "Advise the client of the tax due, accept payment and issue the official receipt (in the name of the person who actually paid).",
+        "duration": "About 5 minutes",
+        "personInCharge": "Designated cashier",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 3,
+        "clientAction": "Optional: request a Realty Tax Clearance.",
+        "providerAction": "Review the documents, prepare the clearance and forward it to the City Treasurer for signature, then release it.",
+        "duration": "12 minutes",
+        "personInCharge": "Designated staff / City Treasurer",
+        "fee": "₱50.00 plus 2 documentary stamps"
+      }
+    ],
+    "contact": {
+      "location": "City Treasurer's Office, Ground Floor, Dipolog City Hall",
+      "phone": "(065) 212-4439",
+      "email": "cto_dipolog@yahoo.com"
+    },
+    "notes": [
+      "The Charter states that if taxes are up to date and advance payment is made within the period set by the city (it cites \"until January 31 of the ensuing year\"), the taxpayer gets a 20% discount on RPT dues. Confirm the current discount and deadlines with the City Treasurer's Office.",
+      "You can also pay real property tax online through the Dipolog City Online Services Portal (eservices.dipologcity.gov.ph)."
+    ],
+    "reference": {
+      "title": "City of Dipolog Citizen's Charter 2022 (1st Edition)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf"
+    }
+  },
+  {
+    "slug": "copy-of-tax-declaration",
+    "title": "Copy of Tax Declaration",
+    "category": "Taxes and Real Property",
+    "description": "Request a copy of a property's tax declaration from the Dipolog City Assessor's Office.",
+    "tags": ["tax declaration", "assessor", "land", "property", "TD"],
+    "source": "official",
+    "isWalkIn": true,
+    "isOnline": false,
+    "department": "City Assessor's Office",
+    "schedule": "Monday to Friday, except holidays. Exact office hours are not stated in the Citizen's Charter, so call ahead.",
+    "whoMayAvail": "Owners of real properties within Dipolog City",
+    "type": "standard",
+    "requirements": [
+      {
+        "groupName": "Checklist of Requirements",
+        "items": [
+          "Lot number, title or name of the owner",
+          "ID of the requesting party"
+        ]
+      }
+    ],
+    "procedures": [
+      {
+        "stepNumber": 1,
+        "clientAction": "Submit the requirements, sign the logbook and wait for the status of the request.",
+        "providerAction": "Receive the request and check completeness (incomplete requests are returned), then print the tax declaration.",
+        "duration": "6 minutes",
+        "personInCharge": "Designated front desk personnel",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 2,
+        "clientAction": "Wait for approval and the Order of Payment.",
+        "providerAction": "The Local Assessment Operations Officer countersigns and the City Assessor approves the tax declaration; the front desk prepares the Order of Payment.",
+        "duration": "About 7 minutes",
+        "personInCharge": "Local Assessment Operations Officer / City Assessor / front desk",
+        "fee": "None"
+      },
+      {
+        "stepNumber": 3,
+        "clientAction": "Pay at the City Treasurer's Office, then submit the official receipt to Window 11, 12, 15 or 16.",
+        "providerAction": "Release the tax declaration after the official receipt is presented and the logbook is signed.",
+        "duration": "2 minutes",
+        "personInCharge": "Designated front desk officer",
+        "fee": "₱100.00 per copy"
+      }
+    ],
+    "contact": {
+      "location": "City Assessor's Office, Ground Floor, Dipolog City Hall",
+      "phone": "(065) 212-6593 / 212-5865",
+      "email": "dipologassessor@gmail.com"
+    },
+    "notes": ["Total processing time per the Charter: 15 minutes."],
+    "reference": {
+      "title": "City of Dipolog Citizen's Charter 2022 (1st Edition)",
+      "url": "https://dipologcity.gov.ph/wp-content/uploads/2022/04/DIPOLOG-CITY-CITIZENS-CHARTER_2022-First-Edition-1.pdf"
+    }
+  },
+  {
+    "title": "Online Real Property Tax Payment",
+    "category": "Taxes and Real Property",
+    "description": "Pay real property tax (amilyar) online through the City Government of Dipolog's Online Services Portal. Sign up for an account first.",
+    "tags": ["online", "eservices", "real property tax", "RPT", "amilyar"],
+    "source": "official",
+    "isWalkIn": false,
+    "isOnline": true,
+    "department": "City Government of Dipolog – Online Services Portal",
+    "type": "external",
+    "externalUrl": "https://eservices.dipologcity.gov.ph/Dipolog/OnlineServices/login"
+  }
+]

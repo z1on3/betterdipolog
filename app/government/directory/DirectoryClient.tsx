@@ -2,11 +2,18 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { MapPin, Globe, Facebook, Building } from "lucide-react";
+import {
+  MapPin,
+  Globe,
+  Facebook,
+  Building,
+  Phone,
+  Mail,
+  ExternalLink,
+} from "lucide-react";
 import SubpageNav from "@/components/ui/SubpageNav";
 import SubpageHero from "@/components/ui/SubpageHero";
-import { allAgencies } from "@/data/government";
-import { AgencyCategory } from "@/validations/agencySchema";
+import type { Agency, AgencyCategory } from "@/validations/agencySchema";
 import FilterGrid from "@/components/ui/FilterGrid";
 import ReferencesFooter from "@/components/ui/ReferencesFooter";
 
@@ -19,15 +26,47 @@ const CATEGORIES: ("All Agencies" | AgencyCategory)[] = [
   "Programs & Associations",
 ];
 
-export default function DirectoryClient() {
+// Short initials fallback when an office has no logo (e.g. "BFP R9 — ..." -> "BFP")
+function initials(name: string) {
+  const first = name.split(/\s+/)[0] ?? "";
+  if (/^[A-Z-]{2,8}$/.test(first)) return first;
+  return name
+    .split(/\s+/)
+    .filter((w) => /^[A-Z]/.test(w))
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join("");
+}
+
+export default function DirectoryClient({
+  allAgencies,
+}: {
+  allAgencies: Agency[];
+}) {
   const [activeCategory, setActiveCategory] = useState<
     "All Agencies" | AgencyCategory
   >("All Agencies");
 
   const agenciesReferences = [
     {
-      title: "iligan.gov.ph - National Government Agencies/Offices",
-      url: "https://iligan.gov.ph/forresidents/nationalgovernmentagenciesoffices?163429964",
+      title: "PSA — Region IX (Zamboanga Peninsula) office directory",
+      url: "https://psa.gov.ph/directory/zamboanga-peninsula",
+    },
+    {
+      title: "PhilHealth — Regional offices directory",
+      url: "https://www.philhealth.gov.ph/about_us/directory/",
+    },
+    {
+      title: "DPWH — Region IX directory",
+      url: "https://www.dpwh.gov.ph/dpwh/directory/region/region-ix",
+    },
+    {
+      title: "Dipolog City Water District — Contact Us",
+      url: "https://dipologwater.gov.ph/contact-us/",
+    },
+    {
+      title: "dipologcity.gov.ph — Contact",
+      url: "https://dipologcity.gov.ph/contact/",
     },
   ];
 
@@ -47,8 +86,9 @@ export default function DirectoryClient() {
         </SubpageHero.Badges>
         <SubpageHero.Title>National Agencies</SubpageHero.Title>
         <SubpageHero.Description>
-          A comprehensive directory of local and national government offices,
-          bureaus, and corporations operating within Iligan City.
+          A directory of national government agencies, government-owned
+          corporations, and public offices serving Dipolog City and Zamboanga
+          del Norte.
         </SubpageHero.Description>
       </SubpageHero>
 
@@ -85,6 +125,10 @@ export default function DirectoryClient() {
                         className="object-contain p-1"
                         sizes="56px"
                       />
+                    ) : initials(agency.name) ? (
+                      <span className="text-xs font-black tracking-tight text-slate-500">
+                        {initials(agency.name)}
+                      </span>
                     ) : (
                       <Building className="h-6 w-6 text-slate-400" />
                     )}
@@ -99,17 +143,74 @@ export default function DirectoryClient() {
                   <h3 className="mb-2 text-lg leading-tight font-bold text-slate-900">
                     {agency.name}
                   </h3>
-                  <p className="flex items-start gap-1.5 text-sm text-slate-500">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
-                    <span className="line-clamp-2">{agency.address}</span>
-                  </p>
+                  {agency.address ? (
+                    <p className="flex items-start gap-1.5 text-sm text-slate-500">
+                      <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
+                      <span className="line-clamp-2">{agency.address}</span>
+                    </p>
+                  ) : (
+                    <p className="text-xs text-slate-400 italic">
+                      Local office address not yet verified — help us gather
+                      this data.
+                    </p>
+                  )}
+                  {agency.numbers && agency.numbers.length > 0 && (
+                    <div className="mt-2 flex items-start gap-1.5 text-sm text-slate-600">
+                      <Phone className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
+                      <div className="flex flex-col gap-0.5">
+                        {agency.numbers.map((number) =>
+                          number.startsWith("Fax") ? (
+                            <span key={number}>{number}</span>
+                          ) : (
+                            <a
+                              key={number}
+                              href={`tel:${number.replace(/[^0-9+]/g, "")}`}
+                              className="hover:text-blue-600"
+                            >
+                              {number}
+                            </a>
+                          ),
+                        )}
+                      </div>
+                    </div>
+                  )}
+                  {agency.emails && agency.emails.length > 0 && (
+                    <div className="mt-2 flex items-start gap-1.5 text-sm text-slate-600">
+                      <Mail className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
+                      <div className="flex flex-col gap-0.5">
+                        {agency.emails.map((email) => (
+                          <a
+                            key={email}
+                            href={`mailto:${email}`}
+                            className="break-all hover:text-blue-600"
+                          >
+                            {email}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {agency.sourceUrl && (
+                    <a
+                      href={agency.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-1 text-[11px] text-slate-400 hover:text-blue-600"
+                    >
+                      <ExternalLink className="h-3 w-3" /> Source
+                    </a>
+                  )}
                 </div>
 
                 {/* Bottom: Action Buttons */}
                 <div className="flex gap-2 border-t border-slate-100 pt-4">
                   {/* Primary Map Button */}
                   <a
-                    href={`https://maps.google.com/?q=${encodeURIComponent(agency.name + " Iligan City")}`}
+                    href={`https://maps.google.com/?q=${encodeURIComponent(
+                      agency.address
+                        ? `${agency.name}, ${agency.address}`
+                        : `${agency.name}, Dipolog City`,
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-slate-900 py-2.5 text-xs font-bold text-white transition-colors hover:bg-slate-800"
@@ -147,7 +248,11 @@ export default function DirectoryClient() {
             ))}
           </FilterGrid.Content>
         </FilterGrid>
-        <ReferencesFooter className="mx-4" references={agenciesReferences} />
+        <ReferencesFooter
+          className="mx-4"
+          references={agenciesReferences}
+          disclaimer="Offices relocate and contact numbers change. Details are taken from the linked official sources where available; please call ahead before visiting. Know a verified address or number? Help us gather this data."
+        />
       </div>
     </main>
   );

@@ -35,13 +35,13 @@ export default function ContributionModal({
       const formData = new FormData(e.currentTarget);
       const result = await submitContribution(formData, captchaToken as string);
 
-      if (result?.success) {
+      if (result.success) {
         toast.success(
           "Sent Successfully! Our moderators will review this shortly.",
         );
         onClose();
       } else {
-        toast.error((result?.error as any) || "Failed to submit.");
+        toast.error(result.error);
         recaptchaRef.current?.reset();
       }
     } catch (error) {
@@ -59,7 +59,7 @@ export default function ContributionModal({
         {/* Header */}
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-100 bg-white p-5">
           <h2 className="text-xl font-bold text-slate-900">
-            Contribute to BetterIligan
+            Contribute to BetterDipolog
           </h2>
           <button
             onClick={onClose}

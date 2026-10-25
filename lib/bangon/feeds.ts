@@ -1,12 +1,12 @@
 import { FeedItemSchema, type FeedItem } from "@/validations/bangonSchema";
 
-// Feed adapters for the Bangon Iligan ingester. Each adapter fetches a trusted
+// Feed adapters for the Bangon Dipolog ingester. Each adapter fetches a trusted
 // external source and returns normalized FeedItem[] (deduped upstream by
 // source + externalId). New sources — PAGASA, NDRRMC, Facebook Graph for
 // admin'd pages — plug in as additional adapters exported from here.
 
-// Bounding box around Mindanao / the southern Philippines. Iligan sits at
-// ~8.23N, 124.25E; this window catches the regional seismicity that matters
+// Bounding box around Mindanao / the southern Philippines. Dipolog sits at
+// ~8.59N, 123.34E; this window catches the regional seismicity that matters
 // locally without pulling the whole country.
 const MINDANAO_BBOX = { minLat: 5, maxLat: 12, minLon: 120, maxLon: 128 };
 
@@ -42,7 +42,7 @@ export async function fetchUsgsEarthquakes(
 
   const res = await fetch(url, {
     cache: "no-store",
-    headers: { "User-Agent": "BetterIligan/bangon-ingester" },
+    headers: { "User-Agent": "BetterDipolog/bangon-ingester" },
   });
   if (!res.ok) throw new Error(`USGS request failed: ${res.status}`);
   const data = (await res.json()) as { features?: UsgsFeature[] };

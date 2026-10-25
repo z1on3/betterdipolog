@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { HIDDEN_HEADER_PATHS } from "@/utils/variables";
 
@@ -48,18 +48,28 @@ const footerSections: FooterSection[] = [
   {
     title: "Government",
     links: [
-      { label: "City Officials", href: "/government" },
+      { label: "City Officials", href: "/dipolog/city-officials" },
       { label: "Departments", href: "/government/departments" },
-      { label: "Barangays", href: "/iligan/barangays" },
-      { label: "Transparency", href: "#" },
+      { label: "Barangays", href: "/dipolog/barangays" },
+      { label: "Transparency", href: "/transparency" },
     ],
   },
   {
     title: "Official",
     links: [
       {
-        label: "iligan.gov.ph",
-        href: "https://iligan.gov.ph/",
+        label: "dipologcity.gov.ph",
+        href: "https://dipologcity.gov.ph/",
+        external: true,
+      },
+      {
+        label: "City Government on Facebook",
+        href: "https://www.facebook.com/DipologCityGovernment",
+        external: true,
+      },
+      {
+        label: "City eServices",
+        href: "https://eservices.dipologcity.gov.ph/Dipolog/OnlineServices/login",
         external: true,
       },
     ],
@@ -79,20 +89,16 @@ export default function Footer({ className }: ClassName) {
         <div className="mb-6 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center sm:gap-6 md:mb-8">
           <p className="max-w-[350px] text-sm leading-relaxed text-slate-400">
             Open-source civic tech initiative making government information
-            accessible for Iliganons.
+            accessible for Dipolognons.
           </p>
           <hr className="grow border-t border-slate-400 max-sm:hidden" />
           <div className="flex shrink-0 gap-3">
+            {/* TODO(owner): add BetterDipolog social links (e.g. Facebook page)
+                here once the accounts exist. */}
             <a
-              href="https://www.facebook.com/BetterIliganCity.org"
-              className="rounded-lg bg-slate-800 p-2 text-slate-400 transition-colors hover:bg-slate-700 hover:text-white"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Facebook className="h-4 w-4" />
-            </a>
-            <a
-              href="https://github.com/KishonShrill/BetterIligan"
+              href="https://github.com/z1on3/betterdipolog"
+              aria-label="BetterDipolog on GitHub"
+              title="BetterDipolog on GitHub"
               className="rounded-lg bg-slate-800 p-2 text-slate-400 transition-colors hover:bg-slate-700 hover:text-white"
               target="_blank"
               rel="noopener noreferrer"
@@ -143,14 +149,14 @@ export default function Footer({ className }: ClassName) {
           {/* The Dynamically Expanding Logo & Name */}
           <div className="flex w-full items-center justify-center gap-3 sm:gap-6">
             <Image
-              src="/images/logos/betteriligan-logo.svg"
-              alt="BetterIliganCity Logo"
+              src="/images/logos/betterdipolog-logo.svg"
+              alt="BetterDipolog Logo"
               width={200}
               height={200}
               className="h-auto w-[12vw] max-w-[140px] min-w-[50px] shrink-0 rounded-xl object-cover select-none sm:rounded-2xl"
             />
             <div className="truncate text-right text-[clamp(2rem,9vw,10rem)] leading-none font-black tracking-tighter text-white select-none">
-              BetterIliganCity
+              BetterDipolog
             </div>
           </div>
         </div>
@@ -159,8 +165,8 @@ export default function Footer({ className }: ClassName) {
         <div>
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-center text-sm text-slate-500 sm:text-left">
-              &copy; {new Date().getFullYear()} BetterIliganCity · Not an
-              official government website
+              &copy; {new Date().getFullYear()} BetterDipolog · Not an official
+              government website
             </p>
             <Link
               href="/site-map"

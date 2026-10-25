@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "dipolog-utilities",
+    "title": "Electricity and Water Utilities",
+    "category": "Utilities",
+    "description": "Electricity (ZANECO) and water (Dipolog City Water District) utility information for Dipolog City.",
+    "tags": [
+      "kuryente",
+      "tubig",
+      "power",
+      "water",
+      "ZANECO",
+      "DCWD",
+      "utilities"
+    ],
+    "source": "community",
+    "isWalkIn": false,
+    "isOnline": true,
+    "type": "custom_link",
+    "href": "/dipolog/utilities"
+  }
+]

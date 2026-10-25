@@ -7,7 +7,7 @@ import ContributorsClient from "./ContributorsClient";
 export const metadata: Metadata = {
   title: "Contributors",
   description:
-    "Meet the developers, maintainers, and community volunteers building BetterIliganCity.",
+    "Meet the developers, maintainers, and community volunteers building BetterDipolog.",
 };
 
 export default function ContributorsPage() {
@@ -23,7 +23,7 @@ export default function ContributorsPage() {
           </span>
         </SubpageHero.Badges>
         <SubpageHero.Title className="text-center">
-          The People Behind BetterIligan
+          The People Behind BetterDipolog
         </SubpageHero.Title>
         <SubpageHero.Description className="mx-auto text-center">
           Meet the developers, maintainers, and everyday citizens working

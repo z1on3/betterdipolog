@@ -13,20 +13,37 @@ export const GridStatSchema = z.object({
   href: z.string().optional(),
 });
 
-export const WonderStatSchema = z.object({
+export const KeyFigureSchema = z.object({
+  value: z.string(),
   label: z.string(),
-  count: z.number(),
-  bgColor: z.string(),
-  textColor: z.string(),
-  divColor: z.string(),
-  borderColor: z.string(),
 });
+
+export const SummaryCardSchema = z.object({
+  value: z.string(),
+  subtext: z.string(),
+  rows: z.array(KeyValueRowSchema),
+});
+
+export const ReferenceSchema = z.object({
+  title: z.string(),
+  url: z.string().url(),
+});
+
+export const FacilityIconSchema = z.enum([
+  "GraduationCap",
+  "Stethoscope",
+  "Zap",
+  "Droplets",
+  "Plane",
+  "Anchor",
+  "Route",
+]);
 
 export const FacilityStatSchema = z.object({
   label: z.string(),
   value: z.string(),
   subtext: z.string(),
-  icon: z.string(),
+  icon: FacilityIconSchema,
   href: z.string().optional(),
 });
 
@@ -63,7 +80,7 @@ export const EconomyDataSchema = z.object({
 });
 
 export const EnvironmentDataSchema = z.object({
-  wonders: z.array(WonderStatSchema),
+  landUse: z.array(KeyValueRowSchema),
   geography: z.array(KeyValueRowSchema),
 });
 
@@ -76,15 +93,22 @@ export const InfrastructureDataSchema = z.object({
 export const CityProfileSchema = z.object({
   header: CityHeaderSchema,
   quickStats: z.array(QuickStatSchema),
+  summary: z.object({
+    population: SummaryCardSchema,
+    economy: SummaryCardSchema,
+  }),
+  keyFigures: z.array(KeyFigureSchema),
   demographics: DemographicsDataSchema,
   government: GovernmentDataSchema,
   economy: EconomyDataSchema,
   environment: EnvironmentDataSchema,
   infrastructure: InfrastructureDataSchema,
+  references: z.array(ReferenceSchema),
 });
 
 // --- Extract TypeScript Types ---
 // This automatically generates standard TS interfaces from the Zod schemas above!
 export type CityProfileData = z.infer<typeof CityProfileSchema>;
 export type FacilityStat = z.infer<typeof FacilityStatSchema>;
+export type FacilityIcon = z.infer<typeof FacilityIconSchema>;
 export type KeyValueRow = z.infer<typeof KeyValueRowSchema>;

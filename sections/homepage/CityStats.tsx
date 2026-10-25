@@ -3,9 +3,8 @@ import {
   Users,
   Calendar,
   Map,
-  Droplets,
+  Landmark,
   Layers,
-  TrendingUp,
   Compass,
   ArrowUpRight,
 } from "lucide-react";
@@ -14,36 +13,39 @@ import { Text } from "@/components/ui/Text";
 import Button3D from "@/components/ui/Button3D";
 
 export default function CityStatsSummary() {
+  // Sources: PSA 2024 Census of Population (POPCEN) and PSA PSGC listing
+  // for the City of Dipolog (population, income class); land area per the
+  // PSA-based Wikipedia infobox. Update together with data/dipolog/city-stats.
   const quickStats = [
     {
       icon: <Users className="h-5 w-5 text-blue-600" />,
       bgIcon: "bg-blue-50 border-blue-100",
       label: "Total Population",
-      value: "368,132",
-      subtext: "2024 Census • 452.60/km² density",
+      value: "136,528",
+      subtext: "2024 Census (PSA) • 566.20/km² density",
     },
     {
       icon: <Map className="h-5 w-5 text-emerald-600" />,
       bgIcon: "bg-emerald-50 border-emerald-100",
       label: "Land Area",
-      value: "81,337 ha",
-      subtext: "813.37 square kilometers",
+      value: "241.13 km²",
+      subtext: "24,113 hectares",
     },
     {
-      icon: <Droplets className="h-5 w-5 text-cyan-600" />,
+      icon: <Landmark className="h-5 w-5 text-cyan-600" />,
       bgIcon: "bg-cyan-50 border-cyan-100",
-      label: "Natural Wonders",
-      value: "23 Waterfalls",
-      subtext: "Plus 8 springs & 15 caves",
-      href: "/travel/waterfalls",
+      label: "Provincial Capital",
+      value: "Zamboanga del Norte",
+      subtext: "Gateway to Western Mindanao",
+      href: "/travel",
     },
     {
       icon: <Layers className="h-5 w-5 text-purple-600" />,
       bgIcon: "bg-purple-50 border-purple-100",
       label: "Political Subdivisions",
-      value: "44 Barangays",
-      subtext: "Highly Urbanized City class",
-      href: "/iligan/barangays",
+      value: "21 Barangays",
+      subtext: "Component city • 2nd income class",
+      href: "/dipolog/barangays",
     },
   ];
 
@@ -53,7 +55,7 @@ export default function CityStatsSummary() {
       <div className="mb-8 flex flex-col justify-between gap-5 md:mb-12 md:flex-row md:items-end md:gap-4">
         <div className="text-left">
           <p className="mb-1.5 text-[10px] font-bold tracking-widest text-blue-600 uppercase md:mb-2 md:text-xs">
-            Iligan At A Glance
+            Dipolog At A Glance
           </p>
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
             City Statistics & Profile
@@ -63,14 +65,14 @@ export default function CityStatsSummary() {
             size="md"
           >
             From vital demographics to natural resources, explore the
-            foundational numbers that drive the City of Majestic Waterfalls.
+            foundational numbers of the capital of Zamboanga del Norte.
           </Text>
         </div>
 
         {/* CTA Button */}
         <Button3D
           text="Explore Full City Profile"
-          href="/iligan/city-stats"
+          href="/dipolog/city-stats"
           hasArrow={true}
           size="sm"
           variant="blue"
@@ -146,24 +148,24 @@ export default function CityStatsSummary() {
                 Foundation
               </span>
               <span className="text-xs font-bold text-slate-700 md:text-sm">
-                Charter Date: June 16, 1950
+                Chartered City: 1970
               </span>
             </div>
             <p className="text-[11px] text-slate-500 md:text-xs">
-              Created under Republic Act No. 525.
+              Created a chartered city under Republic Act No. 5520.
             </p>
           </div>
         </div>
 
         <div className="flex w-full flex-row justify-between gap-3 border-t border-slate-100 pt-3 text-[11px] font-bold text-slate-500 md:w-auto md:flex-nowrap md:justify-end md:gap-4 md:border-t-0 md:pt-0 md:text-xs">
           <div className="flex flex-1 items-center justify-center gap-1.5 md:flex-auto md:justify-start">
-            <TrendingUp className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
-            <span className="truncate">0.33% Growth</span>
+            <Map className="h-3.5 w-3.5 shrink-0 text-emerald-500" />
+            <span className="truncate">Region IX</span>
           </div>
           <div className="hidden h-4 w-px bg-slate-200 md:block"></div>
           <div className="flex flex-1 items-center justify-center gap-1.5 border-l border-slate-100 pl-3 md:flex-auto md:justify-start md:border-0 md:pl-0">
             <Compass className="h-3.5 w-3.5 shrink-0 text-indigo-500" />
-            <span className="truncate">Cebuano Dialect</span>
+            <span className="truncate">Cebuano-speaking</span>
           </div>
         </div>
       </div>

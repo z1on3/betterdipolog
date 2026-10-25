@@ -1,14 +1,14 @@
 {
   "active": false,
   "standby": {
-    "headline": "Iligan is on standby",
-    "message": "No active emergency right now. This page becomes Iligan's live relief command center the moment a disaster strikes — for now, use it to get ready and stay connected with your neighbors.",
+    "headline": "Dipolog is on standby",
+    "message": "No active emergency right now. This page becomes Dipolog's live relief command center the moment a disaster strikes — for now, use it to get ready and stay connected with your neighbors.",
     "preparednessHref": "/disaster"
   },
   "boardEnabled": true,
   "hazardReportsEnabled": true,
   "activeIncident": {
-    "title": "TODO: incident title (e.g. \"Bangon Iligan — <event> Response\")",
+    "title": "TODO: incident title (e.g. \"Bangon Dipolog — <event> Response\")",
     "summary": "TODO: what happened, when, and the current situation. Filled in only when active is true.",
     "declaredAt": "TODO: YYYY-MM-DD"
   },

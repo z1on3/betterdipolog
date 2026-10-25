@@ -53,6 +53,19 @@ async function generateImages() {
     process.exit(1);
   }
 
+  // Embed the local logo as a data URI so generation needs no network access.
+  const logoDataUri = `data:image/svg+xml;base64,${fs
+    .readFileSync(
+      path.join(
+        process.cwd(),
+        "public",
+        "images",
+        "logos",
+        "betterdipolog-logo.svg",
+      ),
+    )
+    .toString("base64")}`;
+
   console.log(
     `Starting OG Image Generation... (Force: ${isForce}, Check: ${isCheck})`,
   );
@@ -112,11 +125,11 @@ async function generateImages() {
             }}
           >
             <img
-              src="https://betteriligancity.org/icon.png"
-              alt="BetterIliganCity logo"
+              src={logoDataUri}
+              alt="BetterDipolog logo"
               style={{ width: "64px", height: "64px", marginRight: 16 }}
             />
-            BetterIliganCity
+            BetterDipolog
           </div>
 
           {/* Dynamic Category Pill */}

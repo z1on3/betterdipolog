@@ -1,4 +1,4 @@
--- Bangon Iligan — live command-center datastore (Cloudflare D1 / SQLite).
+-- Bangon Dipolog — live command-center datastore (Cloudflare D1 / SQLite).
 --
 -- Tables mirror the BangonGenSan reference surface, adapted to D1:
 --   bangon_requests        crowd-sourced relief requests (food/water/etc.)

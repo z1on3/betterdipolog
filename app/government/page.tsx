@@ -5,17 +5,17 @@ import { ArrowRight, Landmark } from "lucide-react";
 import SubpageNav from "@/components/ui/SubpageNav";
 import SubpageHero from "@/components/ui/SubpageHero";
 import FilterGrid from "@/components/ui/FilterGrid";
-import iliganDirectories from "@/data/navigation.json";
+import navigation from "@/data/navigation.json";
 
-const section = iliganDirectories.find((item) => item.name === "Government")!;
+const section = navigation.find((item) => item.name === "Government")!;
 
 export const metadata: Metadata = {
-  title: "Government & Departments | BetterIliganCity",
+  title: "Government & Departments | BetterDipolog",
   description:
-    "Access government directories, departmental profiles, public services, and contact information for the Iligan City local government unit.",
+    "Access government directories, departmental profiles, public services, and contact information for the Dipolog City local government unit.",
 };
 
-export default function IliganDirectories() {
+export default function GovernmentDirectories() {
   return (
     <main className="min-h-screen bg-slate-50 pb-24 font-sans">
       <SubpageNav href="/" text="Go Home" />
@@ -23,7 +23,7 @@ export default function IliganDirectories() {
         <SubpageHero.Title>Government Directory</SubpageHero.Title>
         <SubpageHero.Description>
           Access a comprehensive list of government offices, departments, and
-          national agencies serving Iligan City.
+          national agencies serving Dipolog City.
         </SubpageHero.Description>
       </SubpageHero>
 

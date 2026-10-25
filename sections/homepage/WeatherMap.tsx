@@ -241,7 +241,7 @@ export default function WeatherAndMap() {
           className="mx-auto mt-2 text-sm text-slate-600 md:text-base"
           size="md"
         >
-          Current conditions and interactive map of Iligan City
+          Current conditions and interactive map of Dipolog City
         </Text>
       </div>
 
@@ -270,7 +270,7 @@ export default function WeatherAndMap() {
                   <div className="flex items-start justify-between">
                     <div>
                       <p className="text-sm font-medium text-blue-100">
-                        Iligan City
+                        Dipolog City
                       </p>
                       <p className="mt-0.5 text-xs text-blue-200">
                         Current weather
@@ -438,12 +438,12 @@ export default function WeatherAndMap() {
 
           <div className="relative w-full flex-1 bg-slate-100">
             <iframe
-              title="Map of Iligan City"
+              title="Map of Dipolog City"
               width="100%"
               height="100%"
               frameBorder="0"
               scrolling="no"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123662.66186301723!2d124.34488950644513!3d8.2392162636839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x325579b328c9540d0%3A0xe6e208aba2f0d03b!2sIligan%20City%2C%20Lanao%20del%20Norte!5e0!3m2!1sen!2sph!4v1782954555571!5m2!1sen!2sph"
+              src="https://www.google.com/maps?q=Dipolog+City,+Zamboanga+del+Norte&output=embed"
               className="absolute inset-0 h-full w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -451,9 +451,9 @@ export default function WeatherAndMap() {
           </div>
 
           <div className="flex items-center justify-between border-t border-slate-100 bg-white px-6 py-3 text-xs text-slate-500">
-            <span>📍 Iligan City Hall, Buhanginan Hills</span>
+            <span>📍 Dipolog City Hall, Rizal Avenue</span>
             <a
-              href="https://maps.app.goo.gl/YSWKTjcjZamf2dqC8"
+              href="https://www.google.com/maps/search/?api=1&query=8.5883,123.3409"
               target="_blank"
               rel="noreferrer"
               className="text-blue-600 hover:underline"
@@ -490,7 +490,7 @@ export default function WeatherAndMap() {
                     Detailed Weather Report
                   </p>
                   <h2 className="mb-5 text-2xl font-bold sm:text-3xl">
-                    Iligan City
+                    Dipolog City
                   </h2>
                 </div>
                 <div className="mt-1 flex flex-col items-end">

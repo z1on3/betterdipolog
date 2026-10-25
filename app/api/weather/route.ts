@@ -5,16 +5,16 @@ import { OpenWeatherData, OpenMeteoData } from "@/types/weather";
 const OPEN_METEO_URL = "https://api.open-meteo.com/v1/forecast";
 const OPEN_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather";
 
-const OPEN_METEO_CACHE_KEY = "weather:forecast:iligan";
-const OPEN_WEATHER_CACHE_KEY = "weather:current:iligan";
+const OPEN_METEO_CACHE_KEY = "weather:forecast:dipolog";
+const OPEN_WEATHER_CACHE_KEY = "weather:current:dipolog";
 
 const OPEN_METEO_CACHE_TTL = 60 * 60 * 12; // 12 hours
 const OPEN_WEATHER_CACHE_TTL = 60 * 60; // 1 hour
 
-const LATITUDE = 8.2289;
-const LONGITUDE = 124.2434;
+const LATITUDE = 8.5883;
+const LONGITUDE = 123.3409;
 
-const OPEN_WEATHER_CITY_ID = "1711082";
+const OPEN_WEATHER_CITY_ID = "1715348";
 
 const params = {
   latitude: LATITUDE,

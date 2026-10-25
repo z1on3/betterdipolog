@@ -1,48 +1,48 @@
 [
   {
-    "name": "Iligan City",
-    "href": "/iligan",
+    "name": "Dipolog City",
+    "href": "/dipolog",
     "dropdown": [
       {
-        "name": "All About Iligan",
-        "description": "Overview of Iligan City, including its culture, geography, and key highlights.",
-        "href": "/iligan"
+        "name": "All About Dipolog",
+        "description": "Overview of Dipolog City, including its culture, geography, and key highlights.",
+        "href": "/dipolog"
       },
       {
         "name": "City Profile",
-        "description": "Key facts, demographics, and statistical data about Iligan City.",
-        "href": "/iligan/city-stats"
+        "description": "Key facts, demographics, and statistical data about Dipolog City.",
+        "href": "/dipolog/city-stats"
       },
       {
         "name": "History & Heritage",
-        "description": "Explore the rich history, traditions, and heritage of Iligan City.",
+        "description": "Explore the rich history, traditions, and heritage of Dipolog City.",
         "href": "#",
         "upcoming": true
       },
       {
         "name": "City Officials",
-        "description": "Meet the elected officials and leaders serving Iligan City.",
-        "href": "/iligan/city-officials"
+        "description": "Meet the elected officials and leaders serving Dipolog City.",
+        "href": "/dipolog/city-officials"
       },
       {
         "name": "Barangays",
         "description": "Directory of barangays with basic information and local details.",
-        "href": "/iligan/barangays"
+        "href": "/dipolog/barangays"
       },
       {
-        "name": "Electricity",
-        "description": "Information about power providers, services, and utilities in the city.",
-        "href": "/iligan/electricity"
+        "name": "Utilities",
+        "description": "Power (ZANECO) and water (Dipolog City Water District) providers, services, and contacts.",
+        "href": "/dipolog/utilities"
       },
       {
         "name": "Disaster Preparedness Hub",
-        "description": "Emergency hotlines and typhoon, flood, and earthquake preparedness guides for Iligan City.",
+        "description": "Emergency hotlines and typhoon, flood, and earthquake preparedness guides for Dipolog City.",
         "href": "/disaster"
       },
       {
-        "name": "Bangon Iligan",
+        "name": "Bangon Dipolog",
         "description": "Community relief command center — evacuation map, hazard reports, and a community board. Standby until an emergency.",
-        "href": "/bangon-iligan"
+        "href": "/bangon-dipolog"
       }
     ]
   },
@@ -51,34 +51,24 @@
     "href": "/travel",
     "dropdown": [
       {
-        "name": "Explore Travel",
-        "description": "Discover top destinations, attractions, and experiences in Iligan.",
+        "name": "Explore Dipolog",
+        "description": "Discover top destinations, attractions, and experiences in Dipolog.",
         "href": "/travel"
       },
       {
-        "name": "Mugna sa Iligan 2026",
-        "description": "A popular, month-long annual fiesta park and trade fair held every September as part of the grand Diyandi Festival honoring the city's patron saint, St. Michael the Archangel",
-        "href": "/travel/mugna"
+        "name": "Attractions",
+        "description": "Landmarks, beaches, and natural attractions in and around Dipolog City.",
+        "href": "/travel/attractions"
       },
       {
-        "name": "Jeepney Routes",
-        "description": "Navigate Iligan with our interactive guide to local jeepney routes and commuting paths.",
-        "href": "/travel/transportation/jeepney"
+        "name": "Festivals & Events",
+        "description": "Annual festivals, fiestas, and city events in Dipolog.",
+        "href": "/travel/festivals"
       },
       {
-        "name": "Kalesa Routes",
-        "description": "Navigate Iligan with our interactive guide to local kalesa routes and commuting paths.",
-        "href": "/travel/transportation/kalesa"
-      },
-      {
-        "name": "Bus Schedules",
-        "description": "Check daily departure times for provincial routes and local co-op charter services.",
-        "href": "/travel/transportation/bus"
-      },
-      {
-        "name": "Waterfalls",
-        "description": "Explore Iligan’s famous waterfalls and natural attractions.",
-        "href": "/travel/waterfalls"
+        "name": "Getting Around",
+        "description": "Getting to and around Dipolog — airport, bus terminal, and seaports.",
+        "href": "/travel/transportation"
       }
     ]
   },
@@ -88,23 +78,28 @@
     "dropdown": [
       {
         "name": "Transparency Overview",
-        "description": "Fiscal accountability and governance documents for Iligan City.",
+        "description": "Fiscal accountability and governance documents for Dipolog City.",
         "href": "/transparency"
-      },
-      {
-        "name": "Budget & Finances",
-        "description": "See where the city's revenue comes from and where it's spent.",
-        "href": "/transparency/budget"
-      },
-      {
-        "name": "City Resolutions",
-        "description": "Browse resolutions and ordinances passed by the Sangguniang Panlungsod.",
-        "href": "/transparency/resolutions"
       },
       {
         "name": "Bids & Procurement",
         "description": "Track open, awarded, and in-progress procurement projects from the city.",
         "href": "/transparency/bids"
+      },
+      {
+        "name": "Budget & Financial Documents",
+        "description": "See where the city's revenue comes from and where it's spent.",
+        "href": "/transparency/budget"
+      },
+      {
+        "name": "Projects",
+        "description": "Infrastructure and social projects in Dipolog City, from DPWH and city procurement records.",
+        "href": "/transparency/projects"
+      },
+      {
+        "name": "Ordinances & Resolutions",
+        "description": "Search ordinances and resolutions passed by the Sangguniang Panlungsod of Dipolog City.",
+        "href": "/transparency/resolutions"
       }
     ]
   },
@@ -114,12 +109,12 @@
     "dropdown": [
       {
         "name": "Government Overview",
-        "description": "Structure, roles, and functions of the local government of Iligan.",
+        "description": "Structure, roles, and functions of the local government of Dipolog.",
         "href": "/government"
       },
       {
         "name": "National Agencies",
-        "description": "List of national government offices and agencies operating in Iligan.",
+        "description": "List of national government offices and agencies operating in Dipolog.",
         "href": "/government/directory"
       },
       {
@@ -140,7 +135,7 @@
       },
       {
         "name": "Volunteer",
-        "description": "Learn more about this platform and its purpose.",
+        "description": "Join the volunteers building BetterDipolog.",
         "href": "/volunteer"
       },
       {

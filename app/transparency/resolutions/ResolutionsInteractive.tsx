@@ -8,6 +8,8 @@ import { ResolutionsData } from "@/validations/resolutionSchema";
 
 type TypeFilter = "all" | "resolution" | "ordinance";
 
+const PAGE_SIZE = 60;
+
 interface ResolutionsInteractiveProps {
   data: ResolutionsData;
 }
@@ -18,15 +20,10 @@ export default function ResolutionsInteractive({
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedType, setSelectedType] = useState<TypeFilter>("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const categories = useMemo(() => {
-    const unique = Array.from(
-      new Set(
-        data.entries
-          .sort((a, b) => b.sessionDate.localeCompare(a.sessionDate))
-          .map((r) => r.category),
-      ),
-    );
+    const unique = Array.from(new Set(data.entries.map((r) => r.category)));
     return ["All", ...unique.sort()];
   }, [data]);
 
@@ -38,11 +35,19 @@ export default function ResolutionsInteractive({
       const matchesType = selectedType === "all" || r.type === selectedType;
       const matchesSearch =
         r.title.toLowerCase().includes(query) ||
-        r.summary.toLowerCase().includes(query) ||
+        r.category.toLowerCase().includes(query) ||
         r.number.includes(query);
       return matchesCategory && matchesType && matchesSearch;
     });
   }, [selectedCategory, selectedType, searchQuery, data]);
+
+  // Start from the first page again whenever the filters change.
+  const [lastFilterKey, setLastFilterKey] = useState("");
+  const filterKey = `${selectedCategory}|${selectedType}|${searchQuery}`;
+  if (filterKey !== lastFilterKey) {
+    setLastFilterKey(filterKey);
+    setVisibleCount(PAGE_SIZE);
+  }
 
   return (
     <>
@@ -87,16 +92,31 @@ export default function ResolutionsInteractive({
           columns={2}
         >
           {filtered.length > 0 ? (
-            filtered.map((r) => (
-              <ResolutionCard key={r.number} resolution={r} />
-            ))
+            <>
+              {filtered.slice(0, visibleCount).map((r, idx) => (
+                <ResolutionCard
+                  key={`${r.type}-${r.number}-${idx}`}
+                  resolution={r}
+                />
+              ))}
+              {filtered.length > visibleCount && (
+                <div className="col-span-full flex justify-center">
+                  <button
+                    onClick={() => setVisibleCount((n) => n + PAGE_SIZE)}
+                    className="rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700"
+                  >
+                    Show more ({filtered.length - visibleCount} remaining)
+                  </button>
+                </div>
+              )}
+            </>
           ) : (
             <div className="col-span-full flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-white p-12 text-center">
               <div className="mb-4 rounded-full bg-slate-50 p-4">
                 <Search className="h-8 w-8 text-slate-400" />
               </div>
               <h3 className="mb-2 text-lg font-bold text-slate-900">
-                No resolutions found
+                No ordinances or resolutions found
               </h3>
               <p className="mx-auto max-w-sm text-sm text-slate-500">
                 Try a different search term or category.

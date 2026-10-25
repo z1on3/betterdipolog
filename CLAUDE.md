@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**BetterIliganCity.org** is a volunteer-driven, open-source civic-tech portal for Iligan City, Philippines. It centralizes government services, public data, local heritage, and disaster-response resources.
+**BetterDipolog.org** is a volunteer-driven, open-source civic-tech portal for Dipolog City, Zamboanga del Norte, Philippines. It centralizes government services, public data, local heritage, and disaster-response resources. It is a fork of [BetterIligan](https://github.com/KishonShrill/BetterIligan) (MIT, by Chriscent Louis June Pingol and contributors); keep the upstream credit in `LICENSE.md`, `README.md`, `/about`, and `/contributors`.
+
+City facts used across the site: City Hall at 8.5883 N, 123.3409 E (Rizal Ave, Dipolog City 7100); 21 barangays; demonym _Dipolognon_; LGU site dipologcity.gov.ph. This is a civic site: never invent facts, numbers, names, phone numbers, or social links.
 
 It is a **Next.js 16 App Router** application that is **built and deployed via VINEXT** (a Cloudflare adapter layer) to **Cloudflare Workers + D1 (SQLite)**, with a fallback OpenNext/Vercel path also wired up. The site is styled with **Tailwind CSS v4**, uses **Lucide React** icons, and is typed with **TypeScript** (strict).
 
@@ -17,7 +19,7 @@ All commands run via npm.
 | **Start dev server** (applies local D1 migrations first)                     | `npm run dev`            |
 | **Build for production** (runs `cf-typegen` as a prebuild step)              | `npm run build`          |
 | **Start a local production preview** (applies persisted local D1 migrations) | `npm run start`          |
-| **Deploy** (applies remote D1 migrations, then deploys)                      | `npm run deploy`         |
+| **Deploy manually** (applies remote D1 migrations, then deploys)             | `npm run deploy`         |
 | **Lint** (ESLint 9 + `eslint-config-next`)                                   | `npm run lint`           |
 | **Format code**                                                              | `npm run format`         |
 | **Check formatting**                                                         | `npm run format:check`   |
@@ -27,6 +29,8 @@ All commands run via npm.
 | **Generate OG images** (satori/sharp; runs in the pre-push hook)             | `npm run generate-og`    |
 
 Notes:
+
+- **Production deploys**: pushing to `main` auto-deploys via Cloudflare Workers Builds (git integration configured in the Cloudflare dashboard; build command `npm run build`, deploy command `npm run deploy`, which applies pending remote D1 migrations to `betterdipolog-bangon` before deploying).
 
 - `npm run lint` is **non-blocking** in CI (`continue-on-error: true`) due to existing debt on main; the build and commitlint checks must still pass.
 - The **pre-push hook** runs `npm run generate-og && npm run build`; the **pre-commit hook** runs prettier.
@@ -45,22 +49,22 @@ Data flow per page: **page.tsx (Server Component) → calls data/query helpers o
 Key route groups:
 
 - `app/api/` — Route Handlers. `api/v1/{services,departments,agencies,budget}` serve the validated static data as JSON (with `Cache-Control` headers). `api/bangon/ingest` is the feed ingester. `api/weather` proxies OpenWeatherMap.
-- `app/bangon-iligan/` — The Bangon Iligan command center (see [Bangon Iligan](#bangon-iligan)).
+- `app/bangon-dipolog/` — The Bangon Dipolog command center (see [Bangon Dipolog](#bangon-dipolog)).
 - `app/disaster/` — Disaster preparedness hub (hotlines, facilities map, guides).
-- `app/travel/`, `app/services/`, `app/transparency/`, `app/iligan/` — Content sections.
+- `app/travel/`, `app/services/`, `app/transparency/`, `app/dipolog/`, `app/government/` — Content sections.
 
 ### `components/` — Reusable UI
 
 - `components/ui/` — Primitives: `Card` (+ `CardHeader`/`CardContent`/`CardFooter`), `Section`, `Heading`, `Text`, `Breadcrumbs`, `ListItem`, `SubpageHero` (compound component), `SubpageNav`, `FilterGrid`/`FilterGridSidebar`, `ScrollToTop`, `Button3D`, `ContributionModal`, `ReferencesFooter`.
 - `components/layout/` — `Header` (navigation + mobile drawer, hides on select paths), `TopBanner` (live weather + forex + emergency numbers), `Footer`.
-- `components/modals/` — `FareCalculatorModal`, `ReportIssueModal`.
+- `components/modals/` — `ReportIssueModal`, `WeatherStatusBadgeModal`.
 - Standalone domain components: `ServiceCard`, `BidCard`, `ResolutionCard`.
 
 All components merge class names with the `cn()` helper (clsx + tailwind-merge) from `lib/utils`.
 
 ### `sections/` — Page composition blocks
 
-Organized by page: `sections/homepage/` (Hero, Services, WeatherMap, CityStats, DonationSection, EmergencyHotlines, ReportIssue, ActiveIncidentBanner), `sections/homepage/` for the homepage, and per-feature sections (e.g. `app/disaster/*` local imports, `app/bangon-iligan/*` local modules). These are the building blocks a page composes rather than full routes.
+Organized by page: `sections/homepage/` (Hero, Services, WeatherMap, CityStats, DonationSection, EmergencyHotlines, ReportIssue, ActiveIncidentBanner) for the homepage, and per-feature sections (e.g. `app/disaster/*` local imports, `app/bangon-dipolog/*` local modules). These are the building blocks a page composes rather than full routes.
 
 ### `data/` — Data sources (static + parsed)
 
@@ -70,8 +74,8 @@ Static JSON/YAML is loaded, then **validated through Zod at import time**. These
 - `data/bangon/` — `incident.json` (standby/active config), `index.ts` (parses config), `queries.ts` (D1 read helpers), `state.ts` (runtime overlay of D1 onto static config).
 - `data/disaster/` — hotlines, guides, facilities (validated).
 - `data/government/` — departments + national agencies.
-- `data/iligan/` — city stats, budget, officials, barangays, bids, resolutions.
-- `data/travel/` — bus fares, rural transit schedules, waterfalls.
+- `data/dipolog/` — city stats, budget, officials, barangays, bids, utilities.
+- `data/travel/` — attractions, festivals, and transportation (airport, terminal, ports) content.
 - `data/categories.ts` — `serviceCategories` (used for the services index) and `headerDropdown` (header nav).
 - `data/navigation.json` — top-level nav config consumed by `Header.tsx`.
 
@@ -92,12 +96,11 @@ Next.js server actions for mutations:
 
 ### `validations/` — Zod schemas
 
-Every domain has schemas. **Two-layer convention**: an `*InputSchema` validates untrusted form/ingest input; a `*RowSchema` validates D1 rows read back before they reach the UI ("parse at the boundary"). CHECK constraints in `migrations/*` are kept in sync with the schema enums. Key files: `bangonSchema.ts`, `serviceSchema.ts`, `disasterSchema.ts`, `budgetSchema.ts`, `bidSchema.ts`, `resolutionSchema.ts`, `agencySchema.ts`, `cityProfileSchema.ts`, `waterfallSchema.ts`, `assistanceSchema.ts`.
+Every domain has schemas. **Two-layer convention**: an `*InputSchema` validates untrusted form/ingest input; a `*RowSchema` validates D1 rows read back before they reach the UI ("parse at the boundary"). CHECK constraints in `migrations/*` are kept in sync with the schema enums. Key files: `bangonSchema.ts`, `serviceSchema.ts`, `disasterSchema.ts`, `budgetSchema.ts`, `bidSchema.ts`, `resolutionSchema.ts`, `agencySchema.ts`, `cityProfileSchema.ts`, `attractionSchema.ts`, `assistanceSchema.ts`.
 
 ### `utils/` — Pure helpers
 
-- `utils/fareCalculator.ts` — LTFRB bus-fare math (base km, regular/discounted rates, nearest-0.25 rounding).
-- `utils/variables.ts` — `HIDDEN_HEADER_PATHS` (full-screen routes like `/bangon-iligan`, `/travel/transportation/map`, jeepney), `ROUTE_DIRECTORY_CODES`.
+- `utils/variables.ts` — `HIDDEN_HEADER_PATHS` (full-screen routes like `/bangon-dipolog`), `ROUTE_DIRECTORY_CODES`.
 
 ### `types/` — Shared TypeScript types (e.g. `types/weather.ts`).
 
@@ -122,13 +125,13 @@ Sequential SQL migrations applied via `npm run db:migrate:dev` (local) / `db:mig
 - **Component reuse**: prefer `components/ui/` primitives (`Section`, `Card`, `Heading`, `SubpageHero`, `SubpageNav`) over raw divs — see CONTRIBUTING.md.
 - **Commit messages** are enforced by `commitlint` (conventional commits) via the `commit-msg` hook; PR titles use the `[<prefix>: title]` form. See CONTRIBUTING.md.
 
-## Bangon Iligan (Command Center)
+## Bangon Dipolog (Command Center)
 
-A full-screen operational map at `/bangon-iligan` that stays on **standby** day-to-day and flips to a live disaster-response surface when activated. See `docs/bangon-iligan.md` for the deep feature reference.
+A full-screen operational map at `/bangon-dipolog` that stays on **standby** day-to-day and flips to a live disaster-response surface when activated. See `docs/bangon-dipolog.md` for the deep feature reference.
 
-- **Standby ↔ active switch**: static default in `data/bangon/incident.json` is overlaid at runtime by the single-row D1 table `bangon_incident_state` (`getEffectiveBangonConfig()` in `data/bangon/state.ts`). A moderator toggles it from `/bangon-iligan/admin` — no redeploy. `revalidatePath` refreshes the homepage banner + command center immediately.
-- **Admin auth**: shared-secret `ADMIN_PASSWORD` → signed HttpOnly cookie (`lib/bangonAuth.ts`). Dev fallback is `iligan-admin-dev`; production requires the env var.
-- **Moderation**: inline on the public panel for signed-in moderators; full console at `/bangon-iligan/admin`. Rejection semantics matter: "Unverify"/"Un-publish" **return to the review queue**; "Dismiss"/"Hide" reject; "Delete" hard-removes. See `docs/bangon-iligan.md` §4.
+- **Standby ↔ active switch**: static default in `data/bangon/incident.json` is overlaid at runtime by the single-row D1 table `bangon_incident_state` (`getEffectiveBangonConfig()` in `data/bangon/state.ts`). A moderator toggles it from `/bangon-dipolog/admin` — no redeploy. `revalidatePath` refreshes the homepage banner + command center immediately.
+- **Admin auth**: shared-secret `ADMIN_PASSWORD` → signed HttpOnly cookie (`lib/bangonAuth.ts`). Dev fallback is `dipolog-admin-dev`; production requires the env var.
+- **Moderation**: inline on the public panel for signed-in moderators; full console at `/bangon-dipolog/admin`. Rejection semantics matter: "Unverify"/"Un-publish" **return to the review queue**; "Dismiss"/"Hide" reject; "Delete" hard-removes. See `docs/bangon-dipolog.md` §4.
 - **Feed ingester**: cron (GitHub Actions `bangon-ingest.yml`, every 30 min) → `POST /api/bangon/ingest` → `collectFeedItems()` → upsert into `bangon_feed` (idempotent via `ON CONFLICT (source, external_id)`). Guarded by `INGEST_SECRET` in production. To add a source, drop a new adapter into `lib/bangon/feeds.ts` and register it in `collectFeedItems()` — no schema/migration change needed.
 - **Troubleshooting**: if "Activate incident" does nothing, migration `0003` is missing on the remote D1 — run `npm run db:migrate` or redeploy.
 
@@ -136,15 +139,18 @@ A full-screen operational map at `/bangon-iligan` that stays on **standby** day-
 
 Secrets/local config live in `.env` (gitignored; committed template is `.env.example` when present). The repo's `.env` carries dev-only defaults.
 
-| Variable                                  | Purpose                                                                                |
-| ----------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ADMIN_PASSWORD` / `ADMIN_SESSION_SECRET` | Bangon moderator auth. Required in prod.                                               |
-| `INGEST_SECRET`                           | Guards `POST /api/bangon/ingest` (Bearer token).                                       |
-| `BANGON_INGEST_URL`                       | Cron target URL (dev convenience).                                                     |
-| `NEXT_PUBLIC_WEATHER_CITY_ID`             | OpenWeather city id (1711082 = Iligan).                                                |
-| `OPENWEATHER_API_KEY`                     | Weather proxy (commented in `.env`).                                                   |
-| `RECAPTCHA_SECRET_KEY`                    | If set, `actions/bangon.ts` + modal verify captcha; if absent, dev skips verification. |
-| `DISCORD_WEBHOOK_URL`                     | Where `actions/contribute.ts` posts.                                                   |
-| `DEVELOPMENT_IP`                          | Allows non-localhost origins in `next.config.ts` dev.                                  |
+| Variable                                  | Purpose                                                                                                                                                                 |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ADMIN_PASSWORD` / `ADMIN_SESSION_SECRET` | Bangon moderator auth. Required in prod.                                                                                                                                |
+| `INGEST_SECRET`                           | Guards `POST /api/bangon/ingest` (Bearer token).                                                                                                                        |
+| `BANGON_INGEST_URL`                       | Cron target URL (dev convenience).                                                                                                                                      |
+| `NEXT_PUBLIC_WEATHER_CITY_ID`             | OpenWeather city id (1715348 = Dipolog).                                                                                                                                |
+| `OPENWEATHER_API_KEY`                     | Weather proxy (commented in `.env`).                                                                                                                                    |
+| `RECAPTCHA_SECRET_KEY`                    | Server-side reCAPTCHA check for every public form (`lib/formGuard.ts`). **Required in prod**: without it, submissions are rejected (only `vinext dev` skips the check). |
+| `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`          | Client reCAPTCHA widget. Build-time: set it as a Workers Builds build variable.                                                                                         |
+| `DISCORD_WEBHOOK_URL`                     | Where `actions/contribute.ts` posts contribution and report-an-issue submissions.                                                                                       |
+| `DEVELOPMENT_IP`                          | Allows non-localhost origins in `next.config.ts` dev.                                                                                                                   |
+
+Public forms are also rate-limited at the edge by the `FORM_RATE_LIMITER` binding (Workers Rate Limiting, 3 per minute per IP per form; in-memory fallback when unbound). Both CAPTCHA and rate limiting are prerequisites for a BetterGov.ph community Discord webhook (https://lgu.bettergov.ph/GUIDE).
 
 Typegen for the Cloudflare `env` interface runs automatically via the `prebuild` hook (`npm run cf-typegen`), writing `cloudflare-env.d.ts`.

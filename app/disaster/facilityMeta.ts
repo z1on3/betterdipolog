@@ -23,9 +23,9 @@ export const CATEGORY_ORDER: Category[] = [
   "barangay",
 ];
 
-// LGU-published landlines are 7-digit local numbers; prepend the Iligan area
+// LGU-published landlines are 7-digit local numbers; prepend the Dipolog area
 // code so tap-to-call routes from mobile phones. Mirrors HotlinesSection.
 export function telHref(display: string): string {
   const cleaned = display.replace(/[^+\d]/g, "");
-  return `tel:${cleaned.length === 7 ? `063${cleaned}` : cleaned}`;
+  return `tel:${cleaned.length === 7 ? `065${cleaned}` : cleaned}`;
 }

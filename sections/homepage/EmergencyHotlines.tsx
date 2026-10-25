@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import {
   Phone,
   LifeBuoy,
-  Flame,
-  Shield,
   Cross,
+  HeartPulse,
+  TrafficCone,
+  Landmark,
   ArrowUpRight,
   X,
 } from "lucide-react";
@@ -14,10 +15,18 @@ import Button3D from "@/components/ui/Button3D";
 
 function telHref(display: string): string {
   const cleaned = display.replace(/[^+\d]/g, "");
-  return `tel:${cleaned.length === 7 ? `063${cleaned}` : cleaned}`;
+  // Bare 7-digit local numbers get Dipolog's (065) area code.
+  return `tel:${cleaned.length === 7 ? `065${cleaned}` : cleaned}`;
 }
 
-const CONTACTS = [
+// Verified Dipolog City numbers. Keep in sync with data/disaster/hotlines.json.
+const CONTACTS: {
+  label: string;
+  number: string;
+  alt?: string;
+  Icon: typeof Phone;
+  color: string;
+}[] = [
   {
     label: "National Emergency",
     number: "911",
@@ -26,27 +35,35 @@ const CONTACTS = [
   },
   {
     label: "Rescue / CDRRMO",
-    number: "811",
+    number: "(065) 212-1506",
+    alt: "(065) 212-1508",
     Icon: LifeBuoy,
     color: "#059669",
   },
   {
-    label: "Fire Department",
-    number: "160",
-    Icon: Flame,
+    label: "Corazon C. Aquino Hospital",
+    number: "(065) 212-5860",
+    alt: "(065) 212-5555",
+    Icon: Cross,
+    color: "#dc2626",
+  },
+  {
+    label: "City Health Office",
+    number: "(065) 212-3400",
+    Icon: HeartPulse,
+    color: "#db2777",
+  },
+  {
+    label: "Traffic Management Office",
+    number: "(065) 212-4508",
+    Icon: TrafficCone,
     color: "#ea580c",
   },
   {
-    label: "Police Department",
-    number: "167",
-    Icon: Shield,
+    label: "City Mayor's Office",
+    number: "(065) 212-2484",
+    Icon: Landmark,
     color: "#2563eb",
-  },
-  {
-    label: "Ambulance",
-    number: "221-0081",
-    Icon: Cross,
-    color: "#dc2626",
   },
 ];
 
@@ -149,7 +166,7 @@ export default function EmergencyHotlines() {
 
           <div className="max-h-[calc(92vh-180px)] overflow-y-auto px-5 py-5 sm:px-7 sm:py-6">
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {CONTACTS.map(({ label, number, Icon, color }) => (
+              {CONTACTS.map(({ label, number, alt, Icon, color }) => (
                 <a
                   key={label}
                   href={telHref(number)}
@@ -176,6 +193,12 @@ export default function EmergencyHotlines() {
                     <h3 className="text-xl font-black tracking-tight text-slate-800 transition-colors group-hover:text-blue-600">
                       {number}
                     </h3>
+
+                    {alt && (
+                      <p className="text-xs font-semibold text-slate-500">
+                        Alt: {alt}
+                      </p>
+                    )}
 
                     <p className="mt-0.5 flex items-center gap-1.5 text-xs font-medium text-slate-500">
                       <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />

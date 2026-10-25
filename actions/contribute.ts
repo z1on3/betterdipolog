@@ -1,7 +1,9 @@
 "use server";
 
 import { z } from "zod";
-import { headers } from "next/headers";
+import { checkRateLimit, getClientIp, verifyCaptcha } from "@/lib/formGuard";
+
+type ActionResult = { success: true } | { success: false; error: string };
 
 // Discord field limits are 1024 chars. We cap at 1000 to be safe.
 const formSchema = z.object({
@@ -25,123 +27,151 @@ const formSchema = z.object({
   email: z.union([z.string().email(), z.string().length(0)]).optional(),
 });
 
-// In Cloudflare Workers this resets when the instance spins down,
-// but it is highly effective at stopping rapid-fire bot loops in active containers.
-const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
+// "Report an issue" (homepage) — outdated or incorrect information on the site.
+const reportSchema = z.object({
+  targetInfo: z
+    .string()
+    .trim()
+    .min(2, "Please say which information is wrong")
+    .max(150, "Keep this under 150 characters"),
+  description: z
+    .string()
+    .trim()
+    .min(5, "Please explain the correction")
+    .max(1000, "Explanation exceeds 1000 characters"),
+  referenceUrl: z.union([z.string().url().max(500), z.string().length(0)]),
+  email: z.union([z.string().email(), z.string().length(0)]),
+});
+
+type DiscordField = { name: string; value: string; inline?: boolean };
+
+async function sendToDiscord(
+  title: string,
+  color: number,
+  fields: DiscordField[],
+) {
+  const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+  if (!webhookUrl) throw new Error("Discord webhook URL not configured.");
+
+  const response = await fetch(webhookUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      content: `🚨 **New Community Submission**`,
+      // Never ping @everyone/@here/roles from user-supplied text.
+      allowed_mentions: { parse: [] },
+      embeds: [{ title, color, fields, timestamp: new Date().toISOString() }],
+    }),
+  });
+
+  if (!response.ok)
+    throw new Error(`Failed to send to Discord: ${response.status}`);
+}
+
+// Runs the shared abuse checks; returns an error message or null when clear.
+async function guard(
+  scope: string,
+  captchaToken: string | null | undefined,
+): Promise<string | null> {
+  const ip = await getClientIp();
+  if (!(await checkRateLimit(ip, scope))) {
+    return "You are submitting too fast. Please wait a minute.";
+  }
+  if (!(await verifyCaptcha(captchaToken, ip))) {
+    return "CAPTCHA verification failed. Please try again.";
+  }
+  return null;
+}
+
+function firstError(fieldErrors: Record<string, string[] | undefined>): string {
+  for (const messages of Object.values(fieldErrors)) {
+    if (messages?.length) return messages[0];
+  }
+  return "Please check your entries and try again.";
+}
 
 export async function submitContribution(
   formData: FormData,
   captchaToken: string,
-) {
-  // We wrap EVERYTHING in a try/catch now so network errors don't crash the server action
+): Promise<ActionResult> {
+  // Wrap everything so network errors don't crash the server action
   try {
-    const headersList = await headers();
-    const ip = headersList.get("x-forwarded-for") || "unknown";
-    const now = Date.now();
+    const blocked = await guard("contribute", captchaToken);
+    if (blocked) return { success: false, error: blocked };
 
-    if (ip !== "unknown") {
-      const userStatus = rateLimitMap.get(ip) || { count: 0, timestamp: now };
-      if (now - userStatus.timestamp > 60000) {
-        // 1 minute window
-        userStatus.count = 1;
-        userStatus.timestamp = now;
-      } else {
-        userStatus.count++;
-        if (userStatus.count > 3) {
-          return {
-            success: false,
-            error: "You are submitting too fast. Please wait a minute.",
-          };
-        }
-      }
-      rateLimitMap.set(ip, userStatus);
-    }
-
-    const rawData = {
+    const validatedFields = formSchema.safeParse({
       type: formData.get("type"),
       title: formData.get("title"),
       category: formData.get("category"),
       details: formData.get("details"),
       email: formData.get("email"),
-    };
-
-    const validatedFields = formSchema.safeParse(rawData);
+    });
 
     if (!validatedFields.success) {
-      console.error("Validation Error:", validatedFields.error.flatten());
       return {
         success: false,
-        error: validatedFields.error.flatten().fieldErrors.details,
+        error: firstError(validatedFields.error.flatten().fieldErrors),
       };
     }
 
     const { type, title, category, details, email } = validatedFields.data;
 
-    // --- 3. SECURE RECAPTCHA VERIFICATION ---
-    const verifyBody = new URLSearchParams();
-    verifyBody.append("secret", process.env.RECAPTCHA_SECRET_KEY!);
-    verifyBody.append("response", captchaToken);
-    if (ip !== "unknown") verifyBody.append("remoteip", ip);
-
-    const verifyRes = await fetch(
-      "https://www.google.com/recaptcha/api/siteverify",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: verifyBody.toString(),
-      },
-    );
-
-    const verifyData = await verifyRes.json();
-
-    //if (!verifyData.success) {
-    //    console.error("reCAPTCHA failed:", verifyData);
-    //    return { success: false, error: "CAPTCHA verification failed." };
-    //}
-
-    // --- 4. FORMAT DISCORD EMBED ---
-    const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
-    if (!webhookUrl) throw new Error("Discord webhook URL not configured.");
-
-    const payload = {
-      content: `🚨 **New Community Submission**`,
-      embeds: [
+    await sendToDiscord(
+      type === "report" ? `Update/Fix: ${title}` : `New Service: ${title}`,
+      type === "report" ? 15548997 : 5763719, // Red for report, Green for suggest
+      [
+        { name: "Category", value: category || "None", inline: true },
+        { name: "Contact Email", value: email || "Anonymous", inline: true },
         {
-          title:
-            type === "report"
-              ? `Update/Fix: ${title}`
-              : `New Service: ${title}`,
-          color: type === "report" ? 15548997 : 5763719, // Red for report, Green for suggest
-          fields: [
-            { name: "Category", value: category || "None", inline: true },
-            {
-              name: "Contact Email",
-              value: email || "Anonymous",
-              inline: true,
-            },
-            {
-              name: "Details / Procedures / Links",
-              value: details || "No details provided.",
-            },
-          ],
-          timestamp: new Date().toISOString(),
+          name: "Details / Procedures / Links",
+          value: details || "No details provided.",
         },
       ],
-    };
-
-    // --- 5. SEND TO DISCORD ---
-    const response = await fetch(webhookUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    if (!response.ok)
-      throw new Error(`Failed to send to Discord: ${response.status}`);
+    );
 
     return { success: true };
   } catch (error) {
     console.error("Webhook/Server error:", error);
+    return {
+      success: false,
+      error: "Failed to submit. Please try again later.",
+    };
+  }
+}
+
+export async function submitReport(
+  formData: FormData,
+  captchaToken: string | null | undefined,
+): Promise<ActionResult> {
+  try {
+    const blocked = await guard("report", captchaToken);
+    if (blocked) return { success: false, error: blocked };
+
+    const parsed = reportSchema.safeParse({
+      targetInfo: formData.get("targetInfo") ?? "",
+      description: formData.get("description") ?? "",
+      referenceUrl: formData.get("referenceUrl") ?? "",
+      email: formData.get("email") ?? "",
+    });
+
+    if (!parsed.success) {
+      return {
+        success: false,
+        error: firstError(parsed.error.flatten().fieldErrors),
+      };
+    }
+
+    const { targetInfo, description, referenceUrl, email } = parsed.data;
+
+    await sendToDiscord(`Outdated/Incorrect Info: ${targetInfo}`, 16753920, [
+      { name: "Contact Email", value: email || "Anonymous", inline: true },
+      { name: "Reference", value: referenceUrl || "None", inline: true },
+      { name: "Correction", value: description },
+    ]);
+
+    return { success: true };
+  } catch (error) {
+    console.error("Report webhook error:", error);
     return {
       success: false,
       error: "Failed to submit. Please try again later.",

@@ -1,0 +1,297 @@
+{
+  "header": {
+    "classification": "Component city · 2nd income class",
+    "location": "Zamboanga del Norte, Region IX",
+    "foundedBadge": "Cityhood 1970",
+    "name": "Dipolog City",
+    "description": "Gateway to Western Mindanao —",
+    "highlight": "capital of Zamboanga del Norte",
+    "descriptionEnd": ". A barrio of Dapitan since 1834, a municipality on July 1, 1913, and a chartered city effective July 1, 1970 under R.A. 5520."
+  },
+  "quickStats": [
+    {
+      "label": "Population",
+      "value": "136,528",
+      "subtext": "2024 POPCEN (PSA)"
+    },
+    {
+      "label": "Land area",
+      "value": "13,628 ha",
+      "subtext": "136.28 km² · city profile"
+    },
+    {
+      "label": "Mayor",
+      "value": "Roberto Y. Uy",
+      "subtext": "Term 2025–2028"
+    },
+    {
+      "label": "Income class",
+      "value": "2nd class",
+      "subtext": "Since Jan. 1, 2025"
+    },
+    {
+      "label": "Barangays",
+      "value": "21",
+      "subtext": "5 urban · 16 rural"
+    },
+    {
+      "label": "Time zone",
+      "value": "UTC+8",
+      "subtext": "PST"
+    }
+  ],
+  "summary": {
+    "population": {
+      "value": "136,528",
+      "subtext": "2024 Census of Population (PSA)",
+      "rows": [
+        { "key": "2020 Census", "value": "138,141" },
+        { "key": "2010 Census", "value": "120,460" },
+        { "key": "Barangays", "value": "21 (5 urban, 16 rural)" },
+        { "key": "Main language", "value": "Cebuano" }
+      ]
+    },
+    "economy": {
+      "value": "2nd class",
+      "subtext": "Income class under DOF D.O. No. 074-2024 (previously 3rd)",
+      "rows": [
+        { "key": "Revenue (2024)", "value": "₱1,121M" },
+        { "key": "Assets (2024)", "value": "₱2,348M" },
+        { "key": "Poverty incidence", "value": "22.04% (2023)" },
+        { "key": "Banks", "value": "23 (city profile)" }
+      ]
+    }
+  },
+  "keyFigures": [
+    { "value": "21", "label": "Barangays" },
+    { "value": "1913", "label": "Became a municipality" },
+    { "value": "1970", "label": "Chartered city" },
+    { "value": "13,628", "label": "Hectares of land" },
+    { "value": "303.96", "label": "Km of roads" },
+    { "value": "4", "label": "Hospitals" },
+    { "value": "23", "label": "Banks" },
+    { "value": "8", "label": "Local festivals" }
+  ],
+  "demographics": {
+    "grid": [
+      {
+        "label": "Total population",
+        "value": "136,528",
+        "subtext": "2024 Census of Population (POPCEN), PSA"
+      },
+      {
+        "label": "2020 population",
+        "value": "138,141",
+        "subtext": "2020 Census of Population and Housing, PSA"
+      },
+      {
+        "label": "Households",
+        "value": "23,165",
+        "subtext": "2010 census (NSO), as cited in the city socio-economic profile"
+      },
+      {
+        "label": "Barangays",
+        "value": "21",
+        "subtext": "5 urban poblacion districts and 16 rural barangays",
+        "href": "/dipolog/barangays"
+      }
+    ],
+    "generalInfo": [
+      { "key": "Demonym", "value": "Dipolognon" },
+      { "key": "Main language", "value": "Cebuano (Visayan)" },
+      {
+        "key": "Also spoken",
+        "value": "English, Filipino; Subanon in the highlands"
+      },
+      { "key": "Original inhabitants", "value": "Subanen" },
+      { "key": "Main religion", "value": "Roman Catholic (89.94%, 2000)" },
+      { "key": "ZIP code", "value": "7100" },
+      { "key": "Area code", "value": "+63 (0)65" },
+      { "key": "Time zone", "value": "UTC+8 (PST)" }
+    ]
+  },
+  "government": {
+    "local": [
+      { "key": "Type", "value": "Component city" },
+      { "key": "Mayor", "value": "Roberto Y. Uy" },
+      { "key": "Vice Mayor", "value": "Senen O. Angeles" },
+      { "key": "Legislature", "value": "18th Sangguniang Panlungsod" },
+      {
+        "key": "Congressional district",
+        "value": "2nd District of Zamboanga del Norte"
+      },
+      { "key": "Representative", "value": "Irene G. Labadlabad" },
+      { "key": "City Hall", "value": "Rizal Ave., Dipolog City" }
+    ],
+    "history": [
+      { "key": "Barrio of Dapitan", "value": "1834" },
+      { "key": "Municipality", "value": "July 1, 1913" },
+      {
+        "key": "Provincial seat",
+        "value": "1942 (Zamboanga Province)"
+      },
+      {
+        "key": "Provincial capital",
+        "value": "June 5, 1952 · R.A. 711"
+      },
+      { "key": "Chartered city", "value": "July 1, 1970 · R.A. 5520" },
+      { "key": "Region", "value": "Zamboanga Peninsula (Region IX)" },
+      { "key": "PSGC", "value": "0907202000" }
+    ]
+  },
+  "economy": {
+    "grid": [
+      {
+        "label": "Income class",
+        "value": "2nd class city",
+        "subtext": "Effective January 1, 2025 (DOF D.O. No. 074-2024)"
+      },
+      {
+        "label": "Revenue (2024)",
+        "value": "₱1,121M",
+        "href": "/transparency/budget"
+      },
+      {
+        "label": "Assets (2024)",
+        "value": "₱2,348M"
+      },
+      {
+        "label": "Poverty incidence",
+        "value": "22.04%",
+        "subtext": "2023 estimate"
+      }
+    ],
+    "commerce": [
+      {
+        "key": "Major products",
+        "value": "Coconut, rice, corn, bottled sardines, processed meat and fish, nito handicrafts"
+      },
+      {
+        "key": "Main livelihoods",
+        "value": "Construction, fishing, agriculture, services"
+      },
+      {
+        "key": "Financial institutions",
+        "value": "23 banks · 50 lending services"
+      },
+      {
+        "key": "Electricity provider",
+        "value": "ZANECO"
+      },
+      {
+        "key": "Water provider",
+        "value": "Dipolog City Water District"
+      }
+    ]
+  },
+  "environment": {
+    "landUse": [
+      { "key": "Agriculture", "value": "9,787.04 ha" },
+      { "key": "Residential", "value": "1,920.00 ha" },
+      { "key": "Forest land", "value": "676.00 ha" },
+      { "key": "Shrub land", "value": "329.87 ha" },
+      { "key": "Commercial", "value": "225.00 ha" },
+      { "key": "Industrial", "value": "200.00 ha" },
+      { "key": "Institutional", "value": "165.52 ha" },
+      { "key": "Open spaces (thoroughfares)", "value": "153.72 ha" },
+      { "key": "Transport & utility zone", "value": "69.22 ha" },
+      { "key": "Parks & recreation", "value": "56.63 ha" },
+      { "key": "Planned unit development", "value": "15.00 ha" }
+    ],
+    "geography": [
+      {
+        "key": "Land area (city profile)",
+        "value": "13,628 ha (255 ha urban · 13,373 ha rural)"
+      },
+      {
+        "key": "Land area (PSA-based, per PhilAtlas)",
+        "value": "241.13 km²"
+      },
+      {
+        "key": "Terrain",
+        "value": "Rolling hills with lowlands along the western coast"
+      },
+      { "key": "Coastline", "value": "Faces the Sulu Sea" },
+      { "key": "Main river", "value": "Dipolog River" },
+      { "key": "Elevation (city proper)", "value": "2.5 m above sea level" },
+      {
+        "key": "Climate",
+        "value": "Type IV — rainfall evenly distributed; outside the typhoon belt"
+      }
+    ]
+  },
+  "infrastructure": {
+    "facilities": [
+      {
+        "label": "Elementary schools",
+        "value": "52 schools",
+        "subtext": "38 public · 14 private; also 19 secondary, 4 tertiary (city profile)",
+        "icon": "GraduationCap"
+      },
+      {
+        "label": "Hospitals",
+        "value": "4 hospitals",
+        "subtext": "1 public · 3 private (city profile)",
+        "icon": "Stethoscope"
+      },
+      {
+        "label": "Power",
+        "value": "ZANECO",
+        "subtext": "Zamboanga del Norte Electric Cooperative",
+        "icon": "Zap",
+        "href": "/dipolog/utilities#zaneco"
+      },
+      {
+        "label": "Water",
+        "value": "Dipolog City Water District",
+        "subtext": "Level III supply; Level II government-installed systems",
+        "icon": "Droplets",
+        "href": "/dipolog/utilities#dcwd"
+      },
+      {
+        "label": "Dipolog Airport",
+        "value": "2.5 km",
+        "subtext": "From the city proper · PAL and Cebu Pacific",
+        "icon": "Plane"
+      },
+      {
+        "label": "Road network",
+        "value": "303.96 km",
+        "subtext": "33.78 km national · 26.85 km city · 243.33 km barangay",
+        "icon": "Route"
+      }
+    ],
+    "communications": [
+      "8 broadcast media outlets",
+      "5 print media outlets",
+      "7 telecommunications companies",
+      "2 cable operators"
+    ]
+  },
+  "references": [
+    {
+      "title": "PSA — Highlights of the Region IX (Zamboanga Peninsula) Population, 2024 Census of Population",
+      "url": "https://psa.gov.ph/content/highlights-region-ix-zamboanga-peninsula-population-2024-census-population-2024-popcen"
+    },
+    {
+      "title": "dipologcity.gov.ph — Quick Facts (geography, land use, climate, languages, industries)",
+      "url": "https://dipologcity.gov.ph/quick-facts/"
+    },
+    {
+      "title": "dipologcity.gov.ph — Socio-Economic Profile (history, land area, schools, hospitals, roads, utilities)",
+      "url": "https://dipologcity.gov.ph/socio-economic-profile/"
+    },
+    {
+      "title": "BLGF — LGU income classification (DOF Department Order No. 074-2024)",
+      "url": "https://blgf.gov.ph/lgu-income-class/"
+    },
+    {
+      "title": "Wikipedia — Dipolog (revenue, assets, poverty incidence, PSGC, representative)",
+      "url": "https://en.wikipedia.org/wiki/Dipolog"
+    },
+    {
+      "title": "PhilAtlas — Dipolog (2020 census, PSA-based land area)",
+      "url": "https://www.philatlas.com/mindanao/r09/zamboanga-del-norte/dipolog.html"
+    }
+  ]
+}

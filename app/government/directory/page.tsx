@@ -1,12 +1,13 @@
 import { Metadata } from "next";
 import { safeJsonLd } from "@/lib/utils";
+import { allAgencies } from "@/data/government";
 import DirectoryClient from "./DirectoryClient";
 
 // 1. STATIC METADATA (Server Side)
 export const metadata: Metadata = {
-  title: "Iligan City Government Directory",
+  title: "National Agencies in Dipolog City",
   description:
-    "Find contact information, addresses, and maps for government offices and agencies in Iligan City.",
+    "Find addresses, contact information, and maps for national government agencies and government corporations with offices in Dipolog City, Zamboanga del Norte.",
 };
 
 // 2. MAIN PAGE COMPONENT (Server Side)
@@ -15,13 +16,13 @@ export default function GovernmentDirectoryPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Iligan City Government Directory",
+    name: "Dipolog City Government Directory",
     description:
-      "Directory of local government units, national agencies, and GOCCs in Iligan City.",
-    url: "https://betteriligancity.org/government/directory",
+      "Directory of national agencies, GOCCs, and public offices in Dipolog City.",
+    url: "https://betterdipolog.org/government/directory",
     about: {
       "@type": "City",
-      name: "Iligan City",
+      name: "Dipolog City",
     },
   };
 
@@ -34,7 +35,7 @@ export default function GovernmentDirectoryPage() {
       />
 
       {/* Render your interactive Client UI */}
-      <DirectoryClient />
+      <DirectoryClient allAgencies={allAgencies} />
     </>
   );
 }

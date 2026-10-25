@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about our volunteer-led civic tech initiative to make Iligan City’s government more transparent and accessible.",
+    "Learn about our volunteer-led civic tech initiative to make Dipolog City’s government more transparent and accessible.",
 };
 
 export default function AboutPage() {
@@ -35,10 +35,10 @@ export default function AboutPage() {
             Civic Tech Project
           </span>
         </SubpageHero.Badges>
-        <SubpageHero.Title>About BetterIliganCity.org</SubpageHero.Title>
+        <SubpageHero.Title>About BetterDipolog.org</SubpageHero.Title>
         <SubpageHero.Description>
-          A volunteer-led initiative building digital public goods for the City
-          of Majestic Waterfalls.
+          A volunteer-led initiative building digital public goods for Dipolog
+          City, the Gateway to Western Mindanao.
         </SubpageHero.Description>
       </SubpageHero>
 
@@ -52,11 +52,11 @@ export default function AboutPage() {
             Our Mission
           </h2>
           <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
-            BetterIliganCity is a volunteer-led tech initiative committed to
+            BetterDipolog is a volunteer-led tech initiative committed to
             creating{" "}
             <strong className="text-blue-600">#civictechprojects</strong> aimed
             at making local government more transparent, efficient, and
-            accessible to the citizens of Iligan.
+            accessible to the citizens of Dipolog.
           </p>
         </section>
 
@@ -67,7 +67,7 @@ export default function AboutPage() {
           </h3>
           <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
             {[
-              "Building a volunteer-run website that reflects Iligan's values and culture.",
+              "Building a volunteer-run website that reflects Dipolog's values and culture.",
               "Open Source and Open Data projects for better local collaboration.",
               "Creating intuitive navigation to find local services quickly.",
               "Ensuring accessibility for all citizens, including those with disabilities.",
@@ -93,7 +93,7 @@ export default function AboutPage() {
           <div className="space-y-4 text-lg leading-relaxed text-slate-600">
             <p>
               Finding local government contact numbers, utility rates, and
-              service procedures in Iligan can be fragmented and difficult. The
+              service procedures in Dipolog can be fragmented and difficult. The
               current state of many public portals presents numerous challenges
               for citizens:
             </p>
@@ -115,7 +115,7 @@ export default function AboutPage() {
               These issues create real-world barriers for citizens trying to
               access essential local government services. By addressing them
               here, we hope to create a more unified and effective digital
-              presence for Iligan City.
+              presence for Dipolog City.
             </p>
           </div>
         </section>
@@ -125,14 +125,14 @@ export default function AboutPage() {
           <div className="mb-4 flex items-center gap-3">
             <HeartHandshake className="h-7 w-7 text-blue-600" />
             <h3 className="text-xl font-bold text-blue-900 md:text-2xl">
-              Proudly Supported by BetterGov
+              Inspired by the BetterGov Movement
             </h3>
           </div>
           <p className="mb-6 leading-relaxed text-blue-800">
-            BetterIliganCity is part of a larger, nationwide movement of citizen
-            builders. Our overarching goal is to support, promote, consolidate,
-            and empower developers across the Philippines to build impactful
-            civic tech projects.
+            BetterDipolog follows the example of BetterGov.ph, a nationwide
+            movement of citizen builders whose goal is to support, promote,
+            consolidate, and empower developers across the Philippines to build
+            impactful civic tech projects.
           </p>
           <div className="mb-6 rounded-2xl bg-white/60 p-5">
             <h4 className="mb-3 text-sm font-bold tracking-wider text-blue-900 uppercase">
@@ -203,7 +203,7 @@ export default function AboutPage() {
           <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-emerald-800">
             Whether you're a developer, designer, researcher, or just someone
             who wants to help verify local data—we need you. Join our community
-            of citizen builders and help shape the digital future of Iligan
+            of citizen builders and help shape the digital future of Dipolog
             City.
           </p>
           <Link
@@ -215,7 +215,29 @@ export default function AboutPage() {
           </Link>
         </section>
 
-        {/* 6. License */}
+        {/* 6. Upstream credit */}
+        <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-10">
+          <h3 className="mb-4 text-xl font-bold text-slate-900 md:text-2xl">
+            Built on BetterIligan
+          </h3>
+          <p className="leading-relaxed text-slate-600">
+            BetterDipolog is a fork of{" "}
+            <a
+              href="https://github.com/KishonShrill/BetterIligan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-blue-600 underline decoration-blue-200 underline-offset-2 hover:text-blue-700"
+            >
+              BetterIligan
+            </a>{" "}
+            (github.com/KishonShrill/BetterIligan) by Chriscent Louis June
+            Pingol and contributors, MIT License. We are grateful to the
+            BetterIligan team for building and open-sourcing the foundation this
+            site stands on.
+          </p>
+        </section>
+
+        {/* 7. License */}
         <section className="border-t border-slate-200 pt-8 text-center">
           <div className="mb-4 inline-flex items-center justify-center rounded-full bg-slate-100 p-3 text-slate-500">
             <Scale className="h-6 w-6" />

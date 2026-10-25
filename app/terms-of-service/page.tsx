@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms of Service for BetterIliganCity.org.",
+  description: "Terms of Service for BetterDipolog.org.",
 };
 
 export default function TermsOfServicePage() {
@@ -15,7 +15,7 @@ export default function TermsOfServicePage() {
       <SubpageHero>
         <SubpageHero.Title>Terms of Service</SubpageHero.Title>
         <SubpageHero.Description>
-          Last updated: June 17, 2026
+          Last updated: October 25, 2026
         </SubpageHero.Description>
       </SubpageHero>
 
@@ -26,26 +26,28 @@ export default function TermsOfServicePage() {
               Agreement to Our Legal Terms
             </h2>
             <p className="mb-4">
-              We are BetterIliganCity.org (&quot;Company,&quot; &quot;we,&quot;
-              &quot;us,&quot; &quot;our&quot;), registered in the Philippines at
-              Iligan City, Lanao del Norte 9200. We operate the website{" "}
+              We are BetterDipolog.org (&quot;Company,&quot; &quot;we,&quot;
+              &quot;us,&quot; &quot;our&quot;), a volunteer-run community
+              project based in Dipolog City, Zamboanga del Norte 7100,
+              Philippines. We operate the website{" "}
               <a
-                href="http://betteriligancity.org/"
+                href="https://betterdipolog.org/"
                 className="text-blue-600 hover:text-blue-700 hover:underline"
               >
-                http://betteriligancity.org/
+                https://betterdipolog.org/
               </a>{" "}
               (the &quot;Site&quot;).
             </p>
             <p className="mb-4">
-              BetterIliganCity.org is a volunteer-led civic tech initiative to
+              BetterDipolog.org is a volunteer-led civic tech initiative to
               digitalize and streamline access to local governance, policies,
-              and open data for the City of Iligan, Northern Mindanao,
-              Philippines.
+              and open data for the City of Dipolog, Zamboanga del Norte,
+              Philippines. It is not an official website of the City Government
+              of Dipolog.
             </p>
             <p>
               These Legal Terms constitute a legally binding agreement made
-              between you and BetterIliganCity.org concerning your access to and
+              between you and BetterDipolog.org concerning your access to and
               use of the Services. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL
               TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES
               AND YOU MUST DISCONTINUE USE IMMEDIATELY.
@@ -69,18 +71,17 @@ export default function TermsOfServicePage() {
               2. Intellectual Property Rights
             </h2>
             <p>
-              We are the owner or the licensee of all intellectual property
-              rights in our Services, including all source code, databases,
-              functionality, software, website designs, audio, video, text,
-              photographs, and graphics in the Services (collectively, the
-              &quot;Content&quot;).
+              The source code of this website is open source and released under
+              the MIT License. BetterDipolog is a fork of BetterIligan
+              (github.com/KishonShrill/BetterIligan) by Chriscent Louis June
+              Pingol and contributors. Third-party photographs, logos, and
+              trademarks remain the property of their respective owners.
             </p>
             <p className="mt-4">
-              As a civic tech initiative, while we protect our proprietary
-              codebase and specific website design, we acknowledge that public
-              directory information, government contact details, and open civic
-              data hosted on this platform are public domain and not our
-              intellectual property.
+              As a civic tech initiative, we acknowledge that public directory
+              information, government contact details, and open civic data
+              hosted on this platform are public domain and not our intellectual
+              property.
             </p>
           </section>
 
@@ -173,7 +174,7 @@ export default function TermsOfServicePage() {
             </h2>
             <p>
               These Legal Terms shall be governed by and defined following the
-              laws of the Philippines. BetterIliganCity.org and yourself
+              laws of the Philippines. BetterDipolog.org and yourself
               irrevocably consent that the courts of the Philippines shall have
               exclusive jurisdiction to resolve any dispute which may arise in
               connection with these terms.
@@ -189,10 +190,10 @@ export default function TermsOfServicePage() {
               receive further information regarding use of the Services, please
               contact us at:{" "}
               <a
-                href="mailto:report@betteriligancity.org"
+                href="mailto:reports@betterdipolog.org"
                 className="text-blue-600 hover:text-blue-700 hover:underline"
               >
-                report@betteriligancity.org
+                reports@betterdipolog.org
               </a>
               .
             </p>

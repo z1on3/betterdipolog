@@ -1,0 +1,153 @@
+[
+  {
+    "name": "Linabo Peak (3,003 Steps)",
+    "category": "Nature",
+    "area": "Outskirts of Dipolog City",
+    "description": "A long concrete stairway — the famous \"3,003 Steps\" — climbs to Linabo Peak (about 486 m above sea level), with a panoramic view of the twin cities of Dipolog and Dapitan. Fourteen Stations of the Cross line the first half of the trail, and on Good Friday it hosts Katkat Sakripisyo, the city's Lenten penitential climb.",
+    "note": "There are no restaurants on the trail — bring water, and start early to avoid the midday heat.",
+    "lat": 8.5877782,
+    "lon": 123.3919438,
+    "coordSource": "https://www.openstreetmap.org/node/12019800889",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Linabo_Peak_Entrance.jpg",
+      "credit": "Placelover (English Wikipedia)",
+      "license": "Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Linabo_Peak_Entrance.jpg"
+    },
+    "sources": [
+      "https://dipologcity.gov.ph/events/",
+      "https://en.wikipedia.org/wiki/Dipolog",
+      "https://www.pinoymountaineer.com/2010/08/hiking-matters-95-climbing-3003-steps.html"
+    ],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Dipolog Boulevard",
+    "category": "Landmark",
+    "area": "Barangays Central to Miputak",
+    "description": "The city's foreshore esplanade facing the Sulu Sea, stretching about 1.6 km from the Santa Cruz marker in Barangay Central to Barangay Miputak, with an extension toward the seaport in Barangay Galas. A popular spot for walking and exercise, it is also the venue of P'gsalabuk Festival events, marathons, triathlons and dragon-boat races. The \"Explore Dipolog\" landmark stands along the boulevard.",
+    "lat": 8.5775485,
+    "lon": 123.3351186,
+    "coordSource": "https://www.openstreetmap.org/node/12551201564",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Dipolog_Boulevard_southbound_%28Dipolog%2C_Zamboanga_Del_Norte%3B_10-17-2023%29.jpg",
+      "credit": "Patrickroque01",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Dipolog_Boulevard_southbound_(Dipolog,_Zamboanga_Del_Norte;_10-17-2023).jpg"
+    },
+    "sources": ["https://en.wikipedia.org/wiki/Dipolog"],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Dipolog Cathedral (Our Lady of the Most Holy Rosary)",
+    "category": "Faith",
+    "area": "Barangay Estaka",
+    "description": "The seat of the Diocese of Dipolog. Construction of the church began in April 1894 and its first Mass was celebrated on June 29, 1894. Its original altar was designed by Dr. José Rizal during his exile in nearby Dapitan. It became a cathedral when the Diocese of Dipolog was created in 1967, and was named one of the Jubilee Churches for the 500th anniversary of Christianity in the Philippines in 2021.",
+    "lat": 8.5861736,
+    "lon": 123.3458621,
+    "coordSource": "https://www.openstreetmap.org/way/574185531",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Dipolog_Cathedral_%28P._Ramon%2C_Dipolog%2C_Zamboanga_Del_Norte%3B_10-17-2023%29.jpg",
+      "credit": "Patrickroque01",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Dipolog_Cathedral_(P._Ramon,_Dipolog,_Zamboanga_Del_Norte;_10-17-2023).jpg"
+    },
+    "sources": [
+      "https://dipologcity.gov.ph/socio-economic-profile/",
+      "https://en.wikipedia.org/wiki/Dipolog_Cathedral"
+    ],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Dipolog City Hall",
+    "category": "Heritage",
+    "area": "Rizal Avenue, Barangay Central",
+    "description": "Dipolog became a municipality on July 1, 1913, and the old municipal hall — whose main structure and façade are still preserved — is today the site of the City Hall. It stands near the Cathedral and Plaza Magsaysay, the city's central park.",
+    "lat": 8.5867381,
+    "lon": 123.3444602,
+    "coordSource": "https://www.openstreetmap.org/way/967880396",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Dipolog_City_Hall.jpg",
+      "credit": "Shekinaharmenta",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Dipolog_City_Hall.jpg"
+    },
+    "sources": [
+      "https://dipologcity.gov.ph/socio-economic-profile/",
+      "https://en.wikipedia.org/wiki/Dipolog"
+    ],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Plaza Magsaysay",
+    "category": "Park",
+    "area": "Barangay Central",
+    "description": "A public park on F. Herrera Street in the city centre, a short walk from City Hall and the Cathedral of Our Lady of the Most Holy Rosary.",
+    "lat": 8.5863613,
+    "lon": 123.344977,
+    "coordSource": "https://www.openstreetmap.org/way/574185551",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Dipolog_Magsaysay_Park_%28Herrera%2C_Dipolog%2C_Zamboanga_Del_Norte%3B_10-17-2023%29.jpg",
+      "credit": "Patrickroque01",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Dipolog_Magsaysay_Park_(Herrera,_Dipolog,_Zamboanga_Del_Norte;_10-17-2023).jpg"
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Dipolog",
+      "https://commons.wikimedia.org/wiki/File:Dipolog_Magsaysay_Park_(Herrera,_Dipolog,_Zamboanga_Del_Norte;_10-17-2023).jpg"
+    ],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Santa Cruz Marker (Punta Corro)",
+    "category": "Heritage",
+    "area": "Rizal Avenue, Barangay Central",
+    "description": "A tall cross at Punta Corro marking the spot where migrating Boholanos landed to settle. The settlers erected it on May 3, 1905 in thanksgiving for their safe voyage. Dipolog Boulevard begins here.",
+    "lat": 8.5877188,
+    "lon": 123.3377814,
+    "coordSource": "https://www.openstreetmap.org/node/13674700252",
+    "photo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Dipolog_Santa_Cruz_Marker_%28Rizal_Avenue-Martinez%2C_Dipolog%2C_Zamboanga_Del_Norte%3B_10-17-2023%29.jpg",
+      "credit": "Patrickroque01",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Dipolog_Santa_Cruz_Marker_(Rizal_Avenue-Martinez,_Dipolog,_Zamboanga_Del_Norte;_10-17-2023).jpg"
+    },
+    "sources": ["https://en.wikipedia.org/wiki/Dipolog"],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Casa Bernedo",
+    "category": "Heritage",
+    "area": "Arellano St. cor. Ranillo St.",
+    "description": "A century-old ancestral house built around the turn of the 20th century by Justo Bernedo and Isabel Macias. From 2012 it served as the Dipolog City Center for Culture and the Arts, with gallery space downstairs and a preserved family residence upstairs.",
+    "note": "Reported closed to the public and put up for sale as of 2024 — view from the street only unless the City Tourism Office says otherwise.",
+    "lat": 8.588056,
+    "lon": 123.339167,
+    "coordSource": "https://en.wikipedia.org/wiki/Casa_Bernedo",
+    "sources": ["https://en.wikipedia.org/wiki/Casa_Bernedo"],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Cogon Eco-Tourism Park",
+    "category": "Park",
+    "area": "Barangay Cogon",
+    "description": "A 344-hectare reforestation area established in 1958, with mature stands of mahogany, teak, narra, molave, lauan and other trees. It is a favourite camping site of mountaineering groups and forms an eco-tourism complex with the neighbouring OISCA Forest Park in Barangay Diwan.",
+    "lat": 8.4469974,
+    "lon": 123.3585984,
+    "coordSource": "https://www.openstreetmap.org/node/13676736139",
+    "sources": ["https://en.wikipedia.org/wiki/Dipolog"],
+    "verifiedAt": "2026-10-25"
+  },
+  {
+    "name": "Sungkilaw Falls",
+    "category": "Nature",
+    "area": "Sitio Virginia, Barangay Diwan",
+    "description": "An approximately 20-foot waterfall in a forested ravine in Barangay Diwan, the city's farthest barangay (about 25 km from the city centre). It is reached by roughly 400 descending steps, and nearby is a mineral spring. It is the most prominent feature of the OISCA Forest Park, a joint project of OISCA of Japan and the City Government of Dipolog.",
+    "note": "Access details date from 2013 reporting — check road conditions and any entrance fees with the City Tourism Office before going.",
+    "sources": [
+      "http://pagadianfrontline.blogspot.com/2013/02/sungkilaw-falls-is-now-tourist.html",
+      "https://en.wikipedia.org/wiki/Dipolog"
+    ],
+    "verifiedAt": "2026-10-25"
+  }
+]

@@ -9,28 +9,40 @@ import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://betteriligancity.org"),
+  metadataBase: new URL("https://betterdipolog.org"),
   title: {
-    default: "BetterIliganCity.org",
-    template: "%s | BetterIliganCity.org",
+    default: "BetterDipolog.org",
+    template: "%s | BetterDipolog.org",
   },
   description:
-    "A modernized, volunteer-driven portal to access government services, public data, and resources for the people of Iligan.",
+    "A modernized, volunteer-driven portal to access government services, public data, and resources for the people of Dipolog City, Zamboanga del Norte.",
+  keywords: [
+    "Dipolog",
+    "Dipolog City",
+    "Zamboanga del Norte",
+    "Dipolognon",
+    "BetterDipolog",
+    "civic tech",
+    "government services",
+    "open data",
+    "Philippines",
+  ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    siteName: "BetterIligan",
+    siteName: "BetterDipolog",
     locale: "en_PH",
     type: "website",
-    url: "https://betteriligancity.org",
+    url: "https://betterdipolog.org",
   },
   twitter: {
     card: "summary_large_image",
   },
-  facebook: {
-    appId: "1036061575471786",
-  },
+  // TODO(owner): upstream's Facebook App ID (fb:app_id) was removed. Add
+  // BetterDipolog's own `facebook: { appId }` here once one exists.
   other: {
-    "fb:app_id": "1036061575471786",
-    "og:logo": "https://betteriligancity.org/icon.png",
+    "og:logo": "https://betterdipolog.org/icon.svg",
   },
 };
 
