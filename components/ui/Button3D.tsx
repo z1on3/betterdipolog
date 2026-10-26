@@ -40,10 +40,14 @@ export default function Button3D({
   // This maps the default, hover, and active states perfectly for each theme
   const variantClasses = {
     white: `
-            bg-white dark:bg-slate-900 text-blue-700 dark:text-blue-300 
+            bg-white text-blue-700 
             shadow-[0_4px_0_0_#bfdbfe] 
-            hover:bg-blue-50 dark:hover:bg-blue-950/40 hover:shadow-[0_8px_0_0_#93c5fd] 
+            hover:bg-blue-50 hover:shadow-[0_8px_0_0_#93c5fd] 
             active:shadow-[0_0px_0_0_#93c5fd]
+            dark:bg-slate-800 dark:text-blue-200 
+            dark:shadow-[0_4px_0_0_#0a0d14] 
+            dark:hover:bg-slate-700 dark:hover:shadow-[0_8px_0_0_#0a0d14] 
+            dark:active:shadow-[0_0px_0_0_#0a0d14]
         `,
     blue: `
             bg-blue-600 text-white 
