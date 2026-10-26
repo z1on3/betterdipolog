@@ -104,7 +104,7 @@ export default function EmergencyHotlines() {
         className="fixed right-4 bottom-4 z-40 flex cursor-pointer items-center gap-2 rounded-full bg-red-600 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-red-600/30 transition-all duration-200 hover:scale-[1.03] hover:bg-red-700 hover:shadow-xl active:scale-95 sm:right-6 sm:bottom-6 sm:px-5 sm:py-3.5"
       >
         <span className="relative flex h-5 w-5 items-center justify-center">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/30 dark:bg-slate-900/30" />
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/30" />
 
           <Phone className="relative h-4 w-4" strokeWidth={2.5} />
         </span>

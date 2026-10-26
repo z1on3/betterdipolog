@@ -48,7 +48,7 @@ export default function EmergencyQuickCall() {
           key={label}
           href={telHref(number)}
           aria-label={`Call ${label} at ${number}`}
-          className="group flex h-full items-center gap-2.5 overflow-hidden rounded-lg border border-gray-200 bg-white p-3.5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-md active:scale-[0.98] active:bg-slate-50 dark:border-gray-800 dark:bg-slate-900 dark:hover:border-gray-700 dark:active:bg-slate-950"
+          className="group flex h-full items-center gap-2.5 overflow-hidden rounded-lg border border-gray-200 bg-white p-3.5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-md active:scale-[0.98] active:bg-slate-50 dark:border-gray-800 dark:bg-slate-900 dark:hover:border-gray-700 dark:active:bg-slate-800"
         >
           <span
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg"

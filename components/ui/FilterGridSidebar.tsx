@@ -50,7 +50,7 @@ export default function FilterGridSidebar({
                 className={`w-full border-l-2 px-5 py-3.5 text-left text-sm font-medium transition-colors ${
                   activeCategory === category
                     ? "border-blue-600 bg-blue-50/50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300"
-                    : "border-transparent text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-950 dark:hover:text-slate-100"
+                    : "border-transparent text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100"
                 }`}
               >
                 {category}

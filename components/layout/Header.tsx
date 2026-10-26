@@ -335,7 +335,7 @@ export default function Header({ className }: ClassName) {
                             key={subItem.name}
                             href={subItem.href}
                             onClick={closeDropdown}
-                            className="group flex min-h-[82px] gap-4 rounded-xl p-3 transition-colors hover:bg-slate-50 dark:hover:bg-slate-950"
+                            className="group flex min-h-[82px] gap-4 rounded-xl p-3 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800"
                           >
                             {/* Icon */}
                             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 transition-colors group-hover:bg-blue-700 dark:bg-blue-950/40">

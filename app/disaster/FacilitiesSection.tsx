@@ -40,13 +40,7 @@ export default function FacilitiesSection() {
         {/* Map-preview hero — a faint street grid with category pins so it
                     unmistakably reads as an interactive map. */}
         <div
-          className="relative h-44 sm:h-52"
-          style={{
-            backgroundColor: "#ecfdf5",
-            backgroundImage:
-              "linear-gradient(rgba(15,23,42,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,.06) 1px, transparent 1px)",
-            backgroundSize: "26px 26px",
-          }}
+          className="relative h-44 bg-emerald-50 bg-[linear-gradient(rgba(15,23,42,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,.06)_1px,transparent_1px)] bg-[size:26px_26px] sm:h-52 dark:bg-emerald-950/30 dark:bg-[linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)]"
           aria-hidden
         >
           {PIN_POSITIONS.map((pos, i) => (

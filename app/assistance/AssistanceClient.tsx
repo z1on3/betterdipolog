@@ -137,7 +137,7 @@ export default function AssistanceClient({
                 className={`rounded-full border px-3 py-1.5 text-xs font-bold transition-colors ${
                   filter === key
                     ? "border-transparent bg-slate-800 text-white"
-                    : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:bg-slate-950"
+                    : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:bg-slate-800"
                 }`}
               >
                 {label}

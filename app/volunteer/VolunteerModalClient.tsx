@@ -122,7 +122,7 @@ export default function VolunteerModalClient() {
                 href="https://github.com/z1on3/betterdipolog"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-xl border border-slate-200 p-4 transition-all hover:border-slate-800 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-950"
+                className="group flex items-center justify-between rounded-xl border border-slate-200 p-4 transition-all hover:border-slate-800 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-900 text-white shadow-sm">

@@ -43,6 +43,9 @@ export default function ThemeToggle({ className }: { className?: string }) {
       title={isDark ? "Switch to light mode" : "Switch to dark mode"}
       className={cn(
         "rounded-lg border border-slate-200 bg-white p-2 text-slate-700 transition-colors hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-amber-300 dark:hover:bg-slate-700",
+        // Below `sm` the header has no room, so the toggle floats bottom-left
+        // (opposite the Emergency Hotlines button).
+        "max-sm:fixed max-sm:bottom-4 max-sm:left-4 max-sm:z-40 max-sm:rounded-full max-sm:p-3 max-sm:shadow-lg max-sm:shadow-slate-900/20 dark:max-sm:shadow-black/50",
         className,
       )}
     >

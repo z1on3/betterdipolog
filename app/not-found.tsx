@@ -28,7 +28,7 @@ export default function NotFound() {
   return (
     <main className="flex min-h-[80vh] flex-col items-center justify-center bg-linear-to-br from-blue-600 via-blue-700 to-blue-800 p-6 text-center font-sans">
       {/* Icon */}
-      <div className="mb-6 rounded-full border border-white/10 bg-white/20 p-6 backdrop-blur-sm dark:bg-slate-900/20">
+      <div className="mb-6 rounded-full border border-white/10 bg-white/20 p-6 backdrop-blur-sm">
         <AlertTriangle
           className="h-12 w-12 font-semibold text-white"
           strokeWidth={2}
@@ -62,7 +62,7 @@ export default function NotFound() {
 
         <button
           onClick={() => router.back()}
-          className="inline-flex items-center justify-center rounded-md border border-white/70 bg-transparent px-6 py-2.5 text-[18px] font-medium text-white transition-colors hover:bg-white/10 dark:hover:bg-slate-900/10"
+          className="inline-flex items-center justify-center rounded-md border border-white/70 bg-transparent px-6 py-2.5 text-[18px] font-medium text-white transition-colors hover:bg-white/10"
         >
           Go Back
         </button>

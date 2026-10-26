@@ -489,7 +489,7 @@ export default function WeatherAndMap() {
                 type="button"
                 onClick={() => setIsModalOpen(false)}
                 aria-label="Close weather details"
-                className="absolute top-4 right-4 rounded-full bg-white/10 p-2 transition-colors hover:bg-white/20 dark:bg-slate-900/10 dark:hover:bg-slate-900/20"
+                className="absolute top-4 right-4 rounded-full bg-white/10 p-2 transition-colors hover:bg-white/20"
               >
                 <X className="h-5 w-5" />
               </button>

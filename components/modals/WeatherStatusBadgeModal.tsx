@@ -38,7 +38,7 @@ const WeatherStatusBadge = ({
       ) : (
         <button
           onClick={handleOpen}
-          className="flex cursor-help items-center gap-2 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 backdrop-blur-sm transition-colors hover:bg-white/20 dark:bg-slate-900/10 dark:hover:bg-slate-900/20"
+          className="flex cursor-help items-center gap-2 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 backdrop-blur-sm transition-colors hover:bg-white/20"
         >
           <div className="flex items-center gap-1">
             <div
@@ -76,7 +76,7 @@ const WeatherStatusBadge = ({
               </div>
               <button
                 onClick={handleClose}
-                className="rounded-full bg-white/10 p-1.5 transition-colors hover:bg-white/20 dark:bg-slate-900/10 dark:hover:bg-slate-900/20"
+                className="rounded-full bg-white/10 p-1.5 transition-colors hover:bg-white/20"
               >
                 <X className="h-4 w-4" />
               </button>

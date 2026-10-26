@@ -93,7 +93,7 @@ export default function GuidesSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
                   <div className="relative flex h-full items-end gap-3 p-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm dark:bg-slate-900/20">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
                       <Icon className="h-5 w-5 text-white" aria-hidden />
                     </span>
                     <span className="min-w-0 flex-1">

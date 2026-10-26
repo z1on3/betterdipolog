@@ -141,7 +141,7 @@ export default function HeroSection() {
   };
 
   return (
-    <Section className="bg-[#0038A8] max-md:py-3">
+    <Section className="bg-[#0038A8] max-md:py-3 dark:bg-[#0b2a6b]">
       {/* Subtle Background Grid for texture */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] bg-[size:4rem_4rem]"></div>
 
@@ -193,11 +193,11 @@ export default function HeroSection() {
           className={`z-10 mx-auto w-full max-lg:max-w-2xl lg:mx-0 lg:ml-auto ${!isMobileSearchVisible ? "max-lg:hidden" : "max-lg:animate-in max-lg:fade-in max-lg:slide-in-from-bottom-4 max-lg:duration-300"}`}
         >
           {/* The main Search Card UI */}
-          <div className="relative rounded-xl border border-white/20 p-5 shadow-lg max-lg:bg-white/10 max-lg:backdrop-blur-md md:rounded-2xl md:border-slate-100 md:bg-white md:p-8 md:shadow-2xl dark:max-lg:bg-slate-900/10 dark:md:border-slate-800 dark:md:bg-slate-900">
+          <div className="relative rounded-xl border border-white/20 p-5 shadow-lg max-lg:bg-white/10 max-lg:backdrop-blur-md md:rounded-2xl md:border-slate-100 md:bg-white md:p-8 md:shadow-2xl dark:md:border-slate-800 dark:md:bg-slate-900">
             {/* Card Header & Mobile Close Button */}
             <div className="mb-5 flex items-center justify-between md:mb-6">
               <div className="flex items-center gap-3">
-                <div className="rounded-xl bg-white/20 p-2.5 md:rounded-lg md:bg-blue-100 md:p-2 dark:bg-slate-900/20 dark:md:bg-blue-900/50">
+                <div className="rounded-xl bg-white/20 p-2.5 md:rounded-lg md:bg-blue-100 md:p-2 dark:md:bg-blue-900/50">
                   <Search className="h-5 w-5 text-white md:text-blue-600 dark:md:text-blue-400" />
                 </div>
                 <h2 className="text-xl font-bold text-white md:text-slate-800 dark:md:text-slate-200">
@@ -211,7 +211,7 @@ export default function HeroSection() {
                   setIsMobileSearchVisible(false);
                   setSearchQuery(""); // Optional: clear search when closing
                 }}
-                className="rounded-full p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white lg:hidden dark:hover:bg-slate-900/10"
+                className="rounded-full p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white lg:hidden"
                 aria-label="Close search"
               >
                 <X className="h-6 w-6" />
@@ -316,7 +316,7 @@ export default function HeroSection() {
                   <button
                     key={item.name}
                     onClick={() => handlePopularSearch(item.name)}
-                    className="flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-xs text-white backdrop-blur-sm transition-colors hover:bg-white/20 hover:text-white md:border-slate-100 md:bg-slate-50 md:text-slate-600 md:backdrop-blur-none md:hover:bg-blue-50 md:hover:text-blue-700 dark:bg-slate-900/10 dark:hover:bg-slate-900/20 dark:md:border-slate-800 dark:md:bg-slate-950 dark:md:text-slate-400 dark:md:hover:bg-blue-950/40 dark:md:hover:text-blue-300"
+                    className="flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-3 py-2 text-xs text-white backdrop-blur-sm transition-colors hover:bg-white/20 hover:text-white md:border-slate-100 md:bg-slate-50 md:text-slate-600 md:backdrop-blur-none md:hover:bg-blue-50 md:hover:text-blue-700 dark:md:border-slate-800 dark:md:bg-slate-950 dark:md:text-slate-400 dark:md:hover:bg-blue-950/40 dark:md:hover:text-blue-300"
                   >
                     <item.icon className="h-3.5 w-3.5" />
                     {item.name}
@@ -344,14 +344,14 @@ export default function HeroSection() {
               <Link
                 key={title}
                 href={href}
-                className="group relative z-0 flex flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-4 shadow-lg backdrop-blur-md transition-all hover:-translate-y-1 hover:border-white/40 hover:bg-white/20 md:p-5 dark:bg-slate-900/10 dark:hover:bg-slate-900/20"
+                className="group relative z-0 flex flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-4 shadow-lg backdrop-blur-md transition-all hover:-translate-y-1 hover:border-white/40 hover:bg-white/20 md:p-5"
               >
                 <div className="mb-3 flex items-center justify-between">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 md:h-12 md:w-12 dark:bg-slate-900/20">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 md:h-12 md:w-12">
                     <Icon className="h-5 w-5 text-white md:h-6 md:w-6" />
                   </div>
                   {badge && (
-                    <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-[10px] font-semibold tracking-wider text-white uppercase backdrop-blur-sm dark:bg-slate-900/20">
+                    <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-[10px] font-semibold tracking-wider text-white uppercase backdrop-blur-sm">
                       {badge}
                     </span>
                   )}

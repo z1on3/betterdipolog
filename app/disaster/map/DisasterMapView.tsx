@@ -216,7 +216,7 @@ export default function DisasterMapView({
                       className={`inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-xs font-bold transition-colors ${
                         on
                           ? "border-transparent bg-slate-800 text-white"
-                          : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:bg-slate-950"
+                          : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 dark:hover:bg-slate-800"
                       }`}
                     >
                       <Icon className="h-4 w-4" />
@@ -247,7 +247,7 @@ export default function DisasterMapView({
                   <li key={f.name}>
                     <button
                       onClick={() => setSelected(f)}
-                      className="w-full rounded-lg border border-slate-100 p-3 text-left transition-all hover:border-blue-200 hover:bg-slate-50 dark:border-slate-800 dark:hover:border-blue-800 dark:hover:bg-slate-950"
+                      className="w-full rounded-lg border border-slate-100 p-3 text-left transition-all hover:border-blue-200 hover:bg-slate-50 dark:border-slate-800 dark:hover:border-blue-800 dark:hover:bg-slate-800"
                     >
                       <div className="flex items-center gap-2">
                         <span

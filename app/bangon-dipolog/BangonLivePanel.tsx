@@ -182,7 +182,7 @@ export default function BangonLivePanel({
                         rel: "noopener noreferrer",
                       }
                     : {})}
-                  className={`block px-4 py-3 ${url ? "transition-colors hover:bg-slate-50 dark:hover:bg-slate-950" : ""}`}
+                  className={`block px-4 py-3 ${url ? "transition-colors hover:bg-slate-50 dark:hover:bg-slate-800" : ""}`}
                 >
                   <div className="flex items-center gap-2">
                     <span className="inline-flex shrink-0 items-center rounded-full border border-rose-100 bg-rose-50 px-2 py-0.5 text-[10px] font-bold tracking-wide text-rose-700 uppercase dark:border-rose-900 dark:bg-rose-950/40 dark:text-rose-300">
@@ -540,7 +540,7 @@ function ModButton({
       ? "bg-emerald-600 text-white hover:bg-emerald-700"
       : tone === "danger"
         ? "border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/40"
-        : "border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-950";
+        : "border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800";
   return (
     <form action={action}>
       <button

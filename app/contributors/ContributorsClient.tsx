@@ -164,7 +164,7 @@ export default function ContributorsClient() {
                   href={owner.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-1.5 text-sm font-bold text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:text-blue-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-950 dark:hover:text-blue-400"
+                  className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-1.5 text-sm font-bold text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:text-blue-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400"
                 >
                   <Github className="h-4 w-4" />
                   GitHub Profile

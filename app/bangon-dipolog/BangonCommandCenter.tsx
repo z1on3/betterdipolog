@@ -159,7 +159,7 @@ export default function BangonCommandCenter({
             <button
               onClick={dismissStandby}
               aria-label="Dismiss notice"
-              className="shrink-0 rounded-md p-1 text-emerald-200 transition-colors hover:bg-white/10 hover:text-white dark:hover:bg-slate-900/10"
+              className="shrink-0 rounded-md p-1 text-emerald-200 transition-colors hover:bg-white/10 hover:text-white"
             >
               <X className="h-4 w-4" />
             </button>
@@ -173,7 +173,7 @@ export default function BangonCommandCenter({
           onClick={locateMe}
           disabled={locating}
           aria-label="Find my location"
-          className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-xl bg-white text-slate-700 shadow-md transition-colors hover:bg-slate-50 disabled:opacity-60 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-950"
+          className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-xl bg-white text-slate-700 shadow-md transition-colors hover:bg-slate-50 disabled:opacity-60 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
         >
           {locating ? (
             <Loader2 className="h-5 w-5 animate-spin" />
